@@ -8,10 +8,10 @@ Nov 15, 2026 · @Chris Barlow
 
 - **Auto-scaling.** Every channel is its own small object, so capacity grows one channel at a time with no tuning. A Christmas-morning rush is many small channels waking up, not one big server falling over.
 - **Updates.** Fully automatic and signed. Radios check nightly, install while idle on the dock, and roll back by themselves if anything goes wrong. Nobody presses anything.
-- **No subscription for the hardware, ever.** Running costs follow channels, about NZ$1.40 to 2.80 a channel a year. Every radio set comes with its channels prepaid for life from a ring-fenced fund, with 3 and 5 channel packs cheaper per channel. More channels can be added later, for life or monthly.
+- **No subscription for the hardware, ever.** Running costs follow channels, about NZ$1.40 to 2.80 a channel a year. Every radio set comes with its channels prepaid for life from a ring-fenced fund.
 - **Works anywhere.** Any internet connection that meets the minimum requirements below, in any country Cloudflare serves.
 - **Code reuse.** One small C library holds the protocol, encryption, jitter buffer and turn-taking. The R1 app, the ESP32 firmware, the laptop test client and the iOS and Android family apps all use it unchanged.
-- **Build your own.** Builders get a free kit list, printable case plans and a web flasher, or buy a parts kit and case from us. To use our service they buy channels, singly or in discounted 3 and 5 packs, one-off for life or monthly; or they run the published service themselves for free.
+- **Simple prices.** For radios, families only ever pay for channels: sets come with theirs for life, and more come in 1, 3 or 5, paid once or monthly. Home builders use the same price list, or run the service themselves for free.
 - **The family app** is a paid app with an optional small subscription. It pays for the people side of running the service (updates, support, security). The radios never depend on it being bought.
 
 This changes three earlier choices: voice now travels over a WebSocket on port 443 instead of UDP, the relay is serverless instead of a VPS in Auckland or Sydney, and the separate control page becomes part of the family app. The [relay research](reports/Walkie%20talkie%20without%20central%20relay.md) is still the background for why a blind relay is the right core.
@@ -180,44 +180,52 @@ The promise: **the radio keeps working, with no subscription, anywhere in the wo
 - **An end-of-service plan.** If the business ever stops, the fund, domains, signing keys and code pass to a named trustee or community group, and the code is relicensed for free use.
 - **Get the wording reviewed.** A "forever" promise is a legal commitment under the Fair Trading Act and Consumer Guarantees Act. The wording, the trust arrangement and the interception-law position (see the relay report) need a lawyer before anything is sold. Nothing here is legal advice.
 
-## Build your own: kits, cases and channels
+## Prices, kept simple
 
-People who build their own radio still need the service for channels and updates. So the hardware, the case and the channels are sold separately, and each has a free option.
+The whole price list has to fit on one card a family can read in a minute. So there is one thing to buy, three sizes and two ways to pay.
 
-| Item | Do it yourself | Buy from us |
+**The rules, as a customer sees them.**
+
+1. **For radios, you only ever pay for channels.** Radios, updates, alerts and the app's setup and care screens come with them. A channel holds up to ten radios and phones.
+2. **Every set comes with its channels, paid for life.** They never need a subscription, whatever else you buy.
+3. **Want more? Pick 1, 3 or 5 channels, and pay once or monthly.** Move up any time by paying the difference.
+4. **Built your own radio?** Same price list. Or run the service yourself for free.
+
+| | 1 channel | 3 channels | 5 channels |
+|---|---|---|---|
+| Pay once, for life | NZ$35 | NZ$75 | NZ$99 |
+| Or monthly | NZ$2 | NZ$4 | NZ$5 |
+
+*Including GST. Starting points to test.*
+
+**Example.** A pair bought with one channel wants three. That is NZ$40 once, or NZ$2 a month. If the monthly payments ever stop, the two extra channels stop and the original channel carries on for life.
+
+**Words.** "Channels" is the only word customers see for the service. "Licence" is kept for one thing: businesses that want to copy and sell our designs ([COMMERCIAL.md](COMMERCIAL.md)). Families never need a licence.
+
+**Behind the price list** (not shown to customers):
+
+- Prices cover the channel provision (NZ$25, 50 or 60 for 1, 3 or 5 channels), GST, payment fees and a maintenance contribution that grows with size. Lifetime payments go into the ring-fenced fund with the same guarantee as sold sets.
+- One account per family, billed monthly or yearly. A refunded or charged-back purchase switches its channels off.
+- Monthly plans pay back the lifetime price in about 18 to 20 months.
+- Bought in the store or in the family app. App stores take 15 to 30% of in-app sales, which in-app prices must absorb.
+- Monthly payments are not credited if a family later switches to lifetime; this keeps the rule to "pay the difference". Worth revisiting once there is real data.
+
+## Build your own
+
+Everything a builder needs has a free option. The only thing anyone pays us for is the parts they choose to buy, and channels on our service.
+
+| Item | Free | From us |
 |---|---|---|
-| Parts | Free kit list with part numbers and suppliers (the Stage 2 doc) | A parts kit with every part, tested to work together |
-| Case | Free printable plans (STL and STEP files) | A printed case, as a separate store item |
-| Firmware | Flash it from a web page over USB-C, free | Comes loaded on a kit's board |
-| Channels | Run the published service yourself, free for non-commercial use | Channels singly or in 3 and 5 packs: one-off for life, or monthly |
+| Parts | Kit list with part numbers and suppliers (the Stage 2 doc) | Parts kit, tested to work together |
+| Case | Printable plans (STL and STEP files) | Printed case |
+| Firmware | Web flasher over USB-C | Loaded on a kit's board |
+| Service | Run your own copy | Channels, from the same price list |
 
-**How it works.** When a home-built radio is first flashed it makes its own key pair and shows or speaks a claim code. The builder buys channels in the store or the family app and adds the radio by its code. Any radio or phone on a paid channel can sign in and gets updates, exactly like a radio we sold; a radio on no paid channel cannot sign in. Each channel takes up to ten radios and phones. A refunded or charged-back channel is switched off.
+**Joining our service.** A newly flashed radio makes its own key pair and shows or speaks a claim code. The builder adds it to their channels in the store or the family app. From then on it signs in and gets updates like any radio we sold.
 
-**Channel prices.** One channel is dearest per channel; packs are cheaper because a household's talk is shared across its channels (see above). Starting points, including GST:
+**Updates on home-built boards.** Official firmware is signed and checked by the radio before it installs. Builders' boards do not have Secure Boot switched on, because that permanently locks the chip to our key; the signature check still runs in the firmware. Updates are published for the boards named in the kit list. Other boards can use a self-hosted copy and the builder's own firmware.
 
-| Pack | One-off, for life | Per channel | Monthly, per family | Pays back in |
-|---|---|---|---|---|
-| 1 channel | NZ$35 | NZ$35 | NZ$2 | about 18 months |
-| 3 channels | NZ$75 | NZ$25 | NZ$4 | about 19 months |
-| 5 channels | NZ$99 | NZ$19.80 | NZ$5 | about 20 months |
-
-One-off prices cover the pack's provision, GST, payment fees and a contribution to maintenance that grows with the pack. They go into the same ring-fenced fund as sold sets, with the same guarantee. Monthly plans can also be paid yearly; running costs are only cents a month, so most of a small payment goes on fees, which is why plans are billed per family rather than per channel. These are starting points to test, not decisions. The monthly option is a builder's choice; the no-subscription promise for sets we sell is unchanged.
-
-**Adding channels later.** Anyone with a set, bought or built, can add channels at any time, either for life or monthly. A pair bought with one channel can grow to three or five. Upgrades are priced as the difference between packs, so adding later costs the same as buying the bigger pack at the start.
-
-| Upgrade | One-off, for life | Monthly, while subscribed |
-|---|---|---|
-| 1 to 3 channels | NZ$40 | NZ$2 |
-| 1 to 5 channels | NZ$64 | NZ$3 |
-| 3 to 5 channels | NZ$24 | NZ$1 |
-
-- **The included channels never depend on a subscription.** If a monthly upgrade stops, only the added channels stop; the channels that came with the set keep working for life, as promised.
-- **Mix and switch.** A family can hold some channels for life and some monthly, and can switch a monthly upgrade to lifetime at any time at the one-off upgrade price.
-- **Where to buy.** In the store and in the family app. App stores take 15 to 30% of in-app sales, which the in-app prices must absorb.
-
-**Updates on home-built boards.** Official firmware is signed and checked by the radio before it installs, as on our units. Builders' boards do not have Secure Boot switched on, because that permanently locks the chip to our key; the signature check still runs in the firmware. Updates are published per supported board, so the kit list names the boards and pin layouts the firmware supports. Other boards work with the free self-hosted option and builders' own firmware.
-
-**Licences.** Building a radio for your own family, printing your own case and running your own copy of the service are non-commercial use and free. Buying channels does not change that. Anyone else selling kits, cases or channels needs a commercial licence ([COMMERCIAL.md](COMMERCIAL.md)). Case plans are released under the same CC BY-NC-SA licence as the documents.
+**Licences.** Building radios for your own family, printing your own case and running your own copy of the service are free non-commercial use. Case plans use the same CC BY-NC-SA licence as the documents.
 
 ## Roadmap
 
