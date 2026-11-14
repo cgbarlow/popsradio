@@ -58,7 +58,7 @@ It is not an emergency alarm. In an emergency, call 111.
 | [Rabbit R1 Walkie-Talkie Research and Design](Rabbit%20R1%20Walkie-Talkie%20Research%20and%20Design.md) | Stage 1: the R1 hardware, reflashing, the app, networking, and designing for Grandad |
 | [Walkie-Talkie Beyond the R1: Minimum Hardware](Walkie-Talkie%20Beyond%20the%20R1%20Minimum%20Hardware.md) | Stage 2: the ESP32 build, parts and NZ prices, pairing, power, and open channel mode |
 | [Walkie-Talkie Service Design](Walkie-Talkie%20Service%20Design.md) | The locked design: serverless service, updates, shared code, family app, lifetime costs, the guarantee and the roadmap |
-| [Hack Day Action Plan](Hack%20Day%20Action%20Plan.md) | What to get ready before the 4 December hack day, and how to spend the day |
+| [Hack Day Action Plan](Hack%20Day%20Action%20Plan.md) | Getting the two R1s talking at the 4 December hack day: what to do beforehand, and how to spend the day |
 | [Walkie talkie without central relay](reports/Walkie%20talkie%20without%20central%20relay.md) | Research on running without a central relay, and the recommendation adopted |
 | [Walkie-Talkie Image Prompts](Walkie-Talkie%20Image%20Prompts.md) | The prompts used to make the concept pictures |
 | [`images/`](images) | Concept pictures. These are generated images, not photos of real units |
