@@ -76,7 +76,7 @@ To update the progress shown on the site, change the `done` numbers in the `PLAN
 
 ## Licence
 
-Free for non-commercial use. Build one for your own family, change it, share it.
+Free for non-commercial use. Build one for your own family, change it, share it. A home-built radio can run on your own copy of the service for free, or connect to ours by buying a connection, one-off or monthly. See [build your own](Walkie-Talkie%20Service%20Design.md#build-your-own-kits-cases-and-connections).
 
 - **Code** (including `index.html`): [PolyForm Noncommercial 1.0.0](LICENSE)
 - **Research documents and images:** [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/). Credit Chris Barlow, don't use them commercially, and share any changed versions under the same licence.

@@ -11,6 +11,7 @@ Nov 15, 2026 · @Chris Barlow
 - **No subscription for the hardware, ever.** Each radio's price carries a service provision of NZ$20, ring-fenced to pay its share of running costs for its whole life. Estimated running cost is about NZ$0.70 a radio a year.
 - **Works anywhere.** Any internet connection that meets the minimum requirements below, in any country Cloudflare serves.
 - **Code reuse.** One small C library holds the protocol, encryption, jitter buffer and turn-taking. The R1 app, the ESP32 firmware, the laptop test client and the iOS and Android family apps all use it unchanged.
+- **Build your own.** Builders get a free kit list, printable case plans and a web flasher, or buy a parts kit and case from us. To use our service they buy a connection per radio, one-off for life or monthly; or they run the published service themselves for free.
 - **The family app** is a paid app with an optional small subscription. It pays for the people side of running the service (updates, support, security). The radios never depend on it being bought.
 
 This changes three earlier choices: voice now travels over a WebSocket on port 443 instead of UDP, the relay is serverless instead of a VPS in Auckland or Sydney, and the separate control page becomes part of the family app. The [relay research](reports/Walkie%20talkie%20without%20central%20relay.md) is still the background for why a blind relay is the right core.
@@ -170,6 +171,32 @@ The promise: **the radio keeps working, with no subscription, anywhere in the wo
 - **A published fallback.** A self-hostable version of the service is published, so a family or community can run it if we cannot.
 - **An end-of-service plan.** If the business ever stops, the fund, domains, signing keys and code pass to a named trustee or community group, and the code is relicensed for free use.
 - **Get the wording reviewed.** A "forever" promise is a legal commitment under the Fair Trading Act and Consumer Guarantees Act. The wording, the trust arrangement and the interception-law position (see the relay report) need a lawyer before anything is sold. Nothing here is legal advice.
+
+## Build your own: kits, cases and connections
+
+People who build their own radio still need the service for channels and updates. So the hardware, the case and the connection are sold separately, and each has a free option.
+
+| Item | Do it yourself | Buy from us |
+|---|---|---|
+| Parts | Free kit list with part numbers and suppliers (the Stage 2 doc) | A parts kit with every part, tested to work together |
+| Case | Free printable plans (STL and STEP files) | A printed case, as a separate store item |
+| Firmware | Flash it from a web page over USB-C, free | Comes loaded on a kit's board |
+| Connection | Run the published service yourself, free for non-commercial use | A connection for each radio: one-off for life, or monthly |
+
+**How a connection works.** When a home-built radio is first flashed it makes its own key pair and shows or speaks a claim code. The builder buys a connection in the store or the family app and enters the code. The service then lets that radio sign in, join channels and receive updates, exactly like a radio we sold. A radio with no connection cannot sign in. Connections can be moved to a replacement radio, and a refunded or charged-back connection is switched off.
+
+**Connection prices.** Both options cover channels and updates; the radio and the channel are identical either way.
+
+| Option | Starting point | Basis |
+|---|---|---|
+| One-off, for the life of the radio | About NZ$29 including GST | The NZ$20 service provision, GST, payment fees and a contribution to maintenance. Paid into the same ring-fenced fund as sold radios, with the same guarantee |
+| Monthly | About NZ$1 a radio a month, billed per family, monthly or yearly | Running costs are about 6 cents a radio a month, so most of a small monthly payment goes on payment fees; billing per family keeps that sensible. Pays back the one-off price in about two and a half years |
+
+These are starting points to test, not decisions. The monthly option is a builder's choice; the no-subscription promise for radios we sell is unchanged.
+
+**Updates on home-built boards.** Official firmware is signed and checked by the radio before it installs, as on our units. Builders' boards do not have Secure Boot switched on, because that permanently locks the chip to our key; the signature check still runs in the firmware. Updates are published per supported board, so the kit list names the boards and pin layouts the firmware supports. Other boards work with the free self-hosted option and builders' own firmware.
+
+**Licences.** Building a radio for your own family, printing your own case and running your own copy of the service are non-commercial use and free. Buying a connection does not change that. Anyone else selling kits, cases or connections needs a commercial licence ([COMMERCIAL.md](COMMERCIAL.md)). Case plans are released under the same CC BY-NC-SA licence as the documents.
 
 ## Roadmap
 
