@@ -8,10 +8,10 @@ Nov 15, 2026 · @Chris Barlow
 
 - **Auto-scaling.** Every channel is its own small object, so capacity grows one channel at a time with no tuning. A Christmas-morning rush is many small channels waking up, not one big server falling over.
 - **Updates.** Fully automatic and signed. Radios check nightly, install while idle on the dock, and roll back by themselves if anything goes wrong. Nobody presses anything.
-- **No subscription for the hardware, ever.** Each radio's price carries a service provision of NZ$20, ring-fenced to pay its share of running costs for its whole life. Estimated running cost is about NZ$0.70 a radio a year.
+- **No subscription for the hardware, ever.** Running costs follow channels, about NZ$1.40 to 2.80 a channel a year. Every radio set comes with its channels prepaid for life from a ring-fenced fund, with 3 and 5 channel packs cheaper per channel.
 - **Works anywhere.** Any internet connection that meets the minimum requirements below, in any country Cloudflare serves.
 - **Code reuse.** One small C library holds the protocol, encryption, jitter buffer and turn-taking. The R1 app, the ESP32 firmware, the laptop test client and the iOS and Android family apps all use it unchanged.
-- **Build your own.** Builders get a free kit list, printable case plans and a web flasher, or buy a parts kit and case from us. To use our service they buy a connection per radio, one-off for life or monthly; or they run the published service themselves for free.
+- **Build your own.** Builders get a free kit list, printable case plans and a web flasher, or buy a parts kit and case from us. To use our service they buy channels, singly or in discounted 3 and 5 packs, one-off for life or monthly; or they run the published service themselves for free.
 - **The family app** is a paid app with an optional small subscription. It pays for the people side of running the service (updates, support, security). The radios never depend on it being bought.
 
 This changes three earlier choices: voice now travels over a WebSocket on port 443 instead of UDP, the relay is serverless instead of a VPS in Auckland or Sydney, and the separate control page becomes part of the family app. The [relay research](reports/Walkie%20talkie%20without%20central%20relay.md) is still the background for why a blind relay is the right core.
@@ -129,9 +129,9 @@ The app lets Grandad's family talk to his radio from their phones, and gives the
 
 ## No subscription, ever: whole-of-life costs
 
-Each radio carries a prepaid share of the service for as long as it works. The running costs are small enough that this is affordable.
+Running costs follow channels, not radios. A channel's cost comes from how much people talk on it; adding radios or phones to a channel costs almost nothing, because sending each frame on to more members is free and the channel object runs for the same time. A radio on its own (health checks, updates) costs effectively nothing. So the service is prepaid per channel, and every radio set is sold with its channels included.
 
-**Running cost per family** (four radios, 20 minutes of talk a day, Cloudflare list prices read on 15 November 2026):
+**Running cost per channel** (20 minutes of talk a day, any number of members, Cloudflare list prices read on 15 November 2026):
 
 | Item | Basis | US$ a month |
 |---|---|---|
@@ -140,13 +140,21 @@ Each radio carries a prepaid share of the service for as long as it works. The r
 | Storage, alerts, firmware downloads | One record per spurt; push alerts free; R2 has no download charge | 0.005 |
 | **Total** | | **about 0.13** |
 
-That is about US$0.39, or **NZ$0.71, a radio a year** (NZ$1.81 to the US dollar). A heavy family talking an hour a day costs three times that. The fixed platform fee (US$5 a month) and domain add NZ$0.14 a radio a year at 1,000 radios and almost nothing at scale. Sources: [Durable Objects pricing](https://developers.cloudflare.com/durable-objects/platform/pricing/) and the relay report's cost table, which these figures match.
+That is about **NZ$2.80 a channel a year** at 20 minutes a day, or NZ$1.40 at 10 minutes (NZ$1.81 to the US dollar). The fixed platform fee (US$5 a month) and domain are spread across the fleet and soon round to nothing. Sources: [Durable Objects pricing](https://developers.cloudflare.com/durable-objects/platform/pricing/) and the relay report's cost table, which these figures match.
 
-**Service provision per radio: NZ$20.** Over a 15-year life (generous for a battery device), average use costs about NZ$11. NZ$20 leaves room for heavy households, which average out across the fleet, and for price rises. The provision goes into a ring-fenced fund on every sale and is only spent on running the service.
+**Why more channels cost less each.** A household only talks so much. Grandad can be on one channel at a time, so a family with five channels does not talk five times as much as a family with one; the same talk is spread across them. That is what makes channel packs cheaper per channel.
 
-**Unit cost build-up.** Parts NZ$35 to 50 (Stage 2 doc), plus the NZ$20 service provision, plus assembly, certification, packaging and warranty, which are not yet estimated.
+**Service provision per pack.** Paid into a ring-fenced fund on every sale and only spent on running the service. Sized for 15 years (generous for a battery device) with 13 to 17% margin; heavy households average out across the fleet.
 
-**What the provision does not cover.** People. Security fixes, support and keeping up with platform changes cost more than the servers, as Signal's accounts show. Those are funded by app sales and subscriptions, and by new radio sales. At around 100,000 radios a modest maintenance budget falls under NZ$1 a radio a year and could be prepaid too; below that it depends on the app.
+| Pack | Household talk assumed | 15-year running cost | Provision |
+|---|---|---|---|
+| 1 channel | 10 minutes a day | about NZ$21 | NZ$25 |
+| 3 channels | 20 minutes a day in total | about NZ$43 | NZ$50 |
+| 5 channels | 25 minutes a day in total | about NZ$53 | NZ$60 |
+
+**Set cost build-up.** Radio parts NZ$35 to 50 each (Stage 2 doc), plus the provision for the channel pack in the box, plus assembly, certification, packaging and warranty, which are not yet estimated. For example, a pair of radios with one channel carries NZ$25; a family set of four with three channels carries NZ$50. A radio bought later to join existing channels carries no provision.
+
+**What the provision does not cover.** People. Security fixes, support and keeping up with platform changes cost more than the servers, as Signal's accounts show. Those are funded by app sales and subscriptions, the margin on channel packs, and new sales. At scale a modest maintenance budget could be prepaid too; until then it depends on the app.
 
 ## The guarantee and minimum requirements
 
@@ -172,31 +180,32 @@ The promise: **the radio keeps working, with no subscription, anywhere in the wo
 - **An end-of-service plan.** If the business ever stops, the fund, domains, signing keys and code pass to a named trustee or community group, and the code is relicensed for free use.
 - **Get the wording reviewed.** A "forever" promise is a legal commitment under the Fair Trading Act and Consumer Guarantees Act. The wording, the trust arrangement and the interception-law position (see the relay report) need a lawyer before anything is sold. Nothing here is legal advice.
 
-## Build your own: kits, cases and connections
+## Build your own: kits, cases and channels
 
-People who build their own radio still need the service for channels and updates. So the hardware, the case and the connection are sold separately, and each has a free option.
+People who build their own radio still need the service for channels and updates. So the hardware, the case and the channels are sold separately, and each has a free option.
 
 | Item | Do it yourself | Buy from us |
 |---|---|---|
 | Parts | Free kit list with part numbers and suppliers (the Stage 2 doc) | A parts kit with every part, tested to work together |
 | Case | Free printable plans (STL and STEP files) | A printed case, as a separate store item |
 | Firmware | Flash it from a web page over USB-C, free | Comes loaded on a kit's board |
-| Connection | Run the published service yourself, free for non-commercial use | A connection for each radio: one-off for life, or monthly |
+| Channels | Run the published service yourself, free for non-commercial use | Channels singly or in 3 and 5 packs: one-off for life, or monthly |
 
-**How a connection works.** When a home-built radio is first flashed it makes its own key pair and shows or speaks a claim code. The builder buys a connection in the store or the family app and enters the code. The service then lets that radio sign in, join channels and receive updates, exactly like a radio we sold. A radio with no connection cannot sign in. Connections can be moved to a replacement radio, and a refunded or charged-back connection is switched off.
+**How it works.** When a home-built radio is first flashed it makes its own key pair and shows or speaks a claim code. The builder buys channels in the store or the family app and adds the radio by its code. Any radio or phone on a paid channel can sign in and gets updates, exactly like a radio we sold; a radio on no paid channel cannot sign in. Each channel takes up to ten radios and phones. A refunded or charged-back channel is switched off.
 
-**Connection prices.** Both options cover channels and updates; the radio and the channel are identical either way.
+**Channel prices.** One channel is dearest per channel; packs are cheaper because a household's talk is shared across its channels (see above). Starting points, including GST:
 
-| Option | Starting point | Basis |
-|---|---|---|
-| One-off, for the life of the radio | About NZ$29 including GST | The NZ$20 service provision, GST, payment fees and a contribution to maintenance. Paid into the same ring-fenced fund as sold radios, with the same guarantee |
-| Monthly | About NZ$1 a radio a month, billed per family, monthly or yearly | Running costs are about 6 cents a radio a month, so most of a small monthly payment goes on payment fees; billing per family keeps that sensible. Pays back the one-off price in about two and a half years |
+| Pack | One-off, for life | Per channel | Monthly, per family | Pays back in |
+|---|---|---|---|---|
+| 1 channel | NZ$35 | NZ$35 | NZ$2 | about 18 months |
+| 3 channels | NZ$75 | NZ$25 | NZ$4 | about 19 months |
+| 5 channels | NZ$99 | NZ$19.80 | NZ$5 | about 20 months |
 
-These are starting points to test, not decisions. The monthly option is a builder's choice; the no-subscription promise for radios we sell is unchanged.
+One-off prices cover the pack's provision, GST, payment fees and a contribution to maintenance that grows with the pack. They go into the same ring-fenced fund as sold sets, with the same guarantee. Monthly plans can also be paid yearly; running costs are only cents a month, so most of a small payment goes on fees, which is why plans are billed per family rather than per channel. These are starting points to test, not decisions. The monthly option is a builder's choice; the no-subscription promise for sets we sell is unchanged.
 
 **Updates on home-built boards.** Official firmware is signed and checked by the radio before it installs, as on our units. Builders' boards do not have Secure Boot switched on, because that permanently locks the chip to our key; the signature check still runs in the firmware. Updates are published per supported board, so the kit list names the boards and pin layouts the firmware supports. Other boards work with the free self-hosted option and builders' own firmware.
 
-**Licences.** Building a radio for your own family, printing your own case and running your own copy of the service are non-commercial use and free. Buying a connection does not change that. Anyone else selling kits, cases or connections needs a commercial licence ([COMMERCIAL.md](COMMERCIAL.md)). Case plans are released under the same CC BY-NC-SA licence as the documents.
+**Licences.** Building a radio for your own family, printing your own case and running your own copy of the service are non-commercial use and free. Buying channels does not change that. Anyone else selling kits, cases or channels needs a commercial licence ([COMMERCIAL.md](COMMERCIAL.md)). Case plans are released under the same CC BY-NC-SA licence as the documents.
 
 ## Roadmap
 
@@ -221,6 +230,6 @@ These are starting points to test, not decisions. The monthly option is a builde
 | "Forever" promise outlives the business | Broken promise | Prepaid fund, trustee, published code |
 | App revenue too low | Maintenance underfunded | Radios still run on the prepaid fund; maintenance scaled back, not the service |
 | Christmas rush | Set-up fails | Pre-provisioning, backoff, load test at ten times the peak |
-| Durable Object estimates wrong | Costs differ | Measure real cost per family in the Stage 1 trial before setting the provision |
+| Durable Object estimates wrong | Costs differ | Measure real cost per channel in the Stage 1 trial before setting the provision |
 
 **Still to confirm:** real cost per family from the trial, mouth-to-ear delay over WebSocket on the R1 and ESP32, the Apple Push to Talk entitlement, and legal review of the guarantee.

@@ -2,13 +2,13 @@
 
 Nov 14, 2026 · @Chris Barlow
 
-> **Updated 15 November 2026.** The service design is now locked: a serverless channel service on Cloudflare replaces the relay server, voice travels over a WebSocket on port 443, updates are automatic and signed, and each unit's price includes a NZ$20 provision for lifetime running costs. See the [service design](Walkie-Talkie%20Service%20Design.md).
+> **Updated 15 November 2026.** The service design is now locked: a serverless channel service on Cloudflare replaces the relay server, voice travels over a WebSocket on port 443, updates are automatic and signed, and running costs are prepaid per channel, so every set comes with its channels for life. See the [service design](Walkie-Talkie%20Service%20Design.md).
 
 ## Summary
 
 **Yes, an ESP32 can be the walkie-talkie, and it is arguably a better fit than the R1.** An ESP32-S3 encodes Opus speech at two to four times real time, encrypts it for free, holds a Wi-Fi link on 3 to 5 mA, and costs a few dollars. No reflashing, no root, no kiosk mode: the firmware is the device.
 
-- **Minimum hardware:** ESP32-S3 with PSRAM, one I2S mic, a 3 W I2S amp and 4 ohm speaker, one big button, an optional dial, an RGB LED, a 1000 to 2000 mAh LiPo with charger. About NZ$35 to 50 a unit in parts, or NZ$25 to 30 without a battery, plus a NZ$20 service provision that prepays the unit's running costs for life.
+- **Minimum hardware:** ESP32-S3 with PSRAM, one I2S mic, a 3 W I2S amp and 4 ohm speaker, one big button, an optional dial, an RGB LED, a 1000 to 2000 mAh LiPo with charger. About NZ$35 to 50 a unit in parts, or NZ$25 to 30 without a battery, plus the prepaid provision for its channels (NZ$25 for one channel, less per channel in packs).
 - **Fastest route:** a from-parts build in a simple box. A LilyGO T-Embed is the ready-made match but lands at NZ$93 or more.
 - **Software:** fork xiaozhi-esp32, which already sends Opus over a WebSocket (and over encrypted UDP) on 138 boards, and point it at the same serverless channel service as the R1s. R1s and ESP32 units can share a channel.
 - **Bluetooth pairing:** workable, but only as a short-range pipe with a spoken check code on top. Plain button-only Bluetooth pairing has no protection against an attacker in the middle. For a family build, loading keys over USB at your desk is simpler and stronger; keep BLE for changing Wi-Fi later.
@@ -239,14 +239,14 @@ The one thing that does not carry over is setup: the R1 is set up from the contr
 
 ## Cost in NZ dollars, and keeping it low
 
-A unit costs about NZ$35 to 50 in parts with a battery, and about NZ$25 to 30 without. For a family build two walkies come to roughly NZ$55 to 100 all up, plus shipping. A sold unit also carries the NZ$20 service provision (see below). Prices include 15% GST and use NZ$1.81 to the US dollar ([x-rates](https://www.x-rates.com/table/?from=NZD&amount=1), 13 Nov 2026).
+A unit costs about NZ$35 to 50 in parts with a battery, and about NZ$25 to 30 without. For a family build two walkies come to roughly NZ$55 to 100 all up, plus shipping. A sold set also carries the prepaid provision for its channels (see below). Prices include 15% GST and use NZ$1.81 to the US dollar ([x-rates](https://www.x-rates.com/table/?from=NZD&amount=1), 13 Nov 2026).
 
 **Where to buy.** The three core parts (ESP32-S3 with PSRAM, I2S mic, I2S amp) are not stocked by any NZ retailer I could check, so they are an import either way. The simple parts are in NZ stock at [Surplustronics](https://surplustronics.co.nz/search?q=esp32) in Auckland, at a premium over AliExpress. Jaycar is dearer again. PB Tech, Trade Me and Nicegear blocked automated checks, so look there by hand.
 
 **What cuts the cost most.**
 
 1.  **Build from parts, not a kit.** A T-Embed lands at NZ$93 to 113 from AliExpress, two to three times the parts cost. No kit found was cheaper than parts.
-2.  **Running costs are small and prepaid.** The serverless service costs about NZ$0.70 a unit a year at 20 minutes of family talk a day; a NZ$20 provision in each unit's price covers a 15-year life with margin, so there is no subscription ([service design](Walkie-Talkie%20Service%20Design.md#no-subscription-ever-whole-of-life-costs)). The earlier options of an Oracle free server or a NZ$4.50 to 9 Vultr server are superseded.
+2.  **Running costs are small and prepaid.** The serverless service costs about NZ$1.40 to 2.80 a channel a year, whatever the number of radios on it. A provision per channel pack (NZ$25 for one channel, NZ$50 for three, NZ$60 for five) covers a 15-year life with margin, so there is no subscription ([service design](Walkie-Talkie%20Service%20Design.md#no-subscription-ever-whole-of-life-costs)). The earlier options of an Oracle free server or a NZ$4.50 to 9 Vultr server are superseded.
 3.  **One AliExpress order, multi-packs.** Chargers come in fives, speakers in pairs, encoders in fives. GST is charged at checkout and nothing more is due at the border under NZ$1,000 ([IRD](https://www.ird.govt.nz/gst/gst-for-overseas-businesses/gst-on-low-value-imported-goods)).
 4.  **Skip the battery on Grandad's unit** if it lives on its dock. Saves NZ$3 to 11 and the lithium shipping question. Add one later if he wants to carry it.
 5.  **Use a small OLED with built-in knob** instead of the colour screen and separate encoder: about NZ$2 for both, against NZ$10. Decided: one colour is fine, so every unit uses this.

@@ -46,7 +46,7 @@ Afterwards the R1s can stay on the same channels as the ESP32 radios. The detail
 - **PUSH / OPEN switch.** Flip to OPEN to talk hands-free, taking turns. It works on group channels too, and the radio says out loud who can hear. The red light stays on whenever the microphone can hear. This part is a design proposal and hasn't been tested.
 - **Private.** Messages are encrypted on the radio. The server passes them on but can't open them, and nobody can switch the microphone on from somewhere else.
 - **Looks after itself.** It keeps the last message for 24 hours, tells the family if it goes offline or the battery runs low, and updates itself overnight.
-- **No subscription, ever.** Each radio's price includes its share of the running costs for its whole life.
+- **No subscription, ever.** Each set comes with its channels, and their running costs are prepaid for life.
 
 It is not an emergency alarm. In an emergency, call 111.
 
@@ -76,7 +76,7 @@ To update the progress shown on the site, change the `done` numbers in the `PLAN
 
 ## Licence
 
-Free for non-commercial use. Build one for your own family, change it, share it. A home-built radio can run on your own copy of the service for free, or connect to ours by buying a connection, one-off or monthly. See [build your own](Walkie-Talkie%20Service%20Design.md#build-your-own-kits-cases-and-connections).
+Free for non-commercial use. Build one for your own family, change it, share it. A home-built radio can run on your own copy of the service for free, or connect to ours by buying channels, singly or in packs, one-off or monthly. See [build your own](Walkie-Talkie%20Service%20Design.md#build-your-own-kits-cases-and-channels).
 
 - **Code** (including `index.html`): [PolyForm Noncommercial 1.0.0](LICENSE)
 - **Research documents and images:** [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/). Credit Chris Barlow, don't use them commercially, and share any changed versions under the same licence.

@@ -8,7 +8,7 @@ Commercial use needs a licence from the copyright holder. That includes:
 - selling kits, cases or assembled units based on these designs
 - using the code, documents or images in a commercial product
 
-Buying a parts kit, a case or a service connection from us for a radio you build for your own family is not commercial use, and needs no licence.
+Buying a parts kit, a case or channels on our service for a radio you build for your own family is not commercial use, and needs no licence.
 
 ## How to ask
 
