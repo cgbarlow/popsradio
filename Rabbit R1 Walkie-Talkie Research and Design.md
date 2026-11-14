@@ -2,6 +2,8 @@
 
 Nov 8, 2026 · @Chris Barlow
 
+> **Updated 15 November 2026.** The service design is now locked: the relay is serverless (Cloudflare Workers with one Durable Object per channel), voice travels over a WebSocket on port 443 instead of UDP, updates come from a signed manifest, and this R1 app becomes the start of the Android family app. See the [service design](Walkie-Talkie%20Service%20Design.md). The research below is unchanged; sections affected by the decision say so.
+
 ## Summary
 
 **Yes, this is very doable, and the R1 is a good fit.** It is an Android 13 handset with a hardware talk button, a wheel, a 2 W speaker and Wi-Fi plus LTE, and its MediaTek chip has an unpatchable boot exploit, so you can always get in and almost never brick it.
@@ -11,8 +13,8 @@ The recommended build:
 - **Reflash** both R1s to the LineageOS 21 GSI and root them. Stock rabbitOS cannot run your own app.
 - **Remap the side button**, which Android treats as power, with a root key layout override. The wheel already arrives as volume keys.
 - **One app as Device Owner and HOME** in lock task mode. It boots into the walkie, cannot be escaped, and updates itself from your server.
-- **Opus over encrypted UDP** to a small relay in Auckland or Sydney, with a TLS control channel for floor control and pairing. Do not go peer-to-peer: carrier NAT on LTE breaks it.
-- **QR pairing** carries the relay address and a group key. Channels are server-side groups; broadcast is free.
+- **Sealed Opus frames over one WebSocket** (TLS, port 443) to the serverless channel service, created near the family in Oceania. Do not go peer-to-peer: carrier NAT on LTE breaks it. (Decided 15 Nov 2026; the research below recommended UDP to a VPS relay.)
+- **Setup from the service**, not QR: each R1 gets its own key pair and signed settings. Channels are server-side groups; broadcast is free.
 - **Expected latency** about 70 to 130 ms on Wi-Fi, 150 to 250 ms on LTE. That beats real trunked radio.
 
 Three things to know before you start: the R1 lacks NZ's 700 MHz LTE band (fine in town on Band 3, weak rurally), Rabbit has stopped making R1s, and this is a convenience link, not a medical alarm.
@@ -100,9 +102,11 @@ Screen pinning is not a kiosk; anyone can exit it. [OwnDroid](https://github.com
 
 **Audio.** Capture with `VOICE_COMMUNICATION` (it wins capture priority), play in `MODE_IN_COMMUNICATION` routed with `setCommunicationDevice(BUILTIN_SPEAKER)`, and pin volume at max in code ([AudioManager](https://developer.android.com/reference/android/media/AudioManager)).
 
-**Remote care.** As Device Owner the app can install its own updates silently via `PackageInstaller`: poll a manifest on your server, download, install. No Play Store. The same channel carries config (volume, quiet hours, wheel lock) and health pings back. Avoid leaving ADB over Wi-Fi open on Grandad's network.
+**Remote care.** As Device Owner the app can install its own updates silently via `PackageInstaller`: poll the signed update manifest (now on Cloudflare R2, shared with the ESP32 radios), download, install. No Play Store. The same channel carries config (volume, quiet hours, wheel lock) and health pings back. Avoid leaving ADB over Wi-Fi open on Grandad's network.
 
 ## Audio and networking
+
+> **Decision, 15 November 2026.** Stages 1 and 2 use a WebSocket on port 443 for both control and voice, to a serverless service, accepting the head-of-line blocking described below in exchange for one path that works through any network allowing HTTPS and needs no server. The jitter buffer grows to 60 to 100 ms to absorb it. A UDP path through TURN stays the planned fix if the trial hears stalls. Details in the [service design](Walkie-Talkie%20Service%20Design.md).
 
 Your UDP instinct is right, with one addition: a reliable control channel beside it. Every serious PTT system works this way. Expect about 70 to 130 ms mouth-to-ear on Wi-Fi and 150 to 250 ms on LTE, provided the relay sits in NZ or Sydney.
 
@@ -131,7 +135,7 @@ For scale: the 3GPP mission-critical PTT target is under 300 ms mouth-to-ear ([T
 
 **NAT: do not go peer-to-peer.** Over 90% of cellular networks use carrier-grade NAT, and about 40% of those are symmetric ([Richter et al.](https://arxiv.org/pdf/1605.05606)). Two hard NATs means hole punching basically never works ([Tailscale](https://tailscale.com/blog/how-nat-traversal-works)). Both devices should dial out to one relay with a public IP. Identify each device by a session token in the packet, not by IP and port, so it survives a hop from Wi-Fi to LTE.
 
-**Where the relay lives.**
+**Where the relay lives.** (Superseded: the relay is now a Cloudflare Durable Object per channel, placed in Oceania. The options below were the research.)
 
 - **Small Auckland or Sydney VPS.** Recommended. Public UDP, data-centre power, roughly NZ$5 to 15 a month.
 - **Home Mac Mini.** Works only with a public IP and a UDP port forward. Cloudflare Tunnel does not publish raw UDP to arbitrary clients ([Cloudflare](https://developers.cloudflare.com/cloudflare-one/networks/connectors/cloudflare-tunnel/routing-to-tunnel/protocols/)), so it can carry the TLS fallback but not the voice path. Also a single point of failure on a power cut.
@@ -232,30 +236,30 @@ The 300 ms figure is the 3GPP target for floor grant after a PTT press; real sys
 
 ## Recommended architecture and build plan
 
-Build a small custom app and relay rather than forking Mumla. Your must-haves (one talker at a time, busy tone, missed-message replay, QR pairing, end-to-end encryption, an elder-proof screen) are exactly what Mumble lacks, and the whole thing is a few hundred lines of Go plus one Kotlin app. If you want it working sooner, a stripped Mumla fork is the fallback.
+Build a small custom app and serverless channel service rather than forking Mumla. Your must-haves (one talker at a time, busy tone, missed-message replay, end-to-end encryption, an elder-proof screen) are exactly what Mumble lacks, and the whole thing is a small TypeScript service on Cloudflare plus one Kotlin app over the shared C core. If you want it working sooner, a stripped Mumla fork is the fallback.
 
 ```mermaid
 flowchart TB
   G["<b>Grandad's R1</b><br/>Walkie app: Device Owner, HOME<br/>Root daemon reads the button<br/>Opus encode, sealed per packet<br/>On its dock, screen dimmed"]
   C["<b>Caregiver's R1</b><br/>Same app, same build<br/>Wheel picks the channel<br/>More R1s can join a channel<br/>Paired by the same QR"]
-  R["<b>Relay: Auckland or Sydney VPS</b><br/>Channels are groups; fan-out<br/>Floor control, busy, timeouts<br/>Keeps last message for 24 h<br/>Serves APK updates and config"]
-  P["<b>Caregiver's phone</b><br/>Shows the pairing QR<br/>Battery, offline alerts"]
-  G <-->|"Opus over encrypted UDP<br/>plus TLS control"| R
-  C <-->|"Opus over encrypted UDP<br/>plus TLS control"| R
+  R["<b>Serverless channel service</b><br/>Cloudflare Workers and Durable Objects<br/>Fan-out, floor control, timeouts<br/>Keeps last message for 24 h<br/>Signed APK updates and settings"]
+  P["<b>Caregiver's phone</b><br/>Family app, later stage<br/>Battery, offline alerts"]
+  G <-->|"Sealed Opus over<br/>WebSocket, TLS 443"| R
+  C <-->|"Sealed Opus over<br/>WebSocket, TLS 443"| R
   R -->|"health and alerts"| P
 ```
 
-*Both R1s dial out to one relay, which forwards voice it cannot read.*
+*Both R1s dial out to the channel service, which forwards voice it cannot read.*
 
-Neither R1 accepts inbound connections; both hold an outbound link to the relay, which routes sealed packets by group and never holds the key.
+Neither R1 accepts inbound connections; both hold an outbound link to the service, which routes sealed packets by group and never holds the key.
 
 **Build plan.** Steps marked *(shared)* carry straight over to the ESP32 stage; see the next section.
 
 1.  **Bench night.** Back up both units, unlock, flash the LineageOS GSI, root. Run getevent, OboeTester, and Zello across Wi-Fi and LTE. Gate: button and wheel captured, audio round trip measured.
 2.  **Protocol spec and test client (shared).** Write the wire format and floor rules down as a short spec in the repo, then build a small laptop client that joins a channel, sends a recording and plays what arrives.
-3.  **Relay (a day, shared).** Go service on an Auckland or Sydney VPS: TLS control, UDP fan-out per group, floor control, 24-hour last message, health pings, APK manifest.
-4.  **Shared C core (shared).** Packet format, ChaCha20-Poly1305, jitter buffer, floor control and open-mode voice detection as a small C library on libopus and libsodium.
-5.  **App shell (one or two weekends).** Kotlin, Oboe capture and playback, calling the C core via JNI, pre-roll on button down. Synthesised chirp, busy, roger and squelch tail. Wheel changes channel with a spoken announcement.
+3.  **Channel service (shared).** Cloudflare Workers plus one Durable Object per channel and one per radio: sign-in by key pair, WebSocket fan-out, floor control, 24-hour last message, health and alerts. Signed update manifest on R2.
+4.  **Shared C core (shared).** Packet format, ChaCha20-Poly1305, jitter buffer, floor control, open-mode voice detection, session and signed settings as a small C library on libopus and libsodium. Builds for ESP-IDF, Android, iOS and desktop.
+5.  **App shell (one or two weekends).** Kotlin, as the "radio" build of the codebase that later becomes the Android family app. Oboe capture and playback, calling the C core via JNI, pre-roll on button down. Synthesised chirp, busy, roger and squelch tail. Wheel changes channel with a spoken announcement.
 6.  **Kiosk.** Device Owner, lock task, HOME, remote config for volume, quiet hours and wheel lock. Set up channels from the control service rather than QR scanning, and skip self-update unless the trial needs it.
 7.  **Grandad trial (a week).** Dock beside his chair, printed card, caregiver alerts on. Tune volume and treble, then decide whether the wheel stays unlocked. Try open channel mode and ask him what he thinks.
 
@@ -265,13 +269,13 @@ The R1 is a temporary client. The relay, the protocol and what we learn from Gra
 
 **Carries over to the ESP32 unchanged.**
 
-- The relay server and control service.
-- The wire format: Opus in 20 ms frames, ChaCha20-Poly1305 per packet, TLS control, floor control, 24-hour replay, group channels and open channel mode.
+- The serverless channel service, update manifest and signed settings.
+- The wire format: Opus in 20 ms frames, ChaCha20-Poly1305 per packet, over a WebSocket, floor control, 24-hour replay, group channels and open channel mode.
 - The trial findings: volume, treble boost, whether the wheel or knob works for him, whether he uses OPEN, which sounds he notices.
 - Network findings: delay on home Wi-Fi and NZ mobile networks, jitter buffer size, keep-alive interval.
 - The sounds and screen states.
 
-**R1 only, so kept to a minimum.** Unlocking, reflashing and rooting; the side-button remap; Device Owner lock-down; the Android app shell and screens.
+**R1 only, so kept to a minimum.** Unlocking, reflashing and rooting; the side-button remap; Device Owner lock-down. The Android app shell is no longer throwaway: its "family" build becomes the Android family app.
 
 **How to keep the waste small.**
 
@@ -293,7 +297,7 @@ The R1 is a temporary client. The relay, the protocol and what we learn from Gra
 | No 700 MHz LTE                              | Weak signal rurally or indoors       | Wi-Fi primary; test the carrier at Grandad's house   |
 | 1000 mAh battery                            | Dead device off the dock             | Dock lives by his chair; spoken and caregiver alerts |
 | Rabbit winding down R1                      | No new units, unlock site may vanish | Use mtkclient route; buy a spare now                 |
-| Relay down                                  | Silent failure                       | VPS not home server; device shows NOT CONNECTED      |
+| Service down                                | Silent failure                       | Serverless service; device shows NOT CONNECTED       |
 | Mistaken for an alarm                       | Unsafe reliance                      | Printed card; pair with a monitored alarm            |
 | Lost device holds group key                 | Can eavesdrop                        | Caregiver "reset group" issues a new QR              |
 | Open channel left on                        | Mic hears more than intended         | Device-only switch, red screen, spoken notice, 10-minute pause |

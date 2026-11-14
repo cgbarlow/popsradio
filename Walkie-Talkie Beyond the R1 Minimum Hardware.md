@@ -2,20 +2,22 @@
 
 Nov 14, 2026 · @Chris Barlow
 
+> **Updated 15 November 2026.** The service design is now locked: a serverless channel service on Cloudflare replaces the relay server, voice travels over a WebSocket on port 443, updates are automatic and signed, and each unit's price includes a NZ$20 provision for lifetime running costs. See the [service design](Walkie-Talkie%20Service%20Design.md).
+
 ## Summary
 
 **Yes, an ESP32 can be the walkie-talkie, and it is arguably a better fit than the R1.** An ESP32-S3 encodes Opus speech at two to four times real time, encrypts it for free, holds a Wi-Fi link on 3 to 5 mA, and costs a few dollars. No reflashing, no root, no kiosk mode: the firmware is the device.
 
-- **Minimum hardware:** ESP32-S3 with PSRAM, one I2S mic, a 3 W I2S amp and 4 ohm speaker, one big button, an optional dial, an RGB LED, a 1000 to 2000 mAh LiPo with charger. About NZ$35 to 50 a unit in parts, or NZ$25 to 30 without a battery. The relay can be hosted free.
+- **Minimum hardware:** ESP32-S3 with PSRAM, one I2S mic, a 3 W I2S amp and 4 ohm speaker, one big button, an optional dial, an RGB LED, a 1000 to 2000 mAh LiPo with charger. About NZ$35 to 50 a unit in parts, or NZ$25 to 30 without a battery, plus a NZ$20 service provision that prepays the unit's running costs for life.
 - **Fastest route:** a from-parts build in a simple box. A LilyGO T-Embed is the ready-made match but lands at NZ$93 or more.
-- **Software:** fork xiaozhi-esp32, which already does Opus over encrypted UDP on 138 boards, and point it at the same relay as the R1 design. R1s and ESP32 units can share a channel.
+- **Software:** fork xiaozhi-esp32, which already sends Opus over a WebSocket (and over encrypted UDP) on 138 boards, and point it at the same serverless channel service as the R1s. R1s and ESP32 units can share a channel.
 - **Bluetooth pairing:** workable, but only as a short-range pipe with a spoken check code on top. Plain button-only Bluetooth pairing has no protection against an attacker in the middle. For a family build, loading keys over USB at your desk is simpler and stronger; keep BLE for changing Wi-Fi later.
 - **Battery:** 4 to 9 days off the dock in light sleep, against the R1's day and a half.
 - **LTE:** optional. A SIM7670G board covers all NZ bands including 700 MHz, which the R1 lacks.
 
 **Chosen spec for Grandad's unit:** rotary knob for 3 to 5 channels, a small one-colour screen, spoken channel names, one big talk button and a PUSH / OPEN toggle switch for hands-free talk, with an optional control service for channel setup, health alerts and ringing a lost device.
 
-What you give up against the R1: the screen and camera, a finished case, and some loudness unless you fit a bigger speaker. The relay, channel model and elder-friendly design from the [R1 doc](Rabbit%20R1%20Walkie-Talkie%20Research%20and%20Design.md) carry over unchanged.
+What you give up against the R1: the screen and camera, a finished case, and some loudness unless you fit a bigger speaker. The channel service, channel model and elder-friendly design from the [R1 doc](Rabbit%20R1%20Walkie-Talkie%20Research%20and%20Design.md) carry over unchanged.
 
 ## Minimum requirements
 
@@ -62,14 +64,14 @@ Source: [espboards.dev chip comparison](https://www.espboards.dev/blog/esp32-soc
 
 **What to build on.**
 
-- [xiaozhi-esp32](https://github.com/78/xiaozhi-esp32): MIT, about 32k stars, 138 supported boards. Already does Opus over MQTT plus encrypted UDP. The best base to fork: swap its AI server for your relay and add floor control.
+- [xiaozhi-esp32](https://github.com/78/xiaozhi-esp32): MIT, about 32k stars, 138 supported boards. Already does Opus over MQTT plus encrypted UDP, and Opus as binary frames over a WebSocket ([WebSocket protocol](https://github.com/78/xiaozhi-esp32/blob/main/docs/websocket.md)). The best base to fork: keep its WebSocket path, swap its AI server for the channel service and add floor control.
 - [atomic14 walkie-talkie](https://github.com/atomic14/esp32-walkie-talkie): MIT. LAN only (UDP broadcast or ESP-NOW), no codec. A good read, not a base.
 - [esp-webrtc-solution](https://github.com/espressif/esp-webrtc-solution): Espressif's two-way audio demo. Heavier than needed.
 - No working ESP32 Mumble voice client exists, so the Mumla route from the R1 doc does not carry over.
 
 **Latency.** No published end-to-end figures. My estimate is 120 to 200 ms with Wi-Fi power save off, on par with the R1. Power save is the catch: it delays incoming packets and is the trade against battery life.
 
-**Remote updates.** ESP-IDF over-the-air updates use two firmware slots with automatic rollback and signed images ([OTA docs](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-reference/system/ota.html)). That replaces the R1's Device Owner self-update, with far less ceremony.
+**Remote updates.** ESP-IDF over-the-air updates use two firmware slots with automatic rollback and signed images ([OTA docs](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-reference/system/ota.html)). That replaces the R1's Device Owner self-update, with far less ceremony. The locked update process (nightly check, install while idle on the dock, self-test, staged rollout, USB recovery) is in the [service design](Walkie-Talkie%20Service%20Design.md#firmware-and-app-updates).
 
 **What you gain over the R1.** No reflash, no root, no kiosk mode: the firmware is the whole device. It boots in about a second, the button is just a GPIO pin, parts cost a tenth as much, and supply does not depend on Rabbit.
 
@@ -190,13 +192,13 @@ flowchart LR
   ESP["<b>ESP32-S3 with PSRAM</b><br/>Opus encode and decode<br/>Encrypts every packet<br/>Holds the Wi-Fi link<br/>BLE only for Wi-Fi setup<br/>Updates itself over the air"]
   ESP -->|I2S out| AMP["<b>Amp and speaker</b><br/>MAX98357A, 3 W, 4 ohm"]
   ESP -->|I2C| SCR["<b>One-colour screen</b><br/>Channel name and state"]
-  ESP <-->|Wi-Fi| REL["<b>Internet relay</b><br/>Plus control service"]
+  ESP <-->|"Wi-Fi, WebSocket"| REL["<b>Serverless channel service</b><br/>Cloudflare Workers and Durable Objects"]
   LAP["<b>Your laptop, once</b><br/>Loads keys and Wi-Fi"] -->|USB| ESP
 ```
 
 *A whole walkie is one ESP32-S3 and seven cheap parts.*
 
-Everything on the left and top right lives in the case; the relay is the same one the R1 design uses, and the laptop is only needed once at setup.
+Everything on the left and top right lives in the case; the channel service is the same one the R1s use, and the laptop is only needed once at setup.
 
 **Bill of materials** (NZ dollars including GST, excluding shipping; AliExpress search prices as of 14 November 2026, not checkout quotes):
 
@@ -222,13 +224,13 @@ A [Waveshare S3 audio board](https://core-electronics.com.au/waveshare-esp32-s3-
 1.  **Breadboard night.** A T-Embed, or an S3 dev board with mic, amp, speaker, screen, knob and button. Flash xiaozhi-esp32 unmodified to prove the audio chain and loudness.
 2.  **Firmware.** Fork it: replace the AI server link with the shared C protocol core from Stage 1, add floor control, chirp and busy tones, the knob, screen states, spoken channel names and the PUSH / OPEN switch.
 3.  **Setup tooling.** Laptop script that writes keys, relay address and Wi-Fi over USB. Long-press to open BLE provisioning.
-4.  **Control service.** Admin page for channels, names and device health, then ring and re-key.
+4.  **Care tools.** Channels, names, device health, ring and re-key through the channel service. The family app (Stage 3) becomes the front end.
 5.  **Power.** Light sleep off the dock, radio awake on it. Measure real standby current.
 6.  **Case and trial.** Print the case, fit the dock, then a week with Grandad as in the R1 plan.
 
 **What comes from Stage 1.** The R1 stage is planned so that most of its work lands here (see [making the R1 work count](Rabbit%20R1%20Walkie-Talkie%20Research%20and%20Design.md#making-the-r1-work-count-for-stage-2)):
 
-- **The relay and control service** are used as they are.
+- **The channel service, update manifest and signed settings** are used as they are.
 - **The C protocol core** (packet format, encryption, jitter buffer, floor control, open-mode voice detection) compiles into this firmware unchanged. Only the audio driver, button, knob, screen and power code are new.
 - **The laptop test client** checks that this unit and an R1 can share a channel.
 - **The trial findings** set the starting volume, treble boost, knob behaviour and open-mode defaults.
@@ -237,14 +239,14 @@ The one thing that does not carry over is setup: the R1 is set up from the contr
 
 ## Cost in NZ dollars, and keeping it low
 
-A unit costs about NZ$35 to 50 in parts with a battery, and about NZ$25 to 30 without. The relay can be free. So two walkies come to roughly NZ$55 to 100 all up, plus shipping. Prices include 15% GST and use NZ$1.81 to the US dollar ([x-rates](https://www.x-rates.com/table/?from=NZD&amount=1), 13 Nov 2026).
+A unit costs about NZ$35 to 50 in parts with a battery, and about NZ$25 to 30 without. For a family build two walkies come to roughly NZ$55 to 100 all up, plus shipping. A sold unit also carries the NZ$20 service provision (see below). Prices include 15% GST and use NZ$1.81 to the US dollar ([x-rates](https://www.x-rates.com/table/?from=NZD&amount=1), 13 Nov 2026).
 
 **Where to buy.** The three core parts (ESP32-S3 with PSRAM, I2S mic, I2S amp) are not stocked by any NZ retailer I could check, so they are an import either way. The simple parts are in NZ stock at [Surplustronics](https://surplustronics.co.nz/search?q=esp32) in Auckland, at a premium over AliExpress. Jaycar is dearer again. PB Tech, Trade Me and Nicegear blocked automated checks, so look there by hand.
 
 **What cuts the cost most.**
 
 1.  **Build from parts, not a kit.** A T-Embed lands at NZ$93 to 113 from AliExpress, two to three times the parts cost. No kit found was cheaper than parts.
-2.  **Host the relay for nothing.** Oracle's Always Free tier gives a small server with a public address for NZ$0 ([Oracle](https://docs.oracle.com/en-us/iaas/Content/FreeTier/resourceref.htm)). Oracle can reclaim idle machines, so the fallback is a Vultr server at NZ$4.50 to 9 a month ([Vultr](https://www.vultr.com/pricing/)). Hosting at home is free only if your connection already has a public address; 2degrees charges NZ$10 a month for a static one ([2degrees](https://www.2degrees.nz/help/broadband-help/ip-addresses/2degrees-ip-addresses)).
+2.  **Running costs are small and prepaid.** The serverless service costs about NZ$0.70 a unit a year at 20 minutes of family talk a day; a NZ$20 provision in each unit's price covers a 15-year life with margin, so there is no subscription ([service design](Walkie-Talkie%20Service%20Design.md#no-subscription-ever-whole-of-life-costs)). The earlier options of an Oracle free server or a NZ$4.50 to 9 Vultr server are superseded.
 3.  **One AliExpress order, multi-packs.** Chargers come in fives, speakers in pairs, encoders in fives. GST is charged at checkout and nothing more is due at the border under NZ$1,000 ([IRD](https://www.ird.govt.nz/gst/gst-for-overseas-businesses/gst-on-low-value-imported-goods)).
 4.  **Skip the battery on Grandad's unit** if it lives on its dock. Saves NZ$3 to 11 and the lithium shipping question. Add one later if he wants to carry it.
 5.  **Use a small OLED with built-in knob** instead of the colour screen and separate encoder: about NZ$2 for both, against NZ$10. Decided: one colour is fine, so every unit uses this.
@@ -255,6 +257,8 @@ A unit costs about NZ$35 to 50 in parts with a battery, and about NZ$25 to 30 wi
 **Caveats.** AliExpress prices were read from search pages in US dollars, not NZ checkout, and many NZ$2 prices look like first-order deals. Shipping to NZ was not shown. The S3 board, button and box import prices are from memory. Treat the totals as a good guess until there is a real basket.
 
 ## Optional control service
+
+> **Updated 15 November 2026.** These functions now live in the serverless service (a radio object per unit) with the family app as the front end, instead of a web page on a relay server. The rules below still apply.
 
 The relay already knows every device, so a small admin layer beside it can manage the fleet: channels, settings, health and a lost-device alarm. It is optional by design: devices cache their last settings, so talking still works if the control service is down. This section is a design proposal, not sourced research.
 
