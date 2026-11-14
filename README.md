@@ -33,7 +33,7 @@ Every stage uses the same serverless service, the same code core and the same so
 The R1 is a temporary client. Most of what Stage 1 builds is used again in Stage 2:
 
 - **Used again as is:** the serverless service, the update system, the protocol, the sounds and screen states, and everything learned from the week with Grandad.
-- **Written once for all:** a small C library holding the protocol, encryption, jitter buffer and turn-taking. The R1 app calls it, the ESP32 firmware compiles the same files, and the iOS and Android family app will use it too. The R1 app itself becomes the start of the Android family app.
+- **Written once for all:** a small C library holding the protocol, encryption, jitter buffer, turn-taking and speech shaping (making voices clearer for older ears). The R1 app calls it, the ESP32 firmware compiles the same files, and the iOS and Android family app will use it too. The R1 app itself becomes the start of the Android family app.
 - **Built first:** a written protocol spec and a laptop test client, so the server can be tested without either device and the two devices can be checked against each other.
 - **R1 only, kept small:** reflashing, the button remap and locking the R1 to one app.
 

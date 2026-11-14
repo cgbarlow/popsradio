@@ -119,7 +119,7 @@ The app lets Grandad's family talk to his radio from their phones, and gives the
 
 - **Talk** on any channel the phone is a member of, with the same chirps and turn-taking as the radios.
 - **Join** by scanning an invite from the family's owner device. The phone gets its own key pair, and the channel key is wrapped for it; Grandad's radio needs no change.
-- **Care:** battery, online status and alerts as push notifications; ring a lost radio; set volume, treble, quiet hours and knob lock; record spoken channel names.
+- **Care:** battery, online status and alerts as push notifications; ring a lost radio; set volume, treble, compression, quiet hours and knob lock; record spoken channel names.
 - **Set up:** put a new radio on Wi-Fi over Bluetooth and assign its channels, replacing the laptop script for families.
 - **Never:** turn a radio's microphone on, or switch a radio into OPEN. Those stay on the radio's own switch.
 
