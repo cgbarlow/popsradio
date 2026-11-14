@@ -513,9 +513,9 @@ footer ul { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 8
       <h2>How it adds up</h2>
     </div>
     <div class="stats">
-      <div class="stat"><div class="n">0.1 s</div><div class="k">Delay on Wi-Fi</div><p>Mouth to ear, through the server and back. About 0.2 s on mobile data. Emergency-service radio networks measure about 0.4 s.</p></div>
+      <div class="stat"><div class="n">0.1 to 0.2 s</div><div class="k">Delay on Wi-Fi</div><p>Mouth to ear, through the service and back. A little more on mobile data. Emergency-service radio networks measure about 0.4 s.</p></div>
       <div class="stat"><div class="n">4 to 9 days</div><div class="k">Battery in PUSH</div><p>With 20 minutes of talk a day on a 1000 mAh battery. The R1 manages about a day and a half.</p></div>
-      <div class="stat"><div class="n">NZ$0 to 10</div><div class="k">Server, per month</div><p>A free cloud plan works; a paid one in Auckland or Sydney is under NZ$10 a month.</p></div>
+      <div class="stat"><div class="n">NZ$0</div><div class="k">Subscription, ever</div><p>Running the service costs about 70 cents a radio a year. Each radio's price covers its share for its whole life.</p></div>
       <div class="stat"><div class="n">200 MB</div><div class="k">Data, per month</div><p>For 20 minutes a day. Only matters on a SIM card; at home it uses the Wi-Fi.</p></div>
     </div>
     <p class="small muted" style="margin-top:22px">Estimates from our research. Real figures get measured on the bench.</p>
@@ -551,7 +551,7 @@ footer ul { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 8
   <div class="wrap">
     <div class="section-head"><span class="tag">Questions</span><h2>Questions</h2></div>
     <details><summary>Is it an emergency alarm?</summary><p>No. In an emergency, call 111. The radio has no Help or SOS button. If Grandad lives alone or is frail, it sits alongside a monitored medical alarm, not instead of one.</p></details>
-    <details><summary>Can anyone listen in?</summary><p>No. Each message is locked on the radio and only unlocked on the other radios. The server in the middle passes messages on but can't open them. The microphone only hears while the button is held, or while the switch is on OPEN with the red light on. There's no way to switch it on from somewhere else.</p></details>
+    <details><summary>Can anyone listen in?</summary><p>No. Each message is locked on the radio and only unlocked on the other radios. The service in the middle passes messages on but can't open them. The microphone only hears while the button is held, or while the switch is on OPEN with the red light on. There's no way to switch it on from somewhere else.</p></details>
     <details><summary>Why not just buy a pair of walkie-talkies?</summary><p>If you live within a kilometre or two, a pair of licence-free UHF radios for about $80 is simpler. They fall down on distance, hills, privacy (anyone can tune in), replaying missed messages and telling family when the battery is low.</p></details>
     <details><summary>What's the Rabbit R1 got to do with it?</summary><p>The R1 is a small gadget that happens to have a button, a wheel, a speaker and Wi-Fi. We already own two, so they're the quickest way to test the idea with Grandad. Rabbit has stopped making them and the battery is short, so it isn't the final radio.</p></details>
     <details><summary>Can more of the family join?</summary><p>Yes. Each channel can hold several radios, and the knob picks the channel. OPEN works on group channels too: everyone on the channel can then hear, and still only one person talks at a time.</p></details>
@@ -565,6 +565,7 @@ footer ul { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 8
     <ul>
       <li><a href="https://github.com/cgbarlow/walkie-talkie/blob/main/Walkie-Talkie%20Beyond%20the%20R1%20Minimum%20Hardware.md">ESP32 hardware research</a></li>
       <li><a href="https://github.com/cgbarlow/walkie-talkie/blob/main/Rabbit%20R1%20Walkie-Talkie%20Research%20and%20Design.md">R1 research and design</a></li>
+      <li><a href="https://github.com/cgbarlow/walkie-talkie/blob/main/Walkie-Talkie%20Service%20Design.md">Service design</a></li>
       <li><a href="https://github.com/cgbarlow/walkie-talkie">Source on GitHub</a></li>
     </ul>
     <p>A family project in New Zealand. Free to build for your own family.</p>
@@ -578,21 +579,21 @@ footer ul { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 8
    ========================================================= */
 const PLAN = [
   { id: "r1", title: "Prove it on the Rabbit R1", when: "Stage 1 · now", done: 0,
-    text: "Two R1s, wiped and set up to run one app. They already have a button, a wheel, a speaker and Wi-Fi, so we can test the server, the sounds and the screens with Grandad before building anything. We'll also try OPEN mode here as a hidden setting.",
+    text: "Two R1s, wiped and set up to run one app. They already have a button, a wheel, a speaker and Wi-Fi, so we can test the service, the sounds and the screens with Grandad before building anything. We'll also try OPEN mode here as a hidden setting.",
     steps: [
       ["Bench night", "Back up, unlock and reflash both R1s. Find the button codes and measure the audio delay."],
-      ["Relay server", "A small server in Auckland or Sydney that passes voice between radios and keeps the last message."],
+      ["The service", "Passes voice between radios and keeps the last message. It runs in the cloud with no server to look after, and grows by itself as more families join."],
       ["Radio app", "Record, squeeze, lock and play. Chirps, busy tone and roger beep. The wheel changes channel."],
-      ["Lock it down", "The app becomes the only thing the R1 can run. Pairing by QR code, updates from the server."],
+      ["Lock it down", "The app becomes the only thing the R1 can run. Set up from the service, and it updates itself overnight."],
       ["A week with Grandad", "On a stand by his chair. Tune the volume and treble. Try OPEN mode and ask him what he thinks."]
     ]},
   { id: "esp", title: "Build the radio on an ESP32", when: "Stage 2 · next", done: 0,
-    text: "Our own radio from cheap parts, using the same server and sounds as the R1s, so both can share a channel. No reflashing, and days on a battery.",
+    text: "Our own radio from cheap parts, using the same service and sounds as the R1s, so both can share a channel. No reflashing, and days on a battery.",
     steps: [
       ["Breadboard night", "Wire up the chip, microphone, amplifier, speaker, screen, knob, button and switch. Check it's loud enough."],
-      ["Firmware", "Adapt open-source ESP32 voice firmware to our server. Add PUSH and OPEN modes."],
+      ["Firmware", "Adapt open-source ESP32 voice firmware to our service. Add PUSH and OPEN modes, and updates that install themselves overnight."],
       ["Setup tool", "A laptop script loads Wi-Fi and keys over USB."],
-      ["Control page", "A web page for channels, battery and offline alerts, and ringing a lost radio."],
+      ["Care tools", "Channels, battery and offline alerts, and ringing a lost radio, from the family's phones."],
       ["Power", "Dozing off the stand, fully awake on it. Measure real battery life in both modes."],
       ["Case and trial", "Print the case, fit the stand, then a week with Grandad."]
     ]}
@@ -791,7 +792,7 @@ $("toggle").addEventListener("click", flip);
 
 $("evCall").addEventListener("click", () => {
   if (S.incoming) return;
-  if (!S.online) { hint("No Wi-Fi. The server keeps the message and plays it when the radio is back."); return; }
+  if (!S.online) { hint("No Wi-Fi. The service keeps the message and plays it when the radio is back."); return; }
   if (pressed) up();
   S.incoming = true; S.state = "listen"; snd.kerchunk(); render();
   hint(S.mode === "open" ? "Chris is talking, so Grandad's microphone mutes itself to stop any echo." : "A short click, then Chris's voice. Try pressing the button during the message.");
