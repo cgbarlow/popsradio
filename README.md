@@ -46,7 +46,7 @@ Afterwards the R1s can stay on the same channels as the ESP32 radios. The detail
 - **PUSH / OPEN switch.** Flip to OPEN to talk hands-free, taking turns. It works on group channels too, and the radio says out loud who can hear. The red light stays on whenever the microphone can hear. This part is a design proposal and hasn't been tested.
 - **Private.** Messages are encrypted on the radio. The server passes them on but can't open them, and nobody can switch the microphone on from somewhere else.
 - **Looks after itself.** It keeps the last message for 24 hours, tells the family if it goes offline or the battery runs low, and updates itself overnight.
-- **No subscription, ever.** Each set comes with its channels, and their running costs are prepaid for life More channels can be added later, for life or monthly.
+- **No subscription, ever.** Each set comes with its channels, and their running costs are prepaid for life. More channels can be added later, for life or monthly.
 
 It is not an emergency alarm. In an emergency, call 111.
 
