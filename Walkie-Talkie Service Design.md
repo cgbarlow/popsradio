@@ -8,7 +8,7 @@ Nov 15, 2026 · @Chris Barlow
 
 - **Auto-scaling.** Every channel is its own small object, so capacity grows one channel at a time with no tuning. A Christmas-morning rush is many small channels waking up, not one big server falling over.
 - **Updates.** Fully automatic and signed. Radios check nightly, install while idle on the dock, and roll back by themselves if anything goes wrong. Nobody presses anything.
-- **No subscription for the hardware, ever.** Running costs follow channels, about NZ$1.40 to 2.80 a channel a year. Every radio set comes with its channels prepaid for life from a ring-fenced fund, with 3 and 5 channel packs cheaper per channel.
+- **No subscription for the hardware, ever.** Running costs follow channels, about NZ$1.40 to 2.80 a channel a year. Every radio set comes with its channels prepaid for life from a ring-fenced fund, with 3 and 5 channel packs cheaper per channel. More channels can be added later, for life or monthly.
 - **Works anywhere.** Any internet connection that meets the minimum requirements below, in any country Cloudflare serves.
 - **Code reuse.** One small C library holds the protocol, encryption, jitter buffer and turn-taking. The R1 app, the ESP32 firmware, the laptop test client and the iOS and Android family apps all use it unchanged.
 - **Build your own.** Builders get a free kit list, printable case plans and a web flasher, or buy a parts kit and case from us. To use our service they buy channels, singly or in discounted 3 and 5 packs, one-off for life or monthly; or they run the published service themselves for free.
@@ -202,6 +202,18 @@ People who build their own radio still need the service for channels and updates
 | 5 channels | NZ$99 | NZ$19.80 | NZ$5 | about 20 months |
 
 One-off prices cover the pack's provision, GST, payment fees and a contribution to maintenance that grows with the pack. They go into the same ring-fenced fund as sold sets, with the same guarantee. Monthly plans can also be paid yearly; running costs are only cents a month, so most of a small payment goes on fees, which is why plans are billed per family rather than per channel. These are starting points to test, not decisions. The monthly option is a builder's choice; the no-subscription promise for sets we sell is unchanged.
+
+**Adding channels later.** Anyone with a set, bought or built, can add channels at any time, either for life or monthly. A pair bought with one channel can grow to three or five. Upgrades are priced as the difference between packs, so adding later costs the same as buying the bigger pack at the start.
+
+| Upgrade | One-off, for life | Monthly, while subscribed |
+|---|---|---|
+| 1 to 3 channels | NZ$40 | NZ$2 |
+| 1 to 5 channels | NZ$64 | NZ$3 |
+| 3 to 5 channels | NZ$24 | NZ$1 |
+
+- **The included channels never depend on a subscription.** If a monthly upgrade stops, only the added channels stop; the channels that came with the set keep working for life, as promised.
+- **Mix and switch.** A family can hold some channels for life and some monthly, and can switch a monthly upgrade to lifetime at any time at the one-off upgrade price.
+- **Where to buy.** In the store and in the family app. App stores take 15 to 30% of in-app sales, which the in-app prices must absorb.
 
 **Updates on home-built boards.** Official firmware is signed and checked by the radio before it installs, as on our units. Builders' boards do not have Secure Boot switched on, because that permanently locks the chip to our key; the signature check still runs in the firmware. Updates are published per supported board, so the kit list names the boards and pin layouts the firmware supports. Other boards work with the free self-hosted option and builders' own firmware.
 
