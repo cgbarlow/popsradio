@@ -25,7 +25,7 @@ This is a family project at the research and design stage. Nothing is built yet.
 | 3 | A family app for iOS and Android, to talk to Grandad's radio from a phone | Later |
 | 4 | A direct path between homes, only if the trials show it's needed | If needed |
 | Later | A kids' mini phone: a smaller, cheaper radio that only reaches the people parents approve | Idea |
-| Later | [Grandad's radio as a platform](Grandad's%20Radio%20as%20a%20Platform.md): radio, games and a chess clock on the same box, with approved apps | Idea |
+| Later | [Grandad's radio as a platform](Grandad's%20Radio%20as%20a%20Platform.md): radio, games and a chess clock on the same radio, with approved apps | Idea |
 
 Every stage uses the same serverless service, the same code core and the same sounds, so R1s, ESP32 radios and phones can share a channel. The design is locked in the [service design](Walkie-Talkie%20Service%20Design.md).
 
@@ -64,7 +64,7 @@ It is not an emergency alarm. In an emergency, call 111.
 | [NZ addressable market and opportunities](reports/NZ%20addressable%20market%20and%20opportunities.md) | Research on the size of the New Zealand market, for families and for rest homes, hospitals and other organisations, by category and region |
 | [Similar products and competitors](reports/Similar%20products%20and%20competitors.md) | Research on products like Grandad's radio around the world, what they cost, and what that means for the plan |
 | [Walkie-Talkie Image Prompts](Walkie-Talkie%20Image%20Prompts.md) | The prompts used to make the concept pictures |
-| [Grandad's Radio as a Platform](Grandad's%20Radio%20as%20a%20Platform.md) | A design exploration: a box with three big knobs that also plays FM and internet radio and simple games, and an approved app store |
+| [Grandad's Radio as a Platform](Grandad's%20Radio%20as%20a%20Platform.md) | A design exploration: a slim radio with three big free-turning knobs that also plays FM and internet radio and simple games, and an approved app store |
 | [Grandad's Radio Platform Image Prompts](Grandad's%20Radio%20Platform%20Image%20Prompts.md) | Prompts for concept pictures of the platform unit |
 | [`images/`](images) | Concept pictures. These are generated images, not photos of real units |
 

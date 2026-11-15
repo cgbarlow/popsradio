@@ -10,7 +10,7 @@ Concept picture prompts for this unit are in [Grandad's Radio Platform Image Pro
 
 **The idea: design Grandad's radio as a platform, not just a radio.** The parts that make a good walkie-talkie (a speaker, a screen, knobs, Wi-Fi, a small computer that updates itself) are most of what a bedside radio, a games board and a chess clock need too. Once Grandad trusts one device, each extra useful thing on it is one less gadget to learn.
 
-- **A new shape.** A box with a carry strap and three big knobs that are easy to grip and turn. Every knob is also a button.
+- **A new shape.** A slim upright radio, about 160 mm wide, 150 mm tall and 50 mm deep, with a carry strap and three big knobs that are easy to grip and turn. Every knob turns freely and is also a button.
 - **Mode and Select.** The left knob picks what the radio is doing: Talk, Radio (FM), Radio (Internet) or Play. The right knob picks within it: who to talk to, which station, which game.
 - **Tip it on its back to play.** Screen facing up, the two side knobs become a left and right controller: Pong paddles, pinball flippers, or the two sides of a chess clock.
 - **An approved app store, later.** Once the first-party modes have proven the model, other people could build apps for it. Every app is reviewed and signed by us, installed by the family from the family app, and can never use the microphone or the talk button.
@@ -18,17 +18,17 @@ Concept picture prompts for this unit are in [Grandad's Radio Platform Image Pro
 
 ## What changed from the original design
 
-![The original concept sketch: a box radio with a carry strap, and the front view with labels](images/platform-sketch.png)
+![The original concept sketch: a radio with a carry strap, and the front view with labels](images/platform-sketch.png)
 
-*The design board: the box with its strap, the front view with labels, and the modes on sticky notes.*
+*The design board: the radio with its strap, the front view with labels, and the modes on sticky notes. The sketch is drawn as a deeper box; the unit is now about half that depth.*
 
 | | Original bedside radio | Platform unit |
 | --- | --- | --- |
-| Shape | Squat wedge, sloped front | Upright box with a carry strap over the top |
+| Shape | Squat wedge, sloped front | Slim upright slab, about 160 × 150 × 50 mm, with a carry strap over the top |
 | Talk button | Big orange button on top | Same |
 | PUSH / OPEN | Chrome toggle on the front | A smooth slide switch on top, left of the orange button |
-| Knobs | One, on the front, picks the channel | Three, all large and all pressable: Volume on top right of the orange button, Mode on the left side, Select on the right side |
-| Screen | Small one-colour OLED | A larger paper-like screen with a light (see [The screen](#the-screen-epaper-will-not-play-pong)) |
+| Knobs | One, on the front, picks the channel, with end stops | Three, all large, free turning and pressable: Volume on top right of the orange button, Mode on the left side, Select on the right side |
+| Screen | Small one-colour OLED | Larger, and readable at night. Type not chosen yet (see [The screen](#the-screen-an-open-question)) |
 | Speaker | Grille beside the screen | Wide grille below the screen |
 | Orientation | Sits upright | Sits upright, or lies on its back as a games board |
 | What it does | Talk | Talk, FM radio, internet radio, games, chess clock, and approved apps later |
@@ -49,7 +49,9 @@ In the games board position the two side knobs belong to the game instead: left 
 
 **Why the switch is smooth.** A slide that sits flush in its slot has no lever to catch a sleeve or the strap, and its position can be felt with a fingertip. It is still a real switch, so open channel mode can only ever be turned on at the radio.
 
-**Why the knobs are big.** A knob about 40 to 50 mm across with deep ribs can be turned with a whole hand, by someone with arthritis or a weak grip. That is my estimate of a good size, to be tried with Grandad on printed knobs before choosing parts.
+**Why the knobs are big.** A knob about 40 mm across with deep ribs can be turned with a whole hand, by someone with arthritis or a weak grip. The side panels are only 50 mm deep, so the side knobs cannot be much bigger. That is my estimate of a good size, to be tried with Grandad on printed knobs before choosing parts.
+
+**Why the knobs turn freely.** All three knobs turn round and round with no end stops, so the side knobs can drive Pong paddles and anything else an app needs. This is decided. It gives up the Stage 2 habit that "fully left is always channel one", so the way home is a gesture instead: hold the Mode knob for two seconds to go back to Talk. Whether the knobs click at each step, or turn smoothly, is still to be tried with Grandad.
 
 ## Modes at launch
 
@@ -76,7 +78,7 @@ Presets are set by the family, not by tuning at the radio. Grandad turns to "Cha
 
 ## On its back: the games board
 
-Lay the radio on its back with the strap folded behind and the screen faces up. The Mode knob is now on the player's left hand and the Select knob on the right. A tilt sensor tells the radio which way up it is, so it can offer Play when it is laid down. This part is a design proposal and hasn't been tested.
+Lay the radio on its back with the strap folded behind, and the screen faces up. The Mode knob is now on the player's left hand and the Select knob on the right. A tilt sensor tells the radio which way up it is, so it can offer Play when it is laid down. This part is a design proposal and hasn't been tested.
 
 | Game | Left knob | Right knob | Who plays |
 | --- | --- | --- | --- |
@@ -90,7 +92,7 @@ The chess clock is the clearest case for a platform. A rest home lounge already 
 
 ## Why a platform
 
-- **The hardware is mostly there.** Stage 2 already has an ESP32-S3, Wi-Fi, a speaker, a screen, a knob and signed automatic updates. A platform adds two knobs, a tuner chip, a tilt sensor and a better screen, not a new product.
+- **The hardware is mostly there.** Stage 2 already has an ESP32-S3, Wi-Fi, a speaker, a screen, a knob and signed automatic updates. A platform adds two knobs, a tuner chip, a tilt sensor and a bigger screen, not a new product.
 - **More reasons to keep it near.** A radio that also plays the morning news and keeps the chess clock gets used every day, so it is in reach and charged when the family calls.
 - **A better answer to price.** The market report finds the business is only worth pursuing at a higher price, with sales beyond New Zealand and low support costs. A radio that does five useful things can carry a higher price than one that does one.
 - **Income that is not a subscription.** Apps bought once by the family, through the family app, give the service income without breaking the "no subscription, ever" promise for the radio. That helps with the service design's "app revenue too low" risk.
@@ -134,26 +136,32 @@ Not priced yet. Each line needs a part chosen and a NZ price checked.
 
 | Part | Stage 2 build | Platform unit | Note |
 | --- | --- | --- | --- |
-| Knobs | One rotary encoder with push | Three rotary encoders with push, large knobs | Endless rotation, so games can use them (see open questions) |
-| Screen | 0.96 to 1.3 inch one-colour OLED | Larger reflective screen with a light | See below |
+| Knobs | One rotary encoder with push | Three rotary encoders with push, large knobs | Free turning, no end stops, so games can use them. Decided |
+| Screen | 0.96 to 1.3 inch one-colour OLED | Not chosen yet | Needs more research, see below |
 | FM | None | FM receiver chip, I2C, with a wire antenna | The RDA5807M is a common choice, controlled over I2C, with an ESP32 and MAX98357A example in the pu2clr library ([pu2clr](https://www.github.com/pu2clr/RDA5807)) |
 | Antenna | None | A wire of about 75 cm run through the carry strap | Hobby guides give about 75 to 77 cm as a quarter-wave whip for FM ([101 Things](https://101-things.readthedocs.io/en/latest/fm_radio.html), [Seeed](https://wiki.seeedstudio.com/Grove-I2C_FM_Receiver/)). Hiding it in the strap is a proposal, untested |
 | Tilt sensor | None | A small accelerometer | Knows upright from lying on its back |
 | Battery | Skipped on Grandad's docked unit | Needed | A carry strap means it leaves the dock. A larger cell than 1000 mAh, size to be measured |
-| Case | Wedge | Box with strap anchors and four rubber feet on the back | The feet keep it flat and steady as a games board |
-| Speaker | 50 mm, 3 W | Larger, in the bigger box | Music needs more than speech does |
+| Case | Wedge | Slim slab about 50 mm deep, with strap anchors and four rubber feet on the back | The feet keep it flat and steady as a games board |
+| Speaker | 50 mm, 3 W | As large as the slim case allows | Music needs more than speech does, but a 50 mm deep case limits how deep the speaker and the air behind it can be |
 
-### The screen: ePaper will not play Pong
+### The screen: an open question
 
-The sketch calls for ePaper with a backlight. ePaper reads beautifully and draws almost no power, but it cannot do games. A full refresh takes about 2 seconds on small black-and-white panels and partial refresh about 0.3 seconds ([Waveshare](https://waveshare.com/wiki/2.13inch_e-Paper_HAT%2B)), and partial refresh cannot be used all the time without ghosting ([Microchip](https://developerhelp.microchip.com/xwiki/bin/view/software-tools/mgs/dev-kits/epd-ug/fundamentals/)). A Pong ball needs many frames a second.
+The screen is not chosen. It needs more research before a part is picked. It has to do three things that pull against each other: read easily in daylight like paper, stay readable at the bedside at night, and redraw fast enough for a Pong ball.
 
-| Screen | Reads like paper | Games | In the dark | Verdict |
+What is known so far:
+
+- **ePaper, as in the sketch, cannot do games.** A full refresh takes about 2 seconds on small black-and-white panels and partial refresh about 0.3 seconds ([Waveshare](https://waveshare.com/wiki/2.13inch_e-Paper_HAT%2B)), and partial refresh cannot be used all the time without ghosting ([Microchip](https://developerhelp.microchip.com/xwiki/bin/view/software-tools/mgs/dev-kits/epd-ug/fundamentals/)). A Pong ball needs many frames a second.
+- **Fast paper-like screens exist.** The Playdate console runs games at 30 frames a second, up to 50, on a Sharp Memory LCD ([Playdate SDK](https://sdk.play.date/designing-for-playdate)). It is reflective, so it would need a front light at night.
+- **An ordinary backlit LCD** is cheap, fast and readable in the dark, but it glows and is harder to read in daylight.
+
+| Candidate | Reads like paper | Games | In the dark | To find out |
 | --- | --- | --- | --- | --- |
-| ePaper with a light | Yes | No | Needs a front light | Only if Play is dropped |
-| Sharp Memory LCD with a front light | Nearly | Yes: the Playdate console runs games at 30 fps on one, up to 50 ([Playdate SDK](https://sdk.play.date/designing-for-playdate)) | Reflective, so needs a front light | **First choice to test** |
-| Ordinary backlit LCD | No | Yes | Yes | Fallback: cheap and fast, but glows and is harder to read in daylight |
+| ePaper with a light | Yes | No | Needs a front light | Whether any panel is fast enough, or whether Play would have to go |
+| Sharp Memory LCD with a front light | Nearly | Yes | Needs a front light | Sizes available, whether a front light can be found or made, and how fast an ESP32 can drive it with voice running |
+| Ordinary backlit LCD | No | Yes | Yes | Whether it can be dimmed enough for the bedside, and how it reads in daylight |
 
-Two things to test on the breadboard: how fast the ESP32 can push a full frame to a memory LCD over SPI while voice is running, and whether a front light can be found or made for one.
+Other screen types may suit better. Research should start from the three needs above, not from this list.
 
 ## Where it fits in the roadmap
 
@@ -163,14 +171,15 @@ The cheap way to learn whether it is worth doing:
 
 1. **Simulator first.** Add the three knobs, the modes and Pong to the site's simulator. Sit with Grandad in front of it on a tablet and see whether he wants more than Talk, and whether the Mode knob confuses him.
 2. **Printed knobs.** Print knobs at three sizes and let him choose.
-3. **Breadboard the screen.** Pong on a memory LCD driven by an ESP32-S3, with voice running.
+3. **Research the screen**, then breadboard the best candidates with Pong and voice running on an ESP32-S3.
 4. **Chess clock in a rest home.** A single radio as a chess clock and FM radio in a lounge, as a no-risk pilot with an activities coordinator.
 
 ## Open questions
 
 - **Does Grandad want it?** The whole case rests on more modes adding value without adding confusion. The simulator test answers this before any hardware.
-- **End stops or free turning?** The Stage 2 knob stops at each end, so "fully left is always channel one". Pong paddles need knobs that turn freely. This brief takes free turning plus "hold Mode to go home", which loses the end-stop habit. A knob with a motor that can make its own stops would keep both, at a cost not checked.
-- **Which screen**, and can it be lit for the bedside at night.
+- **Clicks or smooth?** The knobs turn freely; whether they click at each step is still open. Clicks help when choosing, smooth turning suits Pong.
+- **Which screen.** Unanswered and needs more research: paper-like in daylight, readable at night, fast enough for games. See [The screen](#the-screen-an-open-question).
+- **Does it all fit in 50 mm?** A speaker good enough for music, a bigger battery and the side knob shafts, in a slim case.
 - **FM reception indoors** with the antenna in the strap, and what happens when the strap is folded behind for games.
 - **Apps and voice together.** Can the ESP32-S3 run a sandboxed game and live voice at once? Voice keeps priority.
 - **Internet radio rights.** The radio would only play a station's own public stream URL, set by the family. Check what stations allow before offering a station list.
