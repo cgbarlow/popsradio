@@ -110,6 +110,6 @@ From the [council review](.campaign/council-report.md), in order:
 
 1. **Replace the shortcuts:** Opus, end-to-end sealing to the spec, and key-pair sign-in.
 2. **Lock the R1s down** as Device Owner with kiosk mode, ready for Pop.
-3. **Write a one-page Pop trial plan.** Before that, sit with him in front of the [site's simulator](https://cgbarlow.github.io/walkie-talkie/) on a tablet, which can happen any time.
+3. **Write a one-page Pop trial plan.** Before that, sit with him in front of the [site's simulator](https://popsradio.chrisbarlow.nz/) on a tablet, which can happen any time.
 4. **Sweep the docs for drift** and **soften the public promises** ("NZ$0 Subscription, ever", "for life") until the legal review.
 5. **Breadboard an ESP32 with your teammate,** once the R1s work. The [Stage 2 doc](Walkie-Talkie%20Beyond%20the%20R1%20Minimum%20Hardware.md) has the parts list.

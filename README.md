@@ -4,7 +4,7 @@ A walkie-talkie with one big button, made for Pop.
 
 Mobile phones can be tricky for older people. Small icons, passcodes, updates and menus get in the way when all they want is an easy way to reach the people they love. This project is a small radio that does one thing: hold the orange button to talk, let go to listen. It works over Wi-Fi, so the family can be in the next room or the next town.
 
-**See it and try it:** https://cgbarlow.github.io/walkie-talkie/
+**See it and try it:** https://popsradio.chrisbarlow.nz/
 
 ![A sage green radio on a bedside table, with a big orange button on top, a knob on each side and a shoulder strap](images/platform-bedside_sml.jpg)
 

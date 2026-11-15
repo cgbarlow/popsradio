@@ -163,7 +163,7 @@ The README promises "a small radio that does one thing". A platform pulls the ot
 | Spoken prompts in the radio's voice | Adverts, purchases, accounts or links |
 | Network access only to hosts declared at review, through the service | Any host not declared at review |
 
-**Building apps.** The [site's simulator](https://cgbarlow.github.io/walkie-talkie/) becomes the emulator: three knobs, the orange button, both orientations and the real screen size. Developers build and test there, then submit. Phasing: first-party modes only at first, then a small set of invited developers, then an open submission process with review.
+**Building apps.** The [site's simulator](https://popsradio.chrisbarlow.nz/) becomes the emulator: three knobs, the orange button, both orientations and the real screen size. Developers build and test there, then submit. Phasing: first-party modes only at first, then a small set of invited developers, then an open submission process with review.
 
 **Commercial terms are open.** The code is licensed for non-commercial use, so a developer selling apps needs separate terms: a licence for the SDK, the revenue split and what review costs. See [COMMERCIAL.md](COMMERCIAL.md).
 
@@ -206,7 +206,7 @@ This is not Stage 1 or Stage 2, and it does not change them. It sits with the ki
 
 The cheap way to learn whether it is worth doing:
 
-1. **Simulator first.** The three knobs, the modes, Pong and the chess clock are now in the [site's simulator](https://cgbarlow.github.io/walkie-talkie/#try). Sit with Pop in front of it on a tablet and see whether he wants more than Talk, and whether the Mode knob confuses him.
+1. **Simulator first.** The three knobs, the modes, Pong and the chess clock are now in the [site's simulator](https://popsradio.chrisbarlow.nz/#try). Sit with Pop in front of it on a tablet and see whether he wants more than Talk, and whether the Mode knob confuses him.
 2. **Printed knobs.** Print knobs at three sizes and let him choose.
 3. **Research the screen**, then breadboard the best candidates with Pong and voice running on an ESP32-S3.
 4. **Chess clock in a rest home.** A single radio as a chess clock and FM radio in a lounge, as a no-risk pilot with an activities coordinator.
