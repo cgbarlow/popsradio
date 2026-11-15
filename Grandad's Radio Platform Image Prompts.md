@@ -53,7 +53,7 @@ Use the attached image as the reference for the radio. Draw exactly the same rad
 | No. | Part | Job |
 | --- | --- | --- |
 | 1 | PUSH / OPEN slide switch | Push-to-talk or hands-free |
-| 2 | Orange button | Hold to talk, in every mode |
+| 2 | Orange button | Hold to talk, in every mode. A quick tap ends your turn on the chess clock |
 | 3 | Volume knob | Turn for volume, press to pause |
 | 4 | Mode knob (left side) | Talk, Radio (FM), Radio (Internet), Play. Left controller on its back |
 | 5 | Select knob (right side) | Who, which station, which game. Right controller on its back |

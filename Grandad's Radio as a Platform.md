@@ -12,9 +12,10 @@ Concept picture prompts for this unit are in [Grandad's Radio Platform Image Pro
 
 - **A new shape.** A stout rectangular radio, long and low, about 220 mm wide, 125 mm tall and 80 mm deep, so it sits low and is hard to knock over. It has an adjustable shoulder strap and three knobs that are easy to grip and turn: a big one on each side and a smaller volume knob on top. Every knob turns freely and is also a button.
 - **Mode and Select.** The left knob picks what the radio is doing: Talk, Radio (FM), Radio (Internet) or Play. The right knob picks within it: who to talk to, which station, which game.
-- **Tip it on its back to play.** Screen facing up, the two side knobs become a left and right controller: Pong paddles, pinball flippers, or the two sides of a chess clock.
+- **Tip it on its back to play.** Screen facing up, the two side knobs become a left and right controller: Pong paddles or pinball flippers.
+- **A chess clock, standing upright.** It sits beside the board and each player taps the orange button with a palm to end their turn.
 - **An approved app store, later.** Once the first-party modes have proven the model, other people could build apps for it. Every app is reviewed and signed by us, installed by the family from the family app, and can never use the microphone or the talk button.
-- **One rule keeps it Grandad's radio.** The orange button always talks, in every mode, and an incoming message always wins. The family chooses which modes appear, and a radio can ship with Talk only.
+- **One rule keeps it Grandad's radio.** Holding the orange button always talks, in every mode, and an incoming message always wins. The family chooses which modes appear, and a radio can ship with Talk only.
 
 ## What changed from the original design
 
@@ -39,13 +40,15 @@ Every control keeps one job wherever possible, and every turn and press is spoke
 
 | Control | Where | Turn | Press | Hold |
 | --- | --- | --- | --- | --- |
-| **Orange button** | Top, centre | | Hold to talk, in every mode | |
+| **Orange button** | Top, centre | | A quick tap: nothing, except in the chess clock, where it ends your turn | Hold to talk, in every mode |
 | **PUSH / OPEN** | Top, left of the orange button | | Slide: push-to-talk or hands-free, unchanged | |
 | **Volume knob** | Top, right of the orange button | Volume | Pause or resume whatever is playing | |
 | **Mode knob** | Left side | Choose the mode: Talk, Radio (FM), Radio (Internet), Play | Say where I am, out loud | Two seconds: go home to Talk |
 | **Select knob** | Right side | Choose within the mode: person, station, game | Choose. In Talk: replay the last message | |
 
 In the games board position the two side knobs belong to the game instead: left player and right player.
+
+**Tap or hold.** The orange button does two different things, told apart by time. Holding it talks, always. A quick tap is only a tap: nothing is sent, because the radio does not open the microphone until the button has been held past the ready chirp. That leaves the tap free for first-party modes to use, and the chess clock is the only one that does. The length of the gap between a tap and a hold is to be tried with Grandad; this is a design proposal and hasn't been tested.
 
 **Why the switch is smooth.** A slide that sits flush in its slot has no lever to catch a sleeve or the strap, and its position can be felt with a fingertip. It is still a real switch, so open channel mode can only ever be turned on at the radio. Its position has to be obvious at a glance: a small switch whose thumb sits hard against one end of its slot or the other, never looking halfway, with PUSH and OPEN printed at the ends.
 
@@ -74,7 +77,7 @@ flowchart LR
 | **Talk** | Chris, Family, Nurse | The existing walkie-talkie, unchanged | Always the first mode, and always where the radio goes home to |
 | **Radio (FM)** | Channel 1, 2, 3 | An FM receiver chip on the I2C bus, with three presets set from the family app | Works without internet or Wi-Fi, so it still plays during an outage on battery |
 | **Radio (Internet)** | Channel 1, 2, 3 | Streams over Wi-Fi, with three presets set from the family app | Reaches stations FM cannot, such as a station from home for someone who moved countries |
-| **Play** | Pong, Pinball, Chess clock | First-party games written by us, see below | Best played on its back |
+| **Play** | Pong, Pinball, Chess clock | First-party games written by us, see below | Pong and pinball on its back; the chess clock upright |
 
 **The Nurse channel is for talking, not for emergencies.** In a rest home, a channel to the nurses' station is an obvious third name beside Chris and Family. It is an ordinary talk channel: someone has to be listening at the other end. It does not replace the home's call bell, and the radio is still not an emergency alarm. A rest home would need to agree who answers it and when.
 
@@ -107,7 +110,18 @@ Lay the radio on its back with the strap folded behind, and the screen faces up.
 | --- | --- | --- | --- |
 | **Pong** | Turn: left paddle | Turn: right paddle | Two people side by side, or one person against the radio holding both knobs |
 | **Pinball** | Press: left flipper | Press: right flipper | One person, both hands |
-| **Chess clock** | Press: left player ends their turn | Press: right player ends their turn | Two people, one either side of the board. Volume press pauses |
+
+### Upright: the chess clock
+
+The chess clock is played with the radio standing the right way up, beside the board and side on to both players, where a chess clock normally sits. Both can see the two times on the screen.
+
+| Control | In the chess clock |
+| --- | --- |
+| **Orange button** | Tap with a palm: end your turn. The other player's clock starts. Hold: talk, as always |
+| **Select knob** | Before the game: turn to choose how long each player gets, press to start |
+| **Volume knob** | Press: pause or resume both clocks |
+
+One big button on top that both players slap in turn is how a chess clock already works, so nobody needs it explained. An arrow on the screen shows whose clock is running.
 
 The chess clock is the clearest case for a platform. A rest home lounge already has chess sets and players, and a chess clock is a separate thing to buy and learn. Here it is a mode on a radio that is already in the room. The [market report](reports/NZ%20addressable%20market%20and%20opportunities.md) names activities budgets as one way into aged care; shared games are something an activities coordinator can use with a group.
 
@@ -125,7 +139,7 @@ The chess clock is the clearest case for a platform. A rest home lounge already 
 
 The README promises "a small radio that does one thing". A platform pulls the other way. These rules are what make it acceptable, and every app in the store has to follow them.
 
-1. **The orange button always talks.** In every mode, in every app. Holding it fades the radio or pauses the game and talks on the last Talk channel used.
+1. **Holding the orange button always talks.** In every mode, in every app. Holding it fades the radio or pauses the game and talks on the last Talk channel used. A quick tap never sends sound. Only our own modes may give the tap a job, and only the chess clock does; apps from the store cannot use the button at all.
 2. **Incoming messages always win.** A message from the family pauses the game or fades the radio, plays, then hands back.
 3. **The family chooses the modes.** Modes are switched on from the family app. A radio can ship with Talk only, and then the Mode knob just says "Talk".
 4. **Home is always one gesture away.** Hold the Mode knob for two seconds to go back to Talk, from anywhere.
@@ -200,6 +214,7 @@ The cheap way to learn whether it is worth doing:
 ## Open questions
 
 - **Does Grandad want it?** The whole case rests on more modes adding value without adding confusion. The simulator test answers this before any hardware.
+- **Tap or hold.** How long a press counts as a tap, and whether a slow palm on the chess clock ever starts talking by mistake. The ready chirp is the line: nothing is sent before it.
 - **Clicks or smooth?** The knobs turn freely; whether they click at each step is still open. Clicks help when choosing, smooth turning suits Pong.
 - **Which screen.** Unanswered and needs more research: paper-like in daylight, readable at night, fast enough for games. See [The screen](#the-screen-an-open-question).
 - **Is it steady enough?** Check it stays put when the orange button is pressed hard, a side knob is turned with one hand, or the strap is tugged. The size is my estimate and should be tried as a weighted cardboard or printed mock-up.
