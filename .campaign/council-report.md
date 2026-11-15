@@ -1,65 +1,92 @@
 ---
-created: 2026-11-14
+created: 2026-11-15
 council-type: standalone
 ---
 
 # Council Report
 
-Scope: a review of everything in the repository, with recommendations. Read in full: README, COMMERCIAL, the R1 doc, the Stage 2 hardware doc, the service design, the relay report and the site (`index.html`). The five research notes were checked by their headings, takeaways and gaps.
+Scope: a revision of `index.html` to lead with the platform radio. Read in full: `index.html` (882 lines), the platform brief, the platform image prompts and the README. Looked at: the five new pictures (bedside, blueprint, chess clock, Pong, FM in the garden).
 
 ## Animal Perspectives
 
 ### Bear — Vision & Direction
-- The purpose is clear and told the same way everywhere: one button, hold to talk, let go to listen, for Grandad. The README, the site and the printed card all say it the same way.
-- The project now has two directions. The README calls it "a family project"; the service design builds a business: a price list, a ring-fenced fund, an app subscription sized at 1,000 subscribers for NZ$30,000 a year, a kids' phone and a Christmas rush. The business is written in more detail than the first working radio.
-- The locked service design is a good strategic call: a blind relay that is serverless and can be replaced, worked out from a careful relay report.
-- The goal that matters is the week with Grandad. Every later stage depends on it, but it is the least defined goal in the repo.
+1. **The site still sells the old radio.** The hero picture, Fig. 1, the simulator drawing and the "Our pick for Grandad" badge are all the wedge with one knob. The word "platform" does not appear in `index.html` at all. The revision has one job: the stout green radio is *the* radio, and everything else supports it.
+2. **Keep the headline.** "Hold to talk. Let go to listen." is still the promise, and it is rule 1 of the platform brief. Talk comes first on the page; "and it does more" comes second. Do not let the games lead.
+3. **This puts the site ahead of the docs.** The brief calls the platform "a design exploration, not a locked decision", and the Stage 2 spec is still the one-knob wedge. Putting the new radio in the hero is a decision that it is now the radio we are building. Make that decision on purpose, not by swapping a picture.
+4. **A clearer page shape.** The radio, try it, what it does, how it talks, other shapes, how we get there, the card, questions. That is one story told once, with each section handing on to the next.
 
 ### Cat — Risk & Scope
-- **The public promises go further than the evidence.** The site shows "NZ$0 Subscription, ever", and the README says "No subscription, ever" and "prepaid for life". Nothing is built yet, latency is unmeasured and running costs are estimates. Monthly channel plans and an optional app subscription sit next to the "ever". The service design itself says the wording needs a lawyer, and the research notes say the Fair Trading Act angle on "lifetime" claims was not researched.
-- **The docs drifted after the design was locked.** The R1 summary still promises 70 to 130 ms on Wi-Fi, but the service design estimates 100 to 180 ms over WebSocket. The R1 diagram says "Paired by the same QR", and the R1 risks table relies on "reset group issues a new QR", but setup is now from the service, not by QR. The Stage 2 pairing flow and setup step still write a "relay address" with a laptop script, the trust table offers a "web admin page on the relay", and the control-service section says "the same Go program with a SQLite file".
-- **The cipher is ambiguous, which is a wire-format risk.** The R1 and Stage 2 docs say ChaCha20-Poly1305 with a counter nonce; the service design says XChaCha20-Poly1305. The two use different nonce sizes, so two radios built from different docs would not understand each other.
-- **The core's module list differs between docs.** Speech shaping is in the R1 doc, the Stage 2 doc and the README, but not in the service design's summary, decisions table or module table. The EQ band is 2 to 4 kHz at 6 to 10 dB in the R1 doc, but "around 1 to 4 kHz" in the Stage 2 doc.
-- The kids' mini phone brings heavy extra duties. It is correctly parked; keep it parked.
+1. **The prices and battery figures belong to the old radio.** "About NZ$40 in parts", "about NZ$35 to 50" and "4 to 9 days" would sit under a radio with three knobs, an FM chip, a bigger screen and a battery that the brief says is "Not priced yet". Beside the new picture they overstate what we know. And "NZ$0 Subscription, ever" is still on the page; the last Council flagged it and it has not moved.
+2. **The pictures promise untested things.** Pong needs a screen that has not been chosen. FM needs an antenna in a strap that has not been tried. The site already has a "design proposal" tag for PUSH / OPEN; the new modes need the same honesty.
+3. **"NURSE" is on the screen in the hero.** To a family that reads as a call button. "This is not an emergency alarm" is far down the page, in the card and the first question. It needs to be near the picture, and the questions need a line about the Nurse channel.
+4. **Three of the five pictures have faults.** The chess picture shows part of two faces, and you asked for none. The Pong picture shows the radio standing upright, not on its back, and a child's face. The blueprint has garbled words in its title block, "MODEL: CR-01", a filled-in screen, and repeated callout numbers (two 1s, two 3s, three 6s) that cannot match any key.
+5. **The pictures and the brief disagree.** The chess picture shows the mode tabs with PLAY highlighted; the brief says games use the whole screen. The Pong picture shows upright play; the brief says on its back. One of each pair has to change before both are published.
 
 ### Owl — Process & Structure
-- The repo has 48 commits and all of them are documents. The protocol spec doesn't exist yet, although the R1 build plan makes it step 2 and the relay report says to put the first changes "into the protocol spec now". It is the keystone the other work depends on.
-- Decisions are recorded as "Updated 15 November 2026" banners above research bodies that still carry the old advice. There is no single decision log; the service design's Decisions table is the nearest thing.
-- **The public plan and the doc plan differ.** The site's Stage 1 steps leave out the protocol spec, the laptop test client and the C core, which the docs say come first. Every step is at `done: 0`, so there is nothing to track yet.
-- COMMERCIAL.md asks people to open an issue titled "Commercial licence", but there is no issue template. This is minor.
-- **Branch hygiene.** A rebased commit (speech shaping) is still unpushed, because the work branch had been merged and then reused.
+1. **Nine sections and no way to move between them.** The top bar holds only Dark and A A A. Four or five anchor links would make the page feel half as long.
+2. **Every section says its name twice.** A tag and then a heading: "Try it / Have a go", "Parts / What's inside", "Questions / Questions". One label each is tighter and loses nothing.
+3. **One section is a third of the page.** "Two ways to talk" has 573 of the 1,642 words in the body, 35%: two cards, a table, eight numbered notes and a proposal box. Keep the cards and the table. Fold the eight notes into one disclosure, like the Questions.
+4. **Housekeeping that reads as polish.** There are 18 inline `style` attributes; move them to classes. The notes put `h3` under `h3`. Only two pictures have "Fig." captions; number them all. The new pictures are 350 to 510 KB at 1611 × 2000 and need `_sml` versions like the others, with width and height set.
+5. **Order of work.** Pictures in, then hero and shapes, then copy, then the simulator. The simulator is separable and should go last.
 
 ### Puppy — Opportunities & Momentum
-- The site's simulator is a ready-made usability test. Sit Grandad in front of it on a tablet and learn how he gets on with the knob, OPEN and the sounds before any hardware exists.
-- The R1 doc has a one-evening Zello smoke test on flashed R1s. That would be the first real evidence for the whole project.
-- The R1 doc suggests a NZ$30 ESP32 breadboard early. If it is loud enough, it could make the R1 lock-down work unnecessary.
-- The research is unusually good. The relay report, and the "What the first-hand check changed" section in particular, could be published as a post on its own.
-- The printable card, the "Grandad decides" stance and the red-light rule are good design work.
+1. **These pictures are the best thing the project has made.** The bedside picture makes it look real. The chess picture tells the whole platform story without a word of copy.
+2. **A playable Pong, right on the page.** Two side knobs, two keys each. The brief's first roadmap step is "Simulator first: add the three knobs, the modes and Pong, and sit Grandad in front of it." The site revision *is* that test.
+3. **The mode bar is a gift to the simulator.** Turn Mode and the highlight moves along TALK, FM, NET, PLAY. It is small to build and explains the idea in two seconds.
+4. **Quick wins.** Swap the hero picture. Make a new social preview. Add a strip of three pictures: chess, Pong, FM.
+5. **The blueprint as "Meet the radio".** Crop off the title block, and put a short key beside it in real text: orange button, switch, Volume, Mode, Select.
 
 ### Rabbit — Resources & Stakeholders
-- **Stakeholders:** Grandad, Chris as caregiver, other family members, home builders, commercial licensees, a future trustee, a lawyer and RSM. Grandad's input is planned as a single week with "ask him what he thinks", with no defined way to capture it.
-- **Lead times.** The core ESP32 parts are import-only. Ordering them now would let Stage 2 breadboarding run alongside the R1 work.
-- **Accounts and keys still needed:** a Cloudflare paid plan, R2, an Apple developer account and the Push to Talk entitlement (unconfirmed), and offline custody of the signing key. Legal review is needed before anything is sold.
-- **Bus factor of one.** Everything rests on Chris. The end-of-service plan names a trustee role but no trustee.
+1. **What we have and what is missing.** Five pictures are in hand. Two from the prompt set are not: the Talk list close up, and the radio carried with its strap over a shoulder. No current picture shows the strap being used.
+2. **Dependencies stay small.** One file, no build step, and Google Fonts as the only outside call. Keep all three. That simplicity is part of why the site is easy to trust and easy to change.
+3. **Things that hang off the hero picture.** `social-preview.jpg` and its alt text, the README's top picture and its three-shape table, and the printed card. They all still show or describe the wedge.
+4. **Who reads it now.** Grandad, at the simulator. Family, mostly on a phone, so the 560 px layout matters most. And, new with the chess picture, someone who runs activities in a rest home: they need one line and a link.
+5. **Missing links and numbers.** The footer links three documents; the platform brief and the market report are not among them. There is no parts list or price for the new radio to put on the page.
 
 ### Wolf — Cohesion & Balance
-- **Attention is unbalanced.** There are about 180 KB of research on relay alternatives and a detailed pricing model, but nothing on how the week with Grandad will be run or judged. The thing the project is for gets the least depth.
-- **The setup tooling has a gap.** The control page became part of the family app (Stage 3), but the R1 doc (build step 6, and item 4 of "How to keep the waste small") still says to set up from the control service. Stage 1 and Stage 2 have no defined setup or care tool now.
-- The voice is cohesive: plain English, NZ spelling, "Grandad" throughout, and honest "estimate" and "not tested" labels.
-- The site shows two stages and the README shows five. That is fine for the audience, but the site's "NZ$0 Subscription, ever" figure exposes the business promise to a family audience without the conditions attached.
+1. **The balance flips.** Today three shapes share the row as equals, with a badge on one. After the revision one design is large and three are small: the original bedside wedge, the handheld and the pebble, in one row titled something like "Other shapes we looked at". Keep them. They show the thinking.
+2. **The card is neglected, and it is the most Grandad-facing thing on the page.** It says "turn the knob" and "press the knob". There are three knobs now. It needs rewriting with the same care as the hero.
+3. **The simulator and the picture must change together.** The drawing has a lever switch on the front, one knob, a round grille and a black screen with one word. Shown under the new hero picture, it is a different radio. If the simulator cannot be redone in the same pass, say so on the page.
+4. **Slicker is not glossier.** The voice is the asset: plain words, "Grandad", "a concept picture". Keep Fraunces, the cream paper, the wooden frame and the mono captions. Tighten by removing repeats, not by restyling.
+5. **Room has to come from somewhere.** PUSH / OPEN takes 35% of the words. The new modes need space. Trimming the first is what pays for the second.
 
 ## Consensus
 
-**Common themes.** The design is ahead of the evidence: prices, guarantees and a five-stage roadmap are locked before a single latency or cost figure has been measured. The lock on 15 November left drift across the docs, including one real wire-format ambiguity (the cipher). The two artefacts everything else depends on, the protocol spec and a Grandad trial plan, don't exist yet.
+**Common themes.** Four things came up from more than one seat.
 
-**Key tensions.** Ambition against focus: Bear and Puppy see a product with reach, while Cat and Wolf see a family project carrying a business's promises. Locking against learning: Owl wants decisions recorded firmly, but several locked choices (WebSocket over UDP, the cost per channel) are meant to be checked by the Stage 1 trial. The fix is to lock the interfaces and keep the numbers provisional.
+- **One radio leads.** Bear, Wolf and Puppy all want the stout green radio as the single hero, with the other three shapes kept but made small.
+- **The page still describes the wedge in at least seven places:** the hero picture and its facts, the simulator drawing, "What's on it", the shapes badge, the parts and prices, the battery figures, and the printed card. Swapping pictures alone would leave a page that contradicts itself.
+- **Tighter comes from removing repeats.** Owl and Wolf agree: add a small nav, one label per section, fold the long notes away, clear the inline styles. The look stays.
+- **Honesty labels.** Cat and Wolf both point at the same habit that makes the site trustworthy. It has to stretch to cover the new modes, the prices and the Nurse channel.
 
-**Overall.** The vision is clear, the architecture is well reasoned and the research is strong. The project now needs to stop designing and start measuring. The most valuable next work is the protocol spec and a planned week with Grandad, not more design.
+**Key tensions.**
+
+- **Leading with the platform, against what is actually decided.** Bear and Puppy want the new radio up front. Cat notes it is unpriced, partly untested and not locked. These fit together if Talk is shown as the plan and FM, internet radio and games are shown as ideas being explored, under the same kind of tag PUSH / OPEN already carries.
+- **Simulator ambition against scope.** Puppy wants playable Pong; Owl and Cat want the simulator last and bounded. Two passes resolve it: first the new drawing, three knobs, the mode bar and Talk; then Pong and the chess clock.
+- **Pictures against the brief.** Tabs on the chess clock, and Pong played upright. In both cases the picture may be the better idea. That is yours to decide, not the Council's.
+
+**Consensus.** The page is well made and well voiced, and it is about a radio you have moved on from. The revision is mostly an edit, not a redesign: one hero, one story, fewer repeats, and honest labels on what is new. The simulator is the only large piece of building, and it doubles as the first test in the platform brief.
 
 ## Recommended Next Steps
 
-1. **Write the protocol spec.** Pin the cipher (XChaCha20-Poly1305 or ChaCha20-Poly1305 with its nonce layout), the frame and routing header, versioning, floor rules, the signed settings list and the C core's module list, including speech shaping. Then point every doc at it instead of restating it.
-2. **Sweep the docs for drift after the lock.** That covers the R1 summary latency, the QR references and the "reset group" risk row; the Stage 2 relay-address, admin-page and Go/SQLite lines; the module lists; and the EQ band. Either fix them or mark them superseded where they stand.
-3. **Define the setup and care path for Stages 1 and 2.** Decide what replaces the control page before the family app exists: the app's free setup mode built early, or a small command-line tool on the laptop test client.
-4. **Write a one-page Grandad trial plan.** Say what to measure (mouth-to-ear delay, stalls, cost per channel, loudness, missed messages) and how to capture his view, and set the pass mark. Run a simulator session with him first.
-5. **Soften the public promises until the legal review.** Reword "NZ$0 Subscription, ever" and "for life" on the site and README as an aim rather than a guarantee. In parallel, order the ESP32 parts and push the pending commit.
+1. **Decide whether the platform radio is now the radio.** If yes, the site, the README and the Stage 2 spec all follow. If it is still an exploration, the site should say "the design we're exploring" and keep the old prices clearly tied to the simpler build.
+2. **Sort the pictures.** Add all five to `images/` with `_sml` versions. Crop the faces out of the chess picture. Crop the title block off the blueprint and drop its number key. Regenerate Pong, or decide upright play is fine and change the brief. Settle tabs or no tabs on the chess clock.
+3. **Restructure the page** to the outline below.
+4. **Rebuild the simulator in two passes:** the new radio with the mode bar and Talk first, then Pong and the chess clock.
+5. **Fix what hangs off it:** the card, the questions (Nurse, apps), the numbers, the footer links, the social preview and the README.
+
+**Proposed outline.**
+
+| # | Section | Now | After |
+| --- | --- | --- | --- |
+| | Top bar | Mark, Dark, A A A | Add a short nav: Try it, The radio, How it talks, Progress, Questions |
+| 1 | Hero | Wedge picture, two paragraphs, three facts | New bedside picture, one paragraph, three facts rewritten for the new radio, the 111 line close by |
+| 2 | Try it | Simulator of the wedge | Simulator of the new radio, with the mode bar |
+| 3 | The radio | (none) | New: cropped blueprint with a short key to the five controls, then Talk, FM, Net and Play as four small cards with the chess, Pong and FM pictures. The three new modes tagged as ideas being explored |
+| 4 | Two ways to talk | 573 words | Cards and table kept; the eight notes folded into one disclosure |
+| 5 | Other shapes | "Pick a shape", three equal cards | Three small cards: original bedside, handheld, pebble |
+| 6 | What's inside | Parts, prices, and a separate numbers section | Merged into one, labelled as the simpler build until the new radio is priced |
+| 7 | How we get there | Two stages | Same, with the platform shown as what comes after |
+| 8 | The card | One knob | Rewritten for three knobs |
+| 9 | Questions | Five | Add the Nurse channel and apps |
+| | Footer | Three document links | Add the platform brief and the market report |
