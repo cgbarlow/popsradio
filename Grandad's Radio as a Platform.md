@@ -10,7 +10,7 @@ Concept picture prompts for this unit are in [Grandad's Radio Platform Image Pro
 
 **The idea: design Grandad's radio as a platform, not just a radio.** The parts that make a good walkie-talkie (a speaker, a screen, knobs, Wi-Fi, a small computer that updates itself) are most of what a bedside radio, a games board and a chess clock need too. Once Grandad trusts one device, each extra useful thing on it is one less gadget to learn.
 
-- **A new shape.** A slim upright radio, about 160 mm wide, 150 mm tall and 50 mm deep, with a carry strap and three big knobs that are easy to grip and turn. Every knob turns freely and is also a button.
+- **A new shape.** A slim upright radio, about 160 mm wide, 150 mm tall and 50 mm deep, with an adjustable shoulder strap and three knobs that are easy to grip and turn: a big one on each side and a smaller volume knob on top. Every knob turns freely and is also a button.
 - **Mode and Select.** The left knob picks what the radio is doing: Talk, Radio (FM), Radio (Internet) or Play. The right knob picks within it: who to talk to, which station, which game.
 - **Tip it on its back to play.** Screen facing up, the two side knobs become a left and right controller: Pong paddles, pinball flippers, or the two sides of a chess clock.
 - **An approved app store, later.** Once the first-party modes have proven the model, other people could build apps for it. Every app is reviewed and signed by us, installed by the family from the family app, and can never use the microphone or the talk button.
@@ -24,7 +24,7 @@ Concept picture prompts for this unit are in [Grandad's Radio Platform Image Pro
 
 | | Original bedside radio | Platform unit |
 | --- | --- | --- |
-| Shape | Squat wedge, sloped front | Slim upright slab, about 160 × 150 × 50 mm, with a carry strap over the top |
+| Shape | Squat wedge, sloped front | Slim upright slab, about 160 × 150 × 50 mm, with a long adjustable shoulder strap |
 | Talk button | Big orange button on top | Same |
 | PUSH / OPEN | Chrome toggle on the front | A smooth slide switch on top, left of the orange button |
 | Knobs | One, on the front, picks the channel, with end stops | Three, all large, free turning and pressable: Volume on top right of the orange button, Mode on the left side, Select on the right side |
@@ -49,7 +49,7 @@ In the games board position the two side knobs belong to the game instead: left 
 
 **Why the switch is smooth.** A slide that sits flush in its slot has no lever to catch a sleeve or the strap, and its position can be felt with a fingertip. It is still a real switch, so open channel mode can only ever be turned on at the radio.
 
-**Why the knobs are big.** A knob about 40 mm across with deep ribs can be turned with a whole hand, by someone with arthritis or a weak grip. The side panels are only 50 mm deep, so the side knobs cannot be much bigger. That is my estimate of a good size, to be tried with Grandad on printed knobs before choosing parts.
+**Why the knobs are big.** A knob about 40 mm across with deep ribs can be turned with a whole hand, by someone with arthritis or a weak grip. The side panels are only 50 mm deep, so the side knobs cannot be much bigger. The volume knob on top is smaller, about 25 mm, so the orange button (about 40 mm) stays the biggest thing on top and the one a hand lands on. That is my estimate of a good size, to be tried with Grandad on printed knobs before choosing parts.
 
 **Why the knobs turn freely.** All three knobs turn round and round with no end stops, so the side knobs can drive Pong paddles and anything else an app needs. This is decided. It gives up the Stage 2 habit that "fully left is always channel one", so the way home is a gesture instead: hold the Mode knob for two seconds to go back to Talk. Whether the knobs click at each step, or turn smoothly, is still to be tried with Grandad.
 
@@ -139,9 +139,9 @@ Not priced yet. Each line needs a part chosen and a NZ price checked.
 | Knobs | One rotary encoder with push | Three rotary encoders with push, large knobs | Free turning, no end stops, so games can use them. Decided |
 | Screen | 0.96 to 1.3 inch one-colour OLED | Not chosen yet | Needs more research, see below |
 | FM | None | FM receiver chip, I2C, with a wire antenna | The RDA5807M is a common choice, controlled over I2C, with an ESP32 and MAX98357A example in the pu2clr library ([pu2clr](https://www.github.com/pu2clr/RDA5807)) |
-| Antenna | None | A wire of about 75 cm run through the carry strap | Hobby guides give about 75 to 77 cm as a quarter-wave whip for FM ([101 Things](https://101-things.readthedocs.io/en/latest/fm_radio.html), [Seeed](https://wiki.seeedstudio.com/Grove-I2C_FM_Receiver/)). Hiding it in the strap is a proposal, untested |
+| Antenna | None | A wire of about 75 cm run through the shoulder strap | Hobby guides give about 75 to 77 cm as a quarter-wave whip for FM ([101 Things](https://101-things.readthedocs.io/en/latest/fm_radio.html), [Seeed](https://wiki.seeedstudio.com/Grove-I2C_FM_Receiver/)). Hiding it in the strap is a proposal, untested |
 | Tilt sensor | None | A small accelerometer | Knows upright from lying on its back |
-| Battery | Skipped on Grandad's docked unit | Needed | A carry strap means it leaves the dock. A larger cell than 1000 mAh, size to be measured |
+| Battery | Skipped on Grandad's docked unit | Needed | A shoulder strap means it leaves the dock. A larger cell than 1000 mAh, size to be measured |
 | Case | Wedge | Slim slab about 50 mm deep, with strap anchors and four rubber feet on the back | The feet keep it flat and steady as a games board |
 | Speaker | 50 mm, 3 W | As large as the slim case allows | Music needs more than speech does, but a 50 mm deep case limits how deep the speaker and the air behind it can be |
 
