@@ -18,7 +18,7 @@
 <meta property="og:image:type" content="image/jpeg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="A sage green bedside radio with a big orange button, beside the words Hold to talk. Let go to listen.">
+<meta property="og:image:alt" content="A sage green radio with a big orange button on top, on a bedside table, beside the words Hold to talk. Let go to listen.">
 <meta property="og:locale" content="en_NZ">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Grandad's Radio: hold to talk, let go to listen">
@@ -75,10 +75,12 @@ body { margin: 0; background: var(--bg); color: var(--ink); font: 1rem/1.6 "Atki
 a { color: var(--accent); text-underline-offset: 3px; }
 :focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
 .wrap { max-width: 1120px; margin: 0 auto; padding: 0 20px; }
-h1, h2, h3 { font-family: var(--head); font-weight: var(--head-w); text-transform: var(--head-case); letter-spacing: var(--head-ls); line-height: 1.08; margin: 0 0 14px; }
+h1, h2, h3, h4 { font-family: var(--head); font-weight: var(--head-w); text-transform: var(--head-case); letter-spacing: var(--head-ls); line-height: 1.08; margin: 0 0 14px; }
 h1 { font-size: clamp(2.4rem, 6.4vw, 4.2rem); }
 h2 { font-size: clamp(1.7rem, 4vw, 2.5rem); }
 h3 { font-size: 1.25rem; line-height: 1.2; }
+h4 { font-size: 1.1rem; line-height: 1.2; margin-bottom: 6px; }
+figure { margin: 0; }
 h1 em { font-style: italic; font-weight: 600; color: var(--accent); }
 p { margin: 0 0 14px; }
 .muted { color: var(--muted); }
@@ -103,11 +105,17 @@ section.alt { background: var(--bg2); }
 .seg button + button { border-left: 1.5px solid var(--line); }
 .seg button[aria-pressed="true"] { background: var(--ink); color: var(--bg); }
 .seg .lbl { font-size: 0.78rem; color: var(--muted); padding: 0 10px; display: grid; place-items: center; }
+.seg .a2 { font-size: 0.95rem; }
+.seg .a3 { font-size: 1.1rem; }
 .icon { width: 18px; height: 18px; vertical-align: -4px; }
+.nav { display: flex; flex-wrap: wrap; gap: 2px 20px; font-weight: 700; font-size: 0.9rem; }
+.nav a { color: var(--ink); text-decoration: none; padding: 6px 0; border-bottom: 2px solid transparent; }
+.nav a:hover { border-bottom-color: var(--accent); }
 
 /* ============ Hero ============ */
 .hero { display: grid; grid-template-columns: 1fr 0.95fr; gap: 48px; align-items: center; padding-top: 56px; padding-bottom: 72px; }
-.lede { font-size: 1.25rem; max-width: 30em; }
+.hero h1 { margin-top: 18px; }
+.lede { font-size: 1.2rem; max-width: 30em; }
 .facts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 26px 0; }
 .facts div { border-top: 3px solid var(--ink); padding-top: 8px; }
 .facts b { display: block; font-size: 1.1rem; line-height: 1.25; }
@@ -124,14 +132,15 @@ section.alt { background: var(--bg2); }
 .sim svg { display: block; width: 100%; height: auto; user-select: none; -webkit-user-select: none; touch-action: none; }
 .dial { position: relative; margin: 14px 4px 8px; background: var(--dial-bg); color: var(--dial-ink); border-radius: calc(var(--radius) / 2); border: 1.5px solid var(--line); height: 58px; overflow: hidden; }
 .dial::before { content: ""; position: absolute; left: 0; right: 0; top: 6px; height: 10px; background: repeating-linear-gradient(90deg, currentColor 0 1.5px, transparent 1.5px 12px); opacity: .55; }
-.dial-scale { position: absolute; inset: 0; display: grid; grid-template-columns: repeat(3, 1fr); }
+.dial-scale { position: absolute; inset: 0; display: grid; grid-template-columns: repeat(4, 1fr); }
 .dial-scale button { border: 0; background: transparent; color: inherit; font: 600 0.85rem "IBM Plex Mono", monospace; letter-spacing: 0.08em; padding-top: 18px; cursor: pointer; }
-.needle { position: absolute; top: 2px; bottom: 2px; width: 3px; background: var(--needle); border-radius: 2px; transform: translateX(-50%); transition: left .45s cubic-bezier(.3,.7,.3,1); box-shadow: 0 0 6px var(--needle); }
+.needle { position: absolute; left: 12.5%; top: 2px; bottom: 2px; width: 3px; background: var(--needle); border-radius: 2px; transform: translateX(-50%); transition: left .45s cubic-bezier(.3,.7,.3,1); box-shadow: 0 0 6px var(--needle); }
 .hint { text-align: center; color: var(--muted); font-size: 0.92rem; min-height: 3em; margin: 10px 0; }
 .ptt { display: block; width: 100%; border: 0; border-radius: 16px; padding: 18px; cursor: pointer; background: #ea6a1f; color: #fff; font: 700 1.15rem "Atkinson Hyperlegible", sans-serif; box-shadow: inset 0 -5px 0 #b84d10; touch-action: none; user-select: none; -webkit-user-select: none; }
 .ptt.down { transform: translateY(3px); box-shadow: inset 0 -2px 0 #8f3a0b; background: #c95713; }
 .switchrow { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 12px; padding: 12px 14px; border: 1.5px solid var(--line); border-radius: 14px; }
 .switchrow b { display: block; }
+.switchrow .seg { flex: none; }
 .switchrow span { font-size: 0.85rem; color: var(--muted); }
 .toggle { flex: none; display: inline-flex; gap: 2px; padding: 3px; border-radius: 999px; border: 2px solid var(--ink); background: transparent; cursor: pointer; }
 .toggle span { font: 600 0.78rem "IBM Plex Mono", monospace; letter-spacing: .04em; padding: 7px 11px; border-radius: 999px; color: var(--muted); transition: background .15s; }
@@ -146,6 +155,7 @@ section.alt { background: var(--bg2); }
 .legend { list-style: none; padding: 0; margin: 0; }
 .legend li { display: grid; grid-template-columns: 36px 1fr; gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--line); }
 .legend .dot { width: 30px; height: 30px; border-radius: 50%; display: grid; place-items: center; font: 600 0.8rem "IBM Plex Mono", monospace; background: var(--ink); color: var(--bg); }
+.legend .dot.orange { background: #ea6a1f; color: #fff; }
 .blink { animation: blink 1s steps(2) infinite; }
 @keyframes blink { 50% { opacity: .25; } }
 .pulse { animation: pulse 1.6s ease-in-out infinite; }
@@ -209,6 +219,7 @@ section.alt .bom tr.on td { background: var(--panel); }
 .stage .num { font-family: var(--head); font-weight: var(--head-w); font-size: 3.2rem; line-height: 1; margin: 6px 0; }
 .bar { height: 8px; background: var(--line); border-radius: 4px; overflow: hidden; margin-top: 14px; }
 .bar span { display: block; height: 100%; width: 0; background: var(--accent); }
+.stage .status { margin-top: 6px; }
 .steps { list-style: none; padding: 0; margin: 14px 0 0; }
 .steps li { display: grid; grid-template-columns: 24px 1fr; gap: 12px; padding: 9px 0; border-top: 1px solid var(--line); }
 .steps .box { width: 18px; height: 18px; border: 2px solid var(--muted); border-radius: 4px; margin-top: 4px; }
@@ -245,18 +256,48 @@ details p { max-width: 46em; }
 footer { border-top: 1.5px solid var(--line); padding: 34px 0 60px; color: var(--muted); font-size: 0.92rem; }
 footer ul { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 8px 26px; }
 
+/* ============ The radio, and what else it does ============ */
+.meet { display: grid; grid-template-columns: 1.15fr 1fr; gap: 36px; align-items: start; }
+.why { list-style: none; padding: 0; margin: 0; }
+.why li { padding: 14px 0; border-top: 1.5px solid var(--line); }
+.why li:first-child { border-top: 0; padding-top: 0; }
+.why b { display: block; font-family: var(--head); font-weight: var(--head-w); font-size: 1.15rem; line-height: 1.2; margin-bottom: 2px; }
+.modes.four { grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 30px; }
+.modes.four .mode { padding: 20px; }
+.modes.four .mode p { margin: 0; font-size: 0.95rem; }
+.mode .tag { font-size: 0.72rem; padding: 3px 9px; margin-bottom: 12px; }
+.mode.plan { border-color: var(--ink); }
+.rules { grid-template-columns: repeat(3, 1fr); margin-top: 30px; }
+.shapes.small { max-width: 880px; }
+.shapes.small .shape figcaption p { font-size: 0.9rem; }
+.more-notes { margin-top: 30px; }
+.more-notes > summary { font-family: var(--head); font-weight: var(--head-w); font-size: 1.25rem; border-top: 1.5px solid var(--line); }
+.more-notes .notes { margin-top: 6px; }
+.more-notes .proposal { margin-bottom: 26px; }
+.scroll { overflow-x: auto; }
+.center { text-align: center; margin-left: auto; margin-right: auto; }
+.aside { margin: 18px 0 0; }
+.sub { margin-top: 46px; }
+.fineprint { margin: 10px 10px 0; }
+.stats { margin-top: 18px; }
+.hit { cursor: pointer; }
+
 /* ============ Small screens ============ */
 @media (max-width: 900px) {
-  .hero, .trybox, .inside, .modes { grid-template-columns: 1fr; }
+  .hero, .trybox, .inside, .modes, .meet { grid-template-columns: 1fr; }
   .hero { gap: 30px; padding-top: 30px; }
+  .modes.four { grid-template-columns: 1fr 1fr; }
   .shapes { grid-template-columns: 1fr 1fr; }
   .stats { grid-template-columns: 1fr 1fr; }
-  .notes { grid-template-columns: 1fr; }
+  .notes, .rules { grid-template-columns: 1fr; }
   .stage { grid-template-columns: 1fr; gap: 10px; }
+  .nav { order: 3; width: 100%; justify-content: center; }
+  section { scroll-margin-top: 104px; }
 }
 @media (max-width: 560px) {
-  section { padding: 52px 0; }
-  .shapes { grid-template-columns: 1fr; }
+  section { padding: 52px 0; scroll-margin-top: 12px; }
+  .shapes, .modes.four { grid-template-columns: 1fr; }
+  .shapes.small { grid-template-columns: 1fr 1fr; }
   .facts { grid-template-columns: 1fr; }
   .events { grid-template-columns: 1fr 1fr; }
   .card { padding: 24px 20px; font-size: 1.1rem; }
@@ -281,14 +322,22 @@ footer ul { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 8
 <header class="top">
   <div class="wrap">
     <a class="mark" href="#"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M13 44V20a4 4 0 0 1 4-4h30a4 4 0 0 1 4 4v24z" fill="#ea6a1f"/><path d="M13 36h38v8H13z" fill="#b84d10"/><rect x="4" y="42" width="56" height="14" rx="2" fill="#1d1d1d"/></svg>Grandad's radio</a>
+    <nav class="nav" aria-label="On this page">
+      <a href="#try">Try it</a>
+      <a href="#radio">The radio</a>
+      <a href="#talk">How it talks</a>
+      <a href="#more">What else</a>
+      <a href="#stages">Progress</a>
+      <a href="#questions">Questions</a>
+    </nav>
     <div class="controls">
       <div class="seg" role="group" aria-label="Light or dark">
         <button type="button" id="themeBtn" aria-label="Switch to dark"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path id="themeIcon" d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg> <span id="themeLbl">Dark</span></button>
       </div>
       <div class="seg" role="group" aria-label="Text size">
         <button type="button" data-set-size="0" aria-label="Normal text">A</button>
-        <button type="button" data-set-size="1" aria-label="Large text" style="font-size:.95rem">A</button>
-        <button type="button" data-set-size="2" aria-label="Largest text" style="font-size:1.1rem">A</button>
+        <button type="button" data-set-size="1" aria-label="Large text" class="a2">A</button>
+        <button type="button" data-set-size="2" aria-label="Largest text" class="a3">A</button>
       </div>
     </div>
   </div>
@@ -300,22 +349,22 @@ footer ul { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 8
 <div class="wrap hero">
   <div>
     <span class="tag">A simpler way to stay in touch</span>
-    <h1 style="margin-top:18px">Hold to talk.<br><em>Let go to listen.</em></h1>
-    <p class="lede">Mobile phones can be tricky for older people. Small icons, passcodes, updates and menus get in the way when all they want is an easy way to reach the people they love.</p>
-    <p class="lede">So we're building Grandad a radio with one big orange button. It reaches the family over Wi-Fi, whether they're in the next room or the next town.</p>
+    <h1>Hold to talk.<br><em>Let go to listen.</em></h1>
+    <p class="lede">Mobile phones can be tricky for older people. Small icons, passcodes, updates and menus get in the way of reaching the people they love. So we're building Grandad a radio with one big orange button. It reaches the family over Wi-Fi, in the next room or the next town.</p>
     <div class="facts">
-      <div><b>One button</b><span>plus a knob to pick who</span></div>
-      <div><b>Days on a charge</b><span>lives on a stand by his chair</span></div>
-      <div><b>About NZ$40</b><span>in parts, built at home</span></div>
+      <div><b>One big button</b><span>hold it to talk</span></div>
+      <div><b>Names, not numbers</b><span>turn a knob to pick who</span></div>
+      <div><b>Goes with him</b><span>by the bed, or on a strap</span></div>
     </div>
     <div class="cta">
       <a class="btn primary" href="#try">Try it</a>
-      <a class="btn" href="#inside">See inside</a>
+      <a class="btn" href="#radio">See the radio</a>
     </div>
+    <p class="small muted aside">It is not an emergency alarm. In an emergency, call 111.</p>
   </div>
-  <figure style="margin:0">
-    <div class="frame"><img src="images/bedside-radio_sml.jpg" alt="A sage green radio on a bedside table, with a big orange button on top, a speaker grille, a small screen reading CHRIS, a black knob and a PUSH / OPEN toggle switch" width="805" height="1000"></div>
-    <figcaption class="fig"><b>Fig. 1</b> The bedside radio. A concept picture: the first one is still being designed.</figcaption>
+  <figure>
+    <div class="frame"><img src="images/platform-bedside_sml.jpg" alt="A sage green radio on a wooden bedside table beside a lamp and a mug of tea. It has a big orange button on top, a small volume knob, a large black knob on each side, a speaker grille and a cream shoulder strap. The screen lists Chris, Family and Nurse, with Family selected." width="805" height="999"></div>
+    <figcaption class="fig"><b>Fig. 1</b> The design we're exploring. A concept picture: nothing is built yet.</figcaption>
   </figure>
 </div>
 
@@ -323,52 +372,62 @@ footer ul { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 8
 <section class="alt" id="try">
   <div class="wrap">
     <div class="section-head">
-      <span class="tag">Try it</span>
       <h2>Have a go</h2>
-      <p>Hold the orange button (or the space bar) to talk. Tap the knob to change channel, flip the switch, or have Chris call in. Turn your sound on.</p>
+      <p>Hold the orange button (or the space bar) to talk. Turn the knobs, slide the switch, or have Chris call in. Turn your sound on.</p>
     </div>
     <div class="trybox">
       <div class="sim">
-        <svg id="dev" viewBox="0 0 360 320" aria-label="Drawing of the radio">
-          <rect x="132" y="50" width="96" height="16" rx="6" fill="#1d1d1d"/>
-          <rect id="btn" x="146" y="24" width="68" height="34" rx="12" fill="#ea6a1f" style="cursor:pointer"/>
-          <rect x="26" y="60" width="308" height="244" rx="26" fill="#93ab8c"/>
-          <rect x="26" y="60" width="308" height="244" rx="26" fill="none" stroke="#6f8a69" stroke-width="3"/>
+        <svg id="dev" viewBox="0 0 400 262" aria-label="Drawing of the radio">
+          <path d="M52 84C30 120 24 196 38 250" fill="none" stroke="#e6dcc6" stroke-width="7" stroke-linecap="round"/>
+          <path d="M348 84c22 36 28 112 14 166" fill="none" stroke="#e6dcc6" stroke-width="7" stroke-linecap="round"/>
+          <g id="modeKnob" class="hit">
+            <rect x="27" y="105" width="26" height="52" rx="5" fill="#1d1d1d"/>
+            <path d="M30 113h20M30 120h20M30 127h20M30 134h20M30 141h20M30 148h20" stroke="#3d3d3d" stroke-width="2"/>
+          </g>
+          <g id="selKnob" class="hit">
+            <rect x="347" y="105" width="26" height="52" rx="5" fill="#1d1d1d"/>
+            <path d="M350 113h20M350 120h20M350 127h20M350 134h20M350 141h20M350 148h20" stroke="#3d3d3d" stroke-width="2"/>
+          </g>
+          <g id="sw" class="hit">
+            <rect x="70" y="46" width="66" height="26" fill="transparent"/>
+            <rect x="78" y="61" width="50" height="10" rx="5" fill="#55684f"/>
+            <rect id="thumb" x="80" y="55" width="22" height="13" rx="5" fill="#dfe5dc" stroke="#7f8f7a" stroke-width="1.5"/>
+          </g>
+          <rect x="169" y="61" width="62" height="10" rx="4" fill="#b84d10"/>
+          <rect id="btn" class="hit" x="176" y="40" width="48" height="26" rx="12" fill="#ea6a1f"/>
+          <g id="vol" class="hit">
+            <rect x="292" y="49" width="26" height="22" rx="3" fill="#1d1d1d"/>
+            <path d="M298 52v16M305 52v16M312 52v16" stroke="#3d3d3d" stroke-width="2"/>
+          </g>
+          <rect x="50" y="70" width="300" height="176" rx="16" fill="#93ab8c" stroke="#6f8a69" stroke-width="3"/>
+          <text x="91" y="85" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-weight="600" font-size="8" fill="#2d3a2a">PUSH</text>
+          <text x="116" y="85" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-weight="600" font-size="8" fill="#2d3a2a">OPEN</text>
+          <rect x="87" y="89" width="226" height="88" rx="7" fill="#7b9474"/>
+          <g id="scr" font-family="IBM Plex Mono, monospace" font-weight="600"></g>
+          <circle id="led" cx="69" cy="133" r="5" fill="#3e4a3c"/>
           <g id="grille" fill="#55684f"></g>
-          <text x="76" y="238" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-weight="600" font-size="11" fill="#2d3a2a">PUSH</text>
-          <text x="144" y="238" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-weight="600" font-size="11" fill="#2d3a2a">OPEN</text>
-          <g id="sw" style="cursor:pointer">
-            <rect x="70" y="220" width="80" height="70" fill="transparent"/>
-            <circle cx="110" cy="266" r="13" fill="#b9bdb7" stroke="#7f837d" stroke-width="2"/>
-            <circle cx="110" cy="266" r="7" fill="#e6e8e4"/>
-            <g id="lever" transform="rotate(-38 110 266)">
-              <line x1="110" y1="266" x2="110" y2="240" stroke="#dfe2de" stroke-width="6" stroke-linecap="round"/>
-              <line x1="110" y1="266" x2="110" y2="240" stroke="#9fa39e" stroke-width="1.5" stroke-linecap="round" transform="translate(2 0)"/>
-              <circle cx="110" cy="238" r="6.5" fill="#f3f4f1" stroke="#8d918c" stroke-width="1.5"/>
-            </g>
-          </g>
-          <rect x="196" y="96" width="112" height="56" rx="5" fill="#0b0b0b"/>
-          <text id="oCh" x="252" y="117" text-anchor="middle" fill="#e8e8e8" font-family="IBM Plex Mono, monospace" font-weight="600" font-size="12">CHRIS</text>
-          <text id="oWord" x="252" y="142" text-anchor="middle" fill="#ffffff" font-family="IBM Plex Mono, monospace" font-weight="600" font-size="20">READY</text>
-          <circle id="led" cx="320" cy="124" r="5.5" fill="#3e4a3c"/>
-          <g id="knob" style="cursor:pointer">
-            <circle cx="252" cy="236" r="31" fill="#1d1d1d"/>
-            <circle cx="252" cy="236" r="25" fill="#2b2b2b"/>
-            <line id="pointer" x1="252" y1="236" x2="252" y2="214" stroke="#eeeeee" stroke-width="3" stroke-linecap="round"/>
-          </g>
         </svg>
-        <div class="dial" aria-label="Channel dial">
+        <div class="dial" aria-label="The left-hand knob: what the radio is doing">
           <div class="dial-scale">
-            <button type="button" data-ch="0">CHRIS</button>
-            <button type="button" data-ch="1">FAMILY</button>
-            <button type="button" data-ch="2">TEST</button>
+            <button type="button" data-mode="0">TALK</button>
+            <button type="button" data-mode="1">FM</button>
+            <button type="button" data-mode="2">NET</button>
+            <button type="button" data-mode="3">PLAY</button>
           </div>
-          <div class="needle" id="needle" style="left:16.67%"></div>
+          <div class="needle" id="needle"></div>
         </div>
         <p class="hint" id="hint" aria-live="polite">Hold the button below, or hold the space bar.</p>
         <button class="ptt" id="ptt" type="button">Hold to talk</button>
         <div class="switchrow">
-          <div><b>Talk mode switch</b><span id="swText">PUSH: hold the button to talk</span></div>
+          <div><b>Right-hand knob</b><span>Turn it, or press it</span></div>
+          <div class="seg">
+            <button type="button" data-sel="-1" aria-label="Turn the knob back">&#9650;</button>
+            <button type="button" data-sel="1" aria-label="Turn the knob on">&#9660;</button>
+            <button type="button" id="selPress">Press</button>
+          </div>
+        </div>
+        <div class="switchrow">
+          <div><b>Talk switch</b><span id="swText">PUSH: hold the button to talk</span></div>
           <button class="toggle" id="toggle" type="button" role="switch" aria-checked="false" aria-label="Open channel"><span>PUSH</span><span>OPEN</span></button>
         </div>
         <div class="events">
@@ -381,25 +440,51 @@ footer ul { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 8
       <div>
         <h3>What's on it</h3>
         <ul class="legend">
-          <li><span class="dot" style="background:#ea6a1f;color:#fff">1</span><div><b>The orange button</b><br>Hold it to talk. It chirps when it's ready, so the first word isn't lost.</div></li>
-          <li><span class="dot">2</span><div><b>The knob</b><br>Picks who you're talking to. Each click says the name out loud, and it stops at each end so fully left is always Chris.</div></li>
-          <li><span class="dot">3</span><div><b>The screen and light</b><br>One word in big letters: TALK, LISTEN, WAIT or OFFLINE. The light beside it is red whenever the microphone can hear.</div></li>
-          <li><span class="dot">4</span><div><b>The PUSH / OPEN switch</b><br>New. PUSH is a normal walkie-talkie. OPEN lets you talk hands-free, taking turns. More on that below.</div></li>
-          <li><span class="dot">5</span><div><b>Press the knob</b><br>Plays the last message again.</div></li>
+          <li><span class="dot orange">1</span><div><b>The orange button</b><br>Hold it to talk. It chirps when it's ready, so the first word isn't lost.</div></li>
+          <li><span class="dot">2</span><div><b>The right-hand knob</b><br>Picks who you're talking to. Each click says the name out loud. Press it to hear the last message again.</div></li>
+          <li><span class="dot">3</span><div><b>The left-hand knob</b><br>Picks what the radio is doing. It starts on Talk, and for Grandad it can stay there. The rest is <a href="#more">further down</a>.</div></li>
+          <li><span class="dot">4</span><div><b>The screen and light</b><br>What it's doing along the top, who you'll reach below, and one big word when something happens: TALK, LISTEN, WAIT or OFFLINE. The light is red whenever the microphone can hear.</div></li>
+          <li><span class="dot">5</span><div><b>The PUSH / OPEN switch</b><br>PUSH is a normal walkie-talkie. OPEN lets you talk hands-free, taking turns. <a href="#talk">More on that below</a>.</div></li>
+          <li><span class="dot">6</span><div><b>The small knob on top</b><br>Volume. Press it to pause a game.</div></li>
         </ul>
-        <p class="small muted" style="margin-top:14px">The sounds here are rough versions made in your browser. Spoken names use your browser's voice.</p>
+        <p class="small muted aside">The sounds here are rough versions made in your browser. Spoken names use your browser's voice.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Two ways to talk -->
-<section id="modes">
+<!-- Why it looks like this -->
+<section id="radio">
   <div class="wrap">
     <div class="section-head">
-      <span class="tag">New idea · design proposal</span>
+      <span class="tag">The design we're exploring</span>
+      <h2>Why it looks like this</h2>
+      <p>A radio you can't knock over, with controls big enough to find without looking.</p>
+    </div>
+    <div class="meet">
+      <figure>
+        <div class="photo"><img src="images/platform-blueprint_sml.jpg" alt="Blueprint drawing of the radio from the front, the side and the top. It is 220 mm wide, 125 mm tall and 80 mm deep, with the switch, the orange button and the volume knob in a row on top." loading="lazy" width="1000" height="837"></div>
+        <figcaption class="fig"><b>Fig. 2</b> Front, side and top. A generated concept drawing, so the numbers in circles don't point to anything.</figcaption>
+      </figure>
+      <ul class="why">
+        <li><b>Low and wide</b>It gets pressed on top, turned from the sides and picked up by a strap, so it's wider than it is tall. Pressing the button pushes it down, not over.</li>
+        <li><b>The button is the biggest thing on top</b>It's where a hand lands. The volume knob beside it is small on purpose.</li>
+        <li><b>Knobs for a whole hand</b>About 40 mm across with deep ribs, for stiff fingers or a weak grip. They turn freely, and each one is also a button.</li>
+        <li><b>A switch you can feel</b>It slides, and sits hard against one end or the other, so you can tell which way it's set in the dark.</li>
+        <li><b>A strap</b>Long enough to go over a shoulder, so the radio can move from the bed to the garden.</li>
+      </ul>
+    </div>
+    <p class="small muted aside">The sizes are first guesses. They get tried as a cardboard mock-up before anything is printed.</p>
+  </div>
+</section>
+
+<!-- Two ways to talk -->
+<section class="alt" id="talk">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="tag">Design proposal</span>
       <h2>Two ways to talk</h2>
-      <p>A switch on the front sets how the radio talks. Holding a button down is fine for a quick message, but harder for a long chat or for stiff hands. So the radio gets a second mode.</p>
+      <p>A switch on top sets how the radio talks. Holding a button down is fine for a quick message, but harder for a long chat or for stiff hands. So the radio gets a second way.</p>
     </div>
     <div class="modes">
       <div class="mode">
@@ -410,59 +495,116 @@ footer ul { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 8
       <div class="mode open">
         <div class="big">OPEN</div>
         <h3>Hands-free, taking turns</h3>
-        <p>Flip the switch and just talk. It sends when you speak and goes quiet when you stop. When Chris talks back, you hear them. The red light stays on the whole time, so you know it can hear you.</p>
+        <p>Slide the switch and just talk. It sends when you speak and goes quiet when you stop. When Chris talks back, you hear them. The red light stays on the whole time, so you know it can hear you.</p>
       </div>
     </div>
-    <div style="overflow-x:auto">
+    <div class="scroll">
     <table class="cmp">
       <thead><tr><th></th><th>PUSH</th><th>OPEN</th></tr></thead>
       <tbody>
         <tr><td>Microphone on</td><td>Only while the button is held</td><td>Whenever the switch is on OPEN. Red light on.</td></tr>
         <tr><td>Who can talk</td><td>One at a time</td><td>One at a time, swapping by itself</td></tr>
-        <tr><td>Channels</td><td>Any channel on the knob</td><td>Whichever channel the knob is on, group channels included. The knob is locked while it's open.</td></tr>
+        <tr><td>Who hears</td><td>Whoever the knob is on</td><td>Whoever the knob is on, groups included. The knobs are locked while it's open.</td></tr>
         <tr><td>Off the stand</td><td>4 to 9 days</td><td>About a day if mostly quiet, about 4 hours of solid talking</td></tr>
         <tr><td>Data</td><td>Only when someone talks</td><td>Only when someone talks. Silence sends nothing.</td></tr>
       </tbody>
     </table>
     </div>
+    <p class="small muted aside">Battery figures are estimates for the simpler build, with a 1000 mAh battery.</p>
 
-    <h3 style="margin-top:46px">The thinking behind the switch</h3>
-    <div class="notes">
-      <div><h3>A switch, not a setting</h3><p>You can see and feel which way it's set, even in the dark. Nobody can change it from somewhere else. That's the main reason for a physical switch.</p></div>
-      <div><h3>Taking turns, not a phone call</h3><p>While Chris is talking, Grandad's microphone is muted so the speaker doesn't echo back down the line. A true two-way call needs echo cancelling, which takes about a third of the chip and probably a different sound board. That can come later.</p></div>
-      <div><h3>The red light rule</h3><p>If the red light is on, the microphone can hear. In OPEN it stays on, the screen says OPEN, and Chris's radio shows that Grandad's channel is open.</p></div>
-      <div><h3>It says what it's doing</h3><p>Flip to OPEN and it says who can hear, such as "Channel open to family. Everyone on this channel can hear you". Flip back and it says "Channel closed".</p></div>
-      <div><h3>Groups too, with care</h3><p>OPEN works on a group channel, so the whole family can chat hands-free. Everyone on that channel hears what the microphone picks up, so the radio names the channel out loud first, and every other radio on it shows that Grandad's is open. The knob locks while it's open, so an open microphone can't be turned onto another channel by accident.</p></div>
-      <div><h3>It pauses itself</h3><p>After ten minutes of nobody talking, it pauses and says so. Press the orange button to carry on. Pressing it any time in OPEN pauses or resumes.</p></div>
-      <div><h3>Best on the stand</h3><p>In OPEN the radio has to stay fully awake, so the battery goes in hours rather than days. It's meant for when it's sitting on its stand.</p></div>
-      <div><h3>Grandad decides</h3><p>It's his radio and his switch. We explain it, ask him, and ask again later. The printed card says what the red light means.</p></div>
+    <details class="more-notes">
+      <summary>The thinking behind the switch</summary>
+      <div class="notes">
+        <div><h4>A switch, not a setting</h4><p>You can see and feel which way it's set, even in the dark. Nobody can change it from somewhere else. That's the main reason for a physical switch.</p></div>
+        <div><h4>Taking turns, not a phone call</h4><p>While Chris is talking, Grandad's microphone is muted so the speaker doesn't echo back down the line. A true two-way call needs echo cancelling, which takes about a third of the chip and probably a different sound board. That can come later.</p></div>
+        <div><h4>The red light rule</h4><p>If the red light is on, the microphone can hear. In OPEN it stays on, the screen says OPEN, and Chris's radio shows that Grandad's channel is open.</p></div>
+        <div><h4>It says what it's doing</h4><p>Slide to OPEN and it says who can hear, such as "Channel open to family. Everyone on this channel can hear you". Slide back and it says "Channel closed".</p></div>
+        <div><h4>Groups too, with care</h4><p>OPEN works on a group channel, so the whole family can chat hands-free. Everyone on that channel hears what the microphone picks up, so the radio names the channel out loud first, and every other radio on it shows that Grandad's is open. The knobs lock while it's open, so an open microphone can't be turned onto another channel by accident.</p></div>
+        <div><h4>It pauses itself</h4><p>After ten minutes of nobody talking, it pauses and says so. Press the orange button to carry on. Pressing it any time in OPEN pauses or resumes.</p></div>
+        <div><h4>Best on the stand</h4><p>In OPEN the radio has to stay fully awake, so the battery goes in hours rather than days. It's meant for when it's sitting on its stand.</p></div>
+        <div><h4>Grandad decides</h4><p>It's his radio and his switch. We explain it, ask him, and ask again later. The printed card says what the red light means.</p></div>
+      </div>
+      <div class="proposal">
+        <b>Still to work out.</b> Whether ten minutes is the right pause. Whether voice-activated sending clips the first word (the radio records from the moment it hears sound, which should help). Which switch feels best under an older thumb. None of this is tested yet: the R1 stage will try OPEN as a hidden setting first, before we cut a slot for a real switch.
+      </div>
+    </details>
+  </div>
+</section>
+
+<!-- More than a radio -->
+<section id="more">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="tag">Ideas we're exploring</span>
+      <h2>More than a radio</h2>
+      <p>A speaker, a screen, knobs and Wi-Fi are most of what a bedside radio, a chess clock and a games board need too. So the knob on the left picks what the radio is doing. Talk is the plan. The rest are ideas, and none of them is tested.</p>
+    </div>
+    <div class="modes four">
+      <div class="mode plan">
+        <span class="tag">The plan</span>
+        <div class="big">TALK</div>
+        <p>Chris, Family, Nurse. The walkie-talkie, and where the radio always goes back to.</p>
+      </div>
+      <div class="mode">
+        <span class="tag">Idea</span>
+        <div class="big">FM</div>
+        <p>Ordinary radio, on three stations the family sets up. It needs no internet.</p>
+      </div>
+      <div class="mode">
+        <span class="tag">Idea</span>
+        <div class="big">NET</div>
+        <p>Internet radio, for stations FM can't reach. A station from home, for someone who moved countries.</p>
+      </div>
+      <div class="mode">
+        <span class="tag">Idea</span>
+        <div class="big">PLAY</div>
+        <p>Pong and pinball with a knob in each hand, and a chess clock you tap with your palm.</p>
+      </div>
+    </div>
+    <div class="shapes">
+      <figure class="shape">
+        <div class="pic"><img src="images/platform-chess-clock_sml.jpg" alt="The radio standing beside a chessboard in a rest home lounge. An older man presses the orange button with the flat of his hand. The screen shows two clock times, 14:52 and 09:07." loading="lazy" width="805" height="1006"></div>
+        <figcaption><h3>A chess clock</h3><p>It stands beside the board. Each player taps the orange button to end their turn. Holding it still talks.</p></figcaption>
+      </figure>
+      <figure class="shape">
+        <div class="pic"><img src="images/platform-pong_sml.jpg" alt="Two older hands hold the radio by its side knobs on a kitchen table. The screen shows a game of Pong, three points to two." loading="lazy" width="805" height="1006"></div>
+        <figcaption><h3>A games board</h3><p>A knob in each hand. Lay it on its back with the screen facing up and two people can play, one knob each.</p></figcaption>
+      </figure>
+      <figure class="shape">
+        <div class="pic"><img src="images/platform-fm_sml.jpg" alt="The radio on a garden bench. A hand turns the right-hand knob. The screen has FM highlighted and reads Channel 1, 98.2 MHz." loading="lazy" width="805" height="999"></div>
+        <figcaption><h3>A radio in the garden</h3><p>The right-hand knob picks the station, the same way it picks a person.</p></figcaption>
+      </figure>
+    </div>
+    <div class="notes rules">
+      <div><h4>Holding the orange button always talks</h4><p>Whatever the radio is doing. The station fades or the game waits, and it talks to whoever he last talked to.</p></div>
+      <div><h4>The family comes first</h4><p>A message from the family stops the game or the station, plays, then hands back.</p></div>
+      <div><h4>The family chooses</h4><p>Each of these is switched on from the family's phones. A radio can be Talk only, and then the left-hand knob does nothing at all.</p></div>
     </div>
     <div class="proposal">
-      <b>Still to work out.</b> Whether ten minutes is the right pause. Whether voice-activated sending clips the first word (the radio records from the moment it hears sound, which should help). Which toggle switch feels best under an older thumb. None of this is tested yet: the R1 stage will try OPEN as a hidden setting first, before we drill a hole for a real switch.
+      <b>A platform, in time.</b> Once the radio can do a few things, other people could make more for it: a quiz, a bingo caller, a talking clock. Every app would be checked and signed by us, chosen by the family from their phones, and never allowed to use the microphone. Grandad never sees a store. <b>Still to work out:</b> a screen that reads like paper by day, can be seen at night and is quick enough for Pong; whether an FM aerial works inside the strap; and what it all costs. The <a href="https://github.com/cgbarlow/walkie-talkie/blob/main/Grandad's%20Radio%20as%20a%20Platform.md">platform brief</a> has the detail.
     </div>
   </div>
 </section>
 
-<!-- Shapes -->
+<!-- Other shapes -->
 <section class="alt" id="shapes">
   <div class="wrap">
     <div class="section-head">
-      <span class="tag">Three shapes</span>
-      <h2>Pick a shape</h2>
-      <p>The same parts fit three different cases. All of these are generated concept pictures, not photos of real units.</p>
+      <h2>Other shapes we looked at</h2>
+      <p>The same insides fit other cases. These came first, and any of them could still be built. They are generated concept pictures too.</p>
     </div>
-    <div class="shapes">
+    <div class="shapes small">
       <figure class="shape">
-        <div class="pic"><img src="images/bedside-radio_sml.jpg" alt="Sage green tabletop radio with orange button on top, grille, screen, knob and toggle switch" loading="lazy" width="805" height="1000"><span class="tag pick" style="background:var(--accent);color:var(--accent-ink);border:0">Our pick for Grandad</span></div>
-        <figcaption><h3>Bedside radio</h3><p>Sits on its stand by the chair, always charged. The button is on top, right where a hand lands.</p><div class="sw">Switch: on the front, below the grille.</div></figcaption>
+        <div class="pic"><img src="images/bedside-radio_sml.jpg" alt="Sage green wedge-shaped tabletop radio with an orange button on top, a grille, a small screen, one knob and a toggle switch" loading="lazy" width="805" height="1000"></div>
+        <figcaption><h3>The first bedside radio</h3><p>Where we started: one knob, a small screen and a toggle switch on a sloped front.</p></figcaption>
       </figure>
       <figure class="shape">
         <div class="pic"><img src="images/classic-handheld_sml.jpg" alt="Cream handheld walkie-talkie with grille, screen, big orange button, a knob on top and a toggle switch on the side" loading="lazy" width="805" height="1000"></div>
-        <figcaption><h3>Classic handheld</h3><p>The walkie-talkie shape everyone already knows. Good for carrying round the house or garden.</p><div class="sw">Switch: on the side, under the thumb.</div></figcaption>
+        <figcaption><h3>Classic handheld</h3><p>The walkie-talkie shape everyone already knows. Good for carrying round the house.</p></figcaption>
       </figure>
       <figure class="shape">
         <div class="pic flips"><div class="flipper" id="pebble"><img src="images/pocket-pebble-front_sml.jpg" alt="Navy pebble-shaped radio in a hand, front view, with a slide switch on the edge" loading="lazy" width="805" height="1000"><img class="back" src="images/pocket-pebble-back_sml.jpg" alt="Back of the pebble radio, showing the belt clip and lanyard loop" loading="lazy" width="805" height="1000" aria-hidden="true"></div><button class="flip" type="button" id="flip">Show back</button></div>
-        <figcaption><h3>Pocket pebble</h3><p>Small enough for a pocket. A sprung clip on the back grips a belt or a shirt pocket, and there's a loop for a lanyard. The knob is a ring around the button.</p><div class="sw">Switch: a small slider on the edge. Harder to see, so OPEN suits it least.</div></figcaption>
+        <figcaption><h3>Pocket pebble</h3><p>Small enough for a pocket, with a clip on the back and a loop for a lanyard. The knob is a ring around the button.</p></figcaption>
       </figure>
     </div>
   </div>
@@ -472,9 +614,10 @@ footer ul { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 8
 <section id="inside">
   <div class="wrap">
     <div class="section-head">
-      <span class="tag">Parts</span>
+      <span class="tag">The simpler build</span>
       <h2>What's inside</h2>
       <p>One small ESP32 chip does the work: Wi-Fi, squeezing the voice down, and locking it so only our radios can hear it. Everything else is a handful of cheap parts. Tap a part to find it in the picture.</p>
+      <p>These are the parts and prices for the first, simpler radio: one knob and Talk only. The design at the top of the page adds two knobs, an FM tuner, a tilt sensor and a bigger screen, and isn't priced yet.</p>
     </div>
     <div class="inside">
       <div>
@@ -482,14 +625,22 @@ footer ul { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 8
           <img src="images/parts-layout_sml.jpg" alt="Thirteen numbered parts laid out on a grey mat, ending with a chrome toggle switch" loading="lazy" width="1000" height="558">
           <div class="ring" id="ring"></div>
         </div>
-        <p class="fig"><b>Fig. 2</b> The parts for one radio. A generated reference picture, not our actual kit. The orange button appears twice, side on and from above.</p>
+        <p class="fig"><b>Fig. 3</b> The parts for one radio. A generated reference picture, not our actual kit. The orange button appears twice, side on and from above.</p>
       </div>
       <div>
         <table class="bom"><tbody id="bom"></tbody></table>
         <div class="total"><span>Per radio</span><span>about NZ$35 to 50</span></div>
-        <p class="small muted" style="margin:10px 10px 0">Or about NZ$25 to 30 without a battery, if it never leaves its stand. Prices are November 2026 search prices including GST, not quotes. Shipping is extra.</p>
+        <p class="small muted fineprint">Or about NZ$25 to 30 without a battery, if it never leaves its stand. Prices are November 2026 search prices including GST, not quotes. Shipping is extra.</p>
       </div>
     </div>
+    <h3 class="sub">How it adds up</h3>
+    <div class="stats">
+      <div class="stat"><div class="n">0.1 to 0.2 s</div><div class="k">Delay on Wi-Fi</div><p>Mouth to ear, through the service and back. A little more on mobile data. Emergency-service radio networks measure about 0.4 s.</p></div>
+      <div class="stat"><div class="n">4 to 9 days</div><div class="k">Battery in PUSH</div><p>With 20 minutes of talk a day on a 1000 mAh battery. The R1 manages about a day and a half.</p></div>
+      <div class="stat"><div class="n">NZ$0</div><div class="k">Subscription, ever</div><p>Running a channel costs a dollar or two a year. Each set comes with its channels, paid for life.</p></div>
+      <div class="stat"><div class="n">200 MB</div><div class="k">Data, per month</div><p>For 20 minutes a day. Only matters on a SIM card; at home it uses the Wi-Fi.</p></div>
+    </div>
+    <p class="small muted aside">Estimates from our research. Real figures get measured on the bench.</p>
   </div>
 </section>
 
@@ -497,36 +648,17 @@ footer ul { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 8
 <section class="alt" id="stages">
   <div class="wrap">
     <div class="section-head">
-      <span class="tag">How we get there</span>
-      <h2>Two stages</h2>
-      <p>First we prove the idea on hardware we already own. Then we build the radio above.</p>
+      <h2>How we get there</h2>
+      <p>First we prove the idea on hardware we already own. Then we build our own radio. The extras come after that, if they earn their place.</p>
     </div>
     <div class="stages" id="stageList"></div>
   </div>
 </section>
 
-<!-- Numbers -->
-<section id="numbers">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="tag">The numbers</span>
-      <h2>How it adds up</h2>
-    </div>
-    <div class="stats">
-      <div class="stat"><div class="n">0.1 to 0.2 s</div><div class="k">Delay on Wi-Fi</div><p>Mouth to ear, through the service and back. A little more on mobile data. Emergency-service radio networks measure about 0.4 s.</p></div>
-      <div class="stat"><div class="n">4 to 9 days</div><div class="k">Battery in PUSH</div><p>With 20 minutes of talk a day on a 1000 mAh battery. The R1 manages about a day and a half.</p></div>
-      <div class="stat"><div class="n">NZ$0</div><div class="k">Subscription, ever</div><p>Running a channel costs a dollar or two a year. Each set comes with its channels, paid for life.</p></div>
-      <div class="stat"><div class="n">200 MB</div><div class="k">Data, per month</div><p>For 20 minutes a day. Only matters on a SIM card; at home it uses the Wi-Fi.</p></div>
-    </div>
-    <p class="small muted" style="margin-top:22px">Estimates from our research. Real figures get measured on the bench.</p>
-  </div>
-</section>
-
 <!-- Grandad's card -->
-<section class="alt" id="card-section">
+<section id="card-section">
   <div class="wrap">
-    <div class="section-head" style="text-align:center;margin-left:auto;margin-right:auto">
-      <span class="tag">For Grandad</span>
+    <div class="section-head center">
       <h2>The card that comes with it</h2>
       <p>Printed and kept beside the radio.</p>
     </div>
@@ -535,26 +667,30 @@ footer ul { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 8
       <ol>
         <li><b>To talk:</b> hold the <span class="orange">orange button</span>, wait for the chirp, then talk. Let go when you've finished.</li>
         <li><b>To listen:</b> you don't need to do anything. It clicks, then you hear them.</li>
-        <li><b>To choose who:</b> turn the knob. It says the name out loud.</li>
-        <li><b>To talk without holding the button:</b> flip the switch to OPEN. The <span class="red">red light</span> means it can hear you. Flip it back to PUSH to stop.</li>
-        <li><b>To hear the last message again:</b> press the knob.</li>
+        <li><b>To choose who:</b> turn the knob on the right. It says the name out loud.</li>
+        <li><b>To hear the last message again:</b> press the knob on the right.</li>
+        <li><b>Too loud or too quiet:</b> turn the small knob on top.</li>
+        <li><b>To talk without holding the button:</b> slide the switch to OPEN. The <span class="red">red light</span> means it can hear you. Slide it back to PUSH to stop.</li>
+        <li><b>Lost?</b> Hold the knob on the left until it says "Talk".</li>
       </ol>
       <p>Keep it on its stand so it stays charged.</p>
       <p class="alarm">This is not an emergency alarm. In an emergency, call 111.</p>
     </div>
-    <div class="printrow"><button class="btn" type="button" onclick="window.print()">Print the card</button></div>
+    <div class="printrow"><button class="btn" type="button" id="printBtn">Print the card</button></div>
   </div>
 </section>
 
 <!-- Questions -->
-<section id="questions">
+<section class="alt" id="questions">
   <div class="wrap">
-    <div class="section-head"><span class="tag">Questions</span><h2>Questions</h2></div>
+    <div class="section-head"><h2>Questions</h2></div>
     <details><summary>Is it an emergency alarm?</summary><p>No. In an emergency, call 111. The radio has no Help or SOS button. If Grandad lives alone or is frail, it sits alongside a monitored medical alarm, not instead of one.</p></details>
+    <details><summary>Is "Nurse" a call bell?</summary><p>No. In a rest home, Nurse could be a channel to the nurses' station, beside Chris and Family. It's an ordinary channel for talking, so someone has to be listening at the other end. It doesn't replace the home's call bell.</p></details>
     <details><summary>Can anyone listen in?</summary><p>No. Each message is locked on the radio and only unlocked on the other radios. The service in the middle passes messages on but can't open them. The microphone only hears while the button is held, or while the switch is on OPEN with the red light on. There's no way to switch it on from somewhere else.</p></details>
     <details><summary>Why not just buy a pair of walkie-talkies?</summary><p>If you live within a kilometre or two, a pair of licence-free UHF radios for about $80 is simpler. They fall down on distance, hills, privacy (anyone can tune in), replaying missed messages and telling family when the battery is low.</p></details>
     <details><summary>What's the Rabbit R1 got to do with it?</summary><p>The R1 is a small gadget that happens to have a button, a wheel, a speaker and Wi-Fi. We already own two, so they're the quickest way to test the idea with Grandad. Rabbit has stopped making them and the battery is short, so it isn't the final radio.</p></details>
-    <details><summary>Can more of the family join?</summary><p>Yes. Each channel can hold several radios, and the knob picks the channel. OPEN works on group channels too: everyone on the channel can then hear, and still only one person talks at a time.</p></details>
+    <details><summary>Can more of the family join?</summary><p>Yes. Each channel can hold several radios, and the right-hand knob picks the channel. OPEN works on group channels too: everyone on the channel can then hear, and still only one person talks at a time.</p></details>
+    <details><summary>Will it really play the radio and games?</summary><p>Maybe. Those are ideas we're exploring, not promises. They only go ahead if Grandad wants more than Talk, and the family can leave them switched off. Whatever the radio is doing, holding the orange button still talks.</p></details>
   </div>
 </section>
 
@@ -563,9 +699,11 @@ footer ul { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 8
 <footer>
   <div class="wrap">
     <ul>
+      <li><a href="https://github.com/cgbarlow/walkie-talkie/blob/main/Grandad's%20Radio%20as%20a%20Platform.md">The radio as a platform</a></li>
       <li><a href="https://github.com/cgbarlow/walkie-talkie/blob/main/Walkie-Talkie%20Beyond%20the%20R1%20Minimum%20Hardware.md">ESP32 hardware research</a></li>
       <li><a href="https://github.com/cgbarlow/walkie-talkie/blob/main/Rabbit%20R1%20Walkie-Talkie%20Research%20and%20Design.md">R1 research and design</a></li>
       <li><a href="https://github.com/cgbarlow/walkie-talkie/blob/main/Walkie-Talkie%20Service%20Design.md">Service design</a></li>
+      <li><a href="https://github.com/cgbarlow/walkie-talkie/blob/main/reports/NZ%20addressable%20market%20and%20opportunities.md">NZ market report</a></li>
       <li><a href="https://github.com/cgbarlow/walkie-talkie">Source on GitHub</a></li>
     </ul>
     <p>A family project in New Zealand. Free to build for your own family.</p>
@@ -588,7 +726,7 @@ const PLAN = [
       ["A week with Grandad", "On a stand by his chair. Tune the volume and treble. Try OPEN mode and ask him what he thinks."]
     ]},
   { id: "esp", title: "Build the radio on an ESP32", when: "Stage 2 · next", done: 0,
-    text: "Our own radio from cheap parts, using the same service and sounds as the R1s, so both can share a channel. No reflashing, and days on a battery.",
+    text: "Our own radio from cheap parts, using the same service and sounds as the R1s, so both can share a channel. No reflashing, and days on a battery. The first one is the simpler build: one knob, and Talk only.",
     steps: [
       ["Breadboard night", "Wire up the chip, microphone, amplifier, speaker, screen, knob, button and switch. Check it's loud enough."],
       ["Firmware", "Adapt open-source ESP32 voice firmware to our service. Add PUSH and OPEN modes, and updates that install themselves overnight."],
@@ -596,6 +734,14 @@ const PLAN = [
       ["Care tools", "Channels, battery and offline alerts, and ringing a lost radio, from the family's phones."],
       ["Power", "Dozing off the stand, fully awake on it. Measure real battery life in both modes."],
       ["Case and trial", "Print the case, fit the stand, then a week with Grandad."]
+    ]},
+  { id: "more", title: "More than a radio", when: "Later · an idea", done: 0,
+    text: "The same radio as a bedside radio, a chess clock and a games board, and in time a home for approved apps. Only worth doing if Grandad wants more than Talk.",
+    steps: [
+      ["Try it on this page", "The three knobs, the modes, Pong and the chess clock are in the simulator above. Sit Grandad in front of it and watch."],
+      ["Printed knobs", "Print knobs at three sizes and let him choose."],
+      ["Pick the screen", "Paper-like by day, readable at night and quick enough for a game. Not chosen yet."],
+      ["Chess clock in a rest home", "One radio in a lounge, as a chess clock and an FM radio."]
     ]}
 ];
 
@@ -619,6 +765,7 @@ document.querySelectorAll("[data-set-size]").forEach(b => b.addEventListener("cl
 $("themeBtn").addEventListener("click", () => { const t = isDark() ? "light" : "dark"; root.dataset.theme = t; save("wt-theme", t); paintControls(); });
 matchMedia("(prefers-color-scheme: dark)").addEventListener("change", paintControls);
 paintControls();
+$("printBtn").addEventListener("click", () => window.print());
 
 /* ---------- Sounds, made in the browser ---------- */
 let ctx;
@@ -666,17 +813,26 @@ function speak(text, onend) {
 
 /* ---------- The radio ---------- */
 const grille = $("grille");
-for (let r = 0; r <= 55; r += 11) {
-  const n = r === 0 ? 1 : Math.round(2 * Math.PI * r / 11);
-  for (let i = 0; i < n; i++) {
-    const a = i / n * Math.PI * 2;
-    grille.insertAdjacentHTML("beforeend", `<circle cx="${(110 + r * Math.cos(a)).toFixed(1)}" cy="${(150 + r * Math.sin(a)).toFixed(1)}" r="3.4"/>`);
-  }
-}
+for (let y = 191; y <= 236; y += 9) for (let x = 97; x <= 304; x += 9) grille.insertAdjacentHTML("beforeend", `<circle cx="${x}" cy="${y}" r="2.5"/>`);
 
-const CHANNELS = ["CHRIS", "FAMILY", "TEST"];
-const SPOKEN = ["Channel one, Chris.", "Channel two, family.", "Channel three, test."];
-const S = { mode: "push", ch: 0, state: "ready", online: true, incoming: false, low: false, paused: false, talkStart: 0, timer: null };
+const MODES = ["TALK", "FM", "NET", "PLAY"];
+const MODE_SAY = ["Talk.", "F M radio.", "Internet radio.", "Play."];
+const MODE_HINT = [
+  "Talk. Turn the right-hand knob to pick who.",
+  "FM radio, an idea we're exploring. Hold the orange button and it still talks.",
+  "Internet radio, an idea we're exploring. Hold the orange button and it still talks.",
+  "Games, an idea we're exploring. Pick one with the right-hand knob, then press it."
+];
+const LISTS = [
+  ["CHRIS", "FAMILY", "NURSE"],
+  ["CHANNEL 1", "CHANNEL 2", "CHANNEL 3"],
+  ["CHANNEL 1", "CHANNEL 2", "CHANNEL 3"],
+  ["PONG", "CHESS CLOCK", "PINBALL"]
+];
+const FREQ = [98.2, 101.4, 89.0];
+const MESSAGE = "Hi Grandad, it's Chris. I'll pop round at four.";
+/* sw: the PUSH / OPEN switch. view: which mode the left knob is on. sel: the right knob's place in each mode. */
+const S = { sw: "push", view: 0, sel: [0, 0, 0, 0], game: null, gpause: false, state: "ready", online: true, incoming: false, low: false, paused: false, talkStart: 0, timer: null };
 const LOOK = {
   ready:   ["READY", "#3e4a3c"],
   talk:    ["TALK", "#ff3b2a"],
@@ -687,62 +843,135 @@ const LOOK = {
   open:    ["OPEN", "#ff3b2a"],
   paused:  ["PAUSED", "#ffb21a"]
 };
-let pressed = false;
+let pressed = false, tapT = 0;
 
+const who = () => LISTS[0][S.sel[0]];
+const cap = t => t.charAt(0) + t.slice(1).toLowerCase();
+const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
 function idle() {
   if (!S.online) return "offline";
   if (S.incoming) return "listen";
-  if (S.mode === "open") return S.paused ? "paused" : "open";
+  if (S.sw === "open") return S.paused ? "paused" : "open";
   if (S.low) return "charge";
   return "ready";
 }
 function secs() { return Math.floor((Date.now() - S.talkStart) / 1000) + "s"; }
 function hint(t) { $("hint").textContent = t; }
+function locked() { snd.thunk(); hint("The knobs are locked while the channel is open. Slide the switch back to PUSH first."); }
 
-function render() {
-  const st = S.state, [word, led] = LOOK[st];
-  $("oWord").textContent = word;
-  $("oWord").setAttribute("font-size", word.length > 7 ? 15 : 20);
-  $("oCh").textContent = st === "talk" ? CHANNELS[S.ch] + "  " + secs() : st === "open" ? CHANNELS[S.ch] + " · LIVE" : CHANNELS[S.ch];
-  $("led").setAttribute("fill", led);
-  $("led").classList.toggle("blink", st === "charge" || st === "offline");
-  $("led").classList.toggle("pulse", st === "open");
-  $("btn").setAttribute("y", pressed ? 32 : 24);
-  $("btn").setAttribute("height", pressed ? 26 : 34);
-  $("pointer").setAttribute("transform", `rotate(${-60 + S.ch * 60} 252 236)`);
-  $("lever").setAttribute("transform", `rotate(${S.mode === "open" ? 38 : -38} 110 266)`);
-  $("needle").style.left = ((S.ch + 0.5) / CHANNELS.length * 100) + "%";
-  $("toggle").setAttribute("aria-checked", String(S.mode === "open"));
-  $("swText").textContent = S.mode === "open" ? "OPEN: talk hands-free, red light on" : "PUSH: hold the button to talk";
-  $("ptt").textContent = S.mode === "open" ? (S.paused ? "Press to carry on" : "Press to pause") : "Hold to talk";
-  $("evQuiet").disabled = S.mode !== "open" || S.paused;
+/* ---------- The screen: tabs across the top, the choices below ---------- */
+const X = 92, Y = 94, W = 216, H = 78, INK = "#16130f", PAPER = "#ece6d2";
+const T = (x, y, s, size, o = {}) => `<text x="${x}" y="${y}" font-size="${size}" text-anchor="${o.a || "start"}" fill="${o.f || INK}">${s}</text>`;
+function tabs() {
+  let h = "";
+  MODES.forEach((m, i) => {
+    const x = X + i * 54, on = i === S.view;
+    if (on) h += `<rect x="${x}" y="${Y}" width="54" height="17" fill="${INK}"/>`;
+    else if (i && i - 1 !== S.view) h += `<line x1="${x}" y1="${Y + 4}" x2="${x}" y2="${Y + 13}" stroke="${INK}"/>`;
+    h += T(x + 27, Y + 12.5, m, 10, { a: "middle", f: on ? PAPER : INK });
+  });
+  return h + `<line x1="${X}" y1="${Y + 17}" x2="${X + W}" y2="${Y + 17}" stroke="${INK}" stroke-width="1.5"/>`;
+}
+function list(items, sel) {
+  return items.map((t, i) => {
+    const y = Y + 19 + i * 19.5, on = i === sel;
+    return (on ? `<rect x="${X}" y="${y}" width="${W}" height="19" fill="${INK}"/>` : "") + T(X + 8, y + 14.5, t, 14, { f: on ? PAPER : INK });
+  }).join("");
+}
+function station(i, sub, scale) {
+  let h = T(X + 8, Y + 42, "CHANNEL " + (i + 1), 20) + T(X + 8, Y + 56, sub, 10.5);
+  if (scale) {
+    const x0 = X + 8, x1 = X + W - 8, y = Y + 71, m = x0 + (FREQ[i] - 88) / 20 * (x1 - x0);
+    h += `<line x1="${x0}" y1="${y}" x2="${x1}" y2="${y}" stroke="${INK}"/>`;
+    for (let x = x0; x <= x1; x += 10) h += `<line x1="${x}" y1="${y - 4}" x2="${x}" y2="${y}" stroke="${INK}"/>`;
+    h += `<path d="M${m - 4} ${y - 10}h8l-4 6z" fill="${INK}"/>`;
+  }
+  return h;
+}
+const P = { bx: 0, by: 0, vx: 0, vy: 0, l: 30, r: 30, sl: 0, sr: 0, dir: 0 };
+const C = { t: [300, 300], turn: -1, last: 0, iv: 0 };
+function pong() {
+  const mid = X + W / 2;
+  return `<line x1="${mid}" y1="${Y + 3}" x2="${mid}" y2="${Y + H - 3}" stroke="${INK}" stroke-width="1.5" stroke-dasharray="3 3"/>`
+    + T(mid - 12, Y + 17, P.sl, 15, { a: "end" }) + T(mid + 12, Y + 17, P.sr, 15)
+    + `<rect x="${X + 6}" y="${(Y + P.l).toFixed(1)}" width="4" height="18" fill="${INK}"/>`
+    + `<rect x="${X + W - 10}" y="${(Y + P.r).toFixed(1)}" width="4" height="18" fill="${INK}"/>`
+    + `<rect x="${(X + P.bx).toFixed(1)}" y="${(Y + P.by).toFixed(1)}" width="5" height="5" fill="${INK}"/>`
+    + (S.gpause ? T(mid, Y + H - 8, "PAUSED", 9, { a: "middle" }) : "");
+}
+function mmss(t) { const s = Math.ceil(t); return String(Math.floor(s / 60)).padStart(2, "0") + ":" + String(s % 60).padStart(2, "0"); }
+function clock() {
+  const mid = X + W / 2, a = X + W / 4, b = X + 3 * W / 4, on = C.turn === 0 ? a : C.turn === 1 ? b : 0;
+  return `<line x1="${mid}" y1="${Y + 23}" x2="${mid}" y2="${Y + H - 5}" stroke="${INK}"/>`
+    + T(a, Y + 52, mmss(C.t[0]), 24, { a: "middle" }) + T(b, Y + 52, mmss(C.t[1]), 24, { a: "middle" })
+    + (S.gpause ? `<rect x="${mid - 22}" y="${Y + 62}" width="44" height="12" fill="${INK}"/>` + T(mid, Y + 71, "PAUSED", 9, { a: "middle", f: PAPER })
+      : on ? `<path d="M${on - 5} ${Y + 70}h10l-5 -8z" fill="${INK}"/>` : "");
+}
+function screen() {
+  const st = S.state, h = `<rect x="${X}" y="${Y}" width="${W}" height="${H}" rx="2" fill="${PAPER}"/>`;
+  if (st !== "ready") {
+    const mine = st === "offline" || st === "charge" ? LISTS[S.view][S.sel[S.view]] : st === "listen" || st === "wait" ? "CHRIS" : who();
+    const top = st === "talk" ? mine + "  " + secs() : st === "open" ? mine + " · LIVE" : mine;
+    const word = LOOK[st][0];
+    return h + tabs() + T(X + 8, Y + 35, top, 11) + T(X + 8, Y + 66, word, word.length > 7 ? 21 : 27);
+  }
+  if (S.game === "pong") return h + pong();
+  if (S.game === "clock") return h + tabs() + clock();
+  if (S.view === 1) return h + tabs() + station(S.sel[1], FREQ[S.sel[1]].toFixed(1) + " MHz", true);
+  if (S.view === 2) return h + tabs() + station(S.sel[2], "INTERNET RADIO", false);
+  return h + tabs() + list(LISTS[S.view], S.sel[S.view]);
 }
 
+function render() {
+  const st = S.state;
+  $("scr").innerHTML = screen();
+  $("led").setAttribute("fill", LOOK[st][1]);
+  $("led").classList.toggle("blink", st === "charge" || st === "offline");
+  $("led").classList.toggle("pulse", st === "open");
+  $("btn").setAttribute("y", pressed ? 48 : 40);
+  $("btn").setAttribute("height", pressed ? 18 : 26);
+  $("thumb").setAttribute("x", S.sw === "open" ? 104 : 80);
+  $("needle").style.left = ((S.view + 0.5) / MODES.length * 100) + "%";
+  $("toggle").setAttribute("aria-checked", String(S.sw === "open"));
+  $("swText").textContent = S.sw === "open" ? "OPEN: talk hands-free, red light on" : "PUSH: hold the button to talk";
+  $("ptt").textContent = S.sw === "open" ? (S.paused ? "Press to carry on" : "Press to pause") : S.game === "clock" ? "Tap to end your turn · hold to talk" : "Hold to talk";
+  $("evQuiet").disabled = S.sw !== "open" || S.paused;
+}
+
+/* ---------- The orange button ---------- */
+function talk() {
+  S.state = "talk"; S.talkStart = Date.now(); snd.chirp();
+  hint(S.game ? "Holding the orange button talks, whatever it's doing. The game waits."
+    : S.view ? "Holding the orange button talks, whatever it's doing. The station fades while you talk to " + cap(who()) + "."
+    : "Talking. The microphone only hears you while you hold the button.");
+  S.timer = setInterval(() => { if (Date.now() - S.talkStart > 60000) up(); else render(); }, 250);
+  render();
+}
 function down() {
   if (pressed) return;
   pressed = true; $("ptt").classList.add("down");
   if (!S.online) { S.state = "offline"; snd.buzz(); hint("No connection, so it buzzes twice and nothing is sent. Family would get an alert."); render(); return; }
   if (S.incoming) { S.state = "wait"; snd.busy(); hint("Chris is talking. Busy tone, and nothing is sent until they've finished."); render(); return; }
-  if (S.mode === "open") {
+  if (S.sw === "open") {
     S.paused = !S.paused; snd.thunk();
     speak(S.paused ? "Paused." : "Carrying on.");
     hint(S.paused ? "Paused. The microphone is off until you press again." : "Open again. Red light on, talk any time.");
     S.state = idle(); render(); return;
   }
-  S.state = "talk"; S.talkStart = Date.now(); snd.chirp();
-  hint("Talking. The microphone only hears you while you hold the button.");
-  S.timer = setInterval(() => { if (Date.now() - S.talkStart > 60000) up(); else render(); }, 250);
-  render();
+  /* On the chess clock a quick tap ends a turn. Nothing is sent until the button has been held past the chirp. */
+  if (S.game === "clock" && C.turn !== -2) { tapT = setTimeout(() => { tapT = 0; talk(); }, 400); render(); return; }
+  talk();
 }
 function up() {
   if (!pressed) return;
   pressed = false; $("ptt").classList.remove("down");
   clearInterval(S.timer);
-  if (S.state === "talk") { snd.roger(); hint("Roger beep. Chris heard you."); }
+  if (tapT) { clearTimeout(tapT); tapT = 0; clockTap(); }
+  else if (S.state === "talk") { snd.roger(); hint("Roger beep. Sent to " + cap(who()) + "."); }
   S.state = idle(); render();
 }
 function bindHold(el) {
-  el.addEventListener("pointerdown", e => { e.preventDefault(); el.setPointerCapture && el.setPointerCapture(e.pointerId); down(); });
+  el.addEventListener("pointerdown", e => { e.preventDefault(); try { el.setPointerCapture(e.pointerId); } catch (err) {} down(); });
   el.addEventListener("pointerup", up);
   el.addEventListener("pointercancel", up);
   el.addEventListener("contextmenu", e => e.preventDefault());
@@ -751,37 +980,78 @@ bindHold($("ptt")); bindHold($("btn"));
 $("ptt").addEventListener("keydown", e => { if ((e.code === "Space" || e.code === "Enter") && !e.repeat) { e.preventDefault(); down(); } });
 $("ptt").addEventListener("keyup", e => { if (e.code === "Space" || e.code === "Enter") up(); });
 
-function inTry() { const r = $("try").getBoundingClientRect(); return r.top < innerHeight && r.bottom > 0; }
-window.addEventListener("keydown", e => {
-  const tag = e.target.tagName;
-  if (tag === "BUTTON" || tag === "A" || tag === "SUMMARY" || !inTry()) return;
-  if (e.code === "Space" && !e.repeat) { e.preventDefault(); down(); }
-  if (e.key === "ArrowRight") turn(1);
-  if (e.key === "ArrowLeft") turn(-1);
-});
-window.addEventListener("keyup", e => { if (e.code === "Space") up(); });
-
-function turn(dir) { tune(S.ch + dir); }
-function tune(n) {
+/* ---------- The knobs ---------- */
+function setMode(v) {
   if (pressed || S.incoming) return;
-  if (S.mode === "open") { snd.thunk(); hint("The knob is locked while the channel is open. Flip the switch back to PUSH first."); return; }
-  if (n < 0 || n >= CHANNELS.length) { snd.thunk(); hint("The knob stops at each end, so fully left is always Chris."); return; }
-  if (n === S.ch) return;
-  S.ch = n; snd.click(); speak(SPOKEN[n]); hint("Each click says the channel name out loud.");
+  if (S.sw === "open") { locked(); return; }
+  v = (v + MODES.length) % MODES.length;
+  if (v === S.view && !S.game) return;
+  stopGame(); S.view = v; snd.click(); speak(MODE_SAY[v]); hint(MODE_HINT[v]);
   S.state = idle(); render();
 }
-$("knob").addEventListener("click", () => tune((S.ch + 1) % CHANNELS.length));
-document.querySelectorAll("[data-ch]").forEach(b => b.addEventListener("click", () => tune(+b.dataset.ch)));
+function turnSelect(d) {
+  if (pressed || S.incoming || S.game === "pong") return;
+  if (S.sw === "open") { locked(); return; }
+  if (S.game === "clock") { snd.thunk(); hint("Press the right-hand knob to leave the clock."); return; }
+  const v = S.view, n = LISTS[v].length;
+  S.sel[v] = (S.sel[v] + d + n) % n; snd.click(); speak(LISTS[v][S.sel[v]].toLowerCase() + ".");
+  hint(["Each click says the name out loud. The knob turns freely, so the list goes round.",
+    "Three stations, set up by the family. On the real radio you'd be hearing it now.",
+    "Three internet stations, set up by the family.",
+    "Press the right-hand knob to play."][v]);
+  S.state = idle(); render();
+}
+function pressSelect() {
+  if (pressed || S.incoming) return;
+  if (S.sw === "open") { locked(); return; }
+  if (S.game) { stopGame(); snd.click(); hint("Back to the list."); render(); return; }
+  if (S.view === 3) { startGame(S.sel[3]); return; }
+  if (S.view === 0) { snd.kerchunk(); speak(MESSAGE); hint("Pressing the knob plays the last message again."); return; }
+  snd.thunk(); hint("Nothing to press here. Turning the knob picks the station.");
+}
+$("modeKnob").addEventListener("click", () => setMode(S.view + 1));
+$("selKnob").addEventListener("click", () => turnSelect(1));
+$("selPress").addEventListener("click", pressSelect);
+document.querySelectorAll("[data-mode]").forEach(b => b.addEventListener("click", () => setMode(+b.dataset.mode)));
+document.querySelectorAll("[data-sel]").forEach(b => {
+  const d = +b.dataset.sel;
+  b.addEventListener("click", () => turnSelect(d));
+  b.addEventListener("pointerdown", () => { if (S.game === "pong") P.dir = d; });
+  ["pointerup", "pointercancel", "pointerleave"].forEach(ev => b.addEventListener(ev, () => { P.dir = 0; }));
+});
+$("vol").addEventListener("click", () => {
+  if (!S.game) { hint("The small knob on top is the volume. Press it to pause a game."); return; }
+  S.gpause = !S.gpause; C.last = Date.now(); snd.thunk();
+  hint(S.gpause ? "Paused. Press the small knob again to carry on." : "Carrying on.");
+  render();
+});
 
+function inTry() { const r = $("try").getBoundingClientRect(); return r.top < innerHeight && r.bottom > 0; }
+window.addEventListener("keydown", e => {
+  if (!inTry()) return;
+  if (S.game === "pong" && (e.key === "ArrowUp" || e.key === "ArrowDown")) { e.preventDefault(); P.dir = e.key === "ArrowUp" ? -1 : 1; return; }
+  const tag = e.target.tagName;
+  if (tag === "BUTTON" || tag === "A" || tag === "SUMMARY" || e.repeat) return;
+  if (e.code === "Space") { e.preventDefault(); down(); }
+  if (e.key === "ArrowRight") turnSelect(1);
+  if (e.key === "ArrowLeft") turnSelect(-1);
+});
+window.addEventListener("keyup", e => {
+  if (e.code === "Space") up();
+  if (e.key === "ArrowUp" || e.key === "ArrowDown") P.dir = 0;
+});
+
+/* ---------- The switch ---------- */
 function flip() {
   if (pressed) up();
   snd.clack();
-  if (S.mode === "push") {
-    S.mode = "open"; S.paused = false;
-    speak(S.ch === 0 ? "Channel open to Chris. The red light means I can hear you." : "Channel open to " + CHANNELS[S.ch].toLowerCase() + ". Everyone on this channel can hear you.");
-    hint((S.ch === 0 ? "" : "This is a group channel, so everyone on it can hear. ") + "Hands-free now: it sends when you speak, and goes quiet when you stop. The knob is locked until you flip back.");
+  if (S.sw === "push") {
+    stopGame(); S.view = 0; S.sw = "open"; S.paused = false;
+    const group = S.sel[0] === 1;
+    speak(group ? "Channel open to family. Everyone on this channel can hear you." : "Channel open to " + who().toLowerCase() + ". The red light means I can hear you.");
+    hint((group ? "This is a group channel, so everyone on it can hear. " : "") + "Hands-free now: it sends when you speak, and goes quiet when you stop. The knobs are locked until you slide back.");
   } else {
-    S.mode = "push"; S.paused = false;
+    S.sw = "push"; S.paused = false;
     speak("Channel closed.");
     hint("Back to PUSH. The microphone is off until you hold the button.");
   }
@@ -790,21 +1060,25 @@ function flip() {
 $("sw").addEventListener("click", flip);
 $("toggle").addEventListener("click", flip);
 
+/* ---------- Things that happen ---------- */
 $("evCall").addEventListener("click", () => {
   if (S.incoming) return;
   if (!S.online) { hint("No Wi-Fi. The service keeps the message and plays it when the radio is back."); return; }
   if (pressed) up();
   S.incoming = true; S.state = "listen"; snd.kerchunk(); render();
-  hint(S.mode === "open" ? "Chris is talking, so Grandad's microphone mutes itself to stop any echo." : "A short click, then Chris's voice. Try pressing the button during the message.");
-  setTimeout(() => speak("Hi Grandad, it's Chris. I'll pop round at four.", () => {
-    S.incoming = false; snd.roger();
+  hint(S.sw === "open" ? "Chris is talking, so Grandad's microphone mutes itself to stop any echo."
+    : S.game ? "A message from the family comes first, so the game waits."
+    : S.view ? "A message from the family comes first, so the station fades."
+    : "A short click, then Chris's voice. Try pressing the button during the message.");
+  setTimeout(() => speak(MESSAGE, () => {
+    S.incoming = false; C.last = Date.now(); snd.roger();
     if (!pressed) S.state = idle();
-    hint(S.mode === "open" ? "Chris has stopped. The microphone is back on: your turn." : "Message over. Roger beep, and it's ready again.");
+    hint(S.sw === "open" ? "Chris has stopped. The microphone is back on: your turn." : "Message over. Roger beep, and it's ready again.");
     render();
   }), 250);
 });
 $("evQuiet").addEventListener("click", () => {
-  if (S.mode !== "open") return;
+  if (S.sw !== "open") return;
   S.paused = true; S.state = idle(); render();
   speak("Nobody's said anything for a while, so I've paused. Press the button to carry on.");
   hint("After ten quiet minutes it pauses itself. One press brings it back.");
@@ -829,6 +1103,58 @@ $("evBatt").addEventListener("click", e => {
   else hint("Charging. All good.");
   render();
 });
+
+/* ---------- Games: Pong and the chess clock ---------- */
+let raf = 0, lastT = 0;
+function serve(d) { P.bx = W / 2 - 2.5; P.by = H / 2 - 2.5; P.vx = 1.5 * d; P.vy = (Math.random() - 0.5) * 1.6; }
+function pongStep(dt) {
+  P.r = clamp(P.r + P.dir * 2.4 * dt, 2, H - 20);
+  P.l = clamp(P.l + clamp(P.by - 6.5 - P.l, -1.2 * dt, 1.2 * dt), 2, H - 20);
+  P.bx += P.vx * dt; P.by += P.vy * dt;
+  if (P.by < 2) { P.by = 2; P.vy = Math.abs(P.vy); }
+  if (P.by > H - 7) { P.by = H - 7; P.vy = -Math.abs(P.vy); }
+  const hit = pad => { P.vx = -P.vx * 1.03; P.vy = clamp(P.vy + (P.by + 2.5 - pad - 9) * 0.06, -2.2, 2.2); snd.click(); };
+  if (P.vx < 0 && P.bx <= 10 && P.bx > 3 && P.by + 5 > P.l && P.by < P.l + 18) hit(P.l);
+  if (P.vx > 0 && P.bx >= W - 15 && P.bx < W - 8 && P.by + 5 > P.r && P.by < P.r + 18) hit(P.r);
+  if (P.bx < -6) { P.sr++; snd.thunk(); serve(-1); }
+  if (P.bx > W + 1) { P.sl++; snd.thunk(); serve(1); }
+}
+function pongLoop(t) {
+  raf = 0;
+  if (S.game !== "pong") return;
+  const dt = clamp((t - lastT) / 16.7, 0, 2); lastT = t;
+  if (S.state === "ready" && !S.gpause) { pongStep(dt); $("scr").innerHTML = screen(); }
+  raf = requestAnimationFrame(pongLoop);
+}
+function clockTick() {
+  const now = Date.now();
+  if (S.game === "clock" && C.turn >= 0 && !S.gpause && S.state === "ready") {
+    C.t[C.turn] = Math.max(0, C.t[C.turn] - (now - C.last) / 1000);
+    if (C.t[C.turn] === 0) { C.turn = -2; snd.busy(); speak("Time."); hint("Time's up. Press the right-hand knob to go back."); }
+    render();
+  }
+  C.last = now;
+}
+function clockTap() {
+  if (C.turn === -2) return;
+  C.turn = C.turn === 0 ? 1 : 0; C.last = Date.now(); snd.clack();
+  hint("Tap. The other clock is running. Hold the button instead and it talks, as always.");
+}
+function startGame(i) {
+  if (i === 2) { snd.thunk(); hint("Pinball isn't on this page yet."); return; }
+  S.gpause = false; snd.click();
+  if (i === 0) {
+    S.game = "pong"; Object.assign(P, { l: 30, r: 30, sl: 0, sr: 0, dir: 0 }); serve(1);
+    lastT = performance.now(); if (!raf) raf = requestAnimationFrame(pongLoop);
+    hint("You're the right-hand paddle: hold the arrow buttons beside the knob, or the up and down keys. The radio plays the left. Press the small knob on top to pause.");
+  } else {
+    S.game = "clock"; C.t = [300, 300]; C.turn = -1; C.last = Date.now();
+    clearInterval(C.iv); C.iv = setInterval(clockTick, 250);
+    hint("Five minutes each. Tap the orange button to end your turn. Hold it and it talks, as always.");
+  }
+  render();
+}
+function stopGame() { S.game = null; S.gpause = false; P.dir = 0; clearInterval(C.iv); }
 render();
 
 /* ---------- Pebble front and back ---------- */
@@ -848,7 +1174,7 @@ const PARTS = [
   ["Light and on/off switch", "under 1", 16, 80.5], ["Wire", "on hand", 34, 80], ["Case", "about 5", 63, 81.5],
   ["PUSH / OPEN toggle switch", "2 to 5", 89, 82.5]
 ];
-$("bom").innerHTML = PARTS.map(([n, p, x], i) => `<tr data-i="${i}" class="${i === 12 ? "new" : ""}" tabindex="0"><td>${i + 1}</td><td>${n}</td><td>${p}</td></tr>`).join("");
+$("bom").innerHTML = PARTS.map(([n, p, x], i) => `<tr data-i="${i}" tabindex="0"><td>${i + 1}</td><td>${n}</td><td>${p}</td></tr>`).join("");
 const rows = [...$("bom").children], ring = $("ring");
 function mark(i) {
   rows.forEach((r, j) => r.classList.toggle("on", j === i));
@@ -872,7 +1198,7 @@ $("stageList").innerHTML = PLAN.map((s, k) => {
   const pct = Math.round(s.done / s.steps.length * 100);
   const status = s.done === 0 ? `Not started · ${s.steps.length} steps` : s.done === s.steps.length ? "Done" : `${s.done} of ${s.steps.length} steps done`;
   return `<div class="stage ${k === 0 ? "now" : ""}">
-    <div><div class="when">${s.when}</div><div class="num">${k + 1}</div><div class="bar"><span style="width:${pct}%"></span></div><div class="small muted" style="margin-top:6px">${status}</div></div>
+    <div><div class="when">${s.when}</div><div class="num">${k + 1}</div><div class="bar"><span style="width:${pct}%"></span></div><div class="small muted status">${status}</div></div>
     <div><h3>${s.title}</h3><p>${s.text}</p><ol class="steps">${s.steps.map(([t, d], i) =>
       `<li class="${i < s.done ? "done" : i === s.done && k === 0 ? "current" : ""}"><span class="box"></span><div><b>${t}</b><span>${d}</span></div></li>`).join("")}</ol></div>
   </div>`;

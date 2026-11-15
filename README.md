@@ -6,13 +6,15 @@ Mobile phones can be tricky for older people. Small icons, passcodes, updates an
 
 **See it and try it:** https://cgbarlow.github.io/walkie-talkie/
 
-![A sage green bedside radio with a big orange button on top](images/bedside-radio_sml.jpg)
+![A sage green radio on a bedside table, with a big orange button on top, a knob on each side and a shoulder strap](images/platform-bedside_sml.jpg)
 
-*Concept picture. The first unit is still being designed.*
+*Concept picture of the design we're exploring. Nothing is built yet.*
 
-| Classic handheld | Pocket pebble | The parts |
-| --- | --- | --- |
-| ![Cream handheld radio](images/classic-handheld_sml.jpg) | ![Navy pebble-shaped radio in a hand](images/pocket-pebble-front_sml.jpg) | ![Thirteen parts laid out on a mat](images/parts-layout_sml.jpg) |
+Other shapes we looked at, and the parts:
+
+| The first bedside radio | Classic handheld | Pocket pebble | The parts |
+| --- | --- | --- | --- |
+| ![Sage green wedge-shaped bedside radio](images/bedside-radio_sml.jpg) | ![Cream handheld radio](images/classic-handheld_sml.jpg) | ![Navy pebble-shaped radio in a hand](images/pocket-pebble-front_sml.jpg) | ![Thirteen parts laid out on a mat](images/parts-layout_sml.jpg) |
 
 ## Where it's at
 

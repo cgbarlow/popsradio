@@ -206,7 +206,7 @@ This is not Stage 1 or Stage 2, and it does not change them. It sits with the ki
 
 The cheap way to learn whether it is worth doing:
 
-1. **Simulator first.** Add the three knobs, the modes and Pong to the site's simulator. Sit with Grandad in front of it on a tablet and see whether he wants more than Talk, and whether the Mode knob confuses him.
+1. **Simulator first.** The three knobs, the modes, Pong and the chess clock are now in the [site's simulator](https://cgbarlow.github.io/walkie-talkie/#try). Sit with Grandad in front of it on a tablet and see whether he wants more than Talk, and whether the Mode knob confuses him.
 2. **Printed knobs.** Print knobs at three sizes and let him choose.
 3. **Research the screen**, then breadboard the best candidates with Pong and voice running on an ESP32-S3.
 4. **Chess clock in a rest home.** A single radio as a chess clock and FM radio in a lounge, as a no-risk pilot with an activities coordinator.
