@@ -24,7 +24,7 @@ Concept picture prompts for this unit are in [Grandad's Radio Platform Image Pro
 
 | | Original bedside radio | Platform unit |
 | --- | --- | --- |
-| Shape | Squat wedge, sloped front | Stout rectangle, wider than tall, about 200 × 130 × 80 mm, with a long adjustable shoulder strap |
+| Shape | Squat wedge, sloped front | Stout rectangle, wider than tall, about 200 × 130 × 80 mm, with a long, narrow adjustable shoulder strap, about 20 mm wide |
 | Talk button | Big orange button on top | Same |
 | PUSH / OPEN | Chrome toggle on the front | A smooth slide switch on top, left of the orange button |
 | Knobs | One, on the front, picks the channel, with end stops | Three, all large, free turning and pressable: Volume on top right of the orange button, Mode on the left side, Select on the right side |
@@ -49,7 +49,7 @@ In the games board position the two side knobs belong to the game instead: left 
 
 **Why the switch is smooth.** A slide that sits flush in its slot has no lever to catch a sleeve or the strap, and its position can be felt with a fingertip. It is still a real switch, so open channel mode can only ever be turned on at the radio.
 
-**Why it is stout.** A radio that is pressed on top, turned from the sides and picked up by a strap must not tip over. So it is wider than it is tall, with a base 80 mm deep, the battery low in the case and rubber feet underneath. Pressing the orange button pushes it down onto the table, not over.
+**Why it is stout.** A radio that is pressed on top, turned from the sides and picked up by a strap must not tip over. So it is wider than it is tall and 80 mm deep, with the battery low in the case and rubber feet underneath. The case is one plain shape with straight sides; the steadiness comes from its proportions and weight, not from a flared base. Pressing the orange button pushes it down onto the table, not over.
 
 **Why the knobs are big.** A knob about 40 mm across with deep ribs can be turned with a whole hand, by someone with arthritis or a weak grip. The side panels are 80 mm deep, so there is room to go a little bigger if he wants. The volume knob on top is smaller, about 25 mm, so the orange button (about 40 mm) stays the biggest thing on top and the one a hand lands on. That is my estimate of a good size, to be tried with Grandad on printed knobs before choosing parts.
 
