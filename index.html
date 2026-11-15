@@ -275,6 +275,22 @@ footer ul { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 8
 .more-notes .notes { margin-top: 6px; }
 .more-notes .proposal { margin-bottom: 26px; }
 .scroll { overflow-x: auto; }
+
+/* ============ Picture gallery ============ */
+[data-gallery] .pic { cursor: zoom-in; }
+.lightbox { width: 100vw; height: 100vh; max-width: none; max-height: none; margin: 0; padding: 16px 70px; border: 0; background: rgba(20, 14, 10, .94); color: #f2e6d2; }
+.lightbox[open] { display: grid; place-items: center; }
+.lightbox::backdrop { background: rgba(20, 14, 10, .94); }
+.lightbox figure { display: grid; justify-items: center; gap: 14px; max-width: 100%; }
+.lightbox img { display: block; max-width: 100%; max-height: calc(100vh - 130px); width: auto; height: auto; border-radius: var(--radius); background: #2a2019; }
+.lightbox img.loading { opacity: .12; }
+.lightbox figcaption { max-width: 46em; text-align: center; font-size: 0.95rem; line-height: 1.45; }
+.lightbox figcaption b { font-family: var(--head); font-weight: var(--head-w); font-size: 1.1rem; margin-right: 4px; }
+.lb-count { font: 600 0.8rem "IBM Plex Mono", monospace; opacity: .7; white-space: nowrap; margin-left: 6px; }
+.lb-btn { position: fixed; width: 48px; height: 48px; border-radius: 50%; border: 2px solid #f2e6d2; background: rgba(20, 14, 10, .6); color: #f2e6d2; font: 400 1.8rem/1 "Atkinson Hyperlegible", sans-serif; cursor: pointer; display: grid; place-items: center; padding: 0 0 4px; }
+.lb-close { top: 14px; right: 14px; }
+.lb-prev { left: 12px; top: 50%; transform: translateY(-50%); }
+.lb-next { right: 12px; top: 50%; transform: translateY(-50%); }
 .center { text-align: center; margin-left: auto; margin-right: auto; }
 .aside { margin: 18px 0 0; }
 .sub { margin-top: 46px; }
@@ -305,6 +321,11 @@ footer ul { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 8
   .top { position: static; }
   .top .wrap { justify-content: center; }
   .mark { width: 100%; justify-content: center; }
+  .lightbox { padding: 60px 10px 70px; }
+  .lb-prev, .lb-next { top: auto; bottom: 12px; transform: none; }
+  .lb-prev { left: calc(50% - 58px); }
+  .lb-next { right: calc(50% - 58px); }
+  .lightbox img { max-height: calc(100vh - 230px); }
 }
 @media (prefers-reduced-motion: reduce) {
   .blink, .pulse { animation: none; }
@@ -561,16 +582,16 @@ footer ul { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 8
         <p>Pong and pinball with a knob in each hand, and a chess clock you tap with your palm.</p>
       </div>
     </div>
-    <div class="shapes">
-      <figure class="shape">
+    <div class="shapes" data-gallery>
+      <figure class="shape" data-full="images/platform-chess-clock.jpg">
         <div class="pic"><img src="images/platform-chess-clock_sml.jpg" alt="The radio standing beside a chessboard in a rest home lounge. An older man presses the orange button with the flat of his hand. The screen shows two clock times, 14:52 and 09:07." loading="lazy" width="805" height="1006"></div>
         <figcaption><h3>A chess clock</h3><p>It stands beside the board. Each player taps the orange button to end their turn. Holding it still talks.</p></figcaption>
       </figure>
-      <figure class="shape">
+      <figure class="shape" data-full="images/platform-pong.jpg">
         <div class="pic"><img src="images/platform-pong_sml.jpg" alt="Two older hands hold the radio by its side knobs on a kitchen table. The screen shows a game of Pong, three points to two." loading="lazy" width="805" height="1006"></div>
         <figcaption><h3>A games board</h3><p>A knob in each hand. Lay it on its back with the screen facing up and two people can play, one knob each.</p></figcaption>
       </figure>
-      <figure class="shape">
+      <figure class="shape" data-full="images/platform-fm.jpg">
         <div class="pic"><img src="images/platform-fm_sml.jpg" alt="The radio on a garden bench. A hand turns the right-hand knob. The screen has FM highlighted and reads Channel 1, 98.2 MHz." loading="lazy" width="805" height="999"></div>
         <figcaption><h3>A radio in the garden</h3><p>The right-hand knob picks the station, the same way it picks a person.</p></figcaption>
       </figure>
@@ -593,16 +614,16 @@ footer ul { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 8
       <h2>Other shapes we looked at</h2>
       <p>The same insides fit other cases. These came first, and any of them could still be built. They are generated concept pictures too.</p>
     </div>
-    <div class="shapes small">
-      <figure class="shape">
+    <div class="shapes small" data-gallery>
+      <figure class="shape" data-full="images/bedside-radio.jpg">
         <div class="pic"><img src="images/bedside-radio_sml.jpg" alt="Sage green wedge-shaped tabletop radio with an orange button on top, a grille, a small screen, one knob and a toggle switch" loading="lazy" width="805" height="1000"></div>
         <figcaption><h3>The first bedside radio</h3><p>Where we started: one knob, a small screen and a toggle switch on a sloped front.</p></figcaption>
       </figure>
-      <figure class="shape">
+      <figure class="shape" data-full="images/classic-handheld.jpg">
         <div class="pic"><img src="images/classic-handheld_sml.jpg" alt="Cream handheld walkie-talkie with grille, screen, big orange button, a knob on top and a toggle switch on the side" loading="lazy" width="805" height="1000"></div>
         <figcaption><h3>Classic handheld</h3><p>The walkie-talkie shape everyone already knows. Good for carrying round the house.</p></figcaption>
       </figure>
-      <figure class="shape">
+      <figure class="shape" data-full="images/pocket-pebble-front.jpg" data-full-back="images/pocket-pebble-back.jpg">
         <div class="pic flips"><div class="flipper" id="pebble"><img src="images/pocket-pebble-front_sml.jpg" alt="Navy pebble-shaped radio in a hand, front view, with a slide switch on the edge" loading="lazy" width="805" height="1000"><img class="back" src="images/pocket-pebble-back_sml.jpg" alt="Back of the pebble radio, showing the belt clip and lanyard loop" loading="lazy" width="805" height="1000" aria-hidden="true"></div><button class="flip" type="button" id="flip">Show back</button></div>
         <figcaption><h3>Pocket pebble</h3><p>Small enough for a pocket, with a clip on the back and a loop for a lanyard. The knob is a ring around the button.</p></figcaption>
       </figure>
@@ -695,6 +716,16 @@ footer ul { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 8
 </section>
 
 </main>
+
+<dialog class="lightbox" id="lightbox" aria-label="Picture gallery">
+  <button class="lb-btn lb-close" type="button" id="lbClose" aria-label="Close">&times;</button>
+  <button class="lb-btn lb-prev" type="button" id="lbPrev" aria-label="Previous picture">&lsaquo;</button>
+  <figure>
+    <img id="lbImg" alt="">
+    <figcaption><b id="lbTitle"></b> <span id="lbText"></span> <span class="lb-count" id="lbCount"></span></figcaption>
+  </figure>
+  <button class="lb-btn lb-next" type="button" id="lbNext" aria-label="Next picture">&rsaquo;</button>
+</dialog>
 
 <footer>
   <div class="wrap">
@@ -1028,7 +1059,7 @@ $("vol").addEventListener("click", () => {
 
 function inTry() { const r = $("try").getBoundingClientRect(); return r.top < innerHeight && r.bottom > 0; }
 window.addEventListener("keydown", e => {
-  if (!inTry()) return;
+  if (!inTry() || $("lightbox").open) return;
   if (S.game === "pong" && (e.key === "ArrowUp" || e.key === "ArrowDown")) { e.preventDefault(); P.dir = e.key === "ArrowUp" ? -1 : 1; return; }
   const tag = e.target.tagName;
   if (tag === "BUTTON" || tag === "A" || tag === "SUMMARY" || e.repeat) return;
@@ -1164,6 +1195,55 @@ $("flip").addEventListener("click", e => {
   const [front, back] = card.children;
   front.setAttribute("aria-hidden", String(toBack)); back.setAttribute("aria-hidden", String(!toBack));
   e.currentTarget.textContent = toBack ? "Show front" : "Show back";
+});
+
+/* ---------- Picture galleries: click a picture to see its group, full size ---------- */
+const lb = $("lightbox");
+let lbSet = [], lbAt = 0;
+function lbShow(i) {
+  lbAt = (i + lbSet.length) % lbSet.length;
+  const s = lbSet[lbAt];
+  const img = $("lbImg");
+  if (img.getAttribute("src") !== s.src) { img.classList.add("loading"); img.src = s.src; }
+  img.alt = s.alt;
+  new Image().src = lbSet[(lbAt + 1) % lbSet.length].src;
+  $("lbTitle").textContent = s.title; $("lbText").textContent = s.text;
+  $("lbCount").textContent = (lbAt + 1) + " of " + lbSet.length;
+}
+document.querySelectorAll("[data-gallery]").forEach(g => {
+  const figs = [...g.querySelectorAll("figure[data-full]")];
+  figs.forEach((f, i) => {
+    const pic = f.querySelector(".pic");
+    pic.tabIndex = 0; pic.setAttribute("role", "button");
+    pic.setAttribute("aria-label", "Open picture: " + f.querySelector("h3").textContent);
+    const open = e => {
+      if (e.target.closest(".flip")) return;
+      lbSet = figs.map(x => {
+        const back = x.querySelector(".flipper.turned"), img = x.querySelector(back ? "img.back" : "img");
+        return { src: back ? x.dataset.fullBack : x.dataset.full, alt: img.alt, title: x.querySelector("h3").textContent, text: x.querySelector("figcaption p").textContent };
+      });
+      lbShow(i); lb.showModal();
+    };
+    pic.addEventListener("click", open);
+    pic.addEventListener("keydown", e => { if (e.target === pic && (e.key === "Enter" || e.key === " ")) { e.preventDefault(); open(e); } });
+  });
+});
+$("lbImg").addEventListener("load", e => e.target.classList.remove("loading"));
+$("lbImg").addEventListener("error", e => e.target.classList.remove("loading"));
+$("lbPrev").addEventListener("click", () => lbShow(lbAt - 1));
+$("lbNext").addEventListener("click", () => lbShow(lbAt + 1));
+$("lbClose").addEventListener("click", () => lb.close());
+lb.addEventListener("click", e => { if (e.target === lb) lb.close(); });
+lb.addEventListener("keydown", e => {
+  if (e.key === "ArrowLeft") lbShow(lbAt - 1);
+  if (e.key === "ArrowRight") lbShow(lbAt + 1);
+});
+let lbX = null;
+lb.addEventListener("touchstart", e => { lbX = e.touches[0].clientX; }, { passive: true });
+lb.addEventListener("touchend", e => {
+  if (lbX === null) return;
+  const dx = e.changedTouches[0].clientX - lbX; lbX = null;
+  if (Math.abs(dx) > 50) lbShow(lbAt + (dx < 0 ? 1 : -1));
 });
 
 /* ---------- Parts ---------- */
