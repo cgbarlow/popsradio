@@ -35,12 +35,13 @@
   } catch (e) {}
 })();
 </script>
-<!-- Google tag (counts visits) -->
-<script async src="https://www.googletagmanager.com/gtm.js?id=GTM-NLRJ7QZ9"></script>
+<!-- Google tag: counts visits, and which parts of the simulator get used -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-KL1QLNWTNE"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
+  gtag('config', 'G-KL1QLNWTNE');
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -745,7 +746,7 @@ footer ul { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 8
       <li><a href="https://github.com/cgbarlow/popsradio">Source on GitHub</a></li>
     </ul>
     <p>A family project in New Zealand. Free to build for your own family.</p>
-    <p>This site counts visits with Google Analytics. The simulator doesn't use your microphone, and nothing you do in it is recorded.</p>
+    <p>This site counts visits with Google Analytics, and which parts of the simulator get used, such as holding the button or starting a game. The simulator never uses your microphone, so nothing you say is heard or recorded.</p>
     <p>Free for non-commercial use. Code under <a href="https://github.com/cgbarlow/popsradio/blob/main/LICENSE">PolyForm Noncommercial 1.0.0</a>; documents and images under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a>. For commercial use, see <a href="https://github.com/cgbarlow/popsradio/blob/main/COMMERCIAL.md">commercial licensing</a>.</p>
   </div>
 </footer>
@@ -786,6 +787,15 @@ const PLAN = [
 
 const $ = id => document.getElementById(id);
 
+/* ---------- Counting what gets used (Google Analytics events) ---------- */
+let simStarted = false;
+function track(name, params) {
+  try {
+    if (name.startsWith("sim_") && !simStarted) { simStarted = true; gtag("event", "sim_start"); }
+    gtag("event", name, params || {});
+  } catch (e) {}
+}
+
 /* ---------- Light or dark, text size ---------- */
 const root = document.documentElement;
 function save(k, v) { try { localStorage.setItem(k, v); } catch (e) {} }
@@ -804,7 +814,7 @@ document.querySelectorAll("[data-set-size]").forEach(b => b.addEventListener("cl
 $("themeBtn").addEventListener("click", () => { const t = isDark() ? "light" : "dark"; root.dataset.theme = t; save("wt-theme", t); paintControls(); });
 matchMedia("(prefers-color-scheme: dark)").addEventListener("change", paintControls);
 paintControls();
-$("printBtn").addEventListener("click", () => window.print());
+$("printBtn").addEventListener("click", () => { track("card_print"); window.print(); });
 
 /* ---------- Sounds, made in the browser ---------- */
 let ctx;
@@ -979,6 +989,7 @@ function render() {
 
 /* ---------- The orange button ---------- */
 function talk() {
+  track("sim_talk", { mode: S.game ? (S.game === "pong" ? "PONG" : "CHESS CLOCK") : MODES[S.view] });
   S.state = "talk"; S.talkStart = Date.now(); snd.chirp();
   hint(S.game ? "Holding the orange button talks, whatever it's doing. The game waits."
     : S.view ? "Holding the orange button talks, whatever it's doing. The station fades while you talk to " + cap(who()) + "."
@@ -1026,6 +1037,7 @@ function setMode(v) {
   v = (v + MODES.length) % MODES.length;
   if (v === S.view && !S.game) return;
   stopGame(); S.view = v; snd.click(); speak(MODE_SAY[v]); hint(MODE_HINT[v]);
+  track("sim_mode", { mode: MODES[v] });
   S.state = idle(); render();
 }
 function turnSelect(d) {
@@ -1045,7 +1057,7 @@ function pressSelect() {
   if (S.sw === "open") { locked(); return; }
   if (S.game) { stopGame(); snd.click(); hint("Back to the list."); render(); return; }
   if (S.view === 3) { startGame(S.sel[3]); return; }
-  if (S.view === 0) { snd.kerchunk(); speak(MESSAGE); hint("Pressing the knob plays the last message again."); return; }
+  if (S.view === 0) { snd.kerchunk(); speak(MESSAGE); hint("Pressing the knob plays the last message again."); track("sim_replay"); return; }
   snd.thunk(); hint("Nothing to press here. Turning the knob picks the station.");
 }
 $("modeKnob").addEventListener("click", () => setMode(S.view + 1));
@@ -1085,12 +1097,12 @@ function flip() {
   if (pressed) up();
   snd.clack();
   if (S.sw === "push") {
-    stopGame(); S.view = 0; S.sw = "open"; S.paused = false;
+    stopGame(); S.view = 0; S.sw = "open"; S.paused = false; track("sim_switch", { position: "OPEN" });
     const group = S.sel[0] === 1;
     speak(group ? "Channel open to family. Everyone on this channel can hear you." : "Channel open to " + who().toLowerCase() + ". The red light means I can hear you.");
     hint((group ? "This is a group channel, so everyone on it can hear. " : "") + "Hands-free now: it sends when you speak, and goes quiet when you stop. The knobs are locked until you slide back.");
   } else {
-    S.sw = "push"; S.paused = false;
+    S.sw = "push"; S.paused = false; track("sim_switch", { position: "PUSH" });
     speak("Channel closed.");
     hint("Back to PUSH. The microphone is off until you hold the button.");
   }
@@ -1102,6 +1114,7 @@ $("toggle").addEventListener("click", flip);
 /* ---------- Things that happen ---------- */
 $("evCall").addEventListener("click", () => {
   if (S.incoming) return;
+  track("sim_happening", { what: "Chris calls in" });
   if (!S.online) { hint("No Wi-Fi. The service keeps the message and plays it when the radio is back."); return; }
   if (pressed) up();
   S.incoming = true; S.state = "listen"; snd.kerchunk(); render();
@@ -1118,12 +1131,14 @@ $("evCall").addEventListener("click", () => {
 });
 $("evQuiet").addEventListener("click", () => {
   if (S.sw !== "open") return;
+  track("sim_happening", { what: "Ten quiet minutes" });
   S.paused = true; S.state = idle(); render();
   speak("Nobody's said anything for a while, so I've paused. Press the button to carry on.");
   hint("After ten quiet minutes it pauses itself. One press brings it back.");
 });
 $("evNet").addEventListener("click", e => {
   S.online = !S.online;
+  if (!S.online) track("sim_happening", { what: "Wi-Fi drops" });
   const b = e.currentTarget; b.setAttribute("aria-pressed", String(!S.online));
   b.querySelector("span").textContent = S.online ? "Wi-Fi drops" : "Wi-Fi back on";
   b.querySelector("small").textContent = S.online ? "Try to talk with no link" : "Reconnect";
@@ -1134,6 +1149,7 @@ $("evNet").addEventListener("click", e => {
 });
 $("evBatt").addEventListener("click", e => {
   S.low = !S.low;
+  if (S.low) track("sim_happening", { what: "Battery low" });
   const b = e.currentTarget; b.setAttribute("aria-pressed", String(S.low));
   b.querySelector("span").textContent = S.low ? "Back on the stand" : "Battery low";
   b.querySelector("small").textContent = S.low ? "Charge it up" : "Off the stand too long";
@@ -1183,11 +1199,11 @@ function startGame(i) {
   if (i === 2) { snd.thunk(); hint("Pinball isn't on this page yet."); return; }
   S.gpause = false; snd.click();
   if (i === 0) {
-    S.game = "pong"; Object.assign(P, { l: 30, r: 30, sl: 0, sr: 0, dir: 0 }); serve(1);
+    S.game = "pong"; Object.assign(P, { l: 30, r: 30, sl: 0, sr: 0, dir: 0 }); serve(1); track("sim_game", { game: "PONG" });
     lastT = performance.now(); if (!raf) raf = requestAnimationFrame(pongLoop);
     hint("You're the right-hand paddle: hold the arrow buttons beside the knob, or the up and down keys. The radio plays the left. Press the small knob on top to pause.");
   } else {
-    S.game = "clock"; C.t = [300, 300]; C.turn = -1; C.last = Date.now();
+    S.game = "clock"; C.t = [300, 300]; C.turn = -1; C.last = Date.now(); track("sim_game", { game: "CHESS CLOCK" });
     clearInterval(C.iv); C.iv = setInterval(clockTick, 250);
     hint("Five minutes each. Tap the orange button to end your turn. Hold it and it talks, as always.");
   }
@@ -1231,6 +1247,7 @@ document.querySelectorAll("[data-gallery]").forEach(g => {
         return { src: back ? x.dataset.fullBack : x.dataset.full, alt: img.alt, title: x.querySelector("h3").textContent, text: x.querySelector("figcaption p").textContent };
       });
       lbShow(i); lb.showModal();
+      track("gallery_open", { gallery: g.closest("section").id === "more" ? "More than a radio" : "Other shapes", picture: lbSet[i].title });
     };
     pic.addEventListener("click", open);
     pic.addEventListener("keydown", e => { if (e.target === pic && (e.key === "Enter" || e.key === " ")) { e.preventDefault(); open(e); } });
