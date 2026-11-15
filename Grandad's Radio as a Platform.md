@@ -10,7 +10,7 @@ Concept picture prompts for this unit are in [Grandad's Radio Platform Image Pro
 
 **The idea: design Grandad's radio as a platform, not just a radio.** The parts that make a good walkie-talkie (a speaker, a screen, knobs, Wi-Fi, a small computer that updates itself) are most of what a bedside radio, a games board and a chess clock need too. Once Grandad trusts one device, each extra useful thing on it is one less gadget to learn.
 
-- **A new shape.** A stout rectangular radio, wider than it is tall, about 200 mm wide, 130 mm tall and 80 mm deep, so it sits low and is hard to knock over. It has an adjustable shoulder strap and three knobs that are easy to grip and turn: a big one on each side and a smaller volume knob on top. Every knob turns freely and is also a button.
+- **A new shape.** A stout rectangular radio, long and low, about 220 mm wide, 125 mm tall and 80 mm deep, so it sits low and is hard to knock over. It has an adjustable shoulder strap and three knobs that are easy to grip and turn: a big one on each side and a smaller volume knob on top. Every knob turns freely and is also a button.
 - **Mode and Select.** The left knob picks what the radio is doing: Talk, Radio (FM), Radio (Internet) or Play. The right knob picks within it: who to talk to, which station, which game.
 - **Tip it on its back to play.** Screen facing up, the two side knobs become a left and right controller: Pong paddles, pinball flippers, or the two sides of a chess clock.
 - **An approved app store, later.** Once the first-party modes have proven the model, other people could build apps for it. Every app is reviewed and signed by us, installed by the family from the family app, and can never use the microphone or the talk button.
@@ -24,7 +24,7 @@ Concept picture prompts for this unit are in [Grandad's Radio Platform Image Pro
 
 | | Original bedside radio | Platform unit |
 | --- | --- | --- |
-| Shape | Squat wedge, sloped front | Stout rectangle, wider than tall, about 200 × 130 × 80 mm, with a long, narrow adjustable shoulder strap, about 20 mm wide |
+| Shape | Squat wedge, sloped front | Stout rectangle, long and low, about 220 × 125 × 80 mm, with a long, narrow adjustable shoulder strap, about 20 mm wide |
 | Talk button | Big orange button on top | Same |
 | PUSH / OPEN | Chrome toggle on the front | A smooth slide switch on top, left of the orange button |
 | Knobs | One, on the front, picks the channel, with end stops | Three, all large, free turning and pressable: Volume on top right of the orange button, Mode on the left side, Select on the right side |
@@ -165,7 +165,7 @@ Not priced yet. Each line needs a part chosen and a NZ price checked.
 | Antenna | None | A wire of about 75 cm run through the shoulder strap | Hobby guides give about 75 to 77 cm as a quarter-wave whip for FM ([101 Things](https://101-things.readthedocs.io/en/latest/fm_radio.html), [Seeed](https://wiki.seeedstudio.com/Grove-I2C_FM_Receiver/)). Hiding it in the strap is a proposal, untested |
 | Tilt sensor | None | A small accelerometer | Knows upright from lying on its back |
 | Battery | Skipped on Grandad's docked unit | Needed | A shoulder strap means it leaves the dock. A larger cell than 1000 mAh, size to be measured |
-| Case | Wedge | Stout rectangle about 200 × 130 × 80 mm, with strap anchors, four rubber feet under the base and four on the back | Low and wide so it is hard to knock over; the back feet keep it steady as a games board |
+| Case | Wedge | Stout rectangle about 220 × 125 × 80 mm, with strap anchors, four rubber feet under the base and four on the back | Low and wide so it is hard to knock over; the back feet keep it steady as a games board |
 | Speaker | 50 mm, 3 W | Larger, to suit the bigger case | Music needs more than speech does, and an 80 mm deep case leaves room for a bigger speaker and air behind it |
 
 ### The screen: an open question
