@@ -21,9 +21,12 @@ New Zealand market size and local substitutes (senior phones, Spacetalk, medical
 
 ## What's out there
 
-Prices are as shown on each product's own page on 16 November 2026, in the currency shown, unless marked.
+Prices are as shown on each product's own page on 16 November 2026, in the currency shown, unless marked. Pictures are shown from each maker's own website and belong to them; they are not covered by this repository's licence. Zello, Wiley, Kidslox and the Amazon radios have no picture.
 
 ### Screen-free devices for older people
+
+<table><tr><td align="center" width="25%"><a href="https://heyato.ai"><img src="https://heyato.ai/launch/ato-launch-og.jpg" alt="Ato companion, front with orange button" width="150"></a><br><sub>Ato</sub></td><td align="center" width="25%"><a href="https://www.raspberrypi.com/news/yayagram-makes-it-easy-for-grandparents-to-keep-in-touch/"><img src="https://www.raspberrypi.com/app/uploads/2021/05/Screenshot-2021-05-10-at-18.37.27-500x304.png" alt="Yayagram wooden switchboard" width="150"></a><br><sub>Yayagram</sub></td></tr></table>
+
 
 | Product | What it does | Price | Ongoing | Compared with Grandad's radio |
 |---|---|---|---|---|
@@ -33,6 +36,9 @@ Prices are as shown on each product's own page on 16 November 2026, in the curre
 Ato's founders built the first one for a co-founder's grandfather and its story went viral, much like this project. It reports shipping to 24 countries and more than 10,000 family members connected.
 
 ### Simple video devices for older people
+
+<table><tr><td align="center" width="25%"><a href="https://komp.family/en/product/komp/"><img src="https://komp.family/wp-content/uploads/2024/12/Komp_grandmothergrandaughter-5-1024x640-1.png.webp" alt="Komp screen showing a family photo" width="150"></a><br><sub>Komp</sub></td><td align="center" width="25%"><a href="https://www.grandpad.net/shop/grandpad-tablet"><img src="https://www.grandpad.net/images/shop/grandpad-tablet-v2609/ejpr_b2c_prd_grandpad_im01.png" alt="GrandPad tablet on its charger" width="150"></a><br><sub>GrandPad</sub></td><td align="center" width="25%"><a href="https://www.konnekt.com.au/purchase-konnekt/"><img src="https://www.konnekt.com.au/wp-content/uploads/2018/03/konnekt-video-phone.jpg" alt="Konnekt videophone with name buttons" width="150"></a><br><sub>Konnekt Videophone</sub></td><td align="center" width="25%"><a href="https://assistive.co.nz/product/kitcal-tablet-for-seniors"><img src="https://assistive.co.nz/wp-content/uploads/2022/04/Kitcal-1.jpg" alt="Kitcal tablet on a wooden stand" width="150"></a><br><sub>Kitcal</sub></td></tr></table>
+
 
 | Product | What it does | Price | Ongoing |
 |---|---|---|---|
@@ -45,6 +51,9 @@ These prove families pay for grandparent connection, often every month. Komp's 1
 
 ### Push-to-talk radios on the mobile network
 
+<table><tr><td align="center" width="25%"><a href="https://twowaydirect.com/products/twd25-nationwide-ptt-handheld-radio-lte"><img src="https://twowaydirect.com/cdn/shop/files/TWD25_front__24322.1756476638.1280.1280.jpg?v=1760434152" alt="TWD25 handheld radio" width="150"></a><br><sub>Two Way Direct TWD25</sub></td><td align="center" width="25%"><a href="https://www.pbtech.co.nz/product/AUDMLO251705/MILO-Action-Communicator---Miloberry-Red"><img src="https://www.pbtech.co.nz/imgprod/A/U/AUDMLO251705.jpg?h=4249249196" alt="Red Milo communicator" width="150"></a><br><sub>Milo</sub></td></tr></table>
+
+
 | Product | What it does | Price | Ongoing |
 |---|---|---|---|
 | [Two Way Direct TWD25](https://twowaydirect.com/products/twd25-nationwide-ptt-handheld-radio-lte) (US) | Handheld LTE radio, US-wide range | US$199.95 sale (US$500 list) | First year included, then US$50 a radio a year; US$50 more for international |
@@ -55,6 +64,9 @@ These prove families pay for grandparent connection, often every month. Komp's 1
 These solve range but not simplicity. They are made for work crews, with work-radio controls, and none is designed for an older user.
 
 ### Screen-free home phones for kids
+
+<table><tr><td align="center" width="25%"><a href="https://tincan.kids/en-nz/products/tin-can"><img src="https://tincan.kids/cdn/shop/files/2026-06-Product-Photo-01-AnswerMeAquamarine-Master-1200x810-Web-V2-TP.png?v=1781022408" alt="Green Tin Can phone with curly cord" width="150"></a><br><sub>Tin Can</sub></td><td align="center" width="25%"><a href="https://www.pinwheel.com/pinwheel-home-vs-tincan"><img src="https://www.pinwheel.com/hubfs/Pinwheel%20Home%20Phone%20with%20stickers%20on%20table.jpeg" alt="White Pinwheel Home phone with stickers" width="150"></a><br><sub>Pinwheel Home</sub></td><td align="center" width="25%"><a href="https://www.ooma.ca/home-phone-service/myphone/"><img src="https://www.ooma.ca/wp-content/themes/ooma/images/telo/myphone/holiday/MyPhone_Holiday_Hero_Image_4.webp" alt="Blue MyPhone with stickers" width="150"></a><br><sub>Ooma MyPhone</sub></td></tr></table>
+
 
 | Product | What it does | Price | Ongoing |
 |---|---|---|---|
