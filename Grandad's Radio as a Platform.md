@@ -80,6 +80,25 @@ flowchart LR
 
 Presets are set by the family, not by tuning at the radio. Grandad turns to "Channel 1" and hears his station; the screen and the spoken name say which one it is.
 
+### What the screen shows
+
+All the modes sit in a row across the top of the screen, with the current one highlighted. Turning the Mode knob moves the highlight along the row. Below it are the choices for that mode, with the current one highlighted, and the Select knob moves that highlight.
+
+```
++--------------------------------------+
+| [TALK]    FM      NET      PLAY      |
+|                                      |
+|   CHRIS                              |
+| [ FAMILY ]                           |
+|   NURSE                              |
++--------------------------------------+
+```
+
+- **Each knob has its own highlight.** The top row belongs to the Mode knob on the left, the list belongs to the Select knob on the right.
+- **Only the family's modes appear.** If the family has switched on Talk and FM only, the row shows just those two. With Talk only, there is no row at all.
+- **Games use the whole screen.** The row goes away while Pong or the chess clock is running and comes back when the game is paused.
+- **The labels are short on purpose.** "NET" stands for Radio (Internet) here. The right words for Grandad are still to be tried; the names are also spoken aloud as the knob turns.
+
 ## On its back: the games board
 
 Lay the radio on its back with the strap folded behind, and the screen faces up. The Mode knob is now on the player's left hand and the Select knob on the right. A tilt sensor tells the radio which way up it is, so it can offer Play when it is laid down. This part is a design proposal and hasn't been tested.
