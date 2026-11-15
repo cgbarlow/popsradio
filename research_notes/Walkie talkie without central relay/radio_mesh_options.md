@@ -74,7 +74,7 @@ The only stack found that offers genuine real-time voice over LoRa is Reticulum'
   | ESP-NOW / ESP-NOW LR | Yes (Wi-Fi-class rates) | Good (Opus) | Tens to a few hundred metres | Yes | Free on existing hardware; next-door only |
   | Wi-Fi HaLow | Yes (hundreds of kbps+) | Good (Opus) | Best sub-GHz candidate for km-scale with outdoor antennas | Yes | Technically the strongest; cost and NZ certification are the obstacles |
   | SA818/SA868 analogue FM on PRS | Yes | Good (analogue FM) | 1-5 km handheld-class | Yes | Works like a real walkie-talkie but no encryption/privacy, open channel, and a custom transmitter needs PRS type approval |
-  | Amateur radio (M17, etc.) | Yes | Good | Excellent with repeaters | Yes | Every user needs a licence; encryption prohibited: non-starter for grandad |
+  | Amateur radio (M17, etc.) | Yes | Good | Excellent with repeaters | Yes | Every user needs a licence; encryption prohibited: non-starter for Pop |
   | LoRaWAN / Helium | No | n/a | n/a | No (gateways + network server) | Not a voice bearer |
   | NB-IoT / LTE-M / LTE Cat-1 | LTE-M/Cat-1 yes; NB-IoT no | Good | Nationwide | No: swaps your relay for a carrier, and you still need a server | Removes home Wi-Fi dependence, not the relay |
   | Amazon Sidewalk | No | n/a | n/a | No | Not available in NZ |

@@ -1,21 +1,21 @@
-# Grandad's Radio as a Platform
+# Pop's Radio as a Platform
 
 Nov 15, 2026 · @Chris Barlow
 
-A design exploration, not a locked decision. The [Stage 2 spec](Walkie-Talkie%20Beyond%20the%20R1%20Minimum%20Hardware.md#recommended-build) and the [service design](Walkie-Talkie%20Service%20Design.md) stay as they are. This brief asks what happens if the same radio can do more than talk, and what has to be true for that to stay safe and simple for Grandad.
+A design exploration, not a locked decision. The [Stage 2 spec](Walkie-Talkie%20Beyond%20the%20R1%20Minimum%20Hardware.md#recommended-build) and the [service design](Walkie-Talkie%20Service%20Design.md) stay as they are. This brief asks what happens if the same radio can do more than talk, and what has to be true for that to stay safe and simple for Pop.
 
-Concept picture prompts for this unit are in [Grandad's Radio Platform Image Prompts](Grandad's%20Radio%20Platform%20Image%20Prompts.md).
+Concept picture prompts for this unit are in [Pop's Radio Platform Image Prompts](Pop's%20Radio%20Platform%20Image%20Prompts.md).
 
 ## Summary
 
-**The idea: design Grandad's radio as a platform, not just a radio.** The parts that make a good walkie-talkie (a speaker, a screen, knobs, Wi-Fi, a small computer that updates itself) are most of what a bedside radio, a games board and a chess clock need too. Once Grandad trusts one device, each extra useful thing on it is one less gadget to learn.
+**The idea: design Pop's Radio as a platform, not just a radio.** The parts that make a good walkie-talkie (a speaker, a screen, knobs, Wi-Fi, a small computer that updates itself) are most of what a bedside radio, a games board and a chess clock need too. Once Pop trusts one device, each extra useful thing on it is one less gadget to learn.
 
 - **A new shape.** A stout rectangular radio, long and low, about 220 mm wide, 125 mm tall and 80 mm deep, so it sits low and is hard to knock over. It has an adjustable shoulder strap and three knobs that are easy to grip and turn: a big one on each side and a smaller volume knob on top. Every knob turns freely and is also a button.
 - **Mode and Select.** The left knob picks what the radio is doing: Talk, Radio (FM), Radio (Internet) or Play. The right knob picks within it: who to talk to, which station, which game.
 - **Tip it on its back to play.** Screen facing up, the two side knobs become a left and right controller: Pong paddles or pinball flippers.
 - **A chess clock, standing upright.** It sits beside the board and each player taps the orange button with a palm to end their turn.
 - **An approved app store, later.** Once the first-party modes have proven the model, other people could build apps for it. Every app is reviewed and signed by us, installed by the family from the family app, and can never use the microphone or the talk button.
-- **One rule keeps it Grandad's radio.** Holding the orange button always talks, in every mode, and an incoming message always wins. The family chooses which modes appear, and a radio can ship with Talk only.
+- **One rule keeps it Pop's radio.** Holding the orange button always talks, in every mode, and an incoming message always wins. The family chooses which modes appear, and a radio can ship with Talk only.
 
 ## What changed from the original design
 
@@ -48,15 +48,15 @@ Every control keeps one job wherever possible, and every turn and press is spoke
 
 In the games board position the two side knobs belong to the game instead: left player and right player.
 
-**Tap or hold.** The orange button does two different things, told apart by time. Holding it talks, always. A quick tap is only a tap: nothing is sent, because the radio does not open the microphone until the button has been held past the ready chirp. That leaves the tap free for first-party modes to use, and the chess clock is the only one that does. The length of the gap between a tap and a hold is to be tried with Grandad; this is a design proposal and hasn't been tested.
+**Tap or hold.** The orange button does two different things, told apart by time. Holding it talks, always. A quick tap is only a tap: nothing is sent, because the radio does not open the microphone until the button has been held past the ready chirp. That leaves the tap free for first-party modes to use, and the chess clock is the only one that does. The length of the gap between a tap and a hold is to be tried with Pop; this is a design proposal and hasn't been tested.
 
 **Why the switch is smooth.** A slide that sits flush in its slot has no lever to catch a sleeve or the strap, and its position can be felt with a fingertip. It is still a real switch, so open channel mode can only ever be turned on at the radio. Its position has to be obvious at a glance: a small switch whose thumb sits hard against one end of its slot or the other, never looking halfway, with PUSH and OPEN printed at the ends.
 
 **Why it is stout.** A radio that is pressed on top, turned from the sides and picked up by a strap must not tip over. So it is wider than it is tall and 80 mm deep, with the battery low in the case and rubber feet underneath. The case is one plain shape with straight sides; the steadiness comes from its proportions and weight, not from a flared base. Pressing the orange button pushes it down onto the table, not over.
 
-**Why the knobs are big.** A knob about 40 mm across with deep ribs can be turned with a whole hand, by someone with arthritis or a weak grip. The side panels are 80 mm deep, so there is room to go a little bigger if he wants. The volume knob on top is smaller, about 25 mm, so the orange button (about 40 mm) stays the biggest thing on top and the one a hand lands on. That is my estimate of a good size, to be tried with Grandad on printed knobs before choosing parts.
+**Why the knobs are big.** A knob about 40 mm across with deep ribs can be turned with a whole hand, by someone with arthritis or a weak grip. The side panels are 80 mm deep, so there is room to go a little bigger if he wants. The volume knob on top is smaller, about 25 mm, so the orange button (about 40 mm) stays the biggest thing on top and the one a hand lands on. That is my estimate of a good size, to be tried with Pop on printed knobs before choosing parts.
 
-**Why the knobs turn freely.** All three knobs turn round and round with no end stops, so the side knobs can drive Pong paddles and anything else an app needs. This is decided. It gives up the Stage 2 habit that "fully left is always channel one", so the way home is a gesture instead: hold the Mode knob for two seconds to go back to Talk. Whether the knobs click at each step, or turn smoothly, is still to be tried with Grandad.
+**Why the knobs turn freely.** All three knobs turn round and round with no end stops, so the side knobs can drive Pong paddles and anything else an app needs. This is decided. It gives up the Stage 2 habit that "fully left is always channel one", so the way home is a gesture instead: hold the Mode knob for two seconds to go back to Talk. Whether the knobs click at each step, or turn smoothly, is still to be tried with Pop.
 
 ## Modes at launch
 
@@ -81,7 +81,7 @@ flowchart LR
 
 **The Nurse channel is for talking, not for emergencies.** In a rest home, a channel to the nurses' station is an obvious third name beside Chris and Family. It is an ordinary talk channel: someone has to be listening at the other end. It does not replace the home's call bell, and the radio is still not an emergency alarm. A rest home would need to agree who answers it and when.
 
-Presets are set by the family, not by tuning at the radio. Grandad turns to "Channel 1" and hears his station; the screen and the spoken name say which one it is.
+Presets are set by the family, not by tuning at the radio. Pop turns to "Channel 1" and hears his station; the screen and the spoken name say which one it is.
 
 ### What the screen shows
 
@@ -100,7 +100,7 @@ All the modes sit in a row across the top of the screen, with the current one hi
 - **Each knob has its own highlight.** The top row belongs to the Mode knob on the left, the list belongs to the Select knob on the right.
 - **Only the family's modes appear.** If the family has switched on Talk and FM only, the row shows just those two. With Talk only, there is no row at all.
 - **Games use the whole screen.** The row goes away while Pong or the chess clock is running and comes back when the game is paused.
-- **The labels are short on purpose.** "NET" stands for Radio (Internet) here. The right words for Grandad are still to be tried; the names are also spoken aloud as the knob turns.
+- **The labels are short on purpose.** "NET" stands for Radio (Internet) here. The right words for Pop are still to be tried; the names are also spoken aloud as the knob turns.
 
 ## On its back: the games board
 
@@ -125,7 +125,7 @@ One big button on top that both players slap in turn is how a chess clock alread
 
 The chess clock is the clearest case for a platform. A rest home lounge already has chess sets and players, and a chess clock is a separate thing to buy and learn. Here it is a mode on a radio that is already in the room. The [market report](reports/NZ%20addressable%20market%20and%20opportunities.md) names activities budgets as one way into aged care; shared games are something an activities coordinator can use with a group.
 
-**Later: play against the family.** Pong over the family's own channel, with Grandad on his radio and a grandchild on theirs or in the family app. It would use the same service, with game moves sent as small sealed messages like voice. Not designed yet.
+**Later: play against the family.** Pong over the family's own channel, with Pop on his radio and a grandchild on theirs or in the family app. It would use the same service, with game moves sent as small sealed messages like voice. Not designed yet.
 
 ## Why a platform
 
@@ -151,7 +151,7 @@ The README promises "a small radio that does one thing". A platform pulls the ot
 
 **Approved, not open.** Every app is reviewed against the rules above and signed by us before it can reach a radio, in the same way the firmware is signed. There is no way to load an unsigned app on a normal radio. Home builders can still switch on a developer mode on their own radios.
 
-**Installed by the family.** Apps are found, bought and switched on in the family app, then arrive at the radio overnight through the existing signed update system on R2. Grandad never sees a store.
+**Installed by the family.** Apps are found, bought and switched on in the family app, then arrive at the radio overnight through the existing signed update system on R2. Pop never sees a store.
 
 **Sandboxed.** Apps run in a sandbox on the radio, never as native firmware, so a bad app cannot break the voice path. One candidate is WebAssembly: Espressif publishes the WebAssembly Micro Runtime (WAMR) as an ESP-IDF component that lists the ESP32-S3 as supported ([Espressif](https://components.espressif.com/components/espressif/wasm-micro-runtime/versions/2.4.0/examples/esp-idf)). A small scripting language is the other. Whether either can run a game alongside live voice without audio glitches has not been tested; voice must keep its own core.
 
@@ -178,7 +178,7 @@ Not priced yet. Each line needs a part chosen and a NZ price checked.
 | FM | None | FM receiver chip, I2C, with a wire antenna | The RDA5807M is a common choice, controlled over I2C, with an ESP32 and MAX98357A example in the pu2clr library ([pu2clr](https://www.github.com/pu2clr/RDA5807)) |
 | Antenna | None | A wire of about 75 cm run through the shoulder strap | Hobby guides give about 75 to 77 cm as a quarter-wave whip for FM ([101 Things](https://101-things.readthedocs.io/en/latest/fm_radio.html), [Seeed](https://wiki.seeedstudio.com/Grove-I2C_FM_Receiver/)). Hiding it in the strap is a proposal, untested |
 | Tilt sensor | None | A small accelerometer | Knows upright from lying on its back |
-| Battery | Skipped on Grandad's docked unit | Needed | A shoulder strap means it leaves the dock. A larger cell than 1000 mAh, size to be measured |
+| Battery | Skipped on Pop's docked unit | Needed | A shoulder strap means it leaves the dock. A larger cell than 1000 mAh, size to be measured |
 | Case | Wedge | Stout rectangle about 220 × 125 × 80 mm, with strap anchors, four rubber feet under the base and four on the back | Low and wide so it is hard to knock over; the back feet keep it steady as a games board |
 | Speaker | 50 mm, 3 W | Larger, to suit the bigger case | Music needs more than speech does, and an 80 mm deep case leaves room for a bigger speaker and air behind it |
 
@@ -206,14 +206,14 @@ This is not Stage 1 or Stage 2, and it does not change them. It sits with the ki
 
 The cheap way to learn whether it is worth doing:
 
-1. **Simulator first.** The three knobs, the modes, Pong and the chess clock are now in the [site's simulator](https://cgbarlow.github.io/walkie-talkie/#try). Sit with Grandad in front of it on a tablet and see whether he wants more than Talk, and whether the Mode knob confuses him.
+1. **Simulator first.** The three knobs, the modes, Pong and the chess clock are now in the [site's simulator](https://cgbarlow.github.io/walkie-talkie/#try). Sit with Pop in front of it on a tablet and see whether he wants more than Talk, and whether the Mode knob confuses him.
 2. **Printed knobs.** Print knobs at three sizes and let him choose.
 3. **Research the screen**, then breadboard the best candidates with Pong and voice running on an ESP32-S3.
 4. **Chess clock in a rest home.** A single radio as a chess clock and FM radio in a lounge, as a no-risk pilot with an activities coordinator.
 
 ## Open questions
 
-- **Does Grandad want it?** The whole case rests on more modes adding value without adding confusion. The simulator test answers this before any hardware.
+- **Does Pop want it?** The whole case rests on more modes adding value without adding confusion. The simulator test answers this before any hardware.
 - **Tap or hold.** How long a press counts as a tap, and whether a slow palm on the chess clock ever starts talking by mistake. The ready chirp is the line: nothing is sent before it.
 - **Clicks or smooth?** The knobs turn freely; whether they click at each step is still open. Clicks help when choosing, smooth turning suits Pong.
 - **Which screen.** Unanswered and needs more research: paper-like in daylight, readable at night, fast enough for games. See [The screen](#the-screen-an-open-question).

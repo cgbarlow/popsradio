@@ -45,7 +45,7 @@ Clean technical catalogue look, realistic scale between parts, neutral colours. 
 | 1 | ESP32-S3 dev board | The brain: Wi-Fi, voice coding, encryption |
 | 2 | I2S microphone (INMP441) | Hears you |
 | 3 | I2S amplifier (MAX98357A) | Drives the speaker |
-| 4 | 4 ohm 3 W speaker | Loud enough for Grandad |
+| 4 | 4 ohm 3 W speaker | Loud enough for Pop |
 | 5 | Big push button | Hold to talk |
 | 6 | Rotary encoder and knob | Picks the channel |
 | 7 | One-colour OLED screen | Shows channel name and state |

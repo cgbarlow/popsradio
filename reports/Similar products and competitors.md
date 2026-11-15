@@ -1,17 +1,17 @@
-# Nothing does what Grandad's radio does, but its neighbours are close
+# Nothing does what Pop's Radio does, but its neighbours are close
 
 Nov 16, 2026 · @Chris Barlow
 
 ## Summary
 
-**No product found does all four things Grandad's radio does:** one button with no screen, walkie-talkie messages rather than calls, the whole family on one channel from radios and phones, and no subscription. But each part exists somewhere, and four kinds of product are near neighbours:
+**No product found does all four things Pop's Radio does:** one button with no screen, walkie-talkie messages rather than calls, the whole family on one channel from radios and phones, and no subscription. But each part exists somewhere, and four kinds of product are near neighbours:
 
 - **Screen-free companions for older people.** [Ato](https://heyato.ai) is the closest: a radio-style device with a button and a knob, voice notes to and from a family app, US$179, with a free tier and an optional US$249-a-year membership. Its next batch ships in February 2027.
 - **Simple video devices for older people.** Komp, GrandPad, Konnekt and New Zealand's Kitcal all make calling easy, and all charge monthly or quote on request.
 - **Push-to-talk radios on the mobile network.** They give town-to-town walkie-talkie range today, but are built for work crews, and their "no monthly fee" usually means a yearly fee or an unverifiable SIM.
 - **Screen-free home phones for kids.** Tin Can, Pinwheel Home, Ooma MyPhone and Wiley. This is a crowded, fast-moving market, and it is where the kids' mini phone would compete.
 
-**What only Grandad's radio offers:** walkie-talkie, not a call, so nobody has to answer; radios and family phones on the same channel; channels paid for life with no subscription; and open designs you can build yourself.
+**What only Pop's Radio offers:** walkie-talkie, not a call, so nobody has to answer; radios and family phones on the same channel; channels paid for life with no subscription; and open designs you can build yourself.
 
 **What it lacks against them:** no video (Komp, Konnekt), no voice assistant (Ato), and it needs home Wi-Fi where push-to-talk radios and some tablets carry their own mobile data.
 
@@ -28,7 +28,7 @@ Prices are as shown on each product's own page on 16 November 2026, in the curre
 <table><tr><td align="center" width="25%"><a href="https://heyato.ai"><img src="https://heyato.ai/launch/ato-launch-og.jpg" alt="Ato companion, front with orange button" width="150"></a><br><sub>Ato</sub></td><td align="center" width="25%"><a href="https://www.raspberrypi.com/news/yayagram-makes-it-easy-for-grandparents-to-keep-in-touch/"><img src="https://www.raspberrypi.com/app/uploads/2021/05/Screenshot-2021-05-10-at-18.37.27-500x304.png" alt="Yayagram wooden switchboard" width="150"></a><br><sub>Yayagram</sub></td></tr></table>
 
 
-| Product | What it does | Price | Ongoing | Compared with Grandad's radio |
+| Product | What it does | Price | Ongoing | Compared with Pop's Radio |
 |---|---|---|---|---|
 | [Ato](https://heyato.ai) (US/Argentina) | Voice-first AI companion with a button and knob. Family app sends voice notes, texts and calls; reminders, radio, games | US$179 + shipping; US$19 deposit; next batch Feb 2027 | Free tier with a monthly conversation limit; membership US$249 a year | Closest rival. Talks to family and has AI; plugged in, Wi-Fi only, no walkie channel for the family |
 | [Yayagram](https://www.raspberrypi.com/news/yayagram-makes-it-easy-for-grandparents-to-keep-in-touch/) (Spain, 2021) | A grandson's Raspberry Pi switchboard: plug a cable into a name, press to record a Telegram voice message, receipts print on paper | DIY | None | Same idea, built as a one-off; went viral, never a product (search extract) |
@@ -99,7 +99,7 @@ These solve range but not simplicity. They are made for work crews, with work-ra
 1. **Lead with what is unique:** one button, no answering, the whole family on one channel, no subscription.
 2. **Explain the prepaid fund in one sentence** wherever the price appears, and publish it.
 3. **Watch Ato closely.** It reaches the same buyers with a similar device and a family app, and it is shipping. If it adds a walkie-talkie mode it becomes a direct competitor.
-4. **Do not compete with video or AI.** Point families who need video at Komp or Konnekt; Grandad's radio is for the moments in between.
+4. **Do not compete with video or AI.** Point families who need video at Komp or Konnekt; Pop's Radio is for the moments in between.
 5. **For the kids' phone, plan against Tin Can, Pinwheel and Ooma,** not against toy walkie-talkies.
 
 ## Gaps

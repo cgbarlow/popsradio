@@ -1,4 +1,4 @@
-# Demographics of Older People in New Zealand, by Region (market-sizing base for "Grandad's radio")
+# Demographics of Older People in New Zealand, by Region (market-sizing base for "Pop's Radio")
 
 > **Method caveat (read first):** This session could not fetch pages directly. stats.govt.nz, figure.nz, osc.govt.nz, ehinz.ac.nz, wikipedia and alzheimers.org.nz were all blocked by the network policy ("ENOTFOUND"/proxy denial). Every cited figure below comes from **web-search result extracts** of the linked pages, not from reading the pages in full. The figures are internally consistent (for example, Auckland's 219,753 aged 65+ is 26.5% of a national total of about 829,000, which matches EHINZ's 828,600). Still, check any number that goes into a pitch deck against the primary page. To fill the regional age tables properly, allow `www.stats.govt.nz`, `figure.nz` and `explore.data.stats.govt.nz` and re-run. Today's date: 15 Nov 2026.
 

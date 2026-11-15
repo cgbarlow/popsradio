@@ -24,7 +24,7 @@ No option removes every central piece, but the owner can stop maintaining a rela
 - **IPv6 is better than reported for some networks.** APNIC now shows 2degrees at 49%, One NZ at 41% and Starlink at 80% IPv6-capable; Spark is still about 1%.
 - **Smaller fixes.** The amateur radio quote comes from the 2025 amateur licence, not the ZL2GT page; Wellington's mesh moved to a faster preset in 2024; LiveKit's ESP32 SDK no longer carries a "developer preview" warning; Nabu Casa's service is now US$6.50 a month.
 
-## Radio mesh cannot carry Grandad's voice to the next town
+## Radio mesh cannot carry Pop's voice to the next town
 
 Meshtastic is a text mesh. Its default LongFast preset runs at **1.07 kbit/s** and even its fastest, ShortTurbo, at 21.88 kbit/s ([Meshtastic blog, Apr 2025](https://meshtastic.org/blog/why-your-mesh-should-switch-from-longfast/)). Each packet carries at most 239 bytes of payload and a hop limit of at most seven ([Meshtastic mesh algorithm](https://meshtastic.org/docs/overview/mesh-algo/)). Its only audio feature is an experimental Codec2 module for 2.4 GHz SX128x radios on two LilyGo boards, and the docs state plainly that the sub-GHz bands are too narrow for continuous audio packets even in the Short and Fast presets ([Meshtastic audio docs, v2.8](https://meshtastic.org/docs/configuration/module/audio/)).
 

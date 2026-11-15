@@ -1,4 +1,4 @@
-# Other NZ B2B, community and government segments for "Grandad's radio" (one-button Wi-Fi push-to-talk)
+# Other NZ B2B, community and government segments for "Pop's Radio" (one-button Wi-Fi push-to-talk)
 
 Scope: NZ organisational buyers other than rest homes, retirement villages, hospitals, hospices, and disability and home support, which other researchers cover. Research date: 15 November 2026. Method note: WebFetch was blocked for www.tpk.govt.nz, www.educationcounts.govt.nz and figure.nz (DNS not allowed in this session), so figures from those hosts come from search-engine extracts and are marked [verify]. Stats NZ / Figure.NZ business counts are at February 2025 (released 30 Oct 2025). School counts are at 1 July 2025.
 

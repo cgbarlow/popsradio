@@ -139,7 +139,7 @@ ARC is funded by Health NZ under a national ARC agreement with four bed-day rate
 ### Inferences
 - **Positioning:** because nurse call is a compliance-critical, Ngā Paerewa-linked system, the radio should be sold as a *complement* (social and non-urgent contact, "can you bring me a cup of tea") rather than a nurse-call replacement. Otherwise it would face certification, reliability and liability hurdles. Integrating with or reselling through nurse-call resellers is a possible channel.
 - **Price point:** NZ$50–125 per radio is small against per-bed revenue and against nurse-call installs. Bulk purchase of ~60 units per facility would cost ~NZ$3,000–7,500, likely within a facility manager's or activities budget rather than needing group capex approval (inference). A NZ$2–5/month channel fee per resident could be passed through as an optional resident-paid extra, a common model for TV/phone/Wi-Fi in villages (not verified).
-- Under capped ARC funding, family-paid or resident-paid purchase (the family buys the "Grandad's radio" pair, with the facility approving Wi-Fi access) may be an easier route in ARC than operator-funded bulk purchase.
+- Under capped ARC funding, family-paid or resident-paid purchase (the family buys the "Pop's Radio" pair, with the facility approving Wi-Fi access) may be an easier route in ARC than operator-funded bulk purchase.
 
 ### Gaps
 - I did not find Health NZ 2025/26 or 2026/27 bed-day rates by care level and region.

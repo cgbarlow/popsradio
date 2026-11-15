@@ -1,8 +1,8 @@
-# Grandad's Radio Platform Image Prompts
+# Pop's Radio Platform Image Prompts
 
 Nov 15, 2026 · @Chris Barlow
 
-Seven prompts for an image generator, for the platform unit in [Grandad's Radio as a Platform](Grandad's%20Radio%20as%20a%20Platform.md). Prompt 1 designs the radio, in the bedside scene. Prompts 2 to 7 take that picture as their reference and change only the scene: a blueprint, a chess clock in a rest home, Pong from the player's seat, FM radio on the screen, the Talk list close up, and the radio carried with its strap over a shoulder.
+Seven prompts for an image generator, for the platform unit in [Pop's Radio as a Platform](Pop's%20Radio%20as%20a%20Platform.md). Prompt 1 designs the radio, in the bedside scene. Prompts 2 to 7 take that picture as their reference and change only the scene: a blueprint, a chess clock in a rest home, Pong from the player's seat, FM radio on the screen, the Talk list close up, and the radio carried with its strap over a shoulder.
 
 ## How to use
 
@@ -65,7 +65,7 @@ Use the attached image as the reference for the radio. Draw exactly the same rad
 
 ## Prompt 3: chess clock in a rest home
 
-Close and low, at table height. The radio stands upright beside the board and Grandad ends his turn by pressing the orange button with his palm. The radio is the hero; the players are hands and cardigans.
+Close and low, at table height. The radio stands upright beside the board and Pop ends his turn by pressing the orange button with his palm. The radio is the hero; the players are hands and cardigans.
 
 ```
 Use the attached image as the reference for the radio. Show exactly the same radio, identical in every detail: the same matte sage green case with the same long, low shape and proportions; on top, the same small PUSH / OPEN slide switch set to PUSH on the left, the same large orange button in the centre and the same small black volume knob on the right; the same large black ribbed knob on each side; the same screen, speaker grille and single green status light on the front; and the same narrow cream fabric shoulder strap with its metal buckle and rings. Do not redesign the radio, and do not add, remove or move any part. Change only the scene, the camera angle and what the screen shows, as described here. Close-up photograph at table height, low camera angle, of the radio being used as a chess clock in a rest home lounge. A wooden chessboard mid-game on a small round table. In front of the board, between the two players, the radio stands upright, the right way up, on its base, exactly as it stands in the reference image: not lying down, not on its back and not on its side. Its front face, with the screen above the speaker grille, faces the camera, and the orange button is on top. Its strap lies in loose loops on the table beside it. The screen is the right way up and shows two large clock times side by side, "14:52" on the left and "09:07" on the right, with a small black triangle under the right-hand time. No tabs and no other text on the screen. Two elderly players sit either side of the table, seen only from the chest down: on the left an elderly man in a grey knitted cardigan with a tartan blanket over the knees, on the right a player in a navy jumper. The man on the left reaches over and presses the large orange button on top of the radio with the flat palm of his wrinkled hand, fingers relaxed, the way a chess player slaps a clock; the orange button is half hidden under his palm. The right-hand player's hand rests beside a captured pawn. No faces visible. Soft out-of-focus background of armchairs, a window with net curtains and a tea trolley. Warm afternoon daylight, shallow depth of field, sharp focus on the radio and the hand pressing the orange button. Aspect ratio 3:2.

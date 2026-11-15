@@ -1,6 +1,6 @@
-# Grandad's radio
+# Pop's Radio
 
-A walkie-talkie with one big button, made for Grandad.
+A walkie-talkie with one big button, made for Pop.
 
 Mobile phones can be tricky for older people. Small icons, passcodes, updates and menus get in the way when all they want is an easy way to reach the people they love. This project is a small radio that does one thing: hold the orange button to talk, let go to listen. It works over Wi-Fi, so the family can be in the next room or the next town.
 
@@ -24,10 +24,10 @@ This is a family project at the research and design stage. Nothing is built yet.
 | --- | --- | --- |
 | 1 | Prove the idea on two Rabbit R1s, reflashed to run one app | Now |
 | 2 | Build our own radio on an ESP32, for about NZ$35 to 50 in parts | Next |
-| 3 | A family app for iOS and Android, to talk to Grandad's radio from a phone | Later |
+| 3 | A family app for iOS and Android, to talk to Pop's radio from a phone | Later |
 | 4 | A direct path between homes, only if the trials show it's needed | If needed |
 | Later | A kids' mini phone: a smaller, cheaper radio that only reaches the people parents approve | Idea |
-| Later | [Grandad's radio as a platform](Grandad's%20Radio%20as%20a%20Platform.md): radio, games and a chess clock on the same radio, with approved apps | Idea |
+| Later | [Pop's Radio as a platform](Pop's%20Radio%20as%20a%20Platform.md): radio, games and a chess clock on the same radio, with approved apps | Idea |
 
 Every stage uses the same serverless service, the same code core and the same sounds, so R1s, ESP32 radios and phones can share a channel. The design is locked in the [service design](Walkie-Talkie%20Service%20Design.md).
 
@@ -35,7 +35,7 @@ Every stage uses the same serverless service, the same code core and the same so
 
 The R1 is a temporary client. Most of what Stage 1 builds is used again in Stage 2:
 
-- **Used again as is:** the serverless service, the update system, the protocol, the sounds and screen states, and everything learned from the week with Grandad.
+- **Used again as is:** the serverless service, the update system, the protocol, the sounds and screen states, and everything learned from the week with Pop.
 - **Written once for all:** a small C library holding the protocol, encryption, jitter buffer, turn-taking and speech shaping (making voices clearer for older ears). The R1 app calls it, the ESP32 firmware compiles the same files, and the iOS and Android family app will use it too. The R1 app itself becomes the start of the Android family app.
 - **Built first:** a written protocol spec and a laptop test client, so the server can be tested without either device and the two devices can be checked against each other.
 - **R1 only, kept small:** reflashing, the button remap and locking the R1 to one app.
@@ -58,16 +58,16 @@ It is not an emergency alarm. In an emergency, call 111.
 | File | What it is |
 | --- | --- |
 | [`index.html`](index.html) | The project site, in one file. Includes a simulator you can try in the browser |
-| [Rabbit R1 Walkie-Talkie Research and Design](Rabbit%20R1%20Walkie-Talkie%20Research%20and%20Design.md) | Stage 1: the R1 hardware, reflashing, the app, networking, and designing for Grandad |
+| [Rabbit R1 Walkie-Talkie Research and Design](Rabbit%20R1%20Walkie-Talkie%20Research%20and%20Design.md) | Stage 1: the R1 hardware, reflashing, the app, networking, and designing for Pop |
 | [Walkie-Talkie Beyond the R1: Minimum Hardware](Walkie-Talkie%20Beyond%20the%20R1%20Minimum%20Hardware.md) | Stage 2: the ESP32 build, parts and NZ prices, pairing, power, and open channel mode |
 | [Walkie-Talkie Service Design](Walkie-Talkie%20Service%20Design.md) | The locked design: serverless service, updates, shared code, family app, lifetime costs, the guarantee and the roadmap |
 | [Hack Day Action Plan](Hack%20Day%20Action%20Plan.md) | Getting the two R1s talking at the 4 December hack day: what to do beforehand, and how to spend the day |
 | [Walkie talkie without central relay](reports/Walkie%20talkie%20without%20central%20relay.md) | Research on running without a central relay, and the recommendation adopted |
 | [NZ addressable market and opportunities](reports/NZ%20addressable%20market%20and%20opportunities.md) | Research on the size of the New Zealand market, for families and for rest homes, hospitals and other organisations, by category and region |
-| [Similar products and competitors](reports/Similar%20products%20and%20competitors.md) | Research on products like Grandad's radio around the world, what they cost, and what that means for the plan |
+| [Similar products and competitors](reports/Similar%20products%20and%20competitors.md) | Research on products like Pop's Radio around the world, what they cost, and what that means for the plan |
 | [Walkie-Talkie Image Prompts](Walkie-Talkie%20Image%20Prompts.md) | The prompts used to make the concept pictures |
-| [Grandad's Radio as a Platform](Grandad's%20Radio%20as%20a%20Platform.md) | A design exploration: a stout radio with three free-turning knobs that also plays FM and internet radio and simple games, and an approved app store |
-| [Grandad's Radio Platform Image Prompts](Grandad's%20Radio%20Platform%20Image%20Prompts.md) | Prompts for concept pictures of the platform unit |
+| [Pop's Radio as a Platform](Pop's%20Radio%20as%20a%20Platform.md) | A design exploration: a stout radio with three free-turning knobs that also plays FM and internet radio and simple games, and an approved app store |
+| [Pop's Radio Platform Image Prompts](Pop's%20Radio%20Platform%20Image%20Prompts.md) | Prompts for concept pictures of the platform unit |
 | [`images/`](images) | Concept pictures. These are generated images, not photos of real units |
 
 ## Running the site locally

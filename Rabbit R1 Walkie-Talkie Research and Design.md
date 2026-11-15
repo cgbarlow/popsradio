@@ -73,7 +73,7 @@ The R1 is about as open as hardware gets: you can always get in, and it is very 
 
 **Way back.** Rabbit publishes [stock firmware](https://github.com/rabbit-hmi-oss/firmware) and a [browser flash tool](https://rabbit-hmi-oss.github.io/flashing). With mtkclient able to rewrite anything, a permanent brick is unlikely; losing un-backed-up nvram is the real risk.
 
-**No-reflash alternative: Creations.** Rabbit's web-app SDK does expose the side button (longPressStart, longPressEnd) and wheel (scrollUp, scrollDown) ([SDK reference](https://github.com/rabbit-hmi-oss/creations-sdk/blob/main/plugin-demo/reference/creation-triggers.md)). But mic access is undocumented, nobody has shown live audio working, and it still runs inside rabbitOS and depends on Rabbit's servers. Fine for a weekend experiment, wrong for Grandad.
+**No-reflash alternative: Creations.** Rabbit's web-app SDK does expose the side button (longPressStart, longPressEnd) and wheel (scrollUp, scrollDown) ([SDK reference](https://github.com/rabbit-hmi-oss/creations-sdk/blob/main/plugin-demo/reference/creation-triggers.md)). But mic access is undocumented, nobody has shown live audio working, and it still runs inside rabbitOS and depends on Rabbit's servers. Fine for a weekend experiment, wrong for Pop.
 
 ## Kiosk mode and the controls
 
@@ -102,7 +102,7 @@ Screen pinning is not a kiosk; anyone can exit it. [OwnDroid](https://github.com
 
 **Audio.** Capture with `VOICE_COMMUNICATION` (it wins capture priority), play in `MODE_IN_COMMUNICATION` routed with `setCommunicationDevice(BUILTIN_SPEAKER)`, and pin volume at max in code ([AudioManager](https://developer.android.com/reference/android/media/AudioManager)).
 
-**Remote care.** As Device Owner the app can install its own updates silently via `PackageInstaller`: poll the signed update manifest (now on Cloudflare R2, shared with the ESP32 radios), download, install. No Play Store. The same channel carries config (volume, quiet hours, wheel lock) and health pings back. Avoid leaving ADB over Wi-Fi open on Grandad's network.
+**Remote care.** As Device Owner the app can install its own updates silently via `PackageInstaller`: poll the signed update manifest (now on Cloudflare R2, shared with the ESP32 radios), download, install. No Play Store. The same channel carries config (volume, quiet hours, wheel lock) and health pings back. Avoid leaving ADB over Wi-Fi open on Pop's network.
 
 ## Audio and networking
 
@@ -139,7 +139,7 @@ For scale: the 3GPP mission-critical PTT target is under 300 ms mouth-to-ear ([T
 
 - **Small Auckland or Sydney VPS.** Recommended. Public UDP, data-centre power, roughly NZ$5 to 15 a month.
 - **Home Mac Mini.** Works only with a public IP and a UDP port forward. Cloudflare Tunnel does not publish raw UDP to arbitrary clients ([Cloudflare](https://developers.cloudflare.com/cloudflare-one/networks/connectors/cloudflare-tunnel/routing-to-tunnel/protocols/)), so it can carry the TLS fallback but not the voice path. Also a single point of failure on a power cut.
-- **Tailscale.** Adds a VPN login on Grandad's device and relays via Sydney when direct fails. Not worth it.
+- **Tailscale.** Adds a VPN login on Pop's device and relays via Sydney when direct fails. Not worth it.
 
 **Data and battery.** Headers dominate at 20 ms framing: 24 kbit/s Opus is about 46 kbit/s on the wire, roughly 21 MB per hour of talk. Twenty minutes a day is about 200 MB a month. Cellular NAT mappings expire in a median 65 s ([Richter et al.](https://arxiv.org/pdf/1605.05606)), so send a UDP keepalive every 25 to 50 s. Bytes are trivial (about 0.4 MB a day); the cost is the LTE radio waking each time. On the dock over Wi-Fi it does not matter.
 
@@ -190,7 +190,7 @@ Nobody has published an R1 walkie-talkie yet; the only trace is a 2024 forum req
 
 Forking Mumla makes the client GPLv3. That only matters if this ever becomes a product; then start from the MIT pieces.
 
-## Designing for Grandad
+## Designing for Pop
 
 The device should do one thing, sound and look the same forever, and tell the caregiver when something is wrong. Familiar radio metaphor, no menus, adult styling ([SCUF principles](https://wrexham.repository.guildhe.ac.uk/id/eprint/219/), [INDUCT guidance](https://www.dementiainduct.eu/guidance/themes/digital-applications/)).
 
@@ -215,14 +215,14 @@ The 300 ms figure is the 3GPP target for floor grant after a PTT press; real sys
 - The scroll wheel is the biggest accidental-change risk. Speak each step aloud ("Channel two, Chris"), snap back after a few seconds unless confirmed, or lock it remotely. With one or two contacts, disable it.
 - Double-press to replay the last message.
 
-**Reliability.** Rabbit quotes over 36 hours screen-off standby but only about 2.5 hours of heavy audio ([Rabbit support](https://www.rabbit.tech/support/article/rabbit-r1-battery-life)). Live on a dock. Heartbeat every few minutes; alert the caregiver on offline or low battery, which the [Dementia Friendly Technology Charter](https://www.wwl.nhs.uk/media/Services/Dementia/Dementia_Friendly_Technology_Charter.pdf) explicitly asks for. Zello recovers up to 50 missed messages per channel from 24 hours but does not auto-play them ([Zello](https://support.zello.com/zw/message-recovery)); for Grandad, auto-play once with "You have a message from Chris".
+**Reliability.** Rabbit quotes over 36 hours screen-off standby but only about 2.5 hours of heavy audio ([Rabbit support](https://www.rabbit.tech/support/article/rabbit-r1-battery-life)). Live on a dock. Heartbeat every few minutes; alert the caregiver on offline or low battery, which the [Dementia Friendly Technology Charter](https://www.wwl.nhs.uk/media/Services/Dementia/Dementia_Friendly_Technology_Charter.pdf) explicitly asks for. Zello recovers up to 50 missed messages per channel from 24 hours but does not auto-play them ([Zello](https://support.zello.com/zw/message-recovery)); for Pop, auto-play once with "You have a message from Chris".
 
 **Privacy and consent.** Mic live only while the button is held, or while open channel mode is switched on at the device (see below). Never a remote listen-in. Red screen doubles as the mic indicator. Get his consent and revisit it. NZ's domestic-affairs privacy exemption does not cover anything "highly offensive to an ordinary reasonable person" ([Privacy Commissioner](https://privacy.org.nz/blog/to-film-or-not-to-film)).
 
 **Open channel mode (proposal, added November 2026).** Holding a button is fine for a quick message but hard for a long chat or stiff hands. So the walkie gets a second mode, OPEN, alongside push-to-talk. This is a design proposal, not sourced research, and is untested.
 
 - Hands-free but still one talker at a time. The walkie sends when it hears speech and stops when it goes quiet. While the other person talks, the local mic is muted, so no echo cancelling is needed.
-- It can only be switched on at the device, never remotely. On the ESP32 unit it is a physical PUSH / OPEN toggle. The R1 has no spare switch, so Stage 1 tries it as a hidden caregiver setting, purely to learn whether Grandad likes it.
+- It can only be switched on at the device, never remotely. On the ESP32 unit it is a physical PUSH / OPEN toggle. The R1 has no spare switch, so Stage 1 tries it as a hidden caregiver setting, purely to learn whether Pop likes it.
 - The screen stays red and says OPEN the whole time the mic can hear. The walkie says which channel is open, such as "Channel open to family. Everyone on this channel can hear you", and "Channel closed" when it stops. Every other walkie on the channel shows that it is open.
 - OPEN works on whichever channel is selected, group channels included, so a family can chat hands-free. Everyone on that channel hears what the mic picks up, which is why the walkie names the channel aloud. The wheel locks while the channel is open, so an open mic cannot be moved to another channel by accident.
 - After ten minutes with no speech it pauses and says so. One press of the button resumes; a press at any time pauses.
@@ -240,7 +240,7 @@ Build a small custom app and serverless channel service rather than forking Muml
 
 ```mermaid
 flowchart TB
-  G["<b>Grandad's R1</b><br/>Walkie app: Device Owner, HOME<br/>Root daemon reads the button<br/>Opus encode, sealed per packet<br/>On its dock, screen dimmed"]
+  G["<b>Pop's R1</b><br/>Walkie app: Device Owner, HOME<br/>Root daemon reads the button<br/>Opus encode, sealed per packet<br/>On its dock, screen dimmed"]
   C["<b>Caregiver's R1</b><br/>Same app, same build<br/>Wheel picks the channel<br/>More R1s can join a channel<br/>Paired by the same QR"]
   R["<b>Serverless channel service</b><br/>Cloudflare Workers and Durable Objects<br/>Fan-out, floor control, timeouts<br/>Keeps last message for 24 h<br/>Signed APK updates and settings"]
   P["<b>Caregiver's phone</b><br/>Family app, later stage<br/>Battery, offline alerts"]
@@ -261,11 +261,11 @@ Neither R1 accepts inbound connections; both hold an outbound link to the servic
 4.  **Shared C core (shared).** Packet format, ChaCha20-Poly1305, jitter buffer, floor control, open-mode voice detection, speech shaping (compression and EQ for older ears), session and signed settings as a small C library on libopus and libsodium. Builds for ESP-IDF, Android, iOS and desktop.
 5.  **App shell (one or two weekends).** Kotlin, as the "radio" build of the codebase that later becomes the Android family app. Oboe capture and playback, calling the C core via JNI, pre-roll on button down. Synthesised chirp, busy, roger and squelch tail. Wheel changes channel with a spoken announcement.
 6.  **Kiosk.** Device Owner, lock task, HOME, remote config for volume, quiet hours and wheel lock. Set up channels from the control service rather than QR scanning, and skip self-update unless the trial needs it.
-7.  **Grandad trial (a week).** Dock beside his chair, printed card, caregiver alerts on. Tune volume, treble and compression, then decide whether the wheel stays unlocked. Try open channel mode and ask him what he thinks.
+7.  **Pop trial (a week).** Dock beside his chair, printed card, caregiver alerts on. Tune volume, treble and compression, then decide whether the wheel stays unlocked. Try open channel mode and ask him what he thinks.
 
 ## Making the R1 work count for Stage 2
 
-The R1 is a temporary client. The relay, the protocol and what we learn from Grandad are the lasting product, and the ESP32 unit in the [hardware doc](Walkie-Talkie%20Beyond%20the%20R1%20Minimum%20Hardware.md) uses all of them. This section is a plan, not sourced research.
+The R1 is a temporary client. The relay, the protocol and what we learn from Pop are the lasting product, and the ESP32 unit in the [hardware doc](Walkie-Talkie%20Beyond%20the%20R1%20Minimum%20Hardware.md) uses all of them. This section is a plan, not sourced research.
 
 **Carries over to the ESP32 unchanged.**
 
@@ -294,7 +294,7 @@ The R1 is a temporary client. The relay, the protocol and what we learn from Gra
 | Side button scancode unknown                | Blocks PTT                           | getevent on day one; root daemon fallback            |
 | R1 audio latency unknown (no MediaTek data) | Could add 100+ ms                    | Measure with OboeTester before building              |
 | Touch dies after suspend                    | Screen goes dead                     | Keep screen on while docked; cold boot recovers      |
-| No 700 MHz LTE                              | Weak signal rurally or indoors       | Wi-Fi primary; test the carrier at Grandad's house   |
+| No 700 MHz LTE                              | Weak signal rurally or indoors       | Wi-Fi primary; test the carrier at Pop's house   |
 | 1000 mAh battery                            | Dead device off the dock             | Dock lives by his chair; spoken and caregiver alerts |
 | Rabbit winding down R1                      | No new units, unlock site may vanish | Use mtkclient route; buy a spare now                 |
 | Service down                                | Silent failure                       | Serverless service; device shows NOT CONNECTED       |

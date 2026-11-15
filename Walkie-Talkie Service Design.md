@@ -69,7 +69,7 @@ Workers scale per request and every channel is a separate object, so there is no
 
 ## Firmware and app updates
 
-Updates are automatic, signed and reversible. Nobody at Grandad's house does anything.
+Updates are automatic, signed and reversible. Nobody at Pop's house does anything.
 
 | Step | ESP32 radio | R1 radio | Family app |
 |---|---|---|---|
@@ -115,10 +115,10 @@ So the Android app written for the R1 in Stage 1 is the start of the Android fam
 
 ## The family app
 
-The app lets Grandad's family talk to his radio from their phones, and gives them the setup and care tools that the control page was going to provide.
+The app lets Pop's family talk to his radio from their phones, and gives them the setup and care tools that the control page was going to provide.
 
 - **Talk** on any channel the phone is a member of, with the same chirps and turn-taking as the radios.
-- **Join** by scanning an invite from the family's owner device. The phone gets its own key pair, and the channel key is wrapped for it; Grandad's radio needs no change.
+- **Join** by scanning an invite from the family's owner device. The phone gets its own key pair, and the channel key is wrapped for it; Pop's radio needs no change.
 - **Care:** battery, online status and alerts as push notifications; ring a lost radio; set volume, treble, compression, quiet hours and knob lock; record spoken channel names.
 - **Set up:** put a new radio on Wi-Fi over Bluetooth and assign its channels, replacing the laptop script for families.
 - **Never:** turn a radio's microphone on, or switch a radio into OPEN. Those stay on the radio's own switch.
@@ -142,7 +142,7 @@ Running costs follow channels, not radios. A channel's cost comes from how much 
 
 That is about **NZ$2.80 a channel a year** at 20 minutes a day, or NZ$1.40 at 10 minutes (NZ$1.81 to the US dollar). The fixed platform fee (US$5 a month) and domain are spread across the fleet and soon round to nothing. Sources: [Durable Objects pricing](https://developers.cloudflare.com/durable-objects/platform/pricing/) and the relay report's cost table, which these figures match.
 
-**Why more channels cost less each.** A household only talks so much. Grandad can be on one channel at a time, so a family with five channels does not talk five times as much as a family with one; the same talk is spread across them. That is what makes channel packs cheaper per channel.
+**Why more channels cost less each.** A household only talks so much. Pop can be on one channel at a time, so a family with five channels does not talk five times as much as a family with one; the same talk is spread across them. That is what makes channel packs cheaper per channel.
 
 **Service provision per pack.** Paid into a ring-fenced fund on every sale and only spent on running the service. Sized for 15 years (generous for a battery device) with 13 to 17% margin; heavy households average out across the fleet.
 
@@ -231,7 +231,7 @@ Everything a builder needs has a free option. The only thing anyone pays us for 
 
 | Stage | What | Notes |
 |---|---|---|
-| 1, now | Two R1s on the serverless service | Protocol spec, C core, laptop test client, channel service, R1 "radio" app, a week with Grandad |
+| 1, now | Two R1s on the serverless service | Protocol spec, C core, laptop test client, channel service, R1 "radio" app, a week with Pop |
 | 2, next | Our own ESP32 radio | Firmware on the C core, signed automatic updates, setup over USB then Bluetooth, power, case |
 | 3 | Family app for iOS and Android | Talk, join, care and setup. Android starts from the R1 app's codebase |
 | 4, if measured | Direct path | Peer-to-peer and a UDP path through TURN, only if trial data shows cost or delay needs it |

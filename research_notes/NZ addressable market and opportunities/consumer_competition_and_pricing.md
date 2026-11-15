@@ -1,4 +1,4 @@
-# NZ Consumer (B2C) Market: Competition, Pricing, Adoption Benchmarks and Channels for "Grandad's radio" and a kids' mini phone
+# NZ Consumer (B2C) Market: Competition, Pricing, Adoption Benchmarks and Channels for "Pop's Radio" and a kids' mini phone
 
 Research date: 15 November 2026. Prices are NZD incl. GST unless stated. Method note: the research environment blocked direct fetches of msd.govt.nz, www.msd.govt.nz, workandincome.govt.nz, announcements.asx.com.au and tincan.kids (DNS not allowed). Figures for those sources come from search-engine extracts of the pages and are marked [verify]. Retail prices come from search extracts of retailer listings seen in November 2026. Listings change often, so recheck them before using any figure in a pitch.
 

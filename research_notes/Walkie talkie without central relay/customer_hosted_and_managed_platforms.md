@@ -1,4 +1,4 @@
-# Customer-hosted relays and fully managed platforms for "Grandad's radio" (no vendor-run relay fleet)
+# Customer-hosted relays and fully managed platforms for "Pop's Radio" (no vendor-run relay fleet)
 
 Research date: 14 November 2026. Prices are in US$ unless marked NZ$; where converted, the project's own rate of NZ$1.81 per US$1 is used (from `Walkie-Talkie Beyond the R1 Minimum Hardware.md`; not re-checked).
 
@@ -112,7 +112,7 @@ The consumer-device record is poor: the largest incidents came from devices reac
 - A Virus Bulletin 2024 paper exists on the security cost of "open by default" consumer networking — [VB2024 paper](https://virusbulletin.com/uploads/pdf/conference/vb2024/papers/Open-by-default-the-hidden-cost-of-convenience-in-network-security.pdf) (title only seen)
 
 ### Inferences
-- The Kalay lesson applies directly to design B-style and rendezvous designs too: a P2P system with a central lookup is only as strong as the proof a device gives when it registers. Grandad's radio already has per-unit key pairs, so registration and lookup records can be signed; Kalay used a bare UID.
+- The Kalay lesson applies directly to design B-style and rendezvous designs too: a P2P system with a central lookup is only as strong as the proof a device gives when it registers. Pop's Radio already has per-unit key pairs, so registration and lookup records can be signed; Kalay used a bare UID.
 - An exposed base station's realistic risks: (1) DoS or battery/bandwidth drain from internet scanning of the open UDP port, (2) remote code execution through a parser bug on a device that sits inside the family LAN, (3) the unit used as a traffic reflector. Mitigations: answer nothing unless the first packet carries a valid MAC under a group-derived key (silent drop), random high port, no TCP listener, memory-safe parsing, signed OTA. With silent drop the port is indistinguishable from closed.
 - Liability and support: security guidance from ISPs and router vendors tells consumers to turn UPnP off. A product that requires it on will collide with that advice, with router "security scan" warnings, and with managed mesh systems that hide the setting. In a product sold to non-technical grandparents, "log in to your router" is a support call the vendor will lose.
 
@@ -135,7 +135,7 @@ Every precedent I could source that sells to non-experts ended up running centra
 - **Syncthing:** relays are run by volunteers and are "not managed or vetted by the Syncthing project", but each relay announces itself to a global relay pool server hosted by the project, and a forum snapshot put combined relay capacity at 10 Gbit/s with about 900 Mbit/s in use — [Syncthing relay server docs](https://docs.syncthing.net/users/strelaysrv), [relays.syncthing.net](https://relays.syncthing.net), [forum: relay network capacity](https://forum.syncthing.net/t/relay-network-capacity/11470)
 
 ### Inferences
-- The common pattern has three tiers: (1) central identity/rendezvous, always vendor-run; (2) direct path when NAT allows; (3) relay fallback, vendor-run or volunteer-run. Only tier 3 carries media, and it is the tier vendors throttle (Plex) or charge for (Nabu Casa). For Grandad's radio the media is 46 kbit/s, so tier 3 is cheap; the cost that precedents could not escape is tiers 1 and 3 being *available*, not their bandwidth.
+- The common pattern has three tiers: (1) central identity/rendezvous, always vendor-run; (2) direct path when NAT allows; (3) relay fallback, vendor-run or volunteer-run. Only tier 3 carries media, and it is the tier vendors throttle (Plex) or charge for (Nabu Casa). For Pop's Radio the media is 46 kbit/s, so tier 3 is cheap; the cost that precedents could not escape is tiers 1 and 3 being *available*, not their bandwidth.
 - Nabu Casa's relay has the same trust property as the current design: the relay forwards ciphertext and holds no keys. The owner's existing relay is already the "good" version of what these vendors converged on.
 - Syncthing shows a volunteer relay pool is possible for a free, technical community. It is not a model a paid consumer product for grandparents can lean on: no SLA, relays self-report, and the project still hosts the pool and discovery servers.
 
@@ -158,7 +158,7 @@ A Pi hub costs about as much as a walkie unit, adds a second product to support,
 ### Inferences
 - Hub landed cost: board about NZ$40 plus SD card, power supply and case, so roughly NZ$70 to 90 per family (my estimate; accessories not priced this session). That is one to two extra walkie units of cost per family.
 - What a Linux hub buys over an ESP32 base station: it can run the existing Go relay unchanged, a real TLS stack, and an outbound overlay client (a WireGuard-based mesh or Tor) that gets through NAT. But an overlay that gets through NAT is again someone's central coordination and relay service.
-- What it costs: a Linux image to patch for years, SD-card wear and corruption on power cuts, a second OTA pipeline, and a second device for Grandad's household to keep powered. A router plugin (OpenWrt package) only reaches the small minority with open-firmware routers and is unsupportable at consumer scale.
+- What it costs: a Linux image to patch for years, SD-card wear and corruption on power cuts, a second OTA pipeline, and a second device for Pop's household to keep powered. A router plugin (OpenWrt package) only reaches the small minority with open-firmware routers and is unsupportable at consumer scale.
 
 ### Gaps
 - No sourced data on SD-card failure rates or field support cost of Pi-based appliances.

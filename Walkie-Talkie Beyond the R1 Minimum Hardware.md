@@ -15,7 +15,7 @@ Nov 14, 2026 · @Chris Barlow
 - **Battery:** 4 to 9 days off the dock in light sleep, against the R1's day and a half.
 - **LTE:** optional. A SIM7670G board covers all NZ bands including 700 MHz, which the R1 lacks.
 
-**Chosen spec for Grandad's unit:** rotary knob for 3 to 5 channels, a small one-colour screen, spoken channel names, one big talk button and a PUSH / OPEN toggle switch for hands-free talk, with an optional control service for channel setup, health alerts and ringing a lost device.
+**Chosen spec for Pop's unit:** rotary knob for 3 to 5 channels, a small one-colour screen, spoken channel names, one big talk button and a PUSH / OPEN toggle switch for hands-free talk, with an optional control service for channel setup, health alerts and ringing a lost device.
 
 What you give up against the R1: the screen and camera, a finished case, and some loudness unless you fit a bigger speaker. The channel service, channel model and elder-friendly design from the [R1 doc](Rabbit%20R1%20Walkie-Talkie%20Research%20and%20Design.md) carry over unchanged.
 
@@ -62,7 +62,7 @@ Source: [espboards.dev chip comparison](https://www.espboards.dev/blog/esp32-soc
 
 **Audio parts.** An INMP441-class I2S mic and a MAX98357A amp are the standard pairing. The amp gives 3 W into 4 ohms at 5 V; set its gain pin to 15 dB, the usual fix for "too quiet" ([Adafruit](https://learn.adafruit.com/adafruit-max98357-i2s-class-d-mono-amp/pinouts?view=all), [HA forum](https://community.home-assistant.io/t/voice-assistant-volume-too-low-with-max98357a/743281)). Skip Espressif's echo-cancelling front end: it eats 820 KB and a third of a core, and half duplex does not need it ([ESP-SR](https://docs.espressif.com/projects/esp-sr/en/latest/esp32s3/benchmark/README.html)). Sonocotta's Louder-ESP32 boards use the same INMP441 mic on its own I2S bus on the S3, which supports this pairing ([Sonocotta](https://github.com/sonocotta/esp32-audio-dock#mic-header)).
 
-**Speech shaping.** Hi-Fi amp chips such as the TAS5805M on Sonocotta's Louder-ESP32 boards include a DSP that compresses and limits the sound and applies EQ ([TI](https://www.ti.com/product/TAS5805M)). That matters more for Grandad than extra watts: compression brings a quiet talker up to the same level as a loud one without clipping, and a lift around 1 to 4 kHz, where consonants sit, helps the high-frequency loss that comes with age. We do not need the chip for this. Do it in software after decoding, on the listening unit, so each listener's own settings apply: one compressor with a limiter, and two or three EQ filters. At 16 kHz mono this should cost well under 1% of a core (my estimate). It goes in the shared C core, so the R1 gets it too. It is set per unit from the family app, alongside volume and treble, with the treble boost as its EQ. This is a design proposal and hasn't been tested.
+**Speech shaping.** Hi-Fi amp chips such as the TAS5805M on Sonocotta's Louder-ESP32 boards include a DSP that compresses and limits the sound and applies EQ ([TI](https://www.ti.com/product/TAS5805M)). That matters more for Pop than extra watts: compression brings a quiet talker up to the same level as a loud one without clipping, and a lift around 1 to 4 kHz, where consonants sit, helps the high-frequency loss that comes with age. We do not need the chip for this. Do it in software after decoding, on the listening unit, so each listener's own settings apply: one compressor with a limiter, and two or three EQ filters. At 16 kHz mono this should cost well under 1% of a core (my estimate). It goes in the shared C core, so the R1 gets it too. It is set per unit from the family app, alongside volume and treble, with the treble boost as its EQ. This is a design proposal and hasn't been tested.
 
 **What to build on.**
 
@@ -100,7 +100,7 @@ Prices as seen on 14 November 2026, converted at NZ$1.81 to the US dollar and NZ
 
 **The T-Embed caveats.** Its only button is the small push on the dial, and a 1 W speaker may be quiet for older ears. Both are fixable: wire an arcade button to its expansion port and rehouse it with a bigger speaker. The CC1101 version also carries a sub-GHz radio, NFC and IR you will not use.
 
-**A fallback if the bedside unit is too quiet.** If the breadboard test shows a 3 W amp is not loud enough even with a bigger speaker in a sealed box, use a Sonocotta Louder-ESP32 for Grandad's docked unit only. It is the same ESP32-S3 with 8 MB PSRAM, so the firmware still carries over, and it gives about 32 W into 4 ohms from a 5 to 26 V adapter, with a header for the INMP441 mic (S3 boards from rev K0). No soldering is needed for the audio. The costs: it needs a mains adapter and cannot run on a battery, the amp needs setting up over I2C at boot, and its own DSP is hard to tune because TI restricts the tuning software, so keep the speech shaping in software. The Louder-ESP32 Mini (USB powered, 5 W) is not worth it: about 2 dB more than 3 W, and no mic header is listed ([Sonocotta](https://github.com/sonocotta/esp32-audio-dock)). Price not checked.
+**A fallback if the bedside unit is too quiet.** If the breadboard test shows a 3 W amp is not loud enough even with a bigger speaker in a sealed box, use a Sonocotta Louder-ESP32 for Pop's docked unit only. It is the same ESP32-S3 with 8 MB PSRAM, so the firmware still carries over, and it gives about 32 W into 4 ohms from a 5 to 26 V adapter, with a header for the INMP441 mic (S3 boards from rev K0). No soldering is needed for the audio. The costs: it needs a mains adapter and cannot run on a battery, the amp needs setting up over I2C at boot, and its own DSP is hard to tune because TI restricts the tuning software, so keep the speech shaping in software. The Louder-ESP32 Mini (USB powered, 5 W) is not worth it: about 2 dB more than 3 W, and no mic header is listed ([Sonocotta](https://github.com/sonocotta/esp32-audio-dock)). Price not checked.
 
 **Do you need the dial?** With only two people there is one channel. A single-button box is then the simplest device of all.
 
@@ -142,7 +142,7 @@ For scale, consumer products mostly dodge device-to-device pairing and bind devi
 3.  If Wi-Fi changes later, hold the button 10 seconds to open BLE provisioning; use the phone app and the sticker code. BLE stays off otherwise.
 4.  Because each unit has its own key pair, the relay can re-key the group, add a third unit or drop a lost one without anyone touching the devices.
 
-Bluetooth "hold both buttons" pairing is a good second release. It adds firmware and a failure mode Grandad never needs to meet.
+Bluetooth "hold both buttons" pairing is a good second release. It adds firmware and a failure mode Pop never needs to meet.
 
 ## Connectivity and power
 
@@ -178,7 +178,7 @@ The R1 manages about 36 hours on its 1000 mAh, around 28 mA. So: on the dock, ru
 
 Build from parts around an ESP32-S3 with a rotary knob, a small screen and spoken channel names, in a simple box. A LilyGO T-Embed is the ready-made match (knob, screen, mic, speaker, case) but lands in NZ at two to three times the cost of parts.
 
-**Grandad's unit, as specified.**
+**Pop's unit, as specified.**
 
 - **Knob:** 3 to 5 channels. It stops at each end, so fully left is always channel one.
 - **Screen:** a small one-colour OLED, 0.96 to 1.3 inches. Channel name in large text, and one big word for the state: TALK, LISTEN, WAIT, OFFLINE. A status LED beside it adds the colour.
@@ -231,7 +231,7 @@ A [Waveshare S3 audio board](https://core-electronics.com.au/waveshare-esp32-s3-
 3.  **Setup tooling.** Laptop script that writes keys, relay address and Wi-Fi over USB. Long-press to open BLE provisioning.
 4.  **Care tools.** Channels, names, device health, ring and re-key through the channel service. The family app (Stage 3) becomes the front end.
 5.  **Power.** Light sleep off the dock, radio awake on it. Measure real standby current.
-6.  **Case and trial.** Print the case, fit the dock, then a week with Grandad as in the R1 plan.
+6.  **Case and trial.** Print the case, fit the dock, then a week with Pop as in the R1 plan.
 
 **What comes from Stage 1.** The R1 stage is planned so that most of its work lands here (see [making the R1 work count](Rabbit%20R1%20Walkie-Talkie%20Research%20and%20Design.md#making-the-r1-work-count-for-stage-2)):
 
@@ -253,7 +253,7 @@ A unit costs about NZ$35 to 50 in parts with a battery, and about NZ$25 to 30 wi
 1.  **Build from parts, not a kit.** A T-Embed lands at NZ$93 to 113 from AliExpress, two to three times the parts cost. No kit found was cheaper than parts.
 2.  **Running costs are small and prepaid.** The serverless service costs about NZ$1.40 to 2.80 a channel a year, whatever the number of radios on it. A provision per channel pack (NZ$25 for one channel, NZ$50 for three, NZ$60 for five) covers a 15-year life with margin, so there is no subscription ([service design](Walkie-Talkie%20Service%20Design.md#no-subscription-ever-whole-of-life-costs)). The earlier options of an Oracle free server or a NZ$4.50 to 9 Vultr server are superseded.
 3.  **One AliExpress order, multi-packs.** Chargers come in fives, speakers in pairs, encoders in fives. GST is charged at checkout and nothing more is due at the border under NZ$1,000 ([IRD](https://www.ird.govt.nz/gst/gst-for-overseas-businesses/gst-on-low-value-imported-goods)).
-4.  **Skip the battery on Grandad's unit** if it lives on its dock. Saves NZ$3 to 11 and the lithium shipping question. Add one later if he wants to carry it.
+4.  **Skip the battery on Pop's unit** if it lives on its dock. Saves NZ$3 to 11 and the lithium shipping question. Add one later if he wants to carry it.
 5.  **Use a small OLED with built-in knob** instead of the colour screen and separate encoder: about NZ$2 for both, against NZ$10. Decided: one colour is fine, so every unit uses this.
 6.  **Case.** A Surplustronics ABS box is NZ$5.50. Kapiti libraries 3D print at 10 cents a gram, about NZ$4 to 6 a case ([Kapiti Coast](https://www.kapiticoast.govt.nz/libraries/services-at-our-libraries/3d-printing/)); I found no Hutt City equivalent.
 
@@ -285,7 +285,7 @@ The relay already knows every device, so a small admin layer beside it can manag
 - It never holds channel keys. The admin page creates each key in your browser and wraps it for each unit's own public key; the server only stores and forwards the wrapped copies.
 - Firmware is signed with a key kept off the server, so a compromised server cannot push its own code.
 - There is no remote listen, ever. The ring is loud and obvious on purpose. Open channel mode can only be turned on by the switch on the unit; the control service can see it is on but cannot set it.
-- Health and last-seen data are visible to whoever runs the page, so tell Grandad what it shows.
+- Health and last-seen data are visible to whoever runs the page, so tell Pop what it shows.
 
 ## Open channel mode
 
@@ -302,7 +302,7 @@ A toggle switch on the unit chooses between PUSH (hold the button to talk) and O
 - OPEN works on whichever channel the knob is on, group channels included. Everyone on that channel hears what the microphone picks up. The knob is locked while the channel is open, so an open microphone cannot be turned onto another channel by accident.
 - On a group channel it is still one talker at a time: the relay gives the floor to whoever starts speaking first, and the others hear them.
 - After ten minutes with no speech the unit pauses and says so. A press of the big button resumes; a press at any time pauses.
-- Grandad decides whether to use it, and the printed card explains the red light.
+- Pop decides whether to use it, and the printed card explains the red light.
 
 **Cost.** One SPDT toggle switch and one GPIO pin. The relay needs a floor rule driven by voice activity for open sessions.
 
