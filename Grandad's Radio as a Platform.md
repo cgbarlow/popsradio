@@ -59,7 +59,7 @@ In the games board position the two side knobs belong to the game instead: left 
 
 ```mermaid
 flowchart LR
-  M(("<b>Mode knob</b><br/>left side")) --> T["<b>Talk</b><br/>Chris · Family · Test"]
+  M(("<b>Mode knob</b><br/>left side")) --> T["<b>Talk</b><br/>Chris · Family · Nurse"]
   M --> F["<b>Radio (FM)</b><br/>Channel 1 · 2 · 3"]
   M --> I["<b>Radio (Internet)</b><br/>Channel 1 · 2 · 3"]
   M --> P["<b>Play</b><br/>Pong · Pinball · Chess clock"]
@@ -71,10 +71,12 @@ flowchart LR
 
 | Mode | Select knob picks | How it works | Notes |
 | --- | --- | --- | --- |
-| **Talk** | Chris, Family, Test | The existing walkie-talkie, unchanged | Always the first mode, and always where the radio goes home to |
+| **Talk** | Chris, Family, Nurse | The existing walkie-talkie, unchanged | Always the first mode, and always where the radio goes home to |
 | **Radio (FM)** | Channel 1, 2, 3 | An FM receiver chip on the I2C bus, with three presets set from the family app | Works without internet or Wi-Fi, so it still plays during an outage on battery |
 | **Radio (Internet)** | Channel 1, 2, 3 | Streams over Wi-Fi, with three presets set from the family app | Reaches stations FM cannot, such as a station from home for someone who moved countries |
 | **Play** | Pong, Pinball, Chess clock | First-party games written by us, see below | Best played on its back |
+
+**The Nurse channel is for talking, not for emergencies.** In a rest home, a channel to the nurses' station is an obvious third name beside Chris and Family. It is an ordinary talk channel: someone has to be listening at the other end. It does not replace the home's call bell, and the radio is still not an emergency alarm. A rest home would need to agree who answers it and when.
 
 Presets are set by the family, not by tuning at the radio. Grandad turns to "Channel 1" and hears his station; the screen and the spoken name say which one it is.
 
