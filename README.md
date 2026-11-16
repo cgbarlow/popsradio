@@ -10,11 +10,20 @@ Mobile phones can be tricky for older people. Small icons, passcodes, updates an
 
 *Concept picture of the radio we're building. The design is [locked](Design%20Decisions.md); nothing is built yet.*
 
-Other shapes we looked at, and the parts:
+The parts, built two ways:
 
-| The first bedside radio | Classic handheld | Pocket pebble | The parts of the first, one-knob build |
-| --- | --- | --- | --- |
-| ![Sage green wedge-shaped bedside radio](images/bedside-radio_sml.jpg) | ![Cream handheld radio](images/classic-handheld_sml.jpg) | ![Navy pebble-shaped radio in a hand](images/pocket-pebble-front_sml.jpg) | ![Thirteen parts laid out on a mat](images/parts-layout_sml.jpg) |
+| Wired by hand, from modules | One custom board, as a kit |
+| --- | --- |
+| ![Eighteen numbered hobby parts laid out on a grey mat, with a speaker and a battery set apart on the right](images/parts-modules_sml.jpg) | ![The same radio as a kit: one main board, a top board, two small knob boards, three cables, a screen, antennas and knobs, with a speaker and a battery set apart on the right](images/parts-custom-board_sml.jpg) |
+| Eighteen parts, about NZ$61, and two to three hours of soldering | About NZ$58 each to make at 100 and NZ$45 at 1,000. No soldering |
+
+*Generated pictures, not photos of our parts. The speaker and the battery, right of the line, are sold separately. On the site you can [tap each part](https://popsradio.chrisbarlow.nz/build.html#parts) to see what it is.*
+
+The case comes two ways, and other shapes we looked at:
+
+| 3D printed | Plywood | The first bedside radio | Classic handheld | Pocket pebble |
+| --- | --- | --- | --- | --- |
+| ![The sage green radio on a bedside table](images/platform-bedside_sml.jpg) | ![The same radio in a pale plywood box with finger joints](images/plywood-radio_sml.jpg) | ![Sage green wedge-shaped bedside radio](images/bedside-radio_sml.jpg) | ![Cream handheld radio](images/classic-handheld_sml.jpg) | ![Navy pebble-shaped radio in a hand](images/pocket-pebble-front_sml.jpg) |
 
 ## Where it's at
 
@@ -60,10 +69,6 @@ It is not an emergency alarm. In an emergency, call 111.
 ![Eleven houses on a simple map, each with a Pop's Radio. With the internet down, a message from Chris reaches Pop's radio in three hops through two neighbours' radios](images/mesh-map.svg)
 
 *How the mesh might look. A drawing, not a coverage map.*
-
-![The same radio built two ways: sixteen modules joined by hand-soldered wires, and one main board with three small boards](images/build-compare.svg)
-
-*Wired from modules for the first few, then one custom board. A drawing, not a photo.*
 
 ## What's in this repo
 

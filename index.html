@@ -52,7 +52,7 @@
 
 <header class="top">
   <div class="wrap">
-    <a class="mark" href="#"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M13 44V20a4 4 0 0 1 4-4h30a4 4 0 0 1 4 4v24z" fill="#ea6a1f"/><path d="M13 36h38v8H13z" fill="#b84d10"/><rect x="4" y="42" width="56" height="14" rx="2" fill="#1d1d1d"/></svg>Pop's Radio</a>
+    <a class="mark" href="#"><svg viewBox="0 0 64 64" aria-hidden="true"><g class="cap"><path d="M13 44V20a4 4 0 0 1 4-4h30a4 4 0 0 1 4 4v24z" fill="#ea6a1f"/><path d="M13 36h38v8H13z" fill="#b84d10"/></g><rect x="4" y="42" width="56" height="14" rx="2" fill="#1d1d1d"/></svg>Pop's Radio</a>
     <nav class="nav" aria-label="On this page">
       <a href="#try">Try it</a>
       <a href="#radio">The radio</a>
@@ -548,6 +548,16 @@ document.querySelectorAll("[data-set-size]").forEach(b => b.addEventListener("cl
 $("themeBtn").addEventListener("click", () => { const t = isDark() ? "light" : "dark"; root.dataset.theme = t; save("wt-theme", t); paintControls(); });
 matchMedia("(prefers-color-scheme: dark)").addEventListener("change", paintControls);
 paintControls();
+
+/* ---------- The mark: its orange button goes down when pressed ---------- */
+(function () {
+  const m = document.querySelector(".mark"); let t;
+  const down = () => { clearTimeout(t); m.classList.add("pressed"); };
+  const up = () => { clearTimeout(t); t = setTimeout(() => m.classList.remove("pressed"), 160); };
+  m.addEventListener("pointerdown", down);
+  ["pointerup", "pointerleave", "pointercancel"].forEach(e => m.addEventListener(e, up));
+  m.addEventListener("click", () => { down(); up(); });
+})();
 $("printBtn").addEventListener("click", () => { track("card_print"); window.print(); });
 
 /* ---------- Sounds, made in the browser ---------- */
