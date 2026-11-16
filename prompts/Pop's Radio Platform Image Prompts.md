@@ -200,7 +200,7 @@ No loose wires, no tangle, no soldering iron, no hands, no faces, no text on the
 | 5 | Screw posts | Somewhere to fix what you add |
 | 6 | Two USB-C ports, with an antenna socket above them | Power, and Data. The socket takes a screw-on 4G antenna |
 
-**The picture on the site.** Made from an earlier version of this prompt, with one reference picture, on 16 November 2026 and saved as `images/radio-open.jpg`. Its tags came out differently from the key above (two 2s, and 1 on the case corner), so the tinkerer's page has its own key written to match the picture. It also shows the mesh radio on the main board and leaves out the strap, which is why the prompt now takes the parts picture as a second reference.
+**The picture on the site.** Made from this prompt, with both reference pictures, on 16 November 2026 and saved as `images/radio-open.jpg`. The outside, the strap and the main board came out right. The mesh card was not plugged in, so it shows a bare base, and the tags point at different things from the key above, so the tinkerer's page has its own key written to match the picture.
 
 **Getting the inside right.** Generators fill an open case with wires. If it comes out cluttered, add "almost empty inside, three flat cables only". If the outside changes, add "the outside of the radio matches the first image exactly". If the grey mat or the flat lay appears, add "the second image is only a guide to what the parts look like; none of its layout appears in the picture". To show the hotspot, add "the second green card from the second image, its item 12, is plugged into the second bay, and its black whip antenna is screwed onto the gold socket on the side". For the plywood version, attach `images/plywood-radio.jpg` as the first image instead.
 
