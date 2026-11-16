@@ -1,6 +1,6 @@
 # Design Decisions
 
-Nov 16, 2026 · @Chris Barlow
+Nov 16, 2026 · @Chris Barlow · updated with decision 11, the plywood case
 
 **The ideas are now decisions.** Until today the platform radio, the custom board and the mesh were explorations sitting beside a simpler Stage 2 build. This page locks them, so there is one radio to draw, price and build. Where another document disagrees with this page, this page wins.
 
@@ -20,6 +20,7 @@ Locked means the design work stops going round in circles. It does not mean test
 | 8 | **The mesh is always on, and every Pop's Radio takes part.** Each radio passes other people's messages along as well as its own | On only when docked or when Wi-Fi was down; not passing messages on | [Below](#the-mesh-always-on) |
 | 9 | **Two ways to buy: a built radio or a kit.** The plans stay free for anyone building for their own family | "Parts kit" was one line in a table | [Below](#how-people-get-one) |
 | 10 | **Modules for the first few, the custom board from then on.** Stage 2a builds the radio from modules to prove it; Stage 2b is 10 boards, then 100 kits | Stage 2 was a one-knob radio for NZ$35 to 50 | [Roadmap](#the-order-of-work) |
+| 11 | **The case comes two ways: 3D printed or plywood.** Both plans are free. A finished plywood box can be bought with a kit | A 3D printed case only | [Below](#the-case-printed-or-plywood) |
 
 Not changed: the [service design](Walkie-Talkie%20Service%20Design.md), Stage 1 on the two R1s, hold to talk, PUSH / OPEN, encryption, no subscription for the hardware, and "this is not an emergency alarm".
 
@@ -71,8 +72,8 @@ Not changed: the [service design](Walkie-Talkie%20Service%20Design.md), Stage 1 
 | | Free plans | Kit | Built radio |
 |---|---|---|---|
 | Who it is for | Makers building for their own family | Families who can use a screwdriver, schools and community workshops | Everyone else |
-| What you get | Parts list, board files, printable case, firmware | All four boards assembled, tested and loaded, the screen, cables, both antennas, a setup card | A finished radio, charged and paired, ready for Pop |
-| What you add | Everything | A case (print ours or buy it printed), a speaker and an 18650 cell | Nothing |
+| What you get | Parts list, board files, a case to print or to cut from plywood, firmware | All four boards assembled, tested and loaded, the screen, cables, both antennas, a setup card | A finished radio, charged and paired, ready for Pop |
+| What you add | Everything | A case (make ours from the plans, or buy it made), a speaker and an 18650 cell | Nothing |
 | Soldering | Yes, 2 to 3 hours | None. A screwdriver job | None |
 | Price | Parts from about NZ$61 | NZ$89 to 99 for the first 100, towards NZ$79 at 1,000 (suggested) | Not set. Kit plus case, speaker, cell, assembly and a test |
 | Channels | Run your own service, or buy channels | Bought from the [price list](Walkie-Talkie%20Service%20Design.md#prices-kept-simple) | Come with the set, paid for life |
@@ -81,6 +82,23 @@ Not changed: the [service design](Walkie-Talkie%20Service%20Design.md), Stage 1 
 - **Why the cell is left out of the kit.** Lithium cells are awkward to air-freight and cheap to buy in New Zealand.
 - **Where the money comes from.** A margin on kits and built radios, extra channels, and the family app. The hardware never needs a subscription.
 - **Selling either one commercially needs a licence** from us ([COMMERCIAL.md](COMMERCIAL.md)). Building for your own family never does.
+
+## The case: printed or plywood
+
+**A kit needs a case, and not everyone has a 3D printer.** So there are two, and the same boards fit both.
+
+| | 3D printed | Plywood |
+|---|---|---|
+| What it is | The sage green case in the concept pictures, in two halves, with rounded corners | A box of six flat panels with finger joints, about 6 mm thick, the same 220 × 125 × 80 mm outside |
+| The free plan | Files to print (STL and STEP) | A one-page drawing to cut by hand, and a cutting file (SVG and DXF) for a laser cutter or CNC router |
+| Tools | A 3D printer, or a library or makerspace that has one | A laser cutter, or a fretsaw and a drill. Wood glue and sandpaper |
+| Or buy it made | A printed case | A finished box: glued, sanded and oiled, with the holes cut and the back panel left to screw on |
+| Price | Not set | Not set |
+
+- **Small parts are printed either way.** The two big knobs, the volume knob and the orange button cap come with a bought case, or are printed from the plans.
+- **The back panel screws on.** The boards, speaker and cell go in from the back, and the cell can be changed later.
+- **Why plywood.** It suits a school workshop or a shed, it needs no printer, and a wooden radio by the bed looks like furniture, not a gadget.
+- **A first proposal.** The plan is not drawn. The 6 mm thickness, the joints and the finish are starting points, to be settled by building one.
 
 ## What it saves
 
@@ -100,7 +118,7 @@ The saving in parts is modest. The saving in time is the point: 100 radios from 
 | Stage | What | Status |
 |---|---|---|
 | 1 | Prove the idea on two Rabbit R1s | Now |
-| 2a | Build the platform radio from modules: three knobs, the TFT, FM, the tilt sensor and the mesh chip on a breadboard, then in a printed case. A week with Pop | Next |
+| 2a | Build the platform radio from modules: three knobs, the TFT, FM, the tilt sensor and the mesh chip on a breadboard, then in a printed case and a plywood one. A week with Pop | Next |
 | 2b | The custom board. Draw it, get a real quote, build 10, test with Pop, then 100 kits | After 2a |
 | 3 | Family app for iOS and Android | Later |
 | 4 | A direct path between homes | Only if trials show the need |
@@ -121,6 +139,7 @@ Locking a decision does not make it true. Each of these could reopen one.
 | Battery life with the mesh always on | Decision 8 |
 | Mesh range from inside the case, and inside a house | Decision 8, and whether the antenna can stay inside |
 | FM reception with the wire in the strap | Whether FM stays |
+| A plywood box built from the plan, with the boards in it | Decision 11: panel thickness, the joints, whether the knob shafts and the screen reach through, and how the speaker sounds in wood |
 | A real quote from JLCPCB and Heltec | Every price here |
 | RSM's view on kits, and testing in the 915 MHz band | Decision 9, and when kits can be sold |
 | Legal advice on Meshtastic's GPL protobufs | Direct messages and voice clips over the mesh |

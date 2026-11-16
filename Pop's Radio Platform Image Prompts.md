@@ -2,12 +2,12 @@
 
 Nov 15, 2026 · @Chris Barlow
 
-Seven prompts for an image generator, for the platform unit in [Pop's Radio as a Platform](Pop's%20Radio%20as%20a%20Platform.md). Prompt 1 designs the radio, in the bedside scene. Prompts 2 to 7 take that picture as their reference and change only the scene: a blueprint, a chess clock in a rest home, Pong from the player's seat, FM radio on the screen, the Talk list close up, and the radio carried with its strap over a shoulder.
+Nine prompts for an image generator, for the platform unit in [Pop's Radio as a Platform](Pop's%20Radio%20as%20a%20Platform.md). Prompt 1 designs the radio, in the bedside scene. Prompts 2 to 7 take that picture as their reference and change only the scene: a blueprint, a chess clock in a rest home, Pong from the player's seat, FM radio on the screen, the Talk list close up, and the radio carried with its strap over a shoulder. Prompts 8 and 9 are the plywood case: the cut panels laid out as a plan, and the finished plywood radio.
 
 ## How to use
 
 1. **Make the reference picture.** Run prompt 1 until the radio is right, and save that picture. It is the only prompt that describes the radio in full.
-2. **Attach it to every other prompt.** For prompts 2 to 7, attach the reference picture and paste the prompt. Each one tells the generator to keep the radio exactly as it is and change only the scene, the camera angle and what the screen shows.
+2. **Attach it to every other prompt.** For prompts 2 to 7 and 9, attach the reference picture and paste the prompt. Each one tells the generator to keep the radio exactly as it is and change only the scene, the camera angle and what the screen shows.
 3. **Always attach the original.** Use the prompt 1 picture every time, not the latest result. Each copy drifts a little, and copies of copies drift a lot.
 4. **If the radio changes anyway,** add "match the reference image exactly; the radio must not change" to the end, or try again. Small parts drift first: the switch, the volume knob, the status light.
 5. **If your tool cannot take a reference picture,** use [the fallback](#fallback-no-reference-picture) at the end.
@@ -105,9 +105,57 @@ Use the attached image as the reference for the radio. Show exactly the same rad
 
 **Variations worth trying.** All of these start from the reference picture. For a message playing, ask for the same bedside scene with "LISTENING" in large letters below the tabs and the status light red. In prompt 4, add a second pair of younger hands holding the right knob for two-player Pong with a grandchild. In prompt 4, swap Pong for a pinball table, with one hand pressing each side knob as flippers. For a cutaway, add "exploded view showing the circuit board, speaker, battery and antenna wire floating apart above the case" to prompt 2.
 
+## Prompt 8: the plywood box plan
+
+The plywood case as a flat pack: every panel cut and laid out, before any glue. It needs no reference picture, because it shows panels, not the radio. The numbered tags have a key below, so garbled labels don't matter.
+
+```
+Top-down flat lay product photograph, knolling style, of the parts of a flat-pack plywood radio case, neatly arranged on a matte light grey workbench mat. Soft even studio lighting, sharp focus, no hands, generous spacing. All the wooden parts are pale birch plywood, 6 mm thick, freshly cut, with clean visible ply layers on every edge and square finger joints, like evenly spaced teeth, along the edges where panels meet. Exactly nine items, each with a small white round numbered tag (1 to 9) placed beside it:
+
+1. A front panel, a landscape rectangle about 220 x 125 mm. In its upper half, centred, a small rectangular window about 50 x 38 mm. In its lower half, a wide speaker grille made of a neat grid of small round holes. One small round hole to the left of the window.
+2. A back panel, a plain landscape rectangle about 220 x 125 mm, with a small countersunk screw hole in each corner and one small rounded slot near the bottom edge.
+3. A top panel, a long narrow rectangle about 220 x 80 mm, with three openings in a row: a short narrow slot on the left, a large round hole about 40 mm across in the centre, and a small round hole on the right.
+4. A bottom panel, a plain long narrow rectangle about 220 x 80 mm, with four small holes for feet.
+5. A left side panel, a small rectangle about 125 x 80 mm, with one round hole in its upper half and a small hole near the top corner.
+6. A right side panel, identical to the left side panel.
+7. Small printed plastic parts in a row: one round orange button cap about 40 mm across, two large black deeply ribbed knobs about 40 mm across, and one small black ribbed knob about 25 mm across.
+8. A small pile of fittings: eight small brass wood screws, four round black rubber feet, and two small steel rings.
+9. A folded narrow cream woven fabric strap with a metal slide buckle.
+
+Beside the panels, at the edge of the mat, a small bottle of wood glue, a folded sheet of sandpaper and a short steel ruler. Warm, clean, craft workshop catalogue look, realistic scale between parts. No electronics, no circuit boards, no wires, no assembled box, no text or logos on any part, no burn marks. Aspect ratio 16:9.
+```
+
+**With names instead of numbers.** Swap the tag sentence for: "each with a small white printed label beside it reading its name in clean black sans-serif capitals", and use these names: FRONT, BACK, TOP, BOTTOM, LEFT SIDE, RIGHT SIDE, BUTTON AND KNOBS, FITTINGS, STRAP.
+
+**Key to the numbers.**
+
+| No. | Part | What the holes are for |
+| --- | --- | --- |
+| 1 | Front panel | The screen window, the speaker grille and the status light |
+| 2 | Back panel | Screws on, so the boards, speaker and cell go in last. The slot is for USB-C |
+| 3 | Top panel | The PUSH / OPEN switch, the orange button and the volume knob |
+| 4 | Bottom panel | Four rubber feet |
+| 5 | Left side panel | The Mode knob, and a strap ring |
+| 6 | Right side panel | The Select knob, and a strap ring |
+| 7 | Button cap and knobs | 3D printed, with either case |
+| 8 | Screws, feet and strap rings | |
+| 9 | Shoulder strap | The FM aerial runs inside it |
+
+**As a drawing instead.** For a plan to print, swap the first sentence for: "A clean technical cutting plan on white paper, drawn in thin black lines, showing six flat panels laid out as they would be cut from one sheet of plywood, each with its width and height marked by dimension lines." Generators garble the numbers, so use it as a picture of a plan, not as the plan. The real cutting file comes from the board and case drawings.
+
+## Prompt 9: the finished plywood radio
+
+The same radio in the same bedside scene, with a plywood case. Attach the prompt 1 picture. This is the one prompt that does change the radio, so it says exactly what changes and what does not.
+
+```
+Use the attached image as the reference for the radio and the scene. Show the same radio in the same place, with every control in the same position and at the same size: on top, the same small PUSH / OPEN slide switch set to PUSH on the left, the same large orange button in the centre and the same small black volume knob on the right; the same large black ribbed knob on each side; the same single green status light and the same narrow cream fabric shoulder strap with its metal buckle and rings. Do not add, remove or move any control. Change only the case, as described here. The case is now a box made of pale birch plywood, 6 mm thick, instead of green plastic: the same long, low shape, about 220 mm wide, 125 mm tall and 80 mm deep, but with flat faces and square edges, the corners only lightly sanded round. Square finger joints, like evenly spaced interlocking teeth, show clearly along every edge where two panels meet, with the darker ply layers visible on the end grain. The wood has a soft oiled satin finish with a fine natural grain, not varnished and not glossy. On the front face, the screen sits behind a neat rectangular window cut in the plywood, and below it the speaker grille is a neat grid of small round holes drilled straight through the wood. The orange button, the black knobs and the black slide switch stand out against the pale wood. Four small black rubber feet under the base. It looks carefully handmade from a kit, sturdy and warm, like a small piece of furniture. The same wooden bedside table, reading lamp with a warm glowing shade and ceramic mug of tea, the same soft warm evening lamp light and shallow depth of field. The screen shows the same words as the reference image and no other text. No antenna, no keypad, no other buttons, switches or lights, no brand logos, no burn marks, no visible glue. Aspect ratio 4:5.
+```
+
+**Getting the plywood right.** If the case comes out as solid timber, add "plywood, with thin layers visible on every edge". If the corners come out rounded like the plastic case, add "square edges, flat panels". If the joints vanish, add "box joints visible on every corner". For a pair, ask for "the green plastic radio and the plywood radio side by side on the same table".
+
 ## Fallback: no reference picture
 
-If your tool cannot take a picture as a reference, each prompt has to describe the radio itself. In prompts 2 to 7, delete everything from "Use the attached image" to "as described here." and paste this in its place. Results will match less closely than with a reference picture.
+If your tool cannot take a picture as a reference, each prompt has to describe the radio itself. Prompt 8 needs no reference. In prompts 2 to 7, delete everything from "Use the attached image" to "as described here." and paste this in its place. Results will match less closely than with a reference picture.
 
 ```
 The radio: a stout rectangular tabletop radio in matte sage green plastic with softly rounded edges: a long, low, landscape shape, about 220 mm wide, 125 mm tall and 80 mm deep, like a classic portable transistor radio. The front face is clearly much wider than it is tall, nearly twice as wide, and never square. The case is one plain shape with straight sides all the way down: no flared base, no plinth, no skirt, no foot. A long, narrow, adjustable woven cream fabric shoulder strap, only about 20 mm wide, long enough to wear over the shoulder, with a metal slide buckle for adjusting its length, fixed at each end to a small metal ring at the upper corner of each side panel; not a short handle. Front face: in the upper half, a paper-like reflective black-and-white screen about 140 mm wide and 50 mm tall, a wide landscape shape, with a warm light grey background and crisp black text, lit by a soft warm front light; in the lower half, a wide perforated speaker grille. Top surface, from left to right: a small, compact smooth slide switch: a short slot only about 20 mm long, half the width of the orange button, with the word "PUSH" printed in small white capitals just in front of its left end and "OPEN" just in front of its right end. The slider thumb is a small raised oval about 8 mm long, sitting hard against the far left end of the slot, directly behind the word "PUSH"; the rest of the slot, to the right of the thumb, is an empty dark groove. The switch is clearly set to PUSH, not in the middle; exactly in the centre of the top surface, midway between the left and right edges, with the switch to its left and the volume knob to its right, one very large domed orange arcade-style push button about 40 mm wide, the biggest and brightest control on the radio; and a small black ribbed volume knob about 25 mm across, clearly smaller than the orange button. One large black ribbed rotary knob sticks out from each side panel, left and right, level with the screen, each about 40 mm across and 25 mm deep, with deep finger grips like a vintage radio tuning knob and a white pointer line on the face. One small status light glowing green, to the left of the screen only. Only three knobs in total. No antenna, no keypad, no other buttons, switches or lights, no brand logos.

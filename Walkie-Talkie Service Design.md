@@ -219,7 +219,7 @@ Everything a builder needs has a free option. The only thing anyone pays us for 
 | Item | Free | From us |
 |---|---|---|
 | Parts | Parts list and board files, with part numbers and suppliers (the [cost-down report](reports/Custom%20PCB%20and%20cost-down.md)) | A kit: all four boards assembled, tested and loaded, with the screen, cables and antennas. No soldering. Or a built radio |
-| Case | Printable plans (STL and STEP files) | Printed case |
+| Case | Plans for a 3D printed case (STL and STEP files) and for a plywood box (a drawing and a cutting file) | A printed case, or a finished plywood box |
 | Firmware | Web flasher over USB-C | Loaded on a kit's board |
 | Speaker and battery cell | Buy locally | Not in the kit; fitted in a built radio |
 | Service | Run your own copy | Channels, from the same price list |
