@@ -17,36 +17,38 @@ Paste one prompt at a time. Each is self-contained, so the generator needs no ot
 
 ## Prompt 1a: every part, as modules
 
-The radio as it is built in Stage 2a: breakout modules joined by hand. The parts follow the module build in the [cost-down report](reports/Custom%20PCB%20and%20cost-down.md#what-it-costs-from-modules-today), plus the three things every build adds: a speaker, a battery cell and a case.
+The radio as it is built in Stage 2a: breakout modules joined by hand. The parts follow the module build in the [cost-down report](reports/Custom%20PCB%20and%20cost-down.md#what-it-costs-from-modules-today), plus a battery cell. The speaker is sold separately, so it sits off to one side, apart from the kit. The case is left out: it has its own pictures.
 
 ```
-Top-down flat lay product photograph of electronic hobby parts, neatly arranged in a grid (knolling style) on a matte light grey workbench mat. Soft even studio lighting, sharp focus, no hands, no tools, generous spacing between parts. Exactly twenty items in four rows of five, each with a small white round numbered tag (1 to 20) placed beside it:
+Top-down flat lay product photograph of electronic hobby parts, neatly arranged in a grid (knolling style) on a matte light grey workbench mat. Soft even studio lighting, sharp focus, no hands, no tools, generous spacing between parts. Exactly eighteen items in three rows of six on the left three-quarters of the mat, each with a small white round numbered tag (1 to 18) placed beside it:
 
 1. A small green ESP32-S3 microcontroller dev board, about 60 x 25 mm, with two USB-C ports, a silver metal radio shield and two rows of gold header pins.
 2. A tiny round purple microphone breakout board, about 15 mm across, with one small silver MEMS microphone and six pins.
 3. A small blue amplifier breakout board, about 18 x 18 mm, with a green two-pin screw terminal.
-4. A round black 57 mm loudspeaker with a paper cone, metal frame, and two short red and black wires.
-5. A large round orange arcade-style push button, 30 mm wide, with a black threaded body and nut.
-6. A rotary encoder with a metal shaft on a small black board, with a large black deeply ribbed knob, 40 mm across, beside it.
-7. A second identical rotary encoder on a small black board, with a second identical large black ribbed knob, 40 mm across, beside it.
-8. A third rotary encoder on a small black board, with a small black ribbed knob, 20 mm across, beside it.
-9. A 2.4 inch display module, a black glass rectangle about 60 x 43 mm on a red board with a row of pins, switched off.
-10. A tiny green FM radio module, about 11 x 11 mm, a bare board with gold half-holes along two edges.
-11. A neat coil of thin black insulated wire, about 75 cm long, with one stripped end.
-12. A tiny purple accelerometer breakout board, about 12 x 12 mm, with one small black chip and a row of pins.
-13. A small dark green radio module shaped like a postage stamp, about 18 x 17 mm, with a silver metal shield, gold half-holes along its edges and one tiny round gold antenna socket.
-14. A short black stubby rubber antenna, about 50 mm long, joined to a thin grey cable with a tiny gold connector on the end.
-15. A black plastic holder for one cylindrical battery, with a metal spring contact at one end, and beside it one green cylindrical 18650 lithium cell, 65 mm long and 18 mm across.
-16. A small blue USB-C battery charger board, about 25 x 17 mm.
-17. A small black slide switch with a short flat thumb tab.
-18. One red LED and two clear LEDs, each with two long legs.
-19. A tan perforated prototyping board, about 70 x 50 mm, and a small coil of thin multi-coloured hookup wire.
-20. Two halves of an empty matte sage green 3D printed case, a long low box about 220 x 125 x 80 mm with rounded corners, a round hole on each short side and a round speaker grille on the front half.
+4. A large round orange arcade-style push button, 30 mm wide, with a black threaded body and nut.
+5. A rotary encoder with a metal shaft on a small black board, with a large black deeply ribbed knob, 40 mm across, beside it.
+6. A second identical rotary encoder on a small black board, with a second identical large black ribbed knob, 40 mm across, beside it.
+7. A third rotary encoder on a small black board, with a small black ribbed knob, 20 mm across, beside it.
+8. A 2.4 inch display module, a black glass rectangle about 60 x 43 mm on a red board with a row of pins, switched off.
+9. A tiny green FM radio module, about 11 x 11 mm, a bare board with gold half-holes along two edges.
+10. A neat coil of thin black insulated wire, about 75 cm long, with one stripped end.
+11. A tiny purple accelerometer breakout board, about 12 x 12 mm, with one small black chip and a row of pins.
+12. A small dark green radio module shaped like a postage stamp, about 18 x 17 mm, with a silver metal shield, gold half-holes along its edges and one tiny round gold antenna socket.
+13. A short black stubby rubber antenna, about 50 mm long, joined to a thin grey cable with a tiny gold connector on the end.
+14. A black plastic holder for one cylindrical battery, with a metal spring contact at one end, and beside it one green cylindrical 18650 lithium cell, 65 mm long and 18 mm across.
+15. A small blue USB-C battery charger board, about 25 x 17 mm.
+16. A small black slide switch with a short flat thumb tab.
+17. One red LED and two clear LEDs, each with two long legs.
+18. A tan perforated prototyping board, about 70 x 50 mm, and a small coil of thin multi-coloured hookup wire.
 
-Clean technical catalogue look, realistic scale between parts, neutral colours. No extra components, no text or part numbers printed on any board, no brand logos. Aspect ratio 16:9.
+On the right quarter of the mat, set well apart from the grid behind a thin white line, one item on its own, sold separately:
+
+19. A round black 57 mm loudspeaker with a paper cone, metal frame, and two short red and black wires.
+
+Clean technical catalogue look, realistic scale between parts, neutral colours. No case or enclosure, no extra components, no text or part numbers printed on any board, no brand logos. Aspect ratio 16:9.
 ```
 
-**With names instead of numbers.** Swap the tag sentence for: "each with a small white printed label beside it reading its name in clean black sans-serif capitals", and use these names: ESP32-S3 BOARD, MICROPHONE, AMPLIFIER, SPEAKER, TALK BUTTON, MODE KNOB, SELECT KNOB, VOLUME KNOB, SCREEN, FM TUNER, FM AERIAL, TILT SENSOR, MESH RADIO, MESH ANTENNA, BATTERY, CHARGER, PUSH OPEN SWITCH, LIGHTS, BOARD AND WIRE, CASE.
+**With names instead of numbers.** Swap the tag sentence for: "each with a small white printed label beside it reading its name in clean black sans-serif capitals", and use these names: ESP32-S3 BOARD, MICROPHONE, AMPLIFIER, TALK BUTTON, MODE KNOB, SELECT KNOB, VOLUME KNOB, SCREEN, FM TUNER, FM AERIAL, TILT SENSOR, MESH RADIO, MESH ANTENNA, BATTERY, CHARGER, PUSH OPEN SWITCH, LIGHTS, BOARD AND WIRE; and, set apart, SPEAKER.
 
 **Key to the numbers.**
 
@@ -55,25 +57,24 @@ Clean technical catalogue look, realistic scale between parts, neutral colours. 
 | 1 | ESP32-S3 dev board, N16R8 | The brain: Wi-Fi, voice coding, encryption, the screen and games | 10 |
 | 2 | I2S microphone breakout (INMP441) | Hears you | 6, with the amplifier |
 | 3 | I2S amplifier breakout (MAX98357A) | Drives the speaker | |
-| 4 | Speaker, 4 ohm 3 W | Loud enough for Pop, and for music | Not in the report's total |
-| 5 | Big push button | Hold to talk | 5, with the switch and lights |
-| 6 | Encoder and large knob | Mode: Talk, FM, internet radio or Play | 7.50 for all three |
-| 7 | Encoder and large knob | Select: who, which station, which game | |
-| 8 | Encoder and small knob | Volume | |
-| 9 | 2.4 inch TFT screen, 320 × 240 | Names, stations and Pong | 8 |
-| 10 | FM module (RDA5807M) | Ordinary FM radio, with no internet | 2 |
-| 11 | FM wire aerial, about 75 cm | Runs through the shoulder strap | With the FM module |
-| 12 | Accelerometer breakout | Knows upright from lying on its back | 2 |
-| 13 | Mesh radio stamp (Heltec HT-CT62) | The always-on mesh: Meshtastic on its own chip | 14 |
-| 14 | 915 MHz antenna with pigtail | The mesh radio's antenna | A few dollars; not in the report's module total |
-| 15 | 18650 holder and cell | Power off the stand | Holder with the charger; cell about 12.50 |
-| 16 | USB-C charger board | Charges the cell | 3.20, with the holder |
-| 17 | Slide switch | PUSH or OPEN | With the button |
-| 18 | Red LED and two RGB LEDs | Red whenever the microphone can hear; colours for talk and listen | With the button |
-| 19 | Proto board and hookup wire | Joins it all up, by hand | 3 |
-| 20 | Printed case | The shell | Not in the report's total |
+| 4 | Big push button | Hold to talk | 5, with the switch and lights |
+| 5 | Encoder and large knob | Mode: Talk, FM, internet radio or Play | 7.50 for all three |
+| 6 | Encoder and large knob | Select: who, which station, which game | |
+| 7 | Encoder and small knob | Volume | |
+| 8 | 2.4 inch TFT screen, 320 × 240 | Names, stations and Pong | 8 |
+| 9 | FM module (RDA5807M) | Ordinary FM radio, with no internet | 2 |
+| 10 | FM wire aerial, about 75 cm | Runs through the shoulder strap | With the FM module |
+| 11 | Accelerometer breakout | Knows upright from lying on its back | 2 |
+| 12 | Mesh radio stamp (Heltec HT-CT62) | The always-on mesh: Meshtastic on its own chip | 14 |
+| 13 | 915 MHz antenna with pigtail | The mesh radio's antenna | A few dollars; not in the report's module total |
+| 14 | 18650 holder and cell | Power off the stand | Holder with the charger; cell about 12.50 |
+| 15 | USB-C charger board | Charges the cell | 3.20, with the holder |
+| 16 | Slide switch | PUSH or OPEN | With the button |
+| 17 | Red LED and two RGB LEDs | Red whenever the microphone can hear; colours for talk and listen | With the button |
+| 18 | Proto board and hookup wire | Joins it all up, by hand | 3 |
+| 19 | Speaker, 4 ohm 3 W | Loud enough for Pop, and for music | Sold separately; not in the report's total |
 
-About NZ$61 for parts 1 to 19 without the speaker and the cell, and two to three hours of soldering. Prices are from the cost-down report and are list prices and estimates, not quotes.
+About NZ$61 for parts 1 to 18 without the cell, and two to three hours of soldering. The speaker (19) is sold separately. Prices are from the cost-down report and are list prices and estimates, not quotes.
 
 ## Prompt 1b: the same radio on one custom board
 
@@ -122,7 +123,7 @@ Clean technical catalogue look, realistic scale between parts, neutral colours. 
 
 About NZ$58 a kit to make in a batch of 100 and NZ$45 in a batch of 1,000, with no soldering. All four boards are cut from one panel. This is a mock-up: the board is not drawn yet, so the layout in the picture is the generator's guess.
 
-**A single comparison picture.** To get both in one frame, add to the start of 1b: "A split image. The left half shows the same radio as twenty separate hobby modules, a perforated board and a tangle of coloured hookup wire; the right half shows the kit below." It is harder to get right than two pictures.
+**A single comparison picture.** To get both in one frame, add to the start of 1b: "A split image. The left half shows the same radio as eighteen separate hobby modules, a perforated board and a tangle of coloured hookup wire; the right half shows the kit below." It is harder to get right than two pictures.
 
 ## Prompt 1c: the mesh across a town
 
