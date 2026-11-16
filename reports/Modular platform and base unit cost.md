@@ -2,7 +2,7 @@
 
 Nov 16, 2026 · @Chris Barlow
 
-> **Accepted on 16 November 2026.** Every recommendation here is now a decision: see decisions 13 to 23 in [Design Decisions](../Design%20Decisions.md). The report is kept as written, as the evidence.
+> **Accepted on 16 November 2026.** Every recommendation here is now a decision: see decisions 13 to 23 in [Design Decisions](../docs/Design%20Decisions.md). The report is kept as written, as the evidence.
 
 ## Summary
 
@@ -86,14 +86,14 @@ Prices are list prices and my estimates on 16 November 2026, on the same basis a
 
 ### Bluetooth, and the keyboard
 
-**Bluetooth keyboards work, if they are the Low Energy kind.** The ESP32-S3 has Bluetooth Low Energy only, with no Bluetooth Classic, as the [Stage 2 doc](../Walkie-Talkie%20Beyond%20the%20R1%20Minimum%20Hardware.md#pairing-bluetooth-versus-qr) already noted. Espressif publishes a host example for Low Energy keyboards and mice ([Espressif](https://docs.espressif.com/projects/esp-idf/en/stable/esp32/api-reference/bluetooth/esp_hidh.html)). Most current keyboards are Low Energy; older ones are Classic only and will not pair. A USB keyboard in the Data port always works.
+**Bluetooth keyboards work, if they are the Low Energy kind.** The ESP32-S3 has Bluetooth Low Energy only, with no Bluetooth Classic, as the [Stage 2 doc](../docs/Walkie-Talkie%20Beyond%20the%20R1%20Minimum%20Hardware.md#pairing-bluetooth-versus-qr) already noted. Espressif publishes a host example for Low Energy keyboards and mice ([Espressif](https://docs.espressif.com/projects/esp-idf/en/stable/esp32/api-reference/bluetooth/esp_hidh.html)). Most current keyboards are Low Energy; older ones are Classic only and will not pair. A USB keyboard in the Data port always works.
 
 **Bluetooth audio does not work.** Speakers, headphones and most hearing aids use Bluetooth Classic. This matters for older users more than for tinkerers: "can it play through Pop's hearing aids?" is a fair question, and the answer is no. A small Bluetooth audio module in a bay could fix it later.
 
 **Typing messages.** With a keyboard, the radio's screen shows a line to type on.
 
 - **Over the mesh:** already possible. The mesh chip sends each line it is given as a text.
-- **Over the internet, to the family app:** needs a text message added to the [service's](../Walkie-Talkie%20Service%20Design.md) protocol, sealed like voice. Small, but new.
+- **Over the internet, to the family app:** needs a text message added to the [service's](../docs/Walkie-Talkie%20Service%20Design.md) protocol, sealed like voice. Small, but new.
 - **For Pop:** nothing changes. There is still nothing for him to do with the mesh, and no keyboard to find. Typing is for the person who plugged a keyboard in.
 
 ### Mobile data: 4G now, 5G later

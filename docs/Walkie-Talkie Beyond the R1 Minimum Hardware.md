@@ -4,7 +4,7 @@ Nov 14, 2026 · @Chris Barlow
 
 > **Updated 15 November 2026.** The service design is now locked: a serverless channel service on Cloudflare replaces the relay server, voice travels over a WebSocket on port 443, updates are automatic and signed, and running costs are prepaid per channel, so every set comes with its channels for life. See the [service design](Walkie-Talkie%20Service%20Design.md).
 
-> **Updated 16 November 2026.** The radio we are building is now the [platform radio](Pop's%20Radio%20as%20a%20Platform.md): three knobs, a 2.4 inch screen, FM, a tilt sensor, a battery and an always-on mesh radio. This document's one-knob build, and its NZ$35 to 50 parts cost, is the simpler radio we started from; its findings on the ESP32, audio, pairing and power still stand. The current parts and prices are in the [cost-down report](reports/Custom%20PCB%20and%20cost-down.md) and the decisions in [Design Decisions](Design%20Decisions.md).
+> **Updated 16 November 2026.** The radio we are building is now the [platform radio](Pop's%20Radio%20as%20a%20Platform.md): three knobs, a 2.4 inch screen, FM, a tilt sensor, a battery and an always-on mesh radio. This document's one-knob build, and its NZ$35 to 50 parts cost, is the simpler radio we started from; its findings on the ESP32, audio, pairing and power still stand. The current parts and prices are in the [cost-down report](../reports/Custom%20PCB%20and%20cost-down.md) and the decisions in [Design Decisions](Design%20Decisions.md).
 
 ## Summary
 

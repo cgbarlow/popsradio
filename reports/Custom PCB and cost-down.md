@@ -2,7 +2,7 @@
 
 Nov 16, 2026 · @Chris Barlow
 
-> **Decided on 16 November 2026.** The custom board, option C for the mesh, and the kit are now the plan, and the mesh is **always on, with every radio passing messages along**. That last choice goes further than this report first recommended; the settings and power notes below are updated to match. See [Design Decisions](../Design%20Decisions.md). Later the same day, LTE was also decided: it moves from a footprint on the main board to a plug-in 4G board, so any radio can take one (decision 12). Later again, the whole board went modular: the mesh chip moves to a plug-in card and the base comes to about NZ$33 (decisions 13 to 23, costed in the [modular platform report](Modular%20platform%20and%20base%20unit%20cost.md)). The all-on-one-board costs below are superseded.
+> **Decided on 16 November 2026.** The custom board, option C for the mesh, and the kit are now the plan, and the mesh is **always on, with every radio passing messages along**. That last choice goes further than this report first recommended; the settings and power notes below are updated to match. See [Design Decisions](../docs/Design%20Decisions.md). Later the same day, LTE was also decided: it moves from a footprint on the main board to a plug-in 4G board, so any radio can take one (decision 12). Later again, the whole board went modular: the mesh chip moves to a plug-in card and the base comes to about NZ$33 (decisions 13 to 23, costed in the [modular platform report](Modular%20platform%20and%20base%20unit%20cost.md)). The all-on-one-board costs below are superseded.
 
 ## Summary
 
@@ -13,7 +13,7 @@ Nov 16, 2026 · @Chris Barlow
 | 100 kits | US$22.84 | US$4.20 | US$1.00 | **about NZ$58** |
 | 1,000 kits | US$18.41 | US$2.70 | US$0.40 | **about NZ$45** |
 
-That is everything in the [platform brief](../Pop's%20Radio%20as%20a%20Platform.md) for about the price the Stage 2 doc gives for the one-knob radio (NZ$35 to 50), with no wiring at all.
+That is everything in the [platform brief](../docs/Pop's%20Radio%20as%20a%20Platform.md) for about the price the Stage 2 doc gives for the one-knob radio (NZ$35 to 50), with no wiring at all.
 
 - **Meshtastic: add it as a co-processor, not as code in our firmware.** A Heltec HT-CT62 stamp (ESP32-C3 plus SX1262, US$6.90) runs stock Meshtastic beside the ESP32-S3, linked by a serial line. It keeps the mesh on even while voice runs, keeps GPL code out of our PolyForm firmware, needs no Meshtastic changes, and the S3 can update it. It is also the single dearest part on the board, about 30% of the parts bill.
 - **Base kit:** every board assembled and tested, the screen, cables, the 915 MHz and FM antennas and a battery holder. Not included: shell, speaker, and the battery cell, which is cheaper and easier to buy in New Zealand than to air-freight. Suggested price **NZ$89 to 99** for the first 100, falling towards **NZ$79** at 1,000.
@@ -29,7 +29,7 @@ Prices are LCSC, JLCPCB and maker list prices read on 16 November 2026 unless ma
 
 | Feature or idea | Where it comes from | Part on the custom board |
 |---|---|---|
-| Hold to talk, Opus over Wi-Fi, signed updates | [Stage 2](../Walkie-Talkie%20Beyond%20the%20R1%20Minimum%20Hardware.md), [service design](../Walkie-Talkie%20Service%20Design.md) | ESP32-S3 module, 16 MB flash, 8 MB PSRAM |
+| Hold to talk, Opus over Wi-Fi, signed updates | [Stage 2](../docs/Walkie-Talkie%20Beyond%20the%20R1%20Minimum%20Hardware.md), [service design](../docs/Walkie-Talkie%20Service%20Design.md) | ESP32-S3 module, 16 MB flash, 8 MB PSRAM |
 | Mic, speech shaping, loud speaker | Stage 2 | Audio codec, analog MEMS mic, 3 W class-D amp on a 5 V rail |
 | PUSH / OPEN slide switch, red mic light | Stage 2, platform | Slide switch, red LED wired so it lights whenever the mic is powered |
 | Orange button, tap or hold | Platform | Tactile switch under a printed cap |
@@ -133,7 +133,7 @@ flowchart LR
 
 **On the audio.** The Stage 2 doc found the MAX98357A gives only about 0.9 W from a bare battery. Here the amp runs from the IP5306's 5 V boost, so the radio is as loud off the dock as on it. The ES8388 also has a spare ADC path that can carry an echo reference later, which keeps the door open for true two-way OPEN mode.
 
-**On the screen.** A memory LCD would cost about seven times the TFT and is out of stock. Take the TFT now and test it in daylight; the [platform brief](../Pop's%20Radio%20as%20a%20Platform.md#the-screen-an-open-question) question is still open, but the board only needs an SPI connector, so a different panel can be swapped in later.
+**On the screen.** A memory LCD would cost about seven times the TFT and is out of stock. Take the TFT now and test it in daylight; the [platform brief](../docs/Pop's%20Radio%20as%20a%20Platform.md#the-screen-an-open-question) question is still open, but the board only needs an SPI connector, so a different panel can be swapped in later.
 
 ## Meshtastic
 
@@ -258,7 +258,7 @@ At 100 kits the custom board matches the cheapest module build on parts and wins
 
 **Not in the box:** the shell and knob caps (printable plans are free, or bought printed), the speaker (a 40 mm 4 ohm unit is US$3.96 at 100 from [Adafruit](https://www.adafruit.com/product/3968); bigger is better for music), and the 18650 cell. An LG HG2 is NZ$12.50 a cell in a pair from [PB Tech](https://www.pbtech.co.nz/product/NBBOEM1865004/OEM-Pack-2pcs-18650-Li-ion-Battery-Flat-Top-3000mA) and is unprotected, so the board carries its own protection. Cells are awkward to air-freight, so leaving them out avoids dangerous-goods freight.
 
-**Channels are separate.** The [service design](../Walkie-Talkie%20Service%20Design.md#build-your-own) already says builders use the same channel price list or run the service themselves.
+**Channels are separate.** The [service design](../docs/Walkie-Talkie%20Service%20Design.md#build-your-own) already says builders use the same channel price list or run the service themselves.
 
 **Suggested price.** Gross margin per kit before certification, packaging, payment fees and support:
 
@@ -337,7 +337,7 @@ A radio sold in New Zealand needs a supplier's declaration of conformity for eac
 
 ## Sources
 
-- Repo: [Stage 2 hardware](../Walkie-Talkie%20Beyond%20the%20R1%20Minimum%20Hardware.md) · [platform brief](../Pop's%20Radio%20as%20a%20Platform.md) · [service design](../Walkie-Talkie%20Service%20Design.md) · [relay report](Walkie%20talkie%20without%20central%20relay.md)
+- Repo: [Stage 2 hardware](../docs/Walkie-Talkie%20Beyond%20the%20R1%20Minimum%20Hardware.md) · [platform brief](../docs/Pop's%20Radio%20as%20a%20Platform.md) · [service design](../docs/Walkie-Talkie%20Service%20Design.md) · [relay report](Walkie%20talkie%20without%20central%20relay.md)
 - Main parts (LCSC unless marked): [ESP32-S3-WROOM-1-N16R8](https://www.lcsc.com/product-detail/C2913202.html) · [ES8388](https://www.lcsc.com/product-detail/C365736.html) · [ES8311](https://www.lcsc.com/product-detail/C962342.html) · [NS4150B](https://lcsc.com/product-detail/Audio-Amplifiers_Shenzhen-Nsiway-Tech-NS4150B_C189961.html) · [NS4168](https://www.lcsc.com/product-detail/C910588.html) · [ZTS6117](https://www.lcsc.com/product-detail/C481300.html) · [LIS2DH12](https://lcsc.com/product-detail/C110926.html) · [SC7A20](https://www.lcsc.com/product-detail/C5126709.html) · [2.4 inch TFT](https://www.lcsc.com/product-detail/C5329583.html) · [Sharp LS027B7DH01](https://www.lcsc.com/product-detail/C17492463.html) · [ALPS EC11](https://fat.lcsc.com/product-detail/Rotary-Encoders_ALPSALPINE-EC11E1834403_C361165.html) · [IP5306-I2C](https://www.lcsc.com/product-detail/C488349.html) · [18650 holder](https://www.lcsc.com/product-detail/C2988620.html) · [A7670G](https://www.lcsc.com/product-detail/C5846957.html) · [SX1262 chip](https://www.lcsc.com/product-detail/C191341.html) · [Vollgo SX1262 module](https://www.lcsc.com/product-detail/C718839.html) · [RP2040](https://lcsc.com/product-detail/C2040.html) · [nRF52840](https://fat.lcsc.com/product-detail/RF-Transceiver-ICs_Nordic-Semicon-NRF52840-QIAA-R_C190794.html) · [ESP32-C3-MINI-1](https://www.lcsc.com/product-detail/C2838502.html)
 - Other parts: [Heltec modules](https://heltec.org/product-category/module-element) · [Heltec V3 at Rokland](https://store.rokland.com/products/heltec-wifi-lora-32v3) · [RDA5807M module, Electrodragon](https://electrodragon.com/?p=10980) · [RDA5807FP, JLCPCB](https://jlcpcb.com/partdetail/RdaMicroelectronics-RDA5807FP/C77689) · [generic EC11, Alibaba](https://www.alibaba.co.uk/product-detail/New-EC11-Rotary-Encoder-11mm-5_1601845637930.html) · [Adafruit 40 mm speaker](https://www.adafruit.com/product/3968) · [PB Tech 18650](https://www.pbtech.co.nz/product/NBBOEM1865004/OEM-Pack-2pcs-18650-Li-ion-Battery-Flat-Top-3000mA) · [Jaycar protected 18650](https://jaycar.co.nz/18650-2600mah-li-ion-protected-battery/p/SB2299)
 - Manufacturing: [JLCPCB assembly prices](https://jlcpcb.com/help/article/pcb-assembly-price) · [JLCPCB 4-layer example](https://jlcpcb.com/blog/special-discount-on-quality-4-layers-pcbs) · [JLCPCB August 2026 change](https://jlcpcb.com/news/jlcpcb-fr4-pcb-price-adjustment-august2026) · [NZ Customs levies 2026](https://www.customs.govt.nz/business/goods-levies/goods-levies-2026-changes) · [exchange rate, TMGM](https://www.tmgm.com/en-eu/analysis/market-news/article/05540-new-zealand-dollar-dips-to-19-month-lows-ahead-nfp-numbers-202611061216)

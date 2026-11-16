@@ -2,7 +2,7 @@
 
 Nov 15, 2026 · @Chris Barlow
 
-Eleven prompts for an image generator, for the platform unit in [Pop's Radio as a Platform](Pop's%20Radio%20as%20a%20Platform.md). Prompt 1 designs the radio, in the bedside scene. Prompts 2 to 7 take that picture as their reference and change only the scene: a blueprint, a chess clock in a rest home, Pong from the player's seat, FM radio on the screen, the Talk list close up, and the radio carried with its strap over a shoulder. Prompts 8 and 9 are the plywood case: the cut panels laid out as a plan, and the finished plywood radio. Prompts 10 and 11 are for tinkerers: the radio with its back off, and the plug-in cards.
+Eleven prompts for an image generator, for the platform unit in [Pop's Radio as a Platform](../docs/Pop's%20Radio%20as%20a%20Platform.md). Prompt 1 designs the radio, in the bedside scene. Prompts 2 to 7 take that picture as their reference and change only the scene: a blueprint, a chess clock in a rest home, Pong from the player's seat, FM radio on the screen, the Talk list close up, and the radio carried with its strap over a shoulder. Prompts 8 and 9 are the plywood case: the cut panels laid out as a plan, and the finished plywood radio. Prompts 10 and 11 are for tinkerers: the radio with its back off, and the plug-in cards.
 
 ## How to use
 

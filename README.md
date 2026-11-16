@@ -8,7 +8,7 @@ Mobile phones can be tricky for older people. Small icons, passcodes, updates an
 
 ![A sage green radio on a bedside table, with a big orange button on top, a knob on each side and a shoulder strap](images/platform-bedside_sml.jpg)
 
-*Concept picture of the radio we're building. The design is [locked](Design%20Decisions.md); nothing is built yet.*
+*Concept picture of the radio we're building. The design is [locked](docs/Design%20Decisions.md); nothing is built yet.*
 
 The parts, built two ways:
 
@@ -27,7 +27,7 @@ The case comes two ways, and other shapes we looked at:
 
 ## Where it's at
 
-This is a family project at the research and design stage. The design is decided, in [Design Decisions](Design%20Decisions.md). Nothing is built yet.
+This is a family project at the research and design stage. The design is decided, in [Design Decisions](docs/Design%20Decisions.md). Nothing is built yet.
 
 | Stage | What | Status |
 | --- | --- | --- |
@@ -38,9 +38,9 @@ This is a family project at the research and design stage. The design is decided
 | 4 | A direct path between homes, only if the trials show it's needed | If needed |
 | Later | Certify it, then built radios and a batch of 1,000 base kits at about NZ$33 each to make | After the first 100 |
 | Later | A kids' mini phone: a smaller, cheaper radio that only reaches the people parents approve | Idea |
-| Later | Approved apps from other people, on the [platform](Pop's%20Radio%20as%20a%20Platform.md) | Idea |
+| Later | Approved apps from other people, on the [platform](docs/Pop's%20Radio%20as%20a%20Platform.md) | Idea |
 
-Every stage uses the same serverless service, the same code core and the same sounds, so R1s, ESP32 radios and phones can share a channel. The design is locked in the [service design](Walkie-Talkie%20Service%20Design.md).
+Every stage uses the same serverless service, the same code core and the same sounds, so R1s, ESP32 radios and phones can share a channel. The design is locked in the [service design](docs/Walkie-Talkie%20Service%20Design.md).
 
 ### Making the R1 work count
 
@@ -51,7 +51,7 @@ The R1 is a temporary client. Most of what Stage 1 builds is used again in Stage
 - **Built first:** a written protocol spec and a laptop test client, so the server can be tested without either device and the two devices can be checked against each other.
 - **R1 only, kept small:** reflashing, the button remap and locking the R1 to one app.
 
-Afterwards the R1s can stay on the same channels as the ESP32 radios. The detail is in the [R1 doc](Rabbit%20R1%20Walkie-Talkie%20Research%20and%20Design.md#making-the-r1-work-count-for-stage-2).
+Afterwards the R1s can stay on the same channels as the ESP32 radios. The detail is in the [R1 doc](docs/Rabbit%20R1%20Walkie-Talkie%20Research%20and%20Design.md#making-the-r1-work-count-for-stage-2).
 
 ## How it works
 
@@ -73,24 +73,33 @@ It is not an emergency alarm. In an emergency, call 111.
 
 ## What's in this repo
 
+| Folder | What's in it |
+| --- | --- |
+| The top level | The site (`index.html`, `tinker.html`, `build.html`, `site.css`), this README and the licences. The site files stay here so GitHub Pages can serve them |
+| [`docs/`](docs) | The design: decisions, the platform brief, the service design, the hardware research and the hack day plan |
+| [`reports/`](reports) | Research reports, each answering one question |
+| [`research_notes/`](research_notes) | The working notes behind two of the reports |
+| [`prompts/`](prompts) | The prompts used to make the pictures |
+| [`images/`](images) | The pictures and drawings |
+
 | File | What it is |
 | --- | --- |
 | [`index.html`](index.html) | The project site. Includes a simulator you can try in the browser |
 | [`tinker.html`](tinker.html) | The site's page for tinkerers: opening the radio up, the sockets, the cards, and what it can and can't do |
 | [`build.html`](build.html) | The site's second page: the board, the parts, the costs, kits, the mesh and the other shapes |
-| [Design Decisions](Design%20Decisions.md) | What is locked: the radio, the custom board, the always-on mesh, and kits or built radios. Start here |
-| [Rabbit R1 Walkie-Talkie Research and Design](Rabbit%20R1%20Walkie-Talkie%20Research%20and%20Design.md) | Stage 1: the R1 hardware, reflashing, the app, networking, and designing for Pop |
-| [Walkie-Talkie Beyond the R1: Minimum Hardware](Walkie-Talkie%20Beyond%20the%20R1%20Minimum%20Hardware.md) | The ESP32 research behind Stage 2: the simpler one-knob build, pairing, power, and open channel mode |
-| [Walkie-Talkie Service Design](Walkie-Talkie%20Service%20Design.md) | The locked design: serverless service, updates, shared code, family app, lifetime costs, the guarantee and the roadmap |
-| [Hack Day Action Plan](Hack%20Day%20Action%20Plan.md) | Getting the two R1s talking at the 4 December hack day: what to do beforehand, and how to spend the day |
+| [Design Decisions](docs/Design%20Decisions.md) | What is locked: the radio, the custom board, the always-on mesh, and kits or built radios. Start here |
+| [Rabbit R1 Walkie-Talkie Research and Design](docs/Rabbit%20R1%20Walkie-Talkie%20Research%20and%20Design.md) | Stage 1: the R1 hardware, reflashing, the app, networking, and designing for Pop |
+| [Walkie-Talkie Beyond the R1: Minimum Hardware](docs/Walkie-Talkie%20Beyond%20the%20R1%20Minimum%20Hardware.md) | The ESP32 research behind Stage 2: the simpler one-knob build, pairing, power, and open channel mode |
+| [Walkie-Talkie Service Design](docs/Walkie-Talkie%20Service%20Design.md) | The locked design: serverless service, updates, shared code, family app, lifetime costs, the guarantee and the roadmap |
+| [Hack Day Action Plan](docs/Hack%20Day%20Action%20Plan.md) | Getting the two R1s talking at the 4 December hack day: what to do beforehand, and how to spend the day |
 | [Walkie talkie without central relay](reports/Walkie%20talkie%20without%20central%20relay.md) | Research on running without a central relay, and the recommendation adopted |
 | [NZ addressable market and opportunities](reports/NZ%20addressable%20market%20and%20opportunities.md) | Research on the size of the New Zealand market, for families and for rest homes, hospitals and other organisations, by category and region |
 | [Similar products and competitors](reports/Similar%20products%20and%20competitors.md) | Research on products like Pop's Radio around the world, what they cost, and what that means for the plan |
 | [Custom PCB and cost-down](reports/Custom%20PCB%20and%20cost-down.md) | Research on putting the whole platform radio, with Meshtastic, on one custom board: parts, costs at 100 and 1,000, the base kit and certification |
 | [Modular platform and base unit cost](reports/Modular%20platform%20and%20base%20unit%20cost.md) | Research on a cheap base radio that opens up for plug-in modules: what works, what does not, and a revised cost of about NZ$33 a base. Accepted: decisions 13 to 23 |
-| [Walkie-Talkie Image Prompts](Walkie-Talkie%20Image%20Prompts.md) | Prompts for the parts pictures (every module, and the same radio on the custom board) and the earlier shapes |
-| [Pop's Radio as a Platform](Pop's%20Radio%20as%20a%20Platform.md) | The radio we are building: a stout radio with three free-turning knobs that also plays FM and internet radio and simple games, passes mesh messages, and could take approved apps |
-| [Pop's Radio Platform Image Prompts](Pop's%20Radio%20Platform%20Image%20Prompts.md) | Prompts for concept pictures of the platform unit |
+| [Walkie-Talkie Image Prompts](prompts/Walkie-Talkie%20Image%20Prompts.md) | Prompts for the parts pictures (every module, and the same radio on the custom board) and the earlier shapes |
+| [Pop's Radio as a Platform](docs/Pop's%20Radio%20as%20a%20Platform.md) | The radio we are building: a stout radio with three free-turning knobs that also plays FM and internet radio and simple games, passes mesh messages, and could take approved apps |
+| [Pop's Radio Platform Image Prompts](prompts/Pop's%20Radio%20Platform%20Image%20Prompts.md) | Prompts for concept pictures of the platform unit |
 | [`images/`](images) | Concept pictures. These are generated images, not photos of real units |
 
 ## Running the site locally
@@ -107,7 +116,7 @@ To update the progress shown on the site, change the `done` numbers in the `PLAN
 
 ## Licence
 
-Free for non-commercial use. Build one for your own family, change it, share it. A home-built radio can run on your own copy of the service for free, or join ours with channels from the same [price list](Walkie-Talkie%20Service%20Design.md#prices-kept-simple) as everyone else.
+Free for non-commercial use. Build one for your own family, change it, share it. A home-built radio can run on your own copy of the service for free, or join ours with channels from the same [price list](docs/Walkie-Talkie%20Service%20Design.md#prices-kept-simple) as everyone else.
 
 - **Code** (including `index.html`): [PolyForm Noncommercial 1.0.0](LICENSE)
 - **Research documents and images:** [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/). Credit Chris Barlow, don't use them commercially, and share any changed versions under the same licence.

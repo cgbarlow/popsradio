@@ -12,11 +12,11 @@ Locked means the design work stops going round in circles. It does not mean test
 |---|---|---|---|
 | 1 | **The platform radio is the radio.** Stout, about 220 × 125 × 80 mm, an orange button, a PUSH / OPEN slide switch and a small volume knob on top, a big knob on each side, a shoulder strap | "A design exploration, not a locked decision" | [Platform brief](Pop's%20Radio%20as%20a%20Platform.md) |
 | 2 | **Four modes on the Mode knob:** Talk, Radio (FM), Radio (Internet) and Play. The family chooses which appear. The mesh is not a mode | Talk was the plan; the rest were ideas | [Platform brief](Pop's%20Radio%20as%20a%20Platform.md#modes-at-launch) |
-| 3 | **One custom board.** A main board and three small boards cut from one panel, assembled and tested by the factory | Hand-wired breakout modules | [Cost-down report](reports/Custom%20PCB%20and%20cost-down.md#the-custom-board) |
-| 4 | **The parts** (revised by 13 to 16)**:** ESP32-S3-WROOM-1-N16R8, ES8388 codec, NS4150B amp on a 5 V rail, analog MEMS mic, RDA5807M FM, three EC11 encoders, IP5306 charger, one 18650 cell, two USB-C ports, a pin expander. The tilt sensor is a plug-in | "Not priced yet" | [Part choices](reports/Custom%20PCB%20and%20cost-down.md#part-choices) |
+| 3 | **One custom board.** A main board and three small boards cut from one panel, assembled and tested by the factory | Hand-wired breakout modules | [Cost-down report](../reports/Custom%20PCB%20and%20cost-down.md#the-custom-board) |
+| 4 | **The parts** (revised by 13 to 16)**:** ESP32-S3-WROOM-1-N16R8, ES8388 codec, NS4150B amp on a 5 V rail, analog MEMS mic, RDA5807M FM, three EC11 encoders, IP5306 charger, one 18650 cell, two USB-C ports, a pin expander. The tilt sensor is a plug-in | "Not priced yet" | [Part choices](../reports/Custom%20PCB%20and%20cost-down.md#part-choices) |
 | 5 | **The screen is monochrome: a 2.4 inch TFT showing black and white only,** with a dimmable backlight, for the first boards. It plugs in, so a different panel can replace it | "Not chosen yet" | [The screen](Pop's%20Radio%20as%20a%20Platform.md#the-screen-chosen-for-the-first-boards) |
-| 6 | **The talk button is a printed orange cap over a tactile switch** | An arcade button | [Cost-down report](reports/Custom%20PCB%20and%20cost-down.md#cost-down-levers-ranked) |
-| 7 | **Mesh is option C: a co-processor.** A Heltec HT-CT62 runs unmodified Meshtastic joined to the main chip by a serial line. Revised by 14: it sits on a plug-in card | Three options on the table | [Meshtastic](reports/Custom%20PCB%20and%20cost-down.md#meshtastic) |
+| 6 | **The talk button is a printed orange cap over a tactile switch** | An arcade button | [Cost-down report](../reports/Custom%20PCB%20and%20cost-down.md#cost-down-levers-ranked) |
+| 7 | **Mesh is option C: a co-processor.** A Heltec HT-CT62 runs unmodified Meshtastic joined to the main chip by a serial line. Revised by 14: it sits on a plug-in card | Three options on the table | [Meshtastic](../reports/Custom%20PCB%20and%20cost-down.md#meshtastic) |
 | 8 | **The mesh is connectivity, always on, and every built Pop's Radio takes part.** It is a second way to connect beside Wi-Fi, and there is nothing for Pop to do with it. Each radio passes other people's messages along as well as its own. Revised by 14: a bare kit joins when its owner adds the mesh card | On only when docked or when Wi-Fi was down; not passing messages on | [Below](#the-mesh-always-on) |
 | 9 | **Two ways to buy: a built radio or a kit.** Revised by 13: the kit is a base with cards to add. The plans stay free for anyone building for their own family | "Parts kit" was one line in a table | [Below](#how-people-get-one) |
 | 10 | **Modules for the first few, the custom board from then on.** Stage 2a builds the radio from modules to prove it; Stage 2b is 10 boards, then 100 kits | Stage 2 was a one-knob radio for NZ$35 to 50 | [Roadmap](#the-order-of-work) |
@@ -25,21 +25,21 @@ Locked means the design work stops going round in circles. It does not mean test
 | 13 | **A cheap base that opens up.** Every radio has Talk, FM, Wi-Fi and Bluetooth Low Energy. Everything else plugs in, with no soldering. About NZ$33 to make at 1,000 | One board with everything on it, about NZ$45 | [Below](#the-modular-base) |
 | 14 | **Mesh is a plug-in card, fitted to every built radio.** A bare kit does not include it | The mesh chip on every main board | [Below](#the-modular-base) |
 | 15 | **Standard sockets inside:** two card bays in the mikroBUS shape, two Qwiic sensor sockets, a badge add-on socket, a pin header, and screw points in the case | One socket, for 4G | [Below](#sockets-and-cards) |
-| 16 | **Two USB-C ports: Power and Data.** Data takes a keyboard, a USB stick or a computer. It cannot drive a screen | One port | [Research](reports/Modular%20platform%20and%20base%20unit%20cost.md#the-second-usb-c-port-and-the-external-screen) |
-| 17 | **The big screen is a web page, and then casting.** The radio serves a page on the home Wi-Fi. Casting to a Chromecast or Google TV comes second, internet radio first. Talk is never cast | An external screen on USB-C | [Research](reports/Modular%20platform%20and%20base%20unit%20cost.md#the-second-usb-c-port-and-the-external-screen) |
-| 18 | **"Bluetooth keyboards", not "Bluetooth".** Low Energy keyboards pair. Speakers, headphones and hearing aids do not; Bluetooth audio may come later as a card | "Bluetooth connectivity" | [Research](reports/Modular%20platform%20and%20base%20unit%20cost.md#bluetooth-and-the-keyboard) |
-| 19 | **Typing messages with a keyboard.** Over the mesh first; a text message is added to the service's protocol for the family app. Nothing changes for Pop | Not planned | [Research](reports/Modular%20platform%20and%20base%20unit%20cost.md#bluetooth-and-the-keyboard) |
-| 20 | **4G now, 5G when it is cheap.** The second card bay is generic, so a later modem fits | "A 4G or 5G modem" | [Research](reports/Modular%20platform%20and%20base%20unit%20cost.md#mobile-data-4g-now-5g-later) |
-| 21 | **Two audiences, two rooms.** The front page is Pop's. Tinkering has its own page. The line: the radio his younger self would have opened | One audience | [Research](reports/Modular%20platform%20and%20base%20unit%20cost.md#brand) |
-| 22 | **Open hardware, with the promises kept in hardware.** The red light is wired to the microphone's power and is never optional. Built radios have their firmware locked to our key; kits do not. The kids' mini phone has no sockets | Promises kept by firmware | [Research](reports/Modular%20platform%20and%20base%20unit%20cost.md#safety-and-trust) |
-| 23 | **Open to add to, not open to copy.** The socket page is published for anyone to make and sell cards. The radio's own design and firmware stay non-commercial | Everything non-commercial | [Research](reports/Modular%20platform%20and%20base%20unit%20cost.md#licence) |
+| 16 | **Two USB-C ports: Power and Data.** Data takes a keyboard, a USB stick or a computer. It cannot drive a screen | One port | [Research](../reports/Modular%20platform%20and%20base%20unit%20cost.md#the-second-usb-c-port-and-the-external-screen) |
+| 17 | **The big screen is a web page, and then casting.** The radio serves a page on the home Wi-Fi. Casting to a Chromecast or Google TV comes second, internet radio first. Talk is never cast | An external screen on USB-C | [Research](../reports/Modular%20platform%20and%20base%20unit%20cost.md#the-second-usb-c-port-and-the-external-screen) |
+| 18 | **"Bluetooth keyboards", not "Bluetooth".** Low Energy keyboards pair. Speakers, headphones and hearing aids do not; Bluetooth audio may come later as a card | "Bluetooth connectivity" | [Research](../reports/Modular%20platform%20and%20base%20unit%20cost.md#bluetooth-and-the-keyboard) |
+| 19 | **Typing messages with a keyboard.** Over the mesh first; a text message is added to the service's protocol for the family app. Nothing changes for Pop | Not planned | [Research](../reports/Modular%20platform%20and%20base%20unit%20cost.md#bluetooth-and-the-keyboard) |
+| 20 | **4G now, 5G when it is cheap.** The second card bay is generic, so a later modem fits | "A 4G or 5G modem" | [Research](../reports/Modular%20platform%20and%20base%20unit%20cost.md#mobile-data-4g-now-5g-later) |
+| 21 | **Two audiences, two rooms.** The front page is Pop's. Tinkering has its own page. The line: the radio his younger self would have opened | One audience | [Research](../reports/Modular%20platform%20and%20base%20unit%20cost.md#brand) |
+| 22 | **Open hardware, with the promises kept in hardware.** The red light is wired to the microphone's power and is never optional. Built radios have their firmware locked to our key; kits do not. The kids' mini phone has no sockets | Promises kept by firmware | [Research](../reports/Modular%20platform%20and%20base%20unit%20cost.md#safety-and-trust) |
+| 23 | **Open to add to, not open to copy.** The socket page is published for anyone to make and sell cards. The radio's own design and firmware stay non-commercial | Everything non-commercial | [Research](../reports/Modular%20platform%20and%20base%20unit%20cost.md#licence) |
 | 24 | **A 4G hotspot, with a screw-on antenna.** With the 4G card fitted, the radio can share its mobile data over Wi-Fi, and a bigger antenna screws onto a socket on the case for homes with weak coverage. 5G comes later, in the same bay | 4G for the radio's own use only | [Below](#the-4g-hotspot) |
 
 Not changed: the [service design](Walkie-Talkie%20Service%20Design.md), Stage 1 on the two R1s, hold to talk, PUSH / OPEN, encryption, no subscription for the hardware, and "this is not an emergency alarm".
 
 ## The modular base
 
-**Decided on the evidence in the [research report](reports/Modular%20platform%20and%20base%20unit%20cost.md).** The radio is a cheap base that anyone can open and add to. Pop never sees a socket: they are inside, behind a back panel held by screws.
+**Decided on the evidence in the [research report](../reports/Modular%20platform%20and%20base%20unit%20cost.md).** The radio is a cheap base that anyone can open and add to. Pop never sees a socket: they are inside, behind a back panel held by screws.
 
 | | To make, 1,000 | To make, 100 | Suggested price |
 |---|---|---|---|
@@ -75,7 +75,7 @@ Including GST, before the case, speaker and cell for the kit lines. List prices 
 
 **What it is.** A second radio in every built Pop's Radio, on a plug-in card, on 915 MHz, that needs no internet, no Wi-Fi and no mobile network. Radios within range of each other pass short text messages along, hop by hop. It uses [Meshtastic](https://meshtastic.org/), so it can join a mesh that is already there, as in Wellington.
 
-![Eleven houses on a simple map, each with a Pop's Radio. With the internet down, a message from Chris reaches Pop's radio in three hops through two neighbours' radios](images/mesh-map.svg)
+![Eleven houses on a simple map, each with a Pop's Radio. With the internet down, a message from Chris reaches Pop's radio in three hops through two neighbours' radios](../images/mesh-map.svg)
 
 *How it might look. Every house with a Pop's Radio is a link in the chain. A drawing, not a coverage map: real range depends on hills, walls and where the radio sits.*
 
@@ -89,7 +89,7 @@ Including GST, before the case, speaker and cell for the kit lines. List prices 
 
 **What it does not do.**
 
-- **It does not carry live voice.** The [relay report](reports/Walkie%20talkie%20without%20central%20relay.md#radio-mesh-cannot-carry-pops-voice-to-the-next-town) showed why. Hold to talk still needs Wi-Fi or mobile data.
+- **It does not carry live voice.** The [relay report](../reports/Walkie%20talkie%20without%20central%20relay.md#radio-mesh-cannot-carry-pops-voice-to-the-next-town) showed why. Hold to talk still needs Wi-Fi or mobile data.
 - **It is not an emergency service.** In an emergency, call 111.
 - **It cannot hear anything.** The mesh chip has no wire to the microphone.
 
@@ -109,7 +109,7 @@ Including GST, before the case, speaker and cell for the kit lines. List prices 
 
 **What always on costs.**
 
-- **Battery.** About 3 days off the stand on a 3000 mAh cell, against about 13 days with the mesh off (both estimates, in the [report](reports/Custom%20PCB%20and%20cost-down.md#settings-for-a-family-radio)). The radio lives on its stand, so this mostly matters in a power cut, which is also when the mesh matters most. Measure it on the bench.
+- **Battery.** About 3 days off the stand on a 3000 mAh cell, against about 13 days with the mesh off (both estimates, in the [report](../reports/Custom%20PCB%20and%20cost-down.md#settings-for-a-family-radio)). The radio lives on its stand, so this mostly matters in a power cut, which is also when the mesh matters most. Measure it on the bench.
 - **Money.** The mesh chip and antenna are about NZ$14 of each kit, the dearest part on the board.
 - **A busier mesh.** Hundreds of new relaying radios in one city can crowd the channel. Match the local mesh's settings, keep the hop limit at Meshtastic's default of 3, and talk to the local mesh group before a large batch ships there.
 
@@ -129,7 +129,7 @@ Including GST, before the case, speaker and cell for the kit lines. List prices 
 - **Same board, same firmware, same service.** A kit radio, a built radio and a home-wired radio can all share a channel, and all take part in the mesh.
 - **Why the cell is left out of the kit.** Lithium cells are awkward to air-freight and cheap to buy in New Zealand.
 - **Where the money comes from.** A margin on kits and built radios, extra channels, and the family app. The hardware never needs a subscription.
-- **Selling either one commercially needs a licence** from us ([COMMERCIAL.md](COMMERCIAL.md)). Building for your own family never does.
+- **Selling either one commercially needs a licence** from us ([COMMERCIAL.md](../COMMERCIAL.md)). Building for your own family never does.
 
 ## The case: printed or plywood
 

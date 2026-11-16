@@ -106,7 +106,7 @@ You take the app's audio path, the service and integration. Pair up whenever one
 
 ## After the day
 
-From the [council review](.campaign/council-report.md), in order:
+From the [council review](../.campaign/council-report.md), in order:
 
 1. **Replace the shortcuts:** Opus, end-to-end sealing to the spec, and key-pair sign-in.
 2. **Lock the R1s down** as Device Owner with kiosk mode, ready for Pop.

@@ -16,7 +16,7 @@ Nov 15, 2026 · @Chris Barlow
 - **Simple prices.** For radios, families only ever pay for channels: sets come with theirs for life, and more come in 1, 3 or 5, paid once or monthly. Home builders use the same price list, or run the service themselves for free.
 - **The family app** is a paid app with an optional small subscription. It pays for the people side of running the service (updates, support, security). The radios never depend on it being bought.
 
-This changes three earlier choices: voice now travels over a WebSocket on port 443 instead of UDP, the relay is serverless instead of a VPS in Auckland or Sydney, and the separate control page becomes part of the family app. The [relay research](reports/Walkie%20talkie%20without%20central%20relay.md) is still the background for why a blind relay is the right core.
+This changes three earlier choices: voice now travels over a WebSocket on port 443 instead of UDP, the relay is serverless instead of a VPS in Auckland or Sydney, and the separate control page becomes part of the family app. The [relay research](../reports/Walkie%20talkie%20without%20central%20relay.md) is still the background for why a blind relay is the right core.
 
 ## Decisions
 
@@ -202,7 +202,7 @@ The whole price list has to fit on one card a family can read in a minute. So th
 
 **Example.** A pair bought with one channel wants three. That is NZ$40 once, or NZ$2 a month. If the monthly payments ever stop, the two extra channels stop and the original channel carries on for life.
 
-**Words.** "Channels" is the only word customers see for the service. "Licence" is kept for one thing: businesses that want to copy and sell our designs ([COMMERCIAL.md](COMMERCIAL.md)). Families never need a licence.
+**Words.** "Channels" is the only word customers see for the service. "Licence" is kept for one thing: businesses that want to copy and sell our designs ([COMMERCIAL.md](../COMMERCIAL.md)). Families never need a licence.
 
 **Behind the price list** (not shown to customers):
 
@@ -218,7 +218,7 @@ Everything a builder needs has a free option. The only thing anyone pays us for 
 
 | Item | Free | From us |
 |---|---|---|
-| Parts | Parts list and board files, with part numbers and suppliers (the [cost-down report](reports/Custom%20PCB%20and%20cost-down.md)) | A kit: all four boards assembled, tested and loaded, with the screen, cables and antennas. No soldering. Or a built radio |
+| Parts | Parts list and board files, with part numbers and suppliers (the [cost-down report](../reports/Custom%20PCB%20and%20cost-down.md)) | A kit: all four boards assembled, tested and loaded, with the screen, cables and antennas. No soldering. Or a built radio |
 | Case | Plans for a 3D printed case (STL and STEP files) and for a plywood box (a drawing and a cutting file) | A printed case, or a finished plywood box |
 | Firmware | Web flasher over USB-C | Loaded on a kit's board |
 | Speaker and battery cell | Buy locally | Not in the kit; fitted in a built radio |

@@ -17,7 +17,7 @@ Paste one prompt at a time. Each is self-contained, so the generator needs no ot
 
 ## Prompt 1a: every part, as modules
 
-The radio as it is built in Stage 2a: breakout modules joined by hand. The parts follow the module build in the [cost-down report](reports/Custom%20PCB%20and%20cost-down.md#what-it-costs-from-modules-today), with the empty battery holder. The speaker and the battery cell are sold separately, so they sit off to one side, apart from the kit. The case is left out: it has its own pictures.
+The radio as it is built in Stage 2a: breakout modules joined by hand. The parts follow the module build in the [cost-down report](../reports/Custom%20PCB%20and%20cost-down.md#what-it-costs-from-modules-today), with the empty battery holder. The speaker and the battery cell are sold separately, so they sit off to one side, apart from the kit. The case is left out: it has its own pictures.
 
 ```
 Top-down flat lay product photograph of electronic hobby parts, neatly arranged in a grid (knolling style) on a matte light grey workbench mat. Soft even studio lighting, sharp focus, no hands, no tools, generous spacing between parts. Exactly eighteen items in three rows of six on the left three-quarters of the mat, each with a small white round numbered tag (1 to 18) placed beside it:

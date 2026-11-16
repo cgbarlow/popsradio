@@ -2,11 +2,11 @@
 
 Nov 15, 2026 · @Chris Barlow
 
-> **Locked on 16 November 2026.** This began as a design exploration. It is now the radio we are building: the shape, the three knobs, the modes, the screen and the parts are decided, and an always-on mesh radio has been added as a second way to connect. The decisions and the tests that could still change them are in [Design Decisions](Design%20Decisions.md); the parts and prices are in the [cost-down report](reports/Custom%20PCB%20and%20cost-down.md). The [service design](Walkie-Talkie%20Service%20Design.md) is unchanged. Since then the hardware has gone modular: a cheap base with plug-in cards for mesh and 4G, sockets for sensors, and a second USB-C port (decisions 13 to 23).
+> **Locked on 16 November 2026.** This began as a design exploration. It is now the radio we are building: the shape, the three knobs, the modes, the screen and the parts are decided, and an always-on mesh radio has been added as a second way to connect. The decisions and the tests that could still change them are in [Design Decisions](Design%20Decisions.md); the parts and prices are in the [cost-down report](../reports/Custom%20PCB%20and%20cost-down.md). The [service design](Walkie-Talkie%20Service%20Design.md) is unchanged. Since then the hardware has gone modular: a cheap base with plug-in cards for mesh and 4G, sockets for sensors, and a second USB-C port (decisions 13 to 23).
 
 This brief asks what happens if the same radio can do more than talk, and what has to be true for that to stay safe and simple for Pop.
 
-Concept picture prompts for this unit are in [Pop's Radio Platform Image Prompts](Pop's%20Radio%20Platform%20Image%20Prompts.md).
+Concept picture prompts for this unit are in [Pop's Radio Platform Image Prompts](../prompts/Pop's%20Radio%20Platform%20Image%20Prompts.md).
 
 ## Summary
 
@@ -22,7 +22,7 @@ Concept picture prompts for this unit are in [Pop's Radio Platform Image Prompts
 
 ## What changed from the original design
 
-![The original concept sketch: a radio with a carry strap, and the front view with labels](images/platform-sketch.png)
+![The original concept sketch: a radio with a carry strap, and the front view with labels](../images/platform-sketch.png)
 
 *The design board: the radio with its strap, the front view with labels, and the modes on sticky notes. The sketch is drawn close to a cube; the unit is now wider than it is tall and not as deep.*
 
@@ -126,7 +126,7 @@ The chess clock is played with the radio standing the right way up, beside the b
 
 One big button on top that both players slap in turn is how a chess clock already works, so nobody needs it explained. An arrow on the screen shows whose clock is running.
 
-The chess clock is the clearest case for a platform. A rest home lounge already has chess sets and players, and a chess clock is a separate thing to buy and learn. Here it is a mode on a radio that is already in the room. The [market report](reports/NZ%20addressable%20market%20and%20opportunities.md) names activities budgets as one way into aged care; shared games are something an activities coordinator can use with a group.
+The chess clock is the clearest case for a platform. A rest home lounge already has chess sets and players, and a chess clock is a separate thing to buy and learn. Here it is a mode on a radio that is already in the room. The [market report](../reports/NZ%20addressable%20market%20and%20opportunities.md) names activities budgets as one way into aged care; shared games are something an activities coordinator can use with a group.
 
 **Later: play against the family.** Pong over the family's own channel, with Pop on his radio and a grandchild on theirs or in the family app. It would use the same service, with game moves sent as small sealed messages like voice. Not designed yet.
 
@@ -134,7 +134,7 @@ The chess clock is the clearest case for a platform. A rest home lounge already 
 
 **Every Pop's Radio carries a second radio that needs no internet, and it is always on.** It is a small Meshtastic chip on 915 MHz, beside the main chip. Radios in range of each other pass short text messages along, hop by hop, so a message can cross a suburb when the Wi-Fi, the mobile network or the power is down.
 
-![Eleven houses on a simple map, each with a Pop's Radio. With the internet down, a message from Chris reaches Pop's radio in three hops through two neighbours' radios](images/mesh-map.svg)
+![Eleven houses on a simple map, each with a Pop's Radio. With the internet down, a message from Chris reaches Pop's radio in three hops through two neighbours' radios](../images/mesh-map.svg)
 
 *How it might look. A drawing, not a coverage map.*
 
@@ -183,11 +183,11 @@ The README promises "a small radio that does one thing". A platform pulls the ot
 
 **Building apps.** The [site's simulator](https://popsradio.chrisbarlow.nz/) becomes the emulator: three knobs, the orange button, both orientations and the real screen size. Developers build and test there, then submit. Phasing: first-party modes only at first, then a small set of invited developers, then an open submission process with review.
 
-**Commercial terms are open.** The code is licensed for non-commercial use, so a developer selling apps needs separate terms: a licence for the SDK, the revenue split and what review costs. See [COMMERCIAL.md](COMMERCIAL.md).
+**Commercial terms are open.** The code is licensed for non-commercial use, so a developer selling apps needs separate terms: a licence for the SDK, the revenue split and what review costs. See [COMMERCIAL.md](../COMMERCIAL.md).
 
 ## Hardware changes from the Stage 2 build
 
-Now chosen and priced. The [cost-down report](reports/Custom%20PCB%20and%20cost-down.md) puts every part below on one custom board for about NZ$58 a kit in a batch of 100 and NZ$45 in a batch of 1,000, before the case, speaker and cell.
+Now chosen and priced. The [cost-down report](../reports/Custom%20PCB%20and%20cost-down.md) puts every part below on one custom board for about NZ$58 a kit in a batch of 100 and NZ$45 in a batch of 1,000, before the case, speaker and cell.
 
 | Part | Stage 2 build | Platform unit | Note |
 | --- | --- | --- | --- |
