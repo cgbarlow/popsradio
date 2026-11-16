@@ -133,7 +133,7 @@ Clean technical catalogue look, realistic scale between parts, neutral colours. 
 | 12 | 4G card, antenna socket and antenna | A modem and SIM holder on a plug-in card, for card bay 2. The socket fits a hole in the case, and the antenna screws on outside. It also makes the radio a Wi-Fi hotspot | No: sold separately |
 | 13 | Tilt sensor | Plugs into a sensor socket on its cable | No: sold separately |
 
-The base is about NZ$44 to make in a batch of 100 and NZ$33 in a batch of 1,000, with no soldering. All four boards are cut from one panel. This is a mock-up: the board is not drawn yet, so the layout in the picture is the generator's guess. The picture on the site was made from an earlier version of this prompt, with the mesh radio on the main board, and needs redoing.
+The base is about NZ$44 to make in a batch of 100 and NZ$33 in a batch of 1,000, with no soldering. All four boards are cut from one panel. This is a mock-up: the board is not drawn yet, so the layout in the picture is the generator's guess. The picture on the site was made from this prompt on 16 November 2026.
 
 **Getting 1b right.** Check six things: the tags run 1 to 13 with none repeated; eight items on the left and five on the right; no card, gold-connector antenna or sensor on the left; three cables; the two cards the same shape; and at least 2,000 pixels wide. If it comes out small, look for a size or quality setting in the generator: the prompt cannot force it.
 

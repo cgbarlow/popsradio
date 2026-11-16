@@ -14,10 +14,10 @@ The parts, built two ways:
 
 | Wired by hand, from modules | One custom board, as a kit |
 | --- | --- |
-| ![Eighteen numbered hobby parts laid out on a grey mat, with a speaker and a battery set apart on the right](images/parts-modules_sml.jpg) | ![The same radio as a kit: one main board, a top board, two small knob boards, three cables, a screen, antennas and knobs, with a speaker and a battery set apart on the right](images/parts-custom-board_sml.jpg) |
-| Eighteen parts, about NZ$61, and two to three hours of soldering | The base is about NZ$44 each to make at 100 and NZ$33 at 1,000. No soldering. The picture is of the earlier one-board layout |
+| ![Eighteen numbered hobby parts laid out on a grey mat, with a speaker and a battery set apart on the right](images/parts-modules_sml.jpg) | ![The base kit: one main board with two card bays, a top board, two small knob boards, three cables, a screen and knobs. Right of a line, sold separately: a speaker, a battery, a mesh card, a 4G card with a screw-on antenna, and a tilt sensor](images/parts-custom-board_sml.jpg) |
+| Eighteen parts, about NZ$61, and two to three hours of soldering | The base is about NZ$44 each to make at 100 and NZ$33 at 1,000. No soldering. Mesh, 4G and the tilt sensor plug in as cards |
 
-*Generated pictures, not photos of our parts. The speaker and the battery, right of the line, are sold separately. On the site you can [tap each part](https://popsradio.chrisbarlow.nz/build.html#parts) to see what it is.*
+*Generated pictures, not photos of our parts. Everything right of the line is sold separately. On the site you can [tap each part](https://popsradio.chrisbarlow.nz/build.html#parts) to see what it is.*
 
 The case comes two ways, and other shapes we looked at:
 
