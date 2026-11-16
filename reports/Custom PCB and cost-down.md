@@ -142,7 +142,7 @@ flowchart LR
 Meshtastic is a text mesh, not a voice link. The [relay report](Walkie%20talkie%20without%20central%20relay.md#radio-mesh-cannot-carry-pops-voice-to-the-next-town) already showed it cannot carry live voice between towns. On Pop's radio it is a second path for short messages that works with no internet and no power at the house.
 
 - **Outage messages.** When the internet or the power is down, family on Meshtastic can send a short text. It shows in large type with a chime.
-- **"I'm OK" without the internet.** A Mesh mode on the Mode knob, switched on by the family, where Select picks a canned message and a press sends it. The orange button stays talk only, as the platform rules require.
+- **"I'm OK" without the internet.** *Not taken as written: the mesh is connectivity, not a mode, so there is no Mesh position on the Mode knob. How Pop sends a message is not designed yet.* The first idea was a Mesh mode on the Mode knob, switched on by the family, where Select picks a canned message and a press sends it. The orange button stays talk only, as the platform rules require.
 - **A stronger local mesh.** Every Pop's Radio is an always-on node that passes messages along, so each one sold adds a link. Wellington's mesh is already busy (see the relay report), so talk to the local mesh group before a large batch ships there.
 - **Later: voice clips, not live voice.** Projects such as Voicetastic send whole voice clips on Meshtastic's private-app port 256 ([Voicetastic](https://github.com/voicetastic/voicetastic-core/wiki/Overview)). The relay report puts a 10-second clip at about 15 seconds per hop. Possible as a voicemail, never as the main channel.
 

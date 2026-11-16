@@ -57,7 +57,7 @@ Clean technical catalogue look, realistic scale between parts, neutral colours. 
 | 3 | I2S amplifier breakout (MAX98357A) | Drives the speaker | |
 | 4 | Speaker, 4 ohm 3 W | Loud enough for Pop, and for music | Not in the report's total |
 | 5 | Big push button | Hold to talk | 5, with the switch and lights |
-| 6 | Encoder and large knob | Mode: Talk, FM, internet radio, Play or Mesh | 7.50 for all three |
+| 6 | Encoder and large knob | Mode: Talk, FM, internet radio or Play | 7.50 for all three |
 | 7 | Encoder and large knob | Select: who, which station, which game | |
 | 8 | Encoder and small knob | Volume | |
 | 9 | 2.4 inch TFT screen, 320 × 240 | Names, stations and Pong | 8 |

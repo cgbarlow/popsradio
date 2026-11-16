@@ -48,9 +48,9 @@ Afterwards the R1s can stay on the same channels as the ESP32 radios. The detail
 
 - **Hold to talk.** One talker at a time, like a real radio. A chirp says it's ready, a roger beep says the message ended.
 - **A knob picks who.** The right-hand knob says each name out loud. A channel can be one person or a group, such as the whole family.
-- **More than talk.** The left-hand knob picks what the radio is doing: Talk, FM radio, internet radio, games and a chess clock, or Mesh. The family chooses which appear. Holding the orange button always talks.
+- **More than talk.** The left-hand knob picks what the radio is doing: Talk, FM radio, internet radio, or games and a chess clock. The family chooses which appear. Holding the orange button always talks.
 - **PUSH / OPEN switch.** Flip to OPEN to talk hands-free, taking turns. It works on group channels too, and the radio says out loud who can hear. The red light stays on whenever the microphone can hear. This part is a design proposal and hasn't been tested.
-- **A mesh that is always on.** Every radio carries a small Meshtastic radio that needs no internet. Radios in range pass short text messages along, so an "I'm OK" can cross a suburb in a power cut. Text only, and best efforts.
+- **A mesh that is always on.** Every radio carries a small Meshtastic radio that needs no internet. Radios in range pass short text messages along, so a message can cross a suburb in a power cut. It is connectivity, not a mode: there is nothing for Pop to select. Text only, and best efforts.
 - **Private.** Messages are encrypted on the radio. The server passes them on but can't open them, and nobody can switch the microphone on from somewhere else.
 - **Looks after itself.** It keeps the last message for 24 hours, tells the family if it goes offline or the battery runs low, and updates itself overnight.
 - **No subscription, ever.** Each set comes with its channels, and their running costs are prepaid for life. More channels can be added later, for life or monthly.

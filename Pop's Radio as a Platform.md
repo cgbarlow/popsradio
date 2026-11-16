@@ -2,7 +2,7 @@
 
 Nov 15, 2026 · @Chris Barlow
 
-> **Locked on 16 November 2026.** This began as a design exploration. It is now the radio we are building: the shape, the three knobs, the modes, the screen and the parts are decided, and a fifth mode, Mesh, has been added. The decisions and the tests that could still change them are in [Design Decisions](Design%20Decisions.md); the parts and prices are in the [cost-down report](reports/Custom%20PCB%20and%20cost-down.md). The [service design](Walkie-Talkie%20Service%20Design.md) is unchanged.
+> **Locked on 16 November 2026.** This began as a design exploration. It is now the radio we are building: the shape, the three knobs, the modes, the screen and the parts are decided, and an always-on mesh radio has been added as a second way to connect. The decisions and the tests that could still change them are in [Design Decisions](Design%20Decisions.md); the parts and prices are in the [cost-down report](reports/Custom%20PCB%20and%20cost-down.md). The [service design](Walkie-Talkie%20Service%20Design.md) is unchanged.
 
 This brief asks what happens if the same radio can do more than talk, and what has to be true for that to stay safe and simple for Pop.
 
@@ -13,10 +13,10 @@ Concept picture prompts for this unit are in [Pop's Radio Platform Image Prompts
 **The decision: Pop's Radio is a platform, not just a radio.** The parts that make a good walkie-talkie (a speaker, a screen, knobs, Wi-Fi, a small computer that updates itself) are most of what a bedside radio, a games board and a chess clock need too. Once Pop trusts one device, each extra useful thing on it is one less gadget to learn.
 
 - **A new shape.** A stout rectangular radio, long and low, about 220 mm wide, 125 mm tall and 80 mm deep, so it sits low and is hard to knock over. It has an adjustable shoulder strap and three knobs that are easy to grip and turn: a big one on each side and a smaller volume knob on top. Every knob turns freely and is also a button.
-- **Mode and Select.** The left knob picks what the radio is doing: Talk, Radio (FM), Radio (Internet), Play or Mesh. The right knob picks within it: who to talk to, which station, which game.
+- **Mode and Select.** The left knob picks what the radio is doing: Talk, Radio (FM), Radio (Internet) or Play. The right knob picks within it: who to talk to, which station, which game.
 - **Tip it on its back to play.** Screen facing up, the two side knobs become a left and right controller: Pong paddles or pinball flippers.
 - **A chess clock, standing upright.** It sits beside the board and each player taps the orange button with a palm to end their turn.
-- **A mesh that is always on.** Every radio carries a second, long-range radio that passes short text messages from radio to radio with no internet. See [Mesh](#mesh-messages-with-no-internet).
+- **A mesh that is always on.** Every radio carries a second, long-range radio that passes short text messages from radio to radio with no internet. See [Mesh](#mesh-connectivity-with-no-internet).
 - **An approved app store, later.** Once the first-party modes have proven the model, other people could build apps for it. Every app is reviewed and signed by us, installed by the family from the family app, and can never use the microphone or the talk button.
 - **One rule keeps it Pop's radio.** Holding the orange button always talks, in every mode, and an incoming message always wins. The family chooses which modes appear, and a radio can ship with Talk only.
 
@@ -69,12 +69,10 @@ flowchart LR
   M --> F["<b>Radio (FM)</b><br/>Channel 1 · 2 · 3"]
   M --> I["<b>Radio (Internet)</b><br/>Channel 1 · 2 · 3"]
   M --> P["<b>Play</b><br/>Pong · Pinball · Chess clock"]
-  M --> X["<b>Mesh</b><br/>I'm OK · Call me · On my way"]
   S(("<b>Select knob</b><br/>right side")) -.-> T
   S -.-> F
   S -.-> I
   S -.-> P
-  S -.-> X
 ```
 
 | Mode | Select knob picks | How it works | Notes |
@@ -83,7 +81,6 @@ flowchart LR
 | **Radio (FM)** | Channel 1, 2, 3 | An FM receiver chip on the I2C bus, with three presets set from the family app | Works without internet or Wi-Fi, so it still plays during an outage on battery |
 | **Radio (Internet)** | Channel 1, 2, 3 | Streams over Wi-Fi, with three presets set from the family app | Reaches stations FM cannot, such as a station from home for someone who moved countries |
 | **Play** | Pong, Pinball, Chess clock | First-party games written by us, see below | Pong and pinball on its back; the chess clock upright |
-| **Mesh** | A ready-made message, such as "I'm OK" | Sends a short text from radio to radio with no internet, see [Mesh](#mesh-messages-with-no-internet) | The mesh radio itself is always on, whether or not this mode is shown. The message list is an example, set by the family |
 
 **The Nurse channel is for talking, not for emergencies.** In a rest home, a channel to the nurses' station is an obvious third name beside Chris and Family. It is an ordinary talk channel: someone has to be listening at the other end. It does not replace the home's call bell, and the radio is still not an emergency alarm. A rest home would need to agree who answers it and when.
 
@@ -133,7 +130,7 @@ The chess clock is the clearest case for a platform. A rest home lounge already 
 
 **Later: play against the family.** Pong over the family's own channel, with Pop on his radio and a grandchild on theirs or in the family app. It would use the same service, with game moves sent as small sealed messages like voice. Not designed yet.
 
-## Mesh: messages with no internet
+## Mesh: connectivity with no internet
 
 **Every Pop's Radio carries a second radio that needs no internet, and it is always on.** It is a small Meshtastic chip on 915 MHz, beside the main chip. Radios in range of each other pass short text messages along, hop by hop, so a message can cross a suburb when the Wi-Fi, the mobile network or the power is down.
 
@@ -141,8 +138,8 @@ The chess clock is the clearest case for a platform. A rest home lounge already 
 
 *How it might look. A drawing, not a coverage map.*
 
-- **Mesh is the fifth mode.** The family switches it on. Select picks a ready-made message such as "I'm OK", and a press sends it. An incoming message shows in large type with a chime.
-- **Every radio is a link.** Each one passes other people's messages along, whether or not its own family uses Mesh mode. More radios make a better mesh.
+- **Mesh is connectivity, not a mode.** It does not appear on the Mode knob and there is nothing for Pop to select. The radio uses it by itself when the internet is not there. An incoming message shows in large type with a chime. How Pop sends one is not designed yet.
+- **Every radio is a link.** Each one passes other people's messages along, whether or not its own family ever sends one. More radios make a better mesh.
 - **Text only, best efforts.** It cannot carry live voice, and a message only gets through if there is a chain of radios between the two homes. It is not an emergency service.
 - **The rules hold.** The orange button still only talks. The mesh chip has no wire to the microphone. No location is ever sent.
 
@@ -200,7 +197,7 @@ Now chosen and priced. The [cost-down report](reports/Custom%20PCB%20and%20cost-
 | Antenna | None | A wire of about 75 cm run through the shoulder strap | Hobby guides give about 75 to 77 cm as a quarter-wave whip for FM ([101 Things](https://101-things.readthedocs.io/en/latest/fm_radio.html), [Seeed](https://wiki.seeedstudio.com/Grove-I2C_FM_Receiver/)). Hiding it in the strap is a proposal, untested |
 | Tilt sensor | None | A small accelerometer | Knows upright from lying on its back |
 | Battery | Skipped on Pop's docked unit | One 18650 cell, about 3000 mAh | A shoulder strap means it leaves the dock. About 3 days off the dock with the mesh on (estimate) |
-| Mesh | None | Heltec HT-CT62 co-processor running Meshtastic, with a 915 MHz antenna | Always on. See [Mesh](#mesh-messages-with-no-internet) |
+| Mesh | None | Heltec HT-CT62 co-processor running Meshtastic, with a 915 MHz antenna | Always on. See [Mesh](#mesh-connectivity-with-no-internet) |
 | Audio | I2S mic and MAX98357A amp | ES8388 codec, analog MEMS mic, NS4150B amp on a 5 V rail | As loud on battery as on the dock, and FM plays through the same codec |
 | Case | Wedge | Stout rectangle about 220 × 125 × 80 mm, with strap anchors, four rubber feet under the base and four on the back | Low and wide so it is hard to knock over; the back feet keep it steady as a games board |
 | Speaker | 50 mm, 3 W | Larger, to suit the bigger case | Music needs more than speech does, and an 80 mm deep case leaves room for a bigger speaker and air behind it |

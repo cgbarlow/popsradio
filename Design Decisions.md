@@ -11,13 +11,13 @@ Locked means the design work stops going round in circles. It does not mean test
 | # | Decision | Was | Detail in |
 |---|---|---|---|
 | 1 | **The platform radio is the radio.** Stout, about 220 × 125 × 80 mm, an orange button, a PUSH / OPEN slide switch and a small volume knob on top, a big knob on each side, a shoulder strap | "A design exploration, not a locked decision" | [Platform brief](Pop's%20Radio%20as%20a%20Platform.md) |
-| 2 | **Five modes on the Mode knob:** Talk, Radio (FM), Radio (Internet), Play and Mesh. The family chooses which appear | Talk was the plan; the rest were ideas | [Platform brief](Pop's%20Radio%20as%20a%20Platform.md#modes-at-launch) |
+| 2 | **Four modes on the Mode knob:** Talk, Radio (FM), Radio (Internet) and Play. The family chooses which appear. The mesh is not a mode | Talk was the plan; the rest were ideas | [Platform brief](Pop's%20Radio%20as%20a%20Platform.md#modes-at-launch) |
 | 3 | **One custom board.** A main board and three small boards cut from one panel, assembled and tested by the factory | Hand-wired breakout modules | [Cost-down report](reports/Custom%20PCB%20and%20cost-down.md#the-custom-board) |
 | 4 | **The parts:** ESP32-S3-WROOM-1-N16R8, ES8388 codec, NS4150B amp on a 5 V rail, analog MEMS mic, RDA5807M FM, LIS2DH12 tilt sensor, three EC11 encoders, IP5306 charger, one 18650 cell, USB-C | "Not priced yet" | [Part choices](reports/Custom%20PCB%20and%20cost-down.md#part-choices) |
 | 5 | **The screen is monochrome: a 2.4 inch TFT showing black and white only,** with a dimmable backlight, for the first boards. It plugs in, so a different panel can replace it | "Not chosen yet" | [The screen](Pop's%20Radio%20as%20a%20Platform.md#the-screen-chosen-for-the-first-boards) |
 | 6 | **The talk button is a printed orange cap over a tactile switch** | An arcade button | [Cost-down report](reports/Custom%20PCB%20and%20cost-down.md#cost-down-levers-ranked) |
 | 7 | **Mesh is option C: a co-processor.** A Heltec HT-CT62 runs unmodified Meshtastic beside the main chip, joined by a serial line | Three options on the table | [Meshtastic](reports/Custom%20PCB%20and%20cost-down.md#meshtastic) |
-| 8 | **The mesh is always on, and every Pop's Radio takes part.** Each radio passes other people's messages along as well as its own | On only when docked or when Wi-Fi was down; not passing messages on | [Below](#the-mesh-always-on) |
+| 8 | **The mesh is connectivity, always on, and every Pop's Radio takes part.** It is a second way to connect beside Wi-Fi, not something Pop selects. Each radio passes other people's messages along as well as its own | On only when docked or when Wi-Fi was down; not passing messages on | [Below](#the-mesh-always-on) |
 | 9 | **Two ways to buy: a built radio or a kit.** The plans stay free for anyone building for their own family | "Parts kit" was one line in a table | [Below](#how-people-get-one) |
 | 10 | **Modules for the first few, the custom board from then on.** Stage 2a builds the radio from modules to prove it; Stage 2b is 10 boards, then 100 kits | Stage 2 was a one-knob radio for NZ$35 to 50 | [Roadmap](#the-order-of-work) |
 | 11 | **The case comes two ways: 3D printed or plywood.** Both plans are free. A finished plywood box can be bought with a kit | A 3D printed case only | [Below](#the-case-printed-or-plywood) |
@@ -37,7 +37,7 @@ Not changed: the [service design](Walkie-Talkie%20Service%20Design.md), Stage 1 
 **What it does.**
 
 - **Messages when the internet is down.** A short text from the family shows in large type with a chime.
-- **"I'm OK" from Pop.** In Mesh mode, Select picks a ready-made message and a press sends it. The orange button stays talk only.
+- **Nothing for Pop to choose.** The mesh is not a mode on the knob. It is a second way for the radio to connect, and the radio uses it by itself when the internet is not there. How Pop sends a message over it is not designed yet; the orange button stays talk only.
 - **Best efforts, not a promise.** A message gets through if there is a chain of radios between the two homes. Sometimes there will not be.
 
 **What it does not do.**
@@ -50,6 +50,7 @@ Not changed: the [service design](Walkie-Talkie%20Service%20Design.md), Stage 1 
 
 | Setting | Locked value | Why |
 |---|---|---|
+| On the Mode knob | Nowhere | It is connectivity, not a mode |
 | Role | Client: passes messages along | Every radio is a link in the chain |
 | Power | On all the time, on the stand and on battery | A sleeping radio is a gap in the mesh |
 | Family messages | The family's own channel with its own key | Strangers on the public channel never reach Pop's screen |
