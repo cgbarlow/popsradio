@@ -2,7 +2,7 @@
 
 Nov 14, 2026 · @Chris Barlow · updated Nov 16, 2026
 
-Prompts for an image generator. Prompts 1a and 1b are a matching pair: every part of the radio as separate modules, and the same radio on one custom board, so the two pictures can sit side by side. Prompt 1c shows the mesh across a town. Prompts 2a to 2d are the three earlier shapes. Prompts for the radio itself are in [Pop's Radio Platform Image Prompts](Pop's%20Radio%20Platform%20Image%20Prompts.md).
+Prompts for an image generator. Prompts 1a and 1b are a matching pair: every part of the radio as separate modules, and the same radio on one custom board, so the two pictures can sit side by side. Prompts 2a to 2d are the three earlier shapes. Prompts for the radio itself are in [Pop's Radio Platform Image Prompts](Pop's%20Radio%20Platform%20Image%20Prompts.md).
 
 ## How to use
 
@@ -12,7 +12,7 @@ Paste one prompt at a time. Each is self-contained, so the generator needs no ot
 - **Labels.** Image generators often garble small text. Prompts 1a and 1b ask for numbered tags and give the key below, so a wrong label does not matter. If your generator handles text well, use the "with names" line instead.
 - **Boards have no readable text.** Both prompts ask for plain boards with no logos or part numbers, because generators invent them.
 - **There is an antenna now, but only in the parts pictures.** The mesh radio needs a 915 MHz antenna, so 1a and 1b show one. It is meant to sit inside the case, so the pictures of the finished radio still say "no antenna". Whether it can stay inside is a range test still to do.
-- **Aspect ratio.** 16:9 for the parts pictures and the mesh picture, 4:5 for the shapes. Change the last line of each prompt if your tool sets this elsewhere.
+- **Aspect ratio.** 16:9 for the parts pictures, 4:5 for the shapes. Change the last line of each prompt if your tool sets this elsewhere.
 - **The earlier shapes.** Prompts 2a to 2d repeat the same five features (big orange button, knob, small screen, speaker grille, PUSH / OPEN toggle switch), so the three results stay comparable. They work over Wi-Fi only, so they say "no antenna". Generators love adding one.
 
 ## Prompt 1a: every part, as modules
@@ -124,14 +124,6 @@ Clean technical catalogue look, realistic scale between parts, neutral colours. 
 About NZ$58 a kit to make in a batch of 100 and NZ$45 in a batch of 1,000, with no soldering. All four boards are cut from one panel. This is a mock-up: the board is not drawn yet, so the layout in the picture is the generator's guess.
 
 **A single comparison picture.** To get both in one frame, add to the start of 1b: "A split image. The left half shows the same radio as eighteen separate hobby modules, a perforated board and a tangle of coloured hookup wire; the right half shows the kit below." It is harder to get right than two pictures.
-
-## Prompt 1c: the mesh across a town
-
-A picture of the idea, to sit beside the drawing in `images/mesh-map.svg`.
-
-```
-Isometric illustration of a small New Zealand hillside suburb at dusk during a power cut, seen from above, in a warm flat editorial style with soft paper texture. About twelve small weatherboard houses with dark windows are spread across green hills beside a harbour, with a larger single-storey rest home among them. Street lights are off. Every window in every house is dark; no house lights are on anywhere. Inside each house, seen through one front window, a small sage green box-shaped radio with a round orange button on top sits on a table and gives off a small soft glow, the only light in the house. The radios are indoors, never on the roofs. Thin glowing dotted lines arc through the air from window to window, joining each radio to the two or three nearest, forming a loose net across the whole suburb. One chain of three arcs is brighter and orange, running from a house on the far left to a house on the far right. No phone masts, no satellite dishes, no people, no text, no logos. Calm and reassuring, not dramatic. Aspect ratio 16:9.
-```
 
 ## Earlier version of prompt 1: the one-knob build
 

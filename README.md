@@ -80,7 +80,7 @@ It is not an emergency alarm. In an emergency, call 111.
 | [NZ addressable market and opportunities](reports/NZ%20addressable%20market%20and%20opportunities.md) | Research on the size of the New Zealand market, for families and for rest homes, hospitals and other organisations, by category and region |
 | [Similar products and competitors](reports/Similar%20products%20and%20competitors.md) | Research on products like Pop's Radio around the world, what they cost, and what that means for the plan |
 | [Custom PCB and cost-down](reports/Custom%20PCB%20and%20cost-down.md) | Research on putting the whole platform radio, with Meshtastic, on one custom board: parts, costs at 100 and 1,000, the base kit and certification |
-| [Walkie-Talkie Image Prompts](Walkie-Talkie%20Image%20Prompts.md) | Prompts for the parts pictures (every module, and the same radio on the custom board), a mesh picture, and the earlier shapes |
+| [Walkie-Talkie Image Prompts](Walkie-Talkie%20Image%20Prompts.md) | Prompts for the parts pictures (every module, and the same radio on the custom board) and the earlier shapes |
 | [Pop's Radio as a Platform](Pop's%20Radio%20as%20a%20Platform.md) | The radio we are building: a stout radio with three free-turning knobs that also plays FM and internet radio and simple games, passes mesh messages, and could take approved apps |
 | [Pop's Radio Platform Image Prompts](Pop's%20Radio%20Platform%20Image%20Prompts.md) | Prompts for concept pictures of the platform unit |
 | [`images/`](images) | Concept pictures. These are generated images, not photos of real units |
