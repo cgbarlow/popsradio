@@ -2,7 +2,7 @@
 
 Nov 16, 2026 · @Chris Barlow
 
-> **A research report, not a decision.** [Design Decisions](../Design%20Decisions.md) still stands. This report tests a proposal that would reopen four of those decisions; they are listed under [What this would change](#what-this-would-change).
+> **Accepted on 16 November 2026.** Every recommendation here is now a decision: see decisions 13 to 23 in [Design Decisions](../Design%20Decisions.md). The report is kept as written, as the evidence.
 
 ## Summary
 

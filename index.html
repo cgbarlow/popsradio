@@ -78,8 +78,17 @@
 
 <main>
 
+<!-- Who is it for? -->
+<div class="wrap who" aria-labelledby="whoQ">
+  <p class="who-q" id="whoQ">Who is it for?</p>
+  <div class="who-pick">
+    <a href="#pop"><b>For Pop</b><span>A simple radio for someone you love. One big button.</span></a>
+    <a href="tinker.html"><b>For a tinkerer</b><span>Take the back off. Add to it. No soldering.</span></a>
+  </div>
+</div>
+
 <!-- The radio -->
-<div class="wrap hero">
+<div class="wrap hero" id="pop">
   <div>
     <span class="tag">A simpler way to stay in touch</span>
     <h1>Hold to talk.<br><em>Let go to listen.</em></h1>
@@ -326,14 +335,14 @@
     <div class="section-head">
       <span class="tag">Decided, not yet tested</span>
       <h2>When the internet is down</h2>
-      <p>Every Pop's Radio has a second, long-range radio inside that needs no Wi-Fi, no mobile network and no internet. It is always on. Radios in range of each other pass short text messages along, house to house, so a message from the family can still reach Pop in a power cut. There is nothing for Pop to do: it just works.</p>
+      <p>Every built Pop's Radio has a second, long-range radio inside that needs no Wi-Fi, no mobile network and no internet. It is always on. Radios in range of each other pass short text messages along, house to house, so a message from the family can still reach Pop in a power cut. There is nothing for Pop to do: it just works.</p>
     </div>
     <figure>
       <a class="wide" href="images/mesh-map.svg"><img src="images/mesh-map.svg" alt="A simple map of eleven houses, each with a Pop's Radio. Dashed lines join radios in range of each other. With the internet down, the message On my way travels from Chris's house to Pop's house in three hops, through two neighbours' radios, and shows on Pop's radio." loading="lazy" width="1200" height="680"></a>
       <figcaption class="fig"><b>Fig. 3</b> How it might look. A drawing, not a coverage map: real range depends on hills, walls and where the radio sits.</figcaption>
     </figure>
     <div class="notes rules">
-      <div><h4>Every radio is a link</h4><p>Each one passes other people's messages along, whether or not its own family ever sends one. Every radio sold makes the mesh better for everyone.</p></div>
+      <div><h4>Every radio is a link</h4><p>Each one passes other people's messages along, whether or not its own family ever sends one. Every one makes the mesh better for everyone. A bare kit joins in when its owner plugs in the mesh card.</p></div>
       <div><h4>Short messages, best efforts</h4><p>Text in big letters, with a chime. It can't carry live voice, and a message only gets through if there's a chain of radios between the two homes.</p></div>
       <div><h4>It can't listen, and it doesn't say where it is</h4><p>The mesh chip has no wire to the microphone and no GPS. Pop's screen only shows messages from his own family.</p></div>
     </div>
@@ -346,7 +355,7 @@
   <div class="wrap">
     <div class="section-head">
       <h2>One board, not a box of wires</h2>
-      <p>The first radios will be wired by hand from eighteen small parts. That works for one family, and takes two to three hours of soldering each. So the plan is one custom board, assembled and tested by the factory, with everything on it.</p>
+      <p>The first radios will be wired by hand from eighteen small parts. That works for one family, and takes two to three hours of soldering each. So the plan is one custom board, assembled and tested by the factory. It is a cheap base, and the extras plug in as cards.</p>
     </div>
     <div class="two">
       <figure>
@@ -355,10 +364,10 @@
       </figure>
       <figure>
         <a class="wide" href="build.html#parts"><img src="images/parts-custom-board_sml.jpg" alt="The same radio as a kit on the same grey mat: one main circuit board with a battery holder, a long top board with a switch, a button and a knob, two small knob boards, three flat cables, a screen, an antenna and aerial wire, and an orange button cap with three black knobs. A speaker and a battery sit apart on the right." loading="lazy" width="1000" height="558"></a>
-        <figcaption class="fig"><b>Fig. 5</b> One custom board: about NZ$58 each to make at 100 and NZ$45 at 1,000. No soldering.</figcaption>
+        <figcaption class="fig"><b>Fig. 5</b> One custom board: the base is about NZ$44 each to make at 100 and NZ$33 at 1,000. No soldering. The picture shows an earlier layout, with the mesh radio on the board.</figcaption>
       </figure>
     </div>
-    <p class="small muted fineprint"><a href="build.html#parts">See what each part is</a>. These are generated pictures, not photos of our parts, so small details are wrong. The speaker and the battery, right of the line, are sold separately. What each radio costs us to make, including GST, before the case, speaker and battery. At 1,000 the board is about NZ$16 a radio cheaper than the cheapest hand-wired build, about a quarter. The bigger saving is time: 100 radios by hand is 200 to 300 hours of soldering. These are November 2026 list prices and estimates, not quotes.</p>
+    <p class="small muted fineprint"><a href="build.html#parts">See what each part is</a>. These are generated pictures, not photos of our parts, so small details are wrong. The speaker and the battery, right of the line, are sold separately. What each radio costs us to make, including GST, before the case, speaker and battery. At 1,000, the base with its mesh card is about NZ$48, which is NZ$13 a radio cheaper than the cheapest hand-wired build, about a fifth. The bigger saving is time: 100 radios by hand is 200 to 300 hours of soldering. These are November 2026 list prices and estimates, not quotes.</p>
 
     <h3 class="sub">Three ways to get one</h3>
     <div class="modes three">
@@ -368,17 +377,17 @@
         <p>The parts list, the board files, a case to print or cut from plywood, and the firmware. Build one for your own family. Parts from about NZ$61, and an afternoon with a soldering iron.</p>
       </div>
       <div class="mode plan">
-        <span class="tag">About NZ$89 to 99</span>
+        <span class="tag">From about NZ$59</span>
         <div class="big">A KIT</div>
-        <p>Every board assembled, tested and loaded, with the screen, cables and antennas. No soldering. You add a case, printed or plywood, a speaker and a battery, and buy channels.</p>
+        <p>The base: every board assembled, tested and loaded, with the screen and cables. No soldering. You add a case, printed or plywood, a speaker and a battery, and buy channels. Mesh and 4G plug in as cards.</p>
       </div>
       <div class="mode">
         <span class="tag">Price to come</span>
         <div class="big">BUILT</div>
-        <p>A finished radio, charged and paired, ready for Pop. Its channels come with it, paid for life.</p>
+        <p>A finished radio, charged and paired, ready for Pop, with the mesh card fitted. Its channels come with it, paid for life.</p>
       </div>
     </div>
-    <p class="small muted aside">Suggested prices for a first batch of 100 kits, falling towards NZ$79 at 1,000. Nothing is for sale yet. A kit radio, a built radio and a home-made one share the same channels and the same mesh. No Wi-Fi at home? Any of them can take a <a href="build.html#kits">plug-in 4G board</a> and a SIM.</p>
+    <p class="small muted aside">Suggested prices: the base kit at NZ$59 to 69, the mesh card at NZ$29 and the 4G card at NZ$45 to 55. Nothing is for sale yet. A kit radio, a built radio and a home-made one share the same channels. No Wi-Fi at home? Any of them can take a <a href="build.html#kits">plug-in 4G card</a> and a SIM. Want to add more? <a href="tinker.html">It opens up</a>.</p>
 
     <h3 class="sub">Two cases: printed or plywood</h3>
     <div class="modes">
@@ -447,7 +456,7 @@
     <details><summary>Why not just buy a pair of walkie-talkies?</summary><p>If you live within a kilometre or two, a pair of licence-free UHF radios for about $80 is simpler. They fall down on distance, hills, privacy (anyone can tune in), replaying missed messages and telling family when the battery is low.</p></details>
     <details><summary>What's the Rabbit R1 got to do with it?</summary><p>The R1 is a small gadget that happens to have a button, a wheel, a speaker and Wi-Fi. We already own two, so they're the quickest way to test the idea with Pop. Rabbit has stopped making them and the battery is short, so it isn't the final radio.</p></details>
     <details><summary>Can more of the family join?</summary><p>Yes. Each channel can hold several radios, and the right-hand knob picks the channel. OPEN works on group channels too: everyone on the channel can then hear, and still only one person talks at a time.</p></details>
-    <details><summary>What if there's no Wi-Fi?</summary><p>Plug in the 4G board and put in a SIM, and the radio talks over mobile data instead. It can be added to any radio, then or later, with a screwdriver. The family pays for the mobile plan, about $104 to $120 a year on prepay, separate from channels.</p></details>
+    <details><summary>What if there's no Wi-Fi?</summary><p>Plug in the 4G card and put in a SIM, and the radio talks over mobile data instead. It can be added to any radio, then or later, with a screwdriver. The family pays for the mobile plan, about $104 to $120 a year on prepay, separate from channels.</p></details>
     <details><summary>What happens when the internet goes down?</summary><p>Talking needs Wi-Fi or mobile data, so hold to talk stops. The mesh radio carries on: the family can send a short text that shows in big letters, with a chime. There is nothing for Pop to do: the mesh is just another way for the radio to connect, and it uses it by itself. The family needs a mesh radio at their end too: another Pop's Radio, or any Meshtastic radio. A message only gets through if there are enough radios between the two homes, so it's best efforts, not a promise.</p></details>
     <details><summary>Does my radio pass on other people's messages?</summary><p>Yes, always. That's what makes it a mesh. They are short text packets, passed along and never shown on Pop's screen. The mesh chip isn't wired to the microphone, and it never sends a location.</p></details>
     <details><summary>Can I build one myself?</summary><p>Yes. The plans are free for your own family. The easier way will be a kit: the boards arrive assembled and tested, and you add a case, a speaker and a battery with a screwdriver. The case can be 3D printed or made of plywood, from our plans, or bought as a finished plywood box. Nothing is for sale yet.</p></details>
@@ -471,6 +480,7 @@
   <div class="wrap">
     <ul>
       <li><a href="build.html">The board, costs and kits</a></li>
+      <li><a href="tinker.html">For tinkerers</a></li>
       <li><a href="https://github.com/cgbarlow/popsradio/blob/main/Design%20Decisions.md">Design decisions</a></li>
       <li><a href="https://github.com/cgbarlow/popsradio/blob/main/reports/Custom%20PCB%20and%20cost-down.md">Custom board report</a></li>
       <li><a href="https://github.com/cgbarlow/popsradio/blob/main/Pop's%20Radio%20as%20a%20Platform.md">The radio as a platform</a></li>
@@ -510,12 +520,12 @@ const PLAN = [
       ["Case and trial", "Print the case and three sizes of knob, then a week with Pop. Try the screen in daylight and by the bed."]
     ]},
   { id: "board", title: "One custom board, then kits", when: "Stage 2b · after that", done: 0,
-    text: "The same radio on one main board and three small ones, assembled and tested by the factory. Ten first, to try with Pop. Then a hundred, sold as kits.",
+    text: "The same radio on one main board and three small ones, assembled and tested by the factory, as a cheap base that opens up for plug-in cards. Ten first, to try with Pop. Then a hundred, sold as kits.",
     steps: [
-      ["Draw the board", "Four boards cut from one panel. Then a real quote for 10 and for 100: the prices on this page are list prices until then."],
+      ["Draw the board", "Four boards cut from one panel, with sockets inside for plug-in cards. Then a real quote for 10 and for 100: the prices on this page are list prices until then."],
       ["Build 10", "Test the knobs, the button cap, the screen and FM with Pop before ordering more."],
       ["Chess clock in a rest home", "One radio in a lounge, as a chess clock and an FM radio."],
-      ["100 kits", "The first batch, at about NZ$89 to 99 a kit."],
+      ["100 kits", "The first batch: the base at about NZ$59 to 69, with mesh and 4G as plug-in cards."],
       ["Certify, then 1,000", "Radio testing costs too much to spread over 100. It gets done before a bigger batch and before built radios go on sale."]
     ]}
 ];

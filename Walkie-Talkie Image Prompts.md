@@ -8,7 +8,7 @@ Prompts for an image generator. Prompts 1a and 1b are a matching pair: every par
 
 Paste one prompt at a time. Each is self-contained, so the generator needs no other context.
 
-- **A matching pair.** Make 1a first. For 1b, attach the 1a picture if your tool takes a reference, so the mat, the light and the camera match. They are saved as `images/parts-modules.jpg` and `images/parts-custom-board.jpg`, with `_sml` copies 1000 px wide, and are on the site's front page.
+- **A matching pair.** Make 1a first. For 1b, attach the 1a picture if your tool takes a reference, so the mat, the light and the camera match. They are saved as `images/parts-modules.jpg` and `images/parts-custom-board.jpg`, with `_sml` copies 1000 px wide, and are on the site's front page. Prompt 1b changed on 16 November 2026, when the board went modular; 1a did not, since a hand-wired radio has always been loose parts.
 - **Labels.** Image generators often garble small text. Prompts 1a and 1b ask for numbered tags and give the key below, so a wrong label does not matter. If your generator handles text well, use the "with names" line instead.
 - **Boards have no readable text.** Both prompts ask for plain boards with no logos or part numbers, because generators invent them.
 - **There is an antenna now, but only in the parts pictures.** The mesh radio needs a 915 MHz antenna, so 1a and 1b show one. It is meant to sit inside the case, so the pictures of the finished radio still say "no antenna". Whether it can stay inside is a range test still to do.
@@ -80,48 +80,54 @@ About NZ$61 for parts 1 to 18, and two to three hours of soldering. The speaker 
 
 ## Prompt 1b: the same radio on one custom board
 
-The radio as it is built in Stage 2b and sold as a kit. Same mat, same light, same camera as 1a, so the two pictures compare. The kit is on the left, with its empty battery holder on the main board. The speaker and the battery cell are sold separately, so they sit off to one side, apart from the kit. The case is left out: it has its own pictures.
+The radio as it is built in Stage 2b and sold as a kit: a base that opens up, with plug-in cards. Same mat, same light, same camera as 1a, so the two pictures compare. The base kit is on the left. The things sold separately sit off to one side: the speaker, the battery cell, and the plug-in cards. The case is left out: it has its own pictures.
 
 ```
-Top-down flat lay product photograph, knolling style, on the same matte light grey workbench mat, with the same soft even studio lighting and the same camera height as a matching parts photograph. Sharp focus, no hands, no tools, generous spacing. Far fewer items than a hobby parts layout: exactly ten items, each with a small white round numbered tag (1 to 10) placed beside it. A thin white line on the mat separates the left three-quarters from the right quarter.
+Top-down flat lay product photograph, knolling style, on the same matte light grey workbench mat, with the same soft even studio lighting and the same camera height as a matching parts photograph. Sharp focus, no hands, no tools, generous spacing. Far fewer items than a hobby parts layout: exactly thirteen items, each with a small white round numbered tag (1 to 13) placed beside it. A thin white line on the mat separates the left two-thirds from the right third.
 
-On the left three-quarters, a mock-up of a custom electronics kit in matte dark green circuit board with gold pads and neat rows of tiny black and grey surface-mounted parts, all machine-assembled, no loose wires:
+On the left two-thirds, a mock-up of a custom electronics kit in matte dark green circuit board with gold pads and neat rows of tiny black and grey surface-mounted parts, all machine-assembled, no loose wires:
 
-1. One main circuit board, about 110 x 80 mm, dark green, with a rounded corner cut-out at each mounting hole. On it: a silver metal-shielded square module in the top left corner, a second smaller silver metal-shielded module with a tiny round gold antenna socket in the top right corner, a few small black square chips in the middle, a USB-C socket on the right edge, a row of three small white cable sockets along the top edge, and an empty black holder for one cylindrical battery fixed along the bottom edge.
+1. One main circuit board, about 110 x 80 mm, dark green, with a rounded corner cut-out at each mounting hole. On it: one silver metal-shielded square module in the top left corner; a few small black square chips; two USB-C sockets side by side on the right edge; a row of three small white cable sockets along the top edge; in the middle of the board, two empty card bays, each one a pair of short black 8-pin socket strips standing parallel about 23 mm apart with bare board between them; two tiny white 4-pin sockets and one small black 2 x 3 pin socket near the left edge; and an empty black holder for one cylindrical battery fixed along the bottom edge. There is only one metal-shielded module on this board.
 2. One long narrow circuit board, about 110 x 25 mm, dark green, carrying a small square push switch in the centre, a small black slide switch with a flat thumb tab to its left, a rotary encoder with a short metal shaft to its right, and three tiny LEDs.
 3. One small circuit board, about 30 x 30 mm, dark green, carrying a single rotary encoder with a metal shaft.
 4. A second identical small circuit board, about 30 x 30 mm, carrying a single rotary encoder with a metal shaft.
 5. Three short flat white ribbon cables, each about 80 mm long, with a small white plug on both ends, laid side by side.
 6. A 2.4 inch display, a thin black glass rectangle about 60 x 43 mm, switched off, with a short flat orange flexible cable.
-7. A short black stubby rubber antenna, about 50 mm long, joined to a thin grey cable with a tiny gold connector, beside a neat coil of thin black insulated wire.
+7. A neat coil of thin black insulated wire, about 75 cm long, with one stripped end.
 8. A round orange 3D printed button cap, 30 mm across, with two large black deeply ribbed knobs, 40 mm across, and one small black ribbed knob, 20 mm across.
 
-On the right quarter of the mat, set well apart behind the thin white line, two items sold separately:
+On the right third of the mat, set well apart behind the thin white line, five items sold separately, each with a numbered tag (9 to 13):
 
 9. A round black 57 mm loudspeaker with a paper cone, metal frame, and two short red and black wires.
 10. One green cylindrical 18650 lithium cell, 65 mm long and 18 mm across.
+11. A small dark green plug-in card, about 57 x 25 mm, with a row of 8 gold pins along each long edge, carrying one small silver metal-shielded module and one tiny round gold antenna socket; beside it, a short black stubby rubber antenna, about 50 mm long, on a thin grey cable with a tiny gold connector.
+12. A second small dark green plug-in card of the same size and shape, with a row of 8 gold pins along each long edge, carrying one larger flat silver metal-shielded module and a small metal SIM card holder; beside it, a thin flat black adhesive antenna strip on a short cable.
+13. A tiny square red sensor board, about 25 x 25 mm, with one small black chip, joined to a short thin cable of four coloured wires with a small white plug on each end.
 
 Clean technical catalogue look, realistic scale between parts, neutral colours. The four circuit boards look like finished factory-made products of one matching set. No case or enclosure, no breadboard, no perforated board, no hookup wire, no solder, no text or part numbers printed on any board, no brand logos. Aspect ratio 16:9.
 ```
 
-**With names instead of numbers.** Use: MAIN BOARD, TOP BOARD, MODE BOARD, SELECT BOARD, CABLES, SCREEN, ANTENNAS, BUTTON AND KNOBS; and, set apart, SPEAKER, BATTERY.
+**With names instead of numbers.** Use: MAIN BOARD, TOP BOARD, MODE BOARD, SELECT BOARD, CABLES, SCREEN, FM AERIAL, BUTTON AND KNOBS; and, set apart, SPEAKER, BATTERY, MESH CARD, 4G CARD, TILT SENSOR.
 
 **Key to the numbers.**
 
 | No. | Part | What is on it | In the kit |
 | --- | --- | --- | --- |
-| 1 | Main board | ESP32-S3 module, the mesh radio (HT-CT62), audio codec and amplifier, FM tuner, tilt sensor, charger, USB-C, the cell holder, and an empty space for an LTE modem | Yes |
+| 1 | Main board | ESP32-S3 module, audio codec and amplifier, FM tuner, charger, two USB-C ports (Power and Data), two empty card bays, two sensor sockets, a badge socket, a pin header and the cell holder | Yes |
 | 2 | Top board | The talk switch, the PUSH / OPEN slide switch, the volume encoder, the red microphone light and two status lights | Yes |
 | 3 | Mode board | The left-hand encoder | Yes |
 | 4 | Select board | The right-hand encoder | Yes |
 | 5 | Three cables | Join the small boards to the main board | Yes |
 | 6 | 2.4 inch TFT screen | Plugs into the main board | Yes |
-| 7 | 915 MHz antenna and FM wire | The mesh antenna, and the FM aerial for the strap | Yes |
+| 7 | FM wire | The FM aerial, for the strap | Yes |
 | 8 | Button cap and knobs | Small printed parts | With a bought case, or printed from the plans |
 | 9 | Speaker | Set apart | No: sold separately |
 | 10 | 18650 cell | Set apart. Fits the empty holder on the main board | No: sold separately |
+| 11 | Mesh card and antenna | The mesh radio (HT-CT62) on a plug-in card, for card bay 1 | No: sold separately. Fitted in a built radio |
+| 12 | 4G card and antenna | A modem and SIM holder on a plug-in card, for card bay 2 | No: sold separately |
+| 13 | Tilt sensor | Plugs into a sensor socket on its cable | No: sold separately |
 
-About NZ$58 a kit to make in a batch of 100 and NZ$45 in a batch of 1,000, with no soldering. All four boards are cut from one panel. This is a mock-up: the board is not drawn yet, so the layout in the picture is the generator's guess.
+The base is about NZ$44 to make in a batch of 100 and NZ$33 in a batch of 1,000, with no soldering. All four boards are cut from one panel. This is a mock-up: the board is not drawn yet, so the layout in the picture is the generator's guess. The picture on the site was made from an earlier version of this prompt, with the mesh radio on the main board, and needs redoing.
 
 **A single comparison picture.** To get both in one frame, add to the start of 1b: "A split image. The left half shows the same radio as eighteen separate hobby modules, a perforated board and a tangle of coloured hookup wire; the right half shows the kit below." It is harder to get right than two pictures.
 

@@ -2,12 +2,12 @@
 
 Nov 15, 2026 · @Chris Barlow
 
-Nine prompts for an image generator, for the platform unit in [Pop's Radio as a Platform](Pop's%20Radio%20as%20a%20Platform.md). Prompt 1 designs the radio, in the bedside scene. Prompts 2 to 7 take that picture as their reference and change only the scene: a blueprint, a chess clock in a rest home, Pong from the player's seat, FM radio on the screen, the Talk list close up, and the radio carried with its strap over a shoulder. Prompts 8 and 9 are the plywood case: the cut panels laid out as a plan, and the finished plywood radio.
+Eleven prompts for an image generator, for the platform unit in [Pop's Radio as a Platform](Pop's%20Radio%20as%20a%20Platform.md). Prompt 1 designs the radio, in the bedside scene. Prompts 2 to 7 take that picture as their reference and change only the scene: a blueprint, a chess clock in a rest home, Pong from the player's seat, FM radio on the screen, the Talk list close up, and the radio carried with its strap over a shoulder. Prompts 8 and 9 are the plywood case: the cut panels laid out as a plan, and the finished plywood radio. Prompts 10 and 11 are for tinkerers: the radio with its back off, and the plug-in cards.
 
 ## How to use
 
 1. **Make the reference picture.** Run prompt 1 until the radio is right, and save that picture. It is the only prompt that describes the radio in full.
-2. **Attach it to every other prompt.** For prompts 2 to 7 and 9, attach the reference picture and paste the prompt. Each one tells the generator to keep the radio exactly as it is and change only the scene, the camera angle and what the screen shows.
+2. **Attach it to every other prompt.** For prompts 2 to 7, 9 and 10, attach the reference picture and paste the prompt. Each one tells the generator to keep the radio exactly as it is and change only the scene, the camera angle and what the screen shows.
 3. **Always attach the original.** Use the prompt 1 picture every time, not the latest result. Each copy drifts a little, and copies of copies drift a lot.
 4. **If the radio changes anyway,** add "match the reference image exactly; the radio must not change" to the end, or try again. Small parts drift first: the switch, the volume knob, the status light.
 5. **If your tool cannot take a reference picture,** use [the fallback](#fallback-no-reference-picture) at the end.
@@ -155,9 +155,64 @@ Use the attached image as the reference for the radio and the scene. Show the sa
 
 **Getting the plywood right.** The first try came out with a small glowing screen, a toggle switch, two extra holes beside the screen and the strap fixed low on the sides, so the prompt now spells each of those out. Check them first; if one is still wrong, generate again with only that sentence moved to the end. If the case comes out as solid timber, add "plywood, with thin layers visible on every edge". If the corners come out rounded like the plastic case, add "square edges, flat panels". If the joints vanish, add "box joints visible on every corner". For a pair, ask for "the green plastic radio and the plywood radio side by side on the same table".
 
+## Prompt 10: the back off
+
+The radio opened up, for the [tinkerer's page](https://popsradio.chrisbarlow.nz/tinker.html). Attach the prompt 1 picture: this is the same radio, turned round. The numbered callouts have a key below.
+
+```
+Use the attached image as the reference for the radio. Show exactly the same radio from behind, with its back panel taken off: the same matte sage green case with the same long, low shape, about 220 mm wide, 125 mm tall and 80 mm deep; the same large orange button, small slide switch and small black volume knob on top; the same large black ribbed knob on each side; and the same narrow cream fabric shoulder strap fixed to a ring at the upper corner of each side. Do not redesign the outside of the radio. Product photograph, three-quarter rear view, on a wooden workbench in soft daylight. The radio stands upright with its back open towards the camera, like a box with one side removed, so the inside is clearly visible and well lit. The removed back panel, a flat sage green rectangle with a screw hole in each corner, lies flat on the bench beside the radio with four small screws on it and a small screwdriver next to it. Inside the case, tidy and uncluttered, with plenty of empty space: one dark green main circuit board, about 110 x 80 mm, fixed upright against the inside of the front wall on four short posts; on it, one silver metal-shielded module, two empty card bays each made of two short parallel black socket strips, two tiny white sockets, and a black holder with one green cylindrical battery along its bottom edge. One small dark green card with a silver metal-shielded module is plugged into the first card bay, standing just proud of the main board; the second card bay is empty. A round black loudspeaker is fixed to the inside of the front wall beside the board. Three short flat white ribbon cables run neatly from the main board to a small green board under the top and to a small green board behind each side knob. On the inside of the floor of the case, a neat grid of small round screw posts, moulded in the same green plastic, with nothing fixed to them. On the outside of one short side panel, low down, two small USB-C ports side by side. Six small white round numbered tags (1 to 6) sit beside: 1, the main board; 2, the card plugged into the first bay; 3, the empty second bay; 4, the two tiny white sockets; 5, the grid of screw posts; 6, the two USB-C ports. No loose wires, no tangle, no soldering iron, no hands, no faces, no text on the boards, no brand logos. It looks deliberately easy to work on, like a well-made kit. Aspect ratio 3:2.
+```
+
+**Key to the numbers.**
+
+| No. | Part | What it is for |
+| --- | --- | --- |
+| 1 | Main board | The base: Talk, FM, Wi-Fi and Bluetooth keyboards |
+| 2 | A card in bay 1 | The mesh card |
+| 3 | Empty bay 2 | For the 4G card, or any Click card |
+| 4 | Two sensor sockets | Plug-in sensors on a cable |
+| 5 | Screw posts | Somewhere to fix what you add |
+| 6 | Two USB-C ports | Power, and Data |
+
+**Getting the inside right.** Generators fill an open case with wires. If it comes out cluttered, add "almost empty inside, three flat cables only". If the outside changes, add "the outside of the radio matches the reference image exactly". For the plywood version, add "the case is pale birch plywood with finger joints, as in the plywood picture" and attach that picture instead.
+
+## Prompt 11: the plug-in cards
+
+The cards and sensors on their own, laid out like the parts pictures. It needs no reference picture. The numbered tags have a key below.
+
+```
+Top-down flat lay product photograph, knolling style, of small plug-in electronics cards neatly arranged on a matte light grey workbench mat. Soft even studio lighting, sharp focus, no hands, no tools, generous spacing. Exactly seven items, each with a small white round numbered tag (1 to 7) placed beside it:
+
+1. A small dark green card, about 57 x 25 mm, with a row of 8 gold pins along each long edge, carrying one small silver metal-shielded module and one tiny round gold antenna socket. Beside it, a short black stubby rubber antenna, about 50 mm long, on a thin grey cable with a tiny gold connector.
+2. A second dark green card of exactly the same size and shape, with a row of 8 gold pins along each long edge, carrying one larger flat silver metal-shielded module and a small metal SIM card holder. Beside it, a thin flat black adhesive antenna strip on a short cable, and one small SIM card.
+3. A third card of the same size and shape but red, with a row of 8 gold pins along each long edge, carrying a few small black chips.
+4. A tiny square red sensor board, about 25 x 25 mm, with one small black chip and a tiny white socket on two opposite edges.
+5. A second tiny square sensor board, about 25 x 25 mm, purple, with a small silver sensor in its centre and a tiny white socket on two opposite edges.
+6. Two short thin cables, each of four coloured wires (black, red, blue, yellow) about 100 mm long, with a small white plug on each end, laid side by side.
+7. A coin-sized round circuit board, about 40 mm across, matte black with a simple gold pattern and four small LEDs, with a small black 2 x 3 pin plug on its back edge.
+
+Above the cards, at the top of the mat, one empty socket for scale: a small piece of dark green circuit board carrying a pair of short black 8-pin socket strips standing parallel about 23 mm apart. Clean technical catalogue look, realistic scale between parts, neutral colours. Cards 1, 2 and 3 are clearly the same size and shape as each other. No loose wires other than the two cables, no soldering iron, no text or part numbers on any board, no brand logos. Aspect ratio 16:9.
+```
+
+**With names instead of numbers.** Use: MESH CARD, 4G CARD, CLICK CARD, TILT SENSOR, SENSOR, CABLES, BADGE ADD-ON.
+
+**Key to the numbers.**
+
+| No. | Part | Where it goes |
+| --- | --- | --- |
+| 1 | Mesh card and antenna | Card bay 1 |
+| 2 | 4G card, antenna and SIM | Card bay 2 |
+| 3 | Someone else's Click card | Either card bay |
+| 4 | Tilt sensor | A sensor socket |
+| 5 | Another plug-in sensor | A sensor socket, or chained from the first |
+| 6 | Sensor cables | Between a sensor socket and a sensor |
+| 7 | A badge add-on | The badge socket |
+
+**Getting the cards right.** The three cards must match in size: that is the point of a standard bay. If they differ, add "three identical card outlines, different parts on each". Our own cards are not designed yet, so the parts on them are the generator's guess.
+
 ## Fallback: no reference picture
 
-If your tool cannot take a picture as a reference, each prompt has to describe the radio itself. Prompt 8 needs no reference. In prompts 2 to 7, delete everything from "Use the attached image" to "as described here." and paste this in its place. Results will match less closely than with a reference picture.
+If your tool cannot take a picture as a reference, each prompt has to describe the radio itself. Prompts 8 and 11 need no reference. In prompts 2 to 7, delete everything from "Use the attached image" to "as described here." and paste this in its place. Results will match less closely than with a reference picture.
 
 ```
 The radio: a stout rectangular tabletop radio in matte sage green plastic with softly rounded edges: a long, low, landscape shape, about 220 mm wide, 125 mm tall and 80 mm deep, like a classic portable transistor radio. The front face is clearly much wider than it is tall, nearly twice as wide, and never square. The case is one plain shape with straight sides all the way down: no flared base, no plinth, no skirt, no foot. A long, narrow, adjustable woven cream fabric shoulder strap, only about 20 mm wide, long enough to wear over the shoulder, with a metal slide buckle for adjusting its length, fixed at each end to a small metal ring at the upper corner of each side panel; not a short handle. Front face: in the upper half, a paper-like reflective black-and-white screen about 140 mm wide and 50 mm tall, a wide landscape shape, with a warm light grey background and crisp black text, lit by a soft warm front light; in the lower half, a wide perforated speaker grille. Top surface, from left to right: a small, compact smooth slide switch: a short slot only about 20 mm long, half the width of the orange button, with the word "PUSH" printed in small white capitals just in front of its left end and "OPEN" just in front of its right end. The slider thumb is a small raised oval about 8 mm long, sitting hard against the far left end of the slot, directly behind the word "PUSH"; the rest of the slot, to the right of the thumb, is an empty dark groove. The switch is clearly set to PUSH, not in the middle; exactly in the centre of the top surface, midway between the left and right edges, with the switch to its left and the volume knob to its right, one very large domed orange arcade-style push button about 40 mm wide, the biggest and brightest control on the radio; and a small black ribbed volume knob about 25 mm across, clearly smaller than the orange button. One large black ribbed rotary knob sticks out from each side panel, left and right, level with the screen, each about 40 mm across and 25 mm deep, with deep finger grips like a vintage radio tuning knob and a white pointer line on the face. One small status light glowing green, to the left of the screen only. Only three knobs in total. No antenna, no keypad, no other buttons, switches or lights, no brand logos.

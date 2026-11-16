@@ -2,7 +2,7 @@
 
 Nov 15, 2026 · @Chris Barlow
 
-> **Locked on 16 November 2026.** This began as a design exploration. It is now the radio we are building: the shape, the three knobs, the modes, the screen and the parts are decided, and an always-on mesh radio has been added as a second way to connect. The decisions and the tests that could still change them are in [Design Decisions](Design%20Decisions.md); the parts and prices are in the [cost-down report](reports/Custom%20PCB%20and%20cost-down.md). The [service design](Walkie-Talkie%20Service%20Design.md) is unchanged.
+> **Locked on 16 November 2026.** This began as a design exploration. It is now the radio we are building: the shape, the three knobs, the modes, the screen and the parts are decided, and an always-on mesh radio has been added as a second way to connect. The decisions and the tests that could still change them are in [Design Decisions](Design%20Decisions.md); the parts and prices are in the [cost-down report](reports/Custom%20PCB%20and%20cost-down.md). The [service design](Walkie-Talkie%20Service%20Design.md) is unchanged. Since then the hardware has gone modular: a cheap base with plug-in cards for mesh and 4G, sockets for sensors, and a second USB-C port (decisions 13 to 23).
 
 This brief asks what happens if the same radio can do more than talk, and what has to be true for that to stay safe and simple for Pop.
 

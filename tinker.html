@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="en-NZ">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pop's Radio for tinkerers: open it up</title>
+<meta name="description" content="Pop's Radio is simple on the outside and open on the inside. Take the back off: card bays, sensor sockets and a second USB-C port, with no soldering. The radio Pop's younger self would have opened.">
+<link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+<link rel="canonical" href="https://popsradio.chrisbarlow.nz/tinker.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Pop's Radio">
+<meta property="og:title" content="Pop's Radio for tinkerers: open it up">
+<meta property="og:description" content="Pop's Radio is simple on the outside and open on the inside. Take the back off: card bays, sensor sockets and a second USB-C port, with no soldering. The radio Pop's younger self would have opened.">
+<meta property="og:url" content="https://popsradio.chrisbarlow.nz/tinker.html">
+<meta property="og:image" content="https://popsradio.chrisbarlow.nz/images/social-preview.jpg">
+<meta property="og:image:secure_url" content="https://popsradio.chrisbarlow.nz/images/social-preview.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="A sage green radio with a big orange button on top, on a bedside table, beside the words Hold to talk. Let go to listen.">
+<meta property="og:locale" content="en_NZ">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Pop's Radio for tinkerers: open it up">
+<meta name="twitter:description" content="Pop's Radio is simple on the outside and open on the inside. Take the back off: card bays, sensor sockets and a second USB-C port, with no soldering. The radio Pop's younger self would have opened.">
+<meta name="twitter:image" content="https://popsradio.chrisbarlow.nz/images/social-preview.jpg">
+<script>
+/* Apply saved look before the page draws, so it doesn't flash. */
+(function () {
+  var r = document.documentElement;
+  try {
+    var t = localStorage.getItem("wt-theme"), z = localStorage.getItem("wt-size");
+    if (t) r.dataset.theme = t;
+    if (z) r.dataset.size = z;
+  } catch (e) {}
+})();
+</script>
+<!-- Google tag: counts visits, and which parts of the simulator get used -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-KL1QLNWTNE"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-KL1QLNWTNE');
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,800;1,9..144,600&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="mark" href="index.html"><svg viewBox="0 0 64 64" aria-hidden="true"><g class="cap"><path d="M13 44V20a4 4 0 0 1 4-4h30a4 4 0 0 1 4 4v24z" fill="#ea6a1f"/><path d="M13 36h38v8H13z" fill="#b84d10"/></g><rect x="4" y="42" width="56" height="14" rx="2" fill="#1d1d1d"/></svg>Pop's Radio</a>
+    <nav class="nav" aria-label="On this page">
+      <a href="index.html">Home</a>
+      <a href="#open">Open it up</a>
+      <a href="#sockets">Sockets</a>
+      <a href="#cards">Cards</a>
+      <a href="#does">What it does</a>
+      <a href="#rules">The rules</a>
+      <a href="#price">Price</a>
+      <a href="build.html">The detail</a>
+    </nav>
+    <div class="controls">
+      <div class="seg" role="group" aria-label="Light or dark">
+        <button type="button" id="themeBtn" aria-label="Switch to dark"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path id="themeIcon" d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg> <span id="themeLbl">Dark</span></button>
+      </div>
+      <div class="seg" role="group" aria-label="Text size">
+        <button type="button" data-set-size="0" aria-label="Normal text">A</button>
+        <button type="button" data-set-size="1" aria-label="Large text" class="a2">A</button>
+        <button type="button" data-set-size="2" aria-label="Largest text" class="a3">A</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<div class="wrap page-head">
+  <span class="tag">For tinkerers</span>
+  <h1>The radio his younger self would have opened</h1>
+  <p class="lede">Pop spent his working life making things go. So his radio is simple on the outside, with one big button, and open on the inside. Take the back off and there are sockets waiting, with no soldering.</p>
+  <p class="small muted">Nothing is built yet. This is the design, decided on 16 November 2026. Prices are suggestions. Looking for the simple radio? <a href="index.html">It's on the front page</a>.</p>
+</div>
+
+<!-- Open it up -->
+<section id="open">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Open it up</h2>
+      <p>Four screws hold the back panel. Behind it the boards are labelled, there is room to spare, and nothing you plug in needs a soldering iron.</p>
+    </div>
+    <div class="notes rules">
+      <div><h4>A base, and cards</h4><p>Every radio has Talk, FM, Wi-Fi and Bluetooth for keyboards. The mesh radio and 4G are cards you add, when you want them.</p></div>
+      <div><h4>Room to work</h4><p>The case is 220 × 125 × 80 mm, far bigger than the boards need. There are screw points inside for whatever you add.</p></div>
+      <div><h4>Pop never sees it</h4><p>The sockets are inside. On the outside there is one new thing: a second USB-C port.</p></div>
+    </div>
+    <p class="small muted aside">Pictures of the inside are still to be made.</p>
+  </div>
+</section>
+
+<!-- Sockets -->
+<section class="alt" id="sockets">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>The sockets</h2>
+      <p>They are shapes other people already make things for, so the catalogue is there on day one.</p>
+    </div>
+    <div class="scroll">
+      <table class="cmp">
+        <thead><tr><th>Socket</th><th>What it is</th><th>What plugs in</th></tr></thead>
+        <tbody>
+          <tr><td>Card bay 1</td><td>mikroBUS: a push-in card on two rows of pins</td><td>The mesh card. Or any of about 1,700 "Click" cards</td></tr>
+          <tr><td>Card bay 2</td><td>The same, with a battery feed beside it</td><td>The 4G card. Or any Click card</td></tr>
+          <tr><td>Two sensor sockets</td><td>Qwiic and STEMMA QT: a small 4-pin plug on a cable</td><td>Sensors and small displays from SparkFun, Adafruit and others. Grove boards with an adapter cable</td></tr>
+          <tr><td>Badge socket</td><td>The 2 × 3 pin add-on plug from hacker conference badges</td><td>Badge add-on cards, bought or home-made</td></tr>
+          <tr><td>Pin header</td><td>Spare pins, 3.3 V and 5 V</td><td>Jumper wires, for anything else</td></tr>
+          <tr><td>USB-C, marked Data</td><td>The chip's own USB, as a host or a device</td><td>A keyboard, a USB stick, a computer, MIDI and serial gadgets</td></tr>
+          <tr><td>USB-C, marked Power</td><td>Charging only</td><td>The stand, or any USB-C charger</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="small muted aside">The main chip is an ESP32-S3. A pin expander on the board keeps pins free for you. The socket page will be published for anyone to make cards from.</p>
+  </div>
+</section>
+
+<!-- Cards -->
+<section id="cards">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>The first cards</h2>
+      <p>Two from us to begin with, and one sensor that moved off the board.</p>
+    </div>
+    <div class="modes three">
+      <div class="mode plan">
+        <span class="tag">About NZ$29</span>
+        <div class="big">MESH</div>
+        <p>A Meshtastic radio on 915 MHz, on its own chip. Short text messages, radio to radio, with no internet. The radio updates it for you.</p>
+      </div>
+      <div class="mode">
+        <span class="tag">About NZ$45 to 55</span>
+        <div class="big">4G</div>
+        <p>A modem, a SIM holder and an antenna, for homes without Wi-Fi. Every New Zealand band. The bay is generic, so a 5G card can follow when they are cheap.</p>
+      </div>
+      <div class="mode">
+        <span class="tag">A few dollars</span>
+        <div class="big">TILT</div>
+        <p>The sensor that knows the radio is lying on its back for games. It plugs into a sensor socket, like any other.</p>
+      </div>
+    </div>
+    <p class="small muted aside">Suggested prices. A built radio comes with the mesh card fitted, so every radio a family buys is a link in the <a href="build.html#mesh">mesh</a>.</p>
+  </div>
+</section>
+
+<!-- What it does -->
+<section class="alt" id="does">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>What it can do, and what it can't</h2>
+      <p>Better to know before you take the back off.</p>
+    </div>
+    <div class="two">
+      <div>
+        <h3>It can</h3>
+        <ul class="plain">
+          <li><b>Take a keyboard.</b> USB in the Data port, or a Bluetooth Low Energy one. Type a message on the radio's own screen and send it over the mesh.</li>
+          <li><b>Use any screen in the house.</b> The radio serves a page on your Wi-Fi. Open it on a phone, a tablet, a laptop or a TV.</li>
+          <li><b>Cast.</b> Send internet radio to a Chromecast or a Google TV from the knobs. Planned second, after the page.</li>
+          <li><b>Run your code.</b> Arduino, ESP-IDF, MicroPython or CircuitPython. The web flasher puts the official firmware back.</li>
+        </ul>
+      </div>
+      <div>
+        <h3>It can't</h3>
+        <ul class="plain">
+          <li><b>Drive a USB-C screen.</b> The chip has no video output.</li>
+          <li><b>Play through Bluetooth speakers, headphones or hearing aids.</b> It has Bluetooth Low Energy only. A card may fix that later.</li>
+          <li><b>Pair with older Bluetooth keyboards.</b> Low Energy ones only. USB always works.</li>
+          <li><b>Do 5G.</b> Not yet: the modems cost three to four times a 4G one.</li>
+          <li><b>Carry voice over the mesh.</b> Text only.</li>
+        </ul>
+      </div>
+    </div>
+    <p class="small muted aside">None of this is tested yet. The keyboard, the page and casting get tried on a dev board before the board is drawn.</p>
+  </div>
+</section>
+
+<!-- The rules -->
+<section id="rules">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>What stays fixed</h2>
+      <p>An open radio still has promises to keep, so the important ones are kept in hardware.</p>
+    </div>
+    <div class="notes rules">
+      <div><h4>The red light can't be switched off</h4><p>It is wired to the microphone's power. If the microphone can hear, the light is on, whatever firmware is running.</p></div>
+      <div><h4>Pop's radio is locked. Yours isn't.</h4><p>A built radio only runs firmware we signed. A kit runs anything. The family's phones show which radios are on official firmware.</p></div>
+      <div><h4>Open to add to, not open to copy</h4><p>Anyone may make and sell a card. The radio's own design and firmware stay free for non-commercial use, with a <a href="https://github.com/cgbarlow/popsradio/blob/main/COMMERCIAL.md">licence</a> for the rest.</p></div>
+    </div>
+    <p class="small muted aside">The kids' mini phone has no sockets and no mesh. A radio module you fit yourself may need its own approval; we are asking the regulator before any card is sold.</p>
+  </div>
+</section>
+
+<!-- Price -->
+<section class="alt" id="price">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>What it costs</h2>
+      <p>Cheap for what it is. Not a ten-dollar board: there are three knobs, a screen and a loud speaker to pay for.</p>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="n">NZ$59 to 69</div><div class="k">The base kit</div><p>Every board assembled, tested and loaded, with the screen and cables.</p></div>
+      <div class="stat"><div class="n">about NZ$20</div><div class="k">A speaker and a cell</div><p>Sold separately, or bought locally.</p></div>
+      <div class="stat"><div class="n">Free</div><div class="k">The case plans</div><p>3D printed or plywood. Or buy a case made.</p></div>
+      <div class="stat"><div class="n">NZ$80 to 90</div><div class="k">A working radio</div><p>With a case you print yourself. Channels are extra, or run your own service.</p></div>
+    </div>
+    <p class="aside"><a class="btn primary" href="build.html">The board, the costs and the mesh in detail</a> <a class="btn" href="https://github.com/cgbarlow/popsradio/blob/main/reports/Modular%20platform%20and%20base%20unit%20cost.md">The research behind it</a></p>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <ul>
+      <li><a href="index.html">Home, and the simulator</a></li>
+      <li><a href="build.html">The board, costs and kits</a></li>
+      <li><a href="https://github.com/cgbarlow/popsradio/blob/main/Design%20Decisions.md">Design decisions</a></li>
+      <li><a href="https://github.com/cgbarlow/popsradio/blob/main/reports/Custom%20PCB%20and%20cost-down.md">Custom board report</a></li>
+      <li><a href="https://github.com/cgbarlow/popsradio/blob/main/Pop's%20Radio%20as%20a%20Platform.md">The radio as a platform</a></li>
+      <li><a href="https://github.com/cgbarlow/popsradio/blob/main/Walkie-Talkie%20Beyond%20the%20R1%20Minimum%20Hardware.md">ESP32 hardware research</a></li>
+      <li><a href="https://github.com/cgbarlow/popsradio/blob/main/Rabbit%20R1%20Walkie-Talkie%20Research%20and%20Design.md">R1 research and design</a></li>
+      <li><a href="https://github.com/cgbarlow/popsradio/blob/main/Walkie-Talkie%20Service%20Design.md">Service design</a></li>
+      <li><a href="https://github.com/cgbarlow/popsradio/blob/main/reports/NZ%20addressable%20market%20and%20opportunities.md">NZ market report</a></li>
+      <li><a href="https://github.com/cgbarlow/popsradio">Source on GitHub</a></li>
+    </ul>
+    <p>A family project in New Zealand. Free to build for your own family.</p>
+    <p>This site counts visits with Google Analytics.</p>
+    <p>Free for non-commercial use. Code under <a href="https://github.com/cgbarlow/popsradio/blob/main/LICENSE">PolyForm Noncommercial 1.0.0</a>; documents and images under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a>. For commercial use, see <a href="https://github.com/cgbarlow/popsradio/blob/main/COMMERCIAL.md">commercial licensing</a>.</p>
+  </div>
+</footer>
+
+<script>
+const $ = id => document.getElementById(id);
+const root = document.documentElement;
+function save(k, v) { try { localStorage.setItem(k, v); } catch (e) {} }
+function isDark() { return root.dataset.theme ? root.dataset.theme === "dark" : matchMedia("(prefers-color-scheme: dark)").matches; }
+function paintControls() {
+  const sz = root.dataset.size || "0";
+  document.querySelectorAll("[data-set-size]").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.setSize === sz)));
+  const d = isDark();
+  $("themeLbl").textContent = d ? "Light" : "Dark";
+  $("themeBtn").setAttribute("aria-label", d ? "Switch to light" : "Switch to dark");
+  $("themeIcon").setAttribute("d", d
+    ? "M12 4V2M12 22v-2M4 12H2M22 12h-2M5.6 5.6 4.2 4.2M19.8 19.8l-1.4-1.4M5.6 18.4l-1.4 1.4M19.8 4.2l-1.4 1.4M12 17a5 5 0 1 0 0-10 5 5 0 0 0 0 10z"
+    : "M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z");
+}
+document.querySelectorAll("[data-set-size]").forEach(b => b.addEventListener("click", () => { root.dataset.size = b.dataset.setSize; save("wt-size", b.dataset.setSize); paintControls(); }));
+$("themeBtn").addEventListener("click", () => { const t = isDark() ? "light" : "dark"; root.dataset.theme = t; save("wt-theme", t); paintControls(); });
+matchMedia("(prefers-color-scheme: dark)").addEventListener("change", paintControls);
+paintControls();
+
+/* ---------- The mark: its orange button goes down when pressed ---------- */
+(function () {
+  const m = document.querySelector(".mark"); let t;
+  const down = () => { clearTimeout(t); m.classList.add("pressed"); };
+  const up = () => { clearTimeout(t); t = setTimeout(() => m.classList.remove("pressed"), 160); };
+  m.addEventListener("pointerdown", down);
+  ["pointerup", "pointerleave", "pointercancel"].forEach(e => m.addEventListener(e, up));
+  m.addEventListener("click", () => { down(); up(); });
+})();
+
+function track(name, params) { try { gtag("event", name, params || {}); } catch (e) {} }
+</script>
+</body>
+</html>

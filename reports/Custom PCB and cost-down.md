@@ -2,7 +2,7 @@
 
 Nov 16, 2026 · @Chris Barlow
 
-> **Decided on 16 November 2026.** The custom board, option C for the mesh, and the kit are now the plan, and the mesh is **always on, with every radio passing messages along**. That last choice goes further than this report first recommended; the settings and power notes below are updated to match. See [Design Decisions](../Design%20Decisions.md). Later the same day, LTE was also decided: it moves from a footprint on the main board to a plug-in 4G board, so any radio can take one (decision 12).
+> **Decided on 16 November 2026.** The custom board, option C for the mesh, and the kit are now the plan, and the mesh is **always on, with every radio passing messages along**. That last choice goes further than this report first recommended; the settings and power notes below are updated to match. See [Design Decisions](../Design%20Decisions.md). Later the same day, LTE was also decided: it moves from a footprint on the main board to a plug-in 4G board, so any radio can take one (decision 12). Later again, the whole board went modular: the mesh chip moves to a plug-in card and the base comes to about NZ$33 (decisions 13 to 23, costed in the [modular platform report](Modular%20platform%20and%20base%20unit%20cost.md)). The all-on-one-board costs below are superseded.
 
 ## Summary
 

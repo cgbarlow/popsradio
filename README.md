@@ -15,7 +15,7 @@ The parts, built two ways:
 | Wired by hand, from modules | One custom board, as a kit |
 | --- | --- |
 | ![Eighteen numbered hobby parts laid out on a grey mat, with a speaker and a battery set apart on the right](images/parts-modules_sml.jpg) | ![The same radio as a kit: one main board, a top board, two small knob boards, three cables, a screen, antennas and knobs, with a speaker and a battery set apart on the right](images/parts-custom-board_sml.jpg) |
-| Eighteen parts, about NZ$61, and two to three hours of soldering | About NZ$58 each to make at 100 and NZ$45 at 1,000. No soldering |
+| Eighteen parts, about NZ$61, and two to three hours of soldering | The base is about NZ$44 each to make at 100 and NZ$33 at 1,000. No soldering. The picture is of the earlier one-board layout |
 
 *Generated pictures, not photos of our parts. The speaker and the battery, right of the line, are sold separately. On the site you can [tap each part](https://popsradio.chrisbarlow.nz/build.html#parts) to see what it is.*
 
@@ -33,10 +33,10 @@ This is a family project at the research and design stage. The design is decided
 | --- | --- | --- |
 | 1 | Prove the idea on two Rabbit R1s, reflashed to run one app | Now |
 | 2a | Build the radio from modules: three knobs, a 2.4 inch screen, FM and the mesh radio, about NZ$61 in parts | Next |
-| 2b | Put it on one custom board: 10 boards, then 100 kits at about NZ$58 each to make | After 2a |
+| 2b | Put it on one custom board that opens up for plug-in cards: 10 boards, then 100 base kits at about NZ$44 each to make | After 2a |
 | 3 | A family app for iOS and Android, to talk to Pop's radio from a phone | Later |
 | 4 | A direct path between homes, only if the trials show it's needed | If needed |
-| Later | Certify it, then built radios and a batch of 1,000 kits at about NZ$45 each to make | After the first 100 |
+| Later | Certify it, then built radios and a batch of 1,000 base kits at about NZ$33 each to make | After the first 100 |
 | Later | A kids' mini phone: a smaller, cheaper radio that only reaches the people parents approve | Idea |
 | Later | Approved apps from other people, on the [platform](Pop's%20Radio%20as%20a%20Platform.md) | Idea |
 
@@ -59,7 +59,8 @@ Afterwards the R1s can stay on the same channels as the ESP32 radios. The detail
 - **A knob picks who.** The right-hand knob says each name out loud. A channel can be one person or a group, such as the whole family.
 - **More than talk.** The left-hand knob picks what the radio is doing: Talk, FM radio, internet radio, or games and a chess clock. The family chooses which appear. Holding the orange button always talks.
 - **PUSH / OPEN switch.** Flip to OPEN to talk hands-free, taking turns. It works on group channels too, and the radio says out loud who can hear. The red light stays on whenever the microphone can hear. This part is a design proposal and hasn't been tested.
-- **A mesh that is always on.** Every radio carries a small Meshtastic radio that needs no internet. Radios in range pass short text messages along, so a message can cross a suburb in a power cut. It is connectivity, not a mode: there is nothing for Pop to do. Text only, and best efforts.
+- **Opens up.** Take the back off and there are sockets for plug-in cards and sensors, with no soldering. It is the radio Pop's younger self would have opened. See the [tinkerer's page](https://popsradio.chrisbarlow.nz/tinker.html).
+- **A mesh that is always on.** Every built radio carries a small Meshtastic radio that needs no internet. Radios in range pass short text messages along, so a message can cross a suburb in a power cut. It is connectivity, not a mode: there is nothing for Pop to do. Text only, and best efforts.
 - **Private.** Messages are encrypted on the radio. The server passes them on but can't open them, and nobody can switch the microphone on from somewhere else.
 - **Looks after itself.** It keeps the last message for 24 hours, tells the family if it goes offline or the battery runs low, and updates itself overnight.
 - **No subscription, ever.** Each set comes with its channels, and their running costs are prepaid for life. More channels can be added later, for life or monthly.
@@ -75,6 +76,7 @@ It is not an emergency alarm. In an emergency, call 111.
 | File | What it is |
 | --- | --- |
 | [`index.html`](index.html) | The project site. Includes a simulator you can try in the browser |
+| [`tinker.html`](tinker.html) | The site's page for tinkerers: opening the radio up, the sockets, the cards, and what it can and can't do |
 | [`build.html`](build.html) | The site's second page: the board, the parts, the costs, kits, the mesh and the other shapes |
 | [Design Decisions](Design%20Decisions.md) | What is locked: the radio, the custom board, the always-on mesh, and kits or built radios. Start here |
 | [Rabbit R1 Walkie-Talkie Research and Design](Rabbit%20R1%20Walkie-Talkie%20Research%20and%20Design.md) | Stage 1: the R1 hardware, reflashing, the app, networking, and designing for Pop |
@@ -85,7 +87,7 @@ It is not an emergency alarm. In an emergency, call 111.
 | [NZ addressable market and opportunities](reports/NZ%20addressable%20market%20and%20opportunities.md) | Research on the size of the New Zealand market, for families and for rest homes, hospitals and other organisations, by category and region |
 | [Similar products and competitors](reports/Similar%20products%20and%20competitors.md) | Research on products like Pop's Radio around the world, what they cost, and what that means for the plan |
 | [Custom PCB and cost-down](reports/Custom%20PCB%20and%20cost-down.md) | Research on putting the whole platform radio, with Meshtastic, on one custom board: parts, costs at 100 and 1,000, the base kit and certification |
-| [Modular platform and base unit cost](reports/Modular%20platform%20and%20base%20unit%20cost.md) | Research on a cheap base radio that opens up for plug-in modules: what works, what does not, and a revised cost of about NZ$33 a base. A proposal, not a decision |
+| [Modular platform and base unit cost](reports/Modular%20platform%20and%20base%20unit%20cost.md) | Research on a cheap base radio that opens up for plug-in modules: what works, what does not, and a revised cost of about NZ$33 a base. Accepted: decisions 13 to 23 |
 | [Walkie-Talkie Image Prompts](Walkie-Talkie%20Image%20Prompts.md) | Prompts for the parts pictures (every module, and the same radio on the custom board) and the earlier shapes |
 | [Pop's Radio as a Platform](Pop's%20Radio%20as%20a%20Platform.md) | The radio we are building: a stout radio with three free-turning knobs that also plays FM and internet radio and simple games, passes mesh messages, and could take approved apps |
 | [Pop's Radio Platform Image Prompts](Pop's%20Radio%20Platform%20Image%20Prompts.md) | Prompts for concept pictures of the platform unit |
@@ -93,7 +95,7 @@ It is not an emergency alarm. In an emergency, call 111.
 
 ## Running the site locally
 
-The site is two HTML files with no build step. Open `index.html` in a browser, or serve the folder:
+The site is three HTML files and a stylesheet, with no build step. Open `index.html` in a browser, or serve the folder:
 
 ```bash
 python3 -m http.server 8000

@@ -306,6 +306,19 @@ footer ul { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 8
   #card { position: absolute; left: 0; top: 0; box-shadow: none; max-width: none; width: 100%; }
 }
 
+/* ============ Who is it for? ============ */
+.who { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 22px; padding-top: 22px; }
+.who-q { margin: 0; font-family: var(--head); font-weight: var(--head-w); font-size: 1.35rem; line-height: 1.2; }
+.who-pick { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; flex: 1 1 520px; }
+.who-pick a { display: block; background: var(--panel); border: 1.5px solid var(--line); border-radius: var(--radius); padding: 12px 18px; color: var(--ink); text-decoration: none; }
+.who-pick a:hover { border-color: var(--accent); }
+.who-pick b { display: block; font-size: 1.1rem; }
+.who-pick b::after { content: " \2192"; color: var(--accent); }
+.who-pick span { font-size: 0.9rem; color: var(--muted); }
+.who + .hero { padding-top: 34px; }
+#pop { scroll-margin-top: 70px; }
+@media (max-width: 560px) { .who-pick { grid-template-columns: 1fr; } }
+
 /* ============ Parts: picture and list ============ */
 .buildtabs { scroll-margin-top: 80px; display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 22px; }
 .buildtabs button { display: grid; grid-template-columns: 150px 1fr; gap: 14px; align-items: center; text-align: left; background: var(--panel); color: var(--ink); border: 1.5px solid var(--line); border-radius: var(--radius); padding: 10px; cursor: pointer; font: 0.92rem/1.4 "Atkinson Hyperlegible", system-ui, sans-serif; }

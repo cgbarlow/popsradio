@@ -5,74 +5,80 @@ council-type: standalone
 
 # Council Report
 
-Scope: a research task on turning Pop's Radio into a hardware platform. A cheap base with Talk, FM, Wi-Fi and Bluetooth; plug-in mesh, mobile data and more; two USB-C ports; a Bluetooth keyboard; an external screen. The question: how cheap can the base be, and is it viable and practical? Read: Design Decisions, the cost-down report, the platform brief (rules and app store), the Stage 2 doc (Bluetooth, memory), the service design (signing). Researched: the chip's USB and Bluetooth, modem prices, competing devices, and existing expansion standards.
+Scope: every recommendation in the research reports is accepted. Log the decisions, review and update the home page with a question at the top asking who the radio is for (Pop, or a tinkerer, who goes to a tinkerer page), update only the image prompts that need it, and add prompts for the radio opened up and for the expansion cards. Read: Design Decisions, the modular platform report, `index.html`, `build.html`, both image prompt files.
 
-The full findings are in [the research report](../reports/Modular%20platform%20and%20base%20unit%20cost.md). It is a proposal, not a decision.
+The advice was acted on in the same session. What changed is listed at the end.
 
 ## Animal Perspectives
 
 ### Bear — Vision & Direction
-1. **The brand line is the best thing in the brief.** "The radio his younger self would have opened" respects the user, where most products for older people talk down. It is true to why the project exists.
-2. **It is a second market, not a new product.** The base is today's board with one chip moved to a card. That keeps one radio, one firmware and one service.
-3. **Two messages need two rooms.** A family buying for a frail parent wants "it just works". A maker wants "open it up". The front page stays Pop's; the tinkering gets its own page.
-4. **This reverses part of yesterday.** Decision 8 says every Pop's Radio is a link in the mesh. An optional mesh module ends that for the cheapest kit. Decide it on purpose.
+1. **One radio, two front doors.** The question at the top is the right move. A family and a maker want opposite reassurances, and each now gets a page that speaks only to them.
+2. **Pop's page stays Pop's.** "Hold to talk" is still the headline. The question sits above it as a small band, not a gate; nobody has to answer it to read on.
+3. **The tinkerer's headline is the brand line.** "The radio his younger self would have opened" leads that page, and it is the only place it appears large.
+4. **Eleven new decisions in a day.** Decisions 13 to 23 are logged with what each replaced. The older ones they revise say so, not silently change.
 
 ### Cat — Risk & Scope
-1. **Three of the ideas do not work as described.** A USB-C screen needs a video signal the chip cannot make. Bluetooth is Low Energy only, so keyboards work and speakers, headphones and most hearing aids do not. A 5G module costs three to four times a 4G one.
-2. **The regulator could undo the business model.** If RSM treats a radio module the owner plugs in as a new product each time, modules cannot be sold separately.
-3. **An open radio breaks a firmware promise.** "Nobody can switch the microphone on from somewhere else" is kept by our firmware today. On an open radio only the hard-wired red light keeps it.
-4. **Pins and power are not counted.** Three knobs, a screen, audio, two card bays and USB use nearly every pin. A keyboard, a loud speaker and a modem can all draw at once.
-5. **"Dirt cheap" will disappoint.** The base is about NZ$33 to make and NZ$59 to 69 to buy. That is cheap for what it is. It is not a ten-dollar board.
+1. **The site now promises things nothing has tested.** Keyboard, web page, casting, card bays. The tinkerer page says "none of this is tested yet" and lists what it cannot do beside what it can.
+2. **The pictures lag the design.** The custom board picture shows the mesh radio on the main board. The captions say so, and the tap-a-part list still describes that picture, because it has to match what is shown.
+3. **Prices are suggestions on a public page.** Base NZ$59 to 69, mesh card NZ$29, 4G card NZ$45 to 55. Every one is marked suggested, and "nothing is for sale yet" stays.
+4. **Selling cards depends on the regulator.** The tinkerer page says we are asking before any card is sold.
+5. **The built-radio cost is the softest number logged.** The case and the labour are estimates that have never been priced; the decisions page says so.
 
 ### Owl — Process & Structure
-1. **Research first, decisions second.** The report sits beside Design Decisions and lists the four decisions it would reopen. Nothing is re-locked.
-2. **Same cost method as before.** Same exchange rate, GST, factory and part prices as the cost-down report, so the two tables compare line for line.
-3. **Borrow a standard for the sockets.** A private connector means making every add-on ourselves. mikroBUS for the two card bays and Qwiic for sensors bring a catalogue with them.
-4. **Order of work.** Ask RSM, count pins and power on paper, try a keyboard and the web page on a dev board, decide the mesh question, then draw the board once.
+1. **Three pages, three jobs.** Home for Pop, `tinker.html` for makers, `build.html` for the detail. Each links to the other two.
+2. **Only one existing prompt needed changing.** Prompt 1b, the custom board kit. Prompt 1a is a hand-wired radio and has always been loose parts.
+3. **Two new prompts, numbered on.** Prompt 10 is the radio with its back off and takes the reference picture. Prompt 11 is the cards laid out and takes none.
+4. **The research report is kept as written,** with a note that it was accepted. The decisions page is where the current design lives.
 
 ### Puppy — Opportunities & Momentum
-1. **The big case was a cost. Now it is the asset.** At 220 × 125 × 80 mm there is room for bays and screw posts that no pocket device has.
-2. **A web page is a better screen than a cable.** The radio serves a page on the home Wi-Fi, and any phone, tablet or TV becomes its screen and keyboard, for nothing.
-3. **A badge socket costs cents.** It is the tinkerer's handshake, and there are hundreds of home-made cards for it.
-4. **Makers are the first mesh nodes and the first installers.** The grandchild who builds the kit is the one who sets up Pop's radio.
-5. **Less cash per batch.** A thousand bases is about NZ$33,000 against NZ$45,000, and modules can be ordered as they sell.
+1. **The question is also an invitation.** Someone who came for Pop sees "For a tinkerer" and learns the radio opens up.
+2. **The cards picture will sell the idea in one look.** Three cards the same size is the whole point of a standard bay.
+3. **A plywood radio with its back off** is the picture that joins both audiences. The prompt notes how to make it.
 
 ### Rabbit — Resources & Stakeholders
-1. **New people to ask:** RSM on plug-in radios, MIKROE on using the mikroBUS name, and the maker community itself.
-2. **The licence is in the way.** PolyForm Noncommercial stops a maker selling an add-on. Publish the socket page freely; keep the radio's own design as it is.
-3. **More things to stock and support.** A base, two modules, two cases and a speaker, each with a box and a listing.
-4. **Every module is firmware work.** Mesh and 4G are planned. Each later one needs a driver, a test and support.
-5. **Prices are thin in places.** The M5Stack and T-Deck prices are from 2024 and third-party listings, and no specific 5G module price was found.
+1. **Pictures to make:** prompt 1b again, and prompts 10 and 11. The tinkerer page has no pictures until then, and says so.
+2. **Positions to re-place.** When 1b is redone, the tap-a-part circles and list on the detail page need redoing for the new picture.
+3. **People still to ask:** RSM on owner-fitted cards, MIKROE on the socket name.
+4. **A fourth file to keep in step.** `tinker.html` repeats prices that also live on two other pages and in the decisions.
 
 ### Wolf — Cohesion & Balance
-1. **Pop must not notice.** Sockets inside, behind a screwed back panel. Nothing new on the outside but a second USB-C port.
-2. **The mesh is what the proposal costs.** Fit the mesh module to every built radio, and leave it out of the bare kit only. That keeps most of yesterday's promise.
-3. **Hearing aids are the question families will ask.** "Bluetooth" on the box will be read as "plays through Pop's hearing aids". Say "Bluetooth keyboards" and nothing wider.
-4. **The card and the simulator are still behind.** Third Council running. Neither mentions the mesh, and now there is a keyboard too.
-5. **The kids' mini phone stays closed.** No bays, no header, no mesh.
+1. **The mesh wording needed care.** "Every Pop's Radio" became "every built Pop's Radio", with a line that a bare kit joins when its owner adds the card.
+2. **The front page grew by about 280 pixels** for the question band. Nothing else was added to it; the tinkering went to its own page.
+3. **The card and the simulator are still behind.** Fourth Council running. Neither mentions the mesh.
+4. **The older reports now read as history.** Each has a note at the top saying what superseded it.
 
 ## Consensus
 
 **Common themes.**
 
-- **Viable, in a narrow form.** Bear, Owl and Puppy: two card bays, two sensor sockets, a badge socket, two USB-C ports. It is today's board, rearranged.
-- **Cheaper to make, about NZ$3 dearer fully loaded.** About NZ$33 a base at 1,000 against NZ$45 for the all-in-one board; NZ$48 with the mesh module fitted.
-- **Change three promises.** Cat and Wolf: no USB-C screen, "Bluetooth keyboards" not "Bluetooth", and 4G not 5G.
-- **Use other people's sockets.** Owl, Puppy and Rabbit.
+- **Two audiences, kept apart.** Bear, Puppy and Wolf: the question at the top, and a page each.
+- **Say what is untested and what it cannot do.** Cat and Owl.
+- **Pictures are the gap.** Rabbit and Cat: three to make, and one on the site that shows the old layout.
 
 **Key tensions.**
 
-- **A cheap bare base against a mesh in every radio.** The proposal's real cost. Resolved, as a recommendation, by fitting the mesh module to every built radio.
-- **Open hardware against the microphone promise.** Resolved by making the hard-wired red light the guarantee, and locking the firmware on radios built for Pop.
-- **A hobbyist platform against a non-commercial licence.** Not resolved. It is your call.
-- **"Dirt cheap" against three knobs and a screen.** The floor is about NZ$31. Below that it is a different radio.
+- **A question at the top against a clean first screen.** Resolved by making it a slim band that can be ignored.
+- **Updating the tap-a-part list against matching the picture.** Resolved by leaving the list describing the picture, with a note, until the picture is redone.
+- **Logging a built-radio cost that is mostly estimate.** Resolved by logging it with its basis stated.
 
-**Assessment.** The idea is sound and the numbers support it: the modular base is cheaper to make, ties up less cash and adds about three dollars to a fully loaded radio. Three of the features as first described do not survive contact with the chip, and each has a workable substitute. The open questions are the regulator, the licence and the mesh, not the engineering.
+**Assessment.** The decisions are logged, the site has two front doors and a tinkerer page, and the prompts are ready. The site is now ahead of the pictures: one picture shows the old board, and the new page has none.
 
 ## Recommended Next Steps
 
-1. **Ask RSM about radio modules the owner fits.** It decides whether modules are a product or only a factory option.
-2. **Count the pins and the power on paper**, with two card bays, two sensor sockets and a keyboard on the Data port.
-3. **Try the two awkward claims on a dev board:** a Low Energy keyboard typing onto the screen, and the radio's web page open on a phone.
-4. **Decide the mesh question,** and the licence for the socket page.
-5. **Then draw the board once,** with the sockets in.
+1. **Make three pictures:** prompt 1b again, then prompts 10 and 11.
+2. **Re-place the tap-a-part circles** once the new 1b picture is in.
+3. **Ask RSM and MIKROE** before the board is drawn.
+4. **Price the case and time one assembly,** so the built radio has a real cost.
+5. **Bring the card and the simulator up to date.**
+
+## What changed in this session
+
+| File | Change |
+|---|---|
+| `Design Decisions.md` | Decisions 13 to 23; a section on the modular base with costs, including the built radio; sockets and cards; revised decisions 4, 7, 8 and 9; six new tests |
+| `index.html` | "Who is it for?" band at the top; mesh, kit and price wording brought in line; captions note the older board picture |
+| `tinker.html` | New. Open it up, the sockets, the first cards, what it can and cannot do, what stays fixed, what it costs |
+| `build.html` | Decided table, board table, costs, kits and mesh sections updated to the modular base |
+| `Walkie-Talkie Image Prompts.md` | Prompt 1b rewritten for the base with card bays and separate cards |
+| `Pop's Radio Platform Image Prompts.md` | Prompt 10, the back off. Prompt 11, the plug-in cards |
+| Reports, platform brief, README | Notes that the modular decisions supersede the one-board costs |
