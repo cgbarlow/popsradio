@@ -78,12 +78,12 @@ About NZ$61 for parts 1 to 18 without the cell, and two to three hours of solder
 
 ## Prompt 1b: the same radio on one custom board
 
-The radio as it is built in Stage 2b and sold as a kit. Same mat, same light, same camera as 1a, so the two pictures compare. The kit is on the left; the three things the builder adds are set apart on the right.
+The radio as it is built in Stage 2b and sold as a kit. Same mat, same light, same camera as 1a, so the two pictures compare. The kit is on the left. The speaker is sold separately, so it sits off to one side, apart from the kit. The case is left out: it has its own pictures.
 
 ```
-Top-down flat lay product photograph, knolling style, on the same matte light grey workbench mat, with the same soft even studio lighting and the same camera height as a matching parts photograph. Sharp focus, no hands, no tools, generous spacing. Far fewer items than a hobby parts layout: exactly eleven items, each with a small white round numbered tag (1 to 11) placed beside it. A thin white line on the mat separates the left two-thirds from the right third.
+Top-down flat lay product photograph, knolling style, on the same matte light grey workbench mat, with the same soft even studio lighting and the same camera height as a matching parts photograph. Sharp focus, no hands, no tools, generous spacing. Far fewer items than a hobby parts layout: exactly ten items, each with a small white round numbered tag (1 to 10) placed beside it. A thin white line on the mat separates the left three-quarters from the right quarter.
 
-On the left two-thirds, a mock-up of a custom electronics kit in matte dark green circuit board with gold pads and neat rows of tiny black and grey surface-mounted parts, all machine-assembled, no loose wires:
+On the left three-quarters, a mock-up of a custom electronics kit in matte dark green circuit board with gold pads and neat rows of tiny black and grey surface-mounted parts, all machine-assembled, no loose wires:
 
 1. One main circuit board, about 110 x 80 mm, dark green, with a rounded corner cut-out at each mounting hole. On it: a silver metal-shielded square module in the top left corner, a second smaller silver metal-shielded module with a tiny round gold antenna socket in the top right corner, a few small black square chips in the middle, a USB-C socket on the right edge, a row of three small white cable sockets along the top edge, and an empty black holder for one cylindrical battery fixed along the bottom edge.
 2. One long narrow circuit board, about 110 x 25 mm, dark green, carrying a small square push switch in the centre, a small black slide switch with a flat thumb tab to its left, a rotary encoder with a short metal shaft to its right, and three tiny LEDs.
@@ -94,16 +94,16 @@ On the left two-thirds, a mock-up of a custom electronics kit in matte dark gree
 7. A short black stubby rubber antenna, about 50 mm long, joined to a thin grey cable with a tiny gold connector, beside a neat coil of thin black insulated wire.
 8. A round orange 3D printed button cap, 30 mm across, with two large black deeply ribbed knobs, 40 mm across, and one small black ribbed knob, 20 mm across.
 
-On the right third, set apart, the three things added by the builder:
+9. One green cylindrical 18650 lithium cell, 65 mm long and 18 mm across, lying beside the main board.
 
-9. A round black 57 mm loudspeaker with a paper cone, metal frame, and two short red and black wires.
-10. One green cylindrical 18650 lithium cell, 65 mm long and 18 mm across.
-11. Two halves of an empty matte sage green 3D printed case, a long low box about 220 x 125 x 80 mm with rounded corners, a round hole on each short side and a round speaker grille on the front half.
+On the right quarter of the mat, set well apart behind the thin white line, one item on its own, sold separately:
 
-Clean technical catalogue look, realistic scale between parts, neutral colours. The four circuit boards look like finished factory-made products of one matching set. No breadboard, no perforated board, no hookup wire, no solder, no text or part numbers printed on any board, no brand logos. Aspect ratio 16:9.
+10. A round black 57 mm loudspeaker with a paper cone, metal frame, and two short red and black wires.
+
+Clean technical catalogue look, realistic scale between parts, neutral colours. The four circuit boards look like finished factory-made products of one matching set. No case or enclosure, no breadboard, no perforated board, no hookup wire, no solder, no text or part numbers printed on any board, no brand logos. Aspect ratio 16:9.
 ```
 
-**With names instead of numbers.** Use: MAIN BOARD, TOP BOARD, MODE BOARD, SELECT BOARD, CABLES, SCREEN, ANTENNAS, BUTTON AND KNOBS, SPEAKER, BATTERY, CASE.
+**With names instead of numbers.** Use: MAIN BOARD, TOP BOARD, MODE BOARD, SELECT BOARD, CABLES, SCREEN, ANTENNAS, BUTTON AND KNOBS, BATTERY; and, set apart, SPEAKER.
 
 **Key to the numbers.**
 
@@ -116,10 +116,9 @@ Clean technical catalogue look, realistic scale between parts, neutral colours. 
 | 5 | Three cables | Join the small boards to the main board | Yes |
 | 6 | 2.4 inch TFT screen | Plugs into the main board | Yes |
 | 7 | 915 MHz antenna and FM wire | The mesh antenna, and the FM aerial for the strap | Yes |
-| 8 | Button cap and knobs | Printed with the case | With the case |
-| 9 | Speaker | | No: bought locally |
-| 10 | 18650 cell | | No: bought locally |
-| 11 | Case | Print it from the free plans, or buy it printed | No |
+| 8 | Button cap and knobs | Small printed parts | With a bought case, or printed from the plans |
+| 9 | 18650 cell | Fits the holder on the main board | No: bought locally |
+| 10 | Speaker | Set apart | No: sold separately |
 
 About NZ$58 a kit to make in a batch of 100 and NZ$45 in a batch of 1,000, with no soldering. All four boards are cut from one panel. This is a mock-up: the board is not drawn yet, so the layout in the picture is the generator's guess.
 
