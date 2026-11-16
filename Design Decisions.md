@@ -17,7 +17,7 @@ Locked means the design work stops going round in circles. It does not mean test
 | 5 | **The screen is monochrome: a 2.4 inch TFT showing black and white only,** with a dimmable backlight, for the first boards. It plugs in, so a different panel can replace it | "Not chosen yet" | [The screen](Pop's%20Radio%20as%20a%20Platform.md#the-screen-chosen-for-the-first-boards) |
 | 6 | **The talk button is a printed orange cap over a tactile switch** | An arcade button | [Cost-down report](reports/Custom%20PCB%20and%20cost-down.md#cost-down-levers-ranked) |
 | 7 | **Mesh is option C: a co-processor.** A Heltec HT-CT62 runs unmodified Meshtastic beside the main chip, joined by a serial line | Three options on the table | [Meshtastic](reports/Custom%20PCB%20and%20cost-down.md#meshtastic) |
-| 8 | **The mesh is connectivity, always on, and every Pop's Radio takes part.** It is a second way to connect beside Wi-Fi, not something Pop selects. Each radio passes other people's messages along as well as its own | On only when docked or when Wi-Fi was down; not passing messages on | [Below](#the-mesh-always-on) |
+| 8 | **The mesh is connectivity, always on, and every Pop's Radio takes part.** It is a second way to connect beside Wi-Fi, and there is nothing for Pop to do with it. Each radio passes other people's messages along as well as its own | On only when docked or when Wi-Fi was down; not passing messages on | [Below](#the-mesh-always-on) |
 | 9 | **Two ways to buy: a built radio or a kit.** The plans stay free for anyone building for their own family | "Parts kit" was one line in a table | [Below](#how-people-get-one) |
 | 10 | **Modules for the first few, the custom board from then on.** Stage 2a builds the radio from modules to prove it; Stage 2b is 10 boards, then 100 kits | Stage 2 was a one-knob radio for NZ$35 to 50 | [Roadmap](#the-order-of-work) |
 | 11 | **The case comes two ways: 3D printed or plywood.** Both plans are free. A finished plywood box can be bought with a kit | A 3D printed case only | [Below](#the-case-printed-or-plywood) |
@@ -28,7 +28,7 @@ Not changed: the [service design](Walkie-Talkie%20Service%20Design.md), Stage 1 
 
 **What it is.** A second radio inside every Pop's Radio, on 915 MHz, that needs no internet, no Wi-Fi and no mobile network. Radios within range of each other pass short text messages along, hop by hop. It uses [Meshtastic](https://meshtastic.org/), so it can join a mesh that is already there, as in Wellington.
 
-![Eleven houses on a simple map, each with a Pop's Radio. With the internet down, a message from Pop reaches Chris in three hops through two neighbours' radios](images/mesh-map.svg)
+![Eleven houses on a simple map, each with a Pop's Radio. With the internet down, a message from Chris reaches Pop's radio in three hops through two neighbours' radios](images/mesh-map.svg)
 
 *How it might look. Every house with a Pop's Radio is a link in the chain. A drawing, not a coverage map: real range depends on hills, walls and where the radio sits.*
 
@@ -37,7 +37,7 @@ Not changed: the [service design](Walkie-Talkie%20Service%20Design.md), Stage 1 
 **What it does.**
 
 - **Messages when the internet is down.** A short text from the family shows in large type with a chime.
-- **Nothing for Pop to choose.** The mesh is not a mode on the knob. It is a second way for the radio to connect, and the radio uses it by itself when the internet is not there. How Pop sends a message over it is not designed yet; the orange button stays talk only.
+- **Nothing for Pop to do.** The mesh is not a mode on the knob, and Pop never sets it up, switches it on or sends anything with it. It is a second way for the radio to connect, and the radio uses it by itself. The orange button stays talk only.
 - **Best efforts, not a promise.** A message gets through if there is a chain of radios between the two homes. Sometimes there will not be.
 
 **What it does not do.**
@@ -50,7 +50,7 @@ Not changed: the [service design](Walkie-Talkie%20Service%20Design.md), Stage 1 
 
 | Setting | Locked value | Why |
 |---|---|---|
-| On the Mode knob | Nowhere | It is connectivity, not a mode |
+| What Pop does | Nothing | It is connectivity, not a mode |
 | Role | Client: passes messages along | Every radio is a link in the chain |
 | Power | On all the time, on the stand and on battery | A sleeping radio is a gap in the mesh |
 | Family messages | The family's own channel with its own key | Strangers on the public channel never reach Pop's screen |

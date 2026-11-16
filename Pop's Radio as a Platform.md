@@ -134,11 +134,11 @@ The chess clock is the clearest case for a platform. A rest home lounge already 
 
 **Every Pop's Radio carries a second radio that needs no internet, and it is always on.** It is a small Meshtastic chip on 915 MHz, beside the main chip. Radios in range of each other pass short text messages along, hop by hop, so a message can cross a suburb when the Wi-Fi, the mobile network or the power is down.
 
-![Eleven houses on a simple map, each with a Pop's Radio. With the internet down, a message from Pop reaches Chris in three hops through two neighbours' radios](images/mesh-map.svg)
+![Eleven houses on a simple map, each with a Pop's Radio. With the internet down, a message from Chris reaches Pop's radio in three hops through two neighbours' radios](images/mesh-map.svg)
 
 *How it might look. A drawing, not a coverage map.*
 
-- **Mesh is connectivity, not a mode.** It does not appear on the Mode knob and there is nothing for Pop to select. The radio uses it by itself when the internet is not there. An incoming message shows in large type with a chime. How Pop sends one is not designed yet.
+- **Mesh is connectivity, not a mode.** It is in the design and decided, and there is nothing for Pop to do with it: it is not on the Mode knob, and he never sets it up or sends anything. The radio uses it by itself. A message from the family shows in large type with a chime.
 - **Every radio is a link.** Each one passes other people's messages along, whether or not its own family ever sends one. More radios make a better mesh.
 - **Text only, best efforts.** It cannot carry live voice, and a message only gets through if there is a chain of radios between the two homes. It is not an emergency service.
 - **The rules hold.** The orange button still only talks. The mesh chip has no wire to the microphone. No location is ever sent.
