@@ -1,6 +1,6 @@
 # Design Decisions
 
-Nov 16, 2026 · @Chris Barlow · updated with decisions 11 to 24
+Nov 16, 2026 · @Chris Barlow · updated with decisions 11 to 27
 
 **The ideas are now decisions.** Until today the platform radio, the custom board and the mesh were explorations sitting beside a simpler Stage 2 build. This page locks them, so there is one radio to draw, price and build. Where another document disagrees with this page, this page wins.
 
@@ -34,6 +34,9 @@ Locked means the design work stops going round in circles. It does not mean test
 | 22 | **Open hardware, with the promises kept in hardware.** The red light is wired to the microphone's power and is never optional. Built radios have their firmware locked to our key; kits do not. The kids' mini phone has no sockets | Promises kept by firmware | [Research](../reports/Modular%20platform%20and%20base%20unit%20cost.md#safety-and-trust) |
 | 23 | **Open to add to, not open to copy.** The socket page is published for anyone to make and sell cards. The radio's own design and firmware stay non-commercial | Everything non-commercial | [Research](../reports/Modular%20platform%20and%20base%20unit%20cost.md#licence) |
 | 24 | **A 4G hotspot, with a screw-on antenna.** With the 4G card fitted, the radio can share its mobile data over Wi-Fi, and a bigger antenna screws onto a socket on the case for homes with weak coverage. 5G comes later, in the same bay | 4G for the radio's own use only | [Below](#the-4g-hotspot) |
+| 25 | **"Up and about": a daily sign of life, in software.** The radio tells the family when it has first been used each day, and nudges them if it has not. Off until Pop agrees, switched on at the radio, and shared both ways | Battery, online and last seen only | [Below](#looking-out-for-pop) |
+| 26 | **Room sensors as plug-ins.** Temperature and humidity first. A presence radar only later, and only if a trial with Pop says it is welcome | No sensors beyond tilt | [Below](#looking-out-for-pop) |
+| 27 | **Sensing the body is a different device.** Pop's Radio will not detect falls, measure breathing or heart rate, listen, watch, or send a location | Not stated | [Below](#looking-out-for-pop) |
 
 Not changed: the [service design](Walkie-Talkie%20Service%20Design.md), Stage 1 on the two R1s, hold to talk, PUSH / OPEN, encryption, no subscription for the hardware, and "this is not an emergency alarm".
 
@@ -181,6 +184,33 @@ Including GST, before the case, speaker and cell for the kit lines. List prices 
 - **It needs a bigger mobile plan.** The radio alone uses about 200 MB a month. A hotspot uses whatever is connected to it.
 - **5G later.** The bay is generic, so a 5G card can replace the 4G one when the modems are cheap.
 
+## Looking out for Pop
+
+**Decided on the evidence in the [research report](../reports/Looking%20out%20for%20Pop.md).** The radio can help the family look out for Pop in two small ways. Anything that senses his body belongs to a different device.
+
+| Level | What it is | Decision |
+|---|---|---|
+| 1. Signs of life | Software only. "Up and about" the first time the radio is used each day; a nudge to the family if it has not been used by a time they set | **Build it** (25) |
+| 2. The room | Plug-in sensors. Temperature and humidity first; a presence radar later, after a trial with Pop | **Offer as plug-ins** (26) |
+| 3. The body | Fall detection, breathing, heart rate, listening, cameras, location | **Not this device** (27) |
+
+**The rules, written from Pop's side.**
+
+1. **Off until Pop says yes.** Switched on at the radio, with Pop there.
+2. **The radio says what it shares,** out loud and on its card.
+3. **What is plugged in is what is shared.** Unplug a sensor and it shares nothing.
+4. **Never the microphone.**
+5. **A line, not a log.** Today's tick and the room's temperature, with a week of history at most.
+6. **Sealed to the family.** The service passes it on and cannot read it.
+7. **Words that do not overclaim.** "Used at 8", "not used yet", "16 degrees". Never "safe", "OK" or "fallen".
+8. **It works both ways.** Pop's radio shows that the family's radios were used too.
+9. **Not on the kids' mini phone.**
+
+- **It is still not an emergency alarm,** and it only sees the room the radio is in.
+- **It lives in the family app's care screens,** not on the front page, and is never a charge on the radio.
+- **Off in rest homes by default.** An organisation watching a resident is not a family.
+- **Level 3 is a different device.** If it is ever made, it is its own product with its own approvals. It is not a card for this radio.
+
 ## What it saves
 
 All figures include GST and leave out the case, speaker and cell. They are list prices and estimates from November 2026, not quotes.
@@ -230,6 +260,9 @@ Locking a decision does not make it true. Each of these could reopen one.
 | A Low Energy keyboard typing on the screen, and the web page on a phone | Decisions 17 to 19 |
 | Casting internet radio from the chip, beside voice | Decision 17 |
 | MIKROE's terms for the mikroBUS name | Decision 15 |
+| Asking Pop whether he wants "Up and about", and whether he likes seeing the family's | Decision 25: whether it is built at all |
+| A trial of the presence radar with Pop | Decision 26: whether it is ever offered |
+| Medsafe's view on where wellbeing ends | Decisions 25 to 27: the words the site may use |
 | The hotspot on a dev board: speed, a Wi-Fi call over it, and voice running beside it | Decision 24 |
 | How much antenna gain the modem's approval allows | Decision 24: which antennas can be offered |
 | A real quote from JLCPCB and Heltec | Every price here |

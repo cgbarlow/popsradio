@@ -2,7 +2,7 @@
 
 Nov 16, 2026 · @Chris Barlow
 
-> **A research report, not a decision.** [Design Decisions](../docs/Design%20Decisions.md) is unchanged. This looks at one more way to expand the radio: software and sensors that help the family look out for Pop.
+> **Accepted on 16 November 2026.** Levels 1 and 2 go ahead as recommended, and level 3 is a different device: decisions 25 to 27 in [Design Decisions](../docs/Design%20Decisions.md#looking-out-for-pop). The report is kept as written, as the evidence.
 
 ## Summary
 
