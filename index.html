@@ -350,15 +350,15 @@
     </div>
     <div class="two">
       <figure>
-        <a class="wide" href="images/parts-modules.jpg"><img src="images/parts-modules_sml.jpg" alt="Eighteen numbered hobby parts laid out on a grey mat: a small green chip board, a microphone, an amplifier, an orange button, three knobs, a screen, an FM tuner, a coil of aerial wire, a tilt sensor, a mesh radio chip and its antenna, a battery holder, a charger, a slide switch, three lights, and a board with hookup wire. A speaker and a battery sit apart on the right." loading="lazy" width="1000" height="558"></a>
+        <a class="wide" href="images/parts-modules.jpg" data-parts="modules"><img src="images/parts-modules_sml.jpg" alt="Eighteen numbered hobby parts laid out on a grey mat: a small green chip board, a microphone, an amplifier, an orange button, three knobs, a screen, an FM tuner, a coil of aerial wire, a tilt sensor, a mesh radio chip and its antenna, a battery holder, a charger, a slide switch, three lights, and a board with hookup wire. A speaker and a battery sit apart on the right." loading="lazy" width="1000" height="558"></a>
         <figcaption class="fig"><b>Fig. 4</b> Wired by hand: eighteen parts, about NZ$61, and two to three hours of soldering.</figcaption>
       </figure>
       <figure>
-        <a class="wide" href="images/parts-custom-board.jpg"><img src="images/parts-custom-board_sml.jpg" alt="The same radio as a kit on the same grey mat: one main circuit board with a battery holder, a long top board with a switch, a button and a knob, two small knob boards, three flat cables, a screen, an antenna and aerial wire, and an orange button cap with three black knobs. A speaker and a battery sit apart on the right." loading="lazy" width="1000" height="558"></a>
+        <a class="wide" href="images/parts-custom-board.jpg" data-parts="board"><img src="images/parts-custom-board_sml.jpg" alt="The same radio as a kit on the same grey mat: one main circuit board with a battery holder, a long top board with a switch, a button and a knob, two small knob boards, three flat cables, a screen, an antenna and aerial wire, and an orange button cap with three black knobs. A speaker and a battery sit apart on the right." loading="lazy" width="1000" height="558"></a>
         <figcaption class="fig"><b>Fig. 5</b> One custom board: about NZ$58 each to make at 100 and NZ$45 at 1,000. No soldering.</figcaption>
       </figure>
     </div>
-    <p class="small muted fineprint">Generated pictures, not photos of our parts, so small details are wrong. The speaker and the battery, right of the line, are sold separately. What each radio costs us to make, including GST, before the case, speaker and battery. At 1,000 the board is about NZ$16 a radio cheaper than the cheapest hand-wired build, about a quarter. The bigger saving is time: 100 radios by hand is 200 to 300 hours of soldering. These are November 2026 list prices and estimates, not quotes.</p>
+    <p class="small muted fineprint">Tap a picture to see what each part is. They are generated pictures, not photos of our parts, so small details are wrong. The speaker and the battery, right of the line, are sold separately. What each radio costs us to make, including GST, before the case, speaker and battery. At 1,000 the board is about NZ$16 a radio cheaper than the cheapest hand-wired build, about a quarter. The bigger saving is time: 100 radios by hand is 200 to 300 hours of soldering. These are November 2026 list prices and estimates, not quotes.</p>
 
     <h3 class="sub">Three ways to get one</h3>
     <div class="modes three">
@@ -464,6 +464,24 @@
     <figcaption><b id="lbTitle"></b> <span id="lbText"></span> <span class="lb-count" id="lbCount"></span></figcaption>
   </figure>
   <button class="lb-btn lb-next" type="button" id="lbNext" aria-label="Next picture">&rsaquo;</button>
+</dialog>
+
+<dialog class="partsbox" id="partsbox" aria-labelledby="pbTitle">
+  <button class="lb-btn lb-close" type="button" id="pbClose" aria-label="Close">&times;</button>
+  <div class="pb-head">
+    <h2 id="pbTitle"></h2>
+    <div class="seg" role="group" aria-label="Which build">
+      <button type="button" data-pb="modules">Modules</button>
+      <button type="button" data-pb="board">Custom board</button>
+    </div>
+  </div>
+  <div class="pb-body">
+    <div class="pb-pic"><div class="pb-frame" id="pbFrame"><img id="pbImg" alt=""><div class="pb-ring" id="pbRing"></div></div></div>
+    <div class="pb-side">
+      <p class="pb-note" id="pbNote"></p>
+      <ol class="pb-list" id="pbList"></ol>
+    </div>
+  </div>
 </dialog>
 
 <footer>
@@ -995,6 +1013,71 @@ lb.addEventListener("touchend", e => {
   const dx = e.changedTouches[0].clientX - lbX; lbX = null;
   if (Math.abs(dx) > 50) lbShow(lbAt + (dx < 0 ? 1 : -1));
 });
+
+/* ---------- Parts pictures: tap a part to circle it and find it in the list ---------- */
+const PARTS = {
+ "modules": {
+  "title": "Wired by hand, from modules",
+  "img": "images/parts-modules.jpg",
+  "note": "Eighteen parts, about NZ$61, and two to three hours of soldering.",
+  "items": [[ 13.9, 21.8, 16.5, 17.9, "ESP32-S3 board", "The brain: Wi-Fi, voice, encryption, the screen and games"],[ 27.4, 22.0, 8.5, 15.2, "Microphone", "Hears you"],[ 38.0, 22.8, 9.0, 17.0, "Amplifier", "Drives the speaker"],[ 50.2, 23.1, 14.5, 20.6, "Big orange button", "Hold to talk"],[ 63.1, 22.8, 12.5, 17.9, "Mode knob", "Left side. Picks Talk, FM, internet radio or Play"],[ 73.5, 22.8, 13.0, 17.9, "Select knob", "Right side. Picks who, which station or which game"],[ 12.6, 49.1, 12.5, 17.0, "Volume knob", "On top. Louder or quieter"],[ 26.4, 48.9, 16.5, 20.6, "Screen, 2.4 inch", "Names, stations and games, in black and white"],[ 38.4, 49.5, 7.5, 13.4, "FM tuner", "Ordinary FM radio, with no internet"],[ 49.2, 48.8, 14.5, 22.4, "FM aerial wire", "About 75 cm. Runs through the shoulder strap"],[ 60.2, 49.5, 7.5, 13.4, "Tilt sensor", "Knows upright from lying on its back"],[ 70.2, 49.5, 8.5, 16.1, "Mesh radio", "The always-on mesh, on its own chip"],[ 13.5, 78.0, 13.0, 29.6, "Mesh antenna", "For the mesh radio"],[ 26.8, 76.6, 9.0, 32.3, "Battery holder", "Holds one 18650 cell"],[ 38.2, 78.0, 8.0, 17.9, "Charger", "Charges the cell over USB-C"],[ 48.1, 77.8, 7.5, 12.5, "PUSH / OPEN switch", "Slide it to talk hands-free"],[ 58.5, 77.1, 10.0, 22.4, "Lights", "Red whenever the microphone can hear. Colours for talk and listen"],[ 70.2, 77.8, 13.5, 30.5, "Board and wire", "Joins it all up, by hand"],[ 88.8, 31.4, 14.5, 26.9, "Speaker", "Sold separately"],[ 87.8, 70.2, 7.5, 29.6, "Battery cell", "Sold separately"]]
+ },
+ "board": {
+  "title": "One custom board, as a kit",
+  "img": "images/parts-custom-board.jpg",
+  "note": "About NZ$58 each to make at 100 and NZ$45 at 1,000. No soldering.",
+  "items": [[ 18.5, 33.8, 23.5, 42.1, "Main board", "Both radio chips, the audio, FM tuner, tilt sensor, charger, USB-C and the battery holder"],[ 44.5, 23.1, 24.5, 17.0, "Top board", "The talk switch, the PUSH / OPEN switch, the volume knob and the lights"],[ 61.9, 23.1, 8.5, 17.0, "Mode board", "The left-hand knob"],[ 70.8, 23.1, 8.5, 17.0, "Select board", "The right-hand knob"],[ 44.5, 47.5, 24.5, 20.6, "Three cables", "Join the small boards to the main board"],[ 68.2, 48.1, 19.5, 21.5, "Screen, 2.4 inch", "Plugs into the main board"],[ 20.0, 78.0, 26.0, 29.6, "Mesh antenna and FM aerial wire", "The antenna for the mesh radio, and the FM aerial for the strap"],[ 54.8, 77.1, 46.0, 24.2, "Button cap and knobs", "Small printed parts: the orange cap, two large knobs and the volume knob"],[ 88.8, 31.4, 14.5, 26.9, "Speaker", "Sold separately"],[ 87.8, 70.2, 7.5, 29.6, "Battery cell", "Sold separately"]]
+ }
+};
+const pb = $("partsbox"), pbRing = $("pbRing");
+let pbSet = null, pbAt = -1;
+function pbMark(i, focus) {
+  pbAt = i;
+  [...$("pbList").children].forEach((li, j) => {
+    li.firstChild.classList.toggle("on", j === i);
+    li.firstChild.setAttribute("aria-pressed", String(j === i));
+  });
+  const p = pbSet.items[i];
+  if (!p) { pbRing.classList.remove("on"); return; }
+  pbRing.style.left = p[0] + "%"; pbRing.style.top = p[1] + "%";
+  pbRing.style.width = p[2] + "%"; pbRing.style.height = p[3] + "%";
+  pbRing.classList.add("on");
+  const b = $("pbList").children[i].firstChild;
+  if (focus) b.focus({ preventScroll: true });
+  b.scrollIntoView({ block: "nearest" });
+}
+function pbShow(key) {
+  pbSet = PARTS[key];
+  $("pbTitle").textContent = pbSet.title; $("pbNote").textContent = pbSet.note;
+  const img = $("pbImg");
+  img.src = pbSet.img; img.alt = pbSet.title + ". " + pbSet.items.length + " numbered parts.";
+  document.querySelectorAll("[data-pb]").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.pb === key)));
+  $("pbList").innerHTML = pbSet.items.map((p, i) => `<li><button type="button" data-i="${i}" aria-pressed="false"><span class="n">${i + 1}</span><span><b>${p[4]}</b>${p[5]}</span></button></li>`).join("");
+  $("pbList").scrollTop = 0;
+  pbMark(-1);
+}
+document.querySelectorAll("[data-parts]").forEach(a => a.addEventListener("click", e => {
+  e.preventDefault();
+  pbShow(a.dataset.parts); pb.showModal();
+  track("parts_open", { picture: pbSet.title });
+}));
+document.querySelectorAll("[data-pb]").forEach(b => b.addEventListener("click", () => pbShow(b.dataset.pb)));
+$("pbList").addEventListener("click", e => { const b = e.target.closest("button"); if (b) pbMark(+b.dataset.i); });
+$("pbList").addEventListener("focusin", e => { const b = e.target.closest("button"); if (b) pbMark(+b.dataset.i); });
+$("pbList").addEventListener("keydown", e => {
+  if (e.key !== "ArrowDown" && e.key !== "ArrowUp") return;
+  e.preventDefault();
+  const n = pbSet.items.length;
+  pbMark(((pbAt < 0 ? (e.key === "ArrowDown" ? -1 : 0) : pbAt) + (e.key === "ArrowDown" ? 1 : -1) + n) % n, true);
+});
+$("pbFrame").addEventListener("click", e => {
+  const r = e.currentTarget.getBoundingClientRect(), px = (e.clientX - r.left) / r.width * 100, py = (e.clientY - r.top) / r.height * 100;
+  let best = -1, d = 1e9;
+  pbSet.items.forEach(([x, y, w, h], i) => { const dd = ((px - x) / (w / 2)) ** 2 + ((py - y) / (h / 2)) ** 2; if (dd < d) { d = dd; best = i; } });
+  pbMark(d < 1.6 ? best : -1, d < 1.6);
+});
+$("pbClose").addEventListener("click", () => pb.close());
+pb.addEventListener("click", e => { if (e.target === pb) pb.close(); });
 
 /* ---------- Stages ---------- */
 $("stageList").innerHTML = PLAN.map((s, k) => {
