@@ -7,7 +7,7 @@ Eleven prompts for an image generator, for the platform unit in [Pop's Radio as 
 ## How to use
 
 1. **Make the reference picture.** Run prompt 1 until the radio is right, and save that picture. It is the only prompt that describes the radio in full.
-2. **Attach it to every other prompt.** For prompts 2 to 7, 9 and 10, attach the reference picture and paste the prompt. Each one tells the generator to keep the radio exactly as it is and change only the scene, the camera angle and what the screen shows.
+2. **Attach it to every other prompt.** For prompts 2 to 7 and 9, attach the reference picture and paste the prompt. Prompt 10 takes two pictures: the reference picture and the custom board parts picture. Each one tells the generator to keep the radio exactly as it is and change only the scene, the camera angle and what the screen shows.
 3. **Always attach the original.** Use the prompt 1 picture every time, not the latest result. Each copy drifts a little, and copies of copies drift a lot.
 4. **If the radio changes anyway,** add "match the reference image exactly; the radio must not change" to the end, or try again. Small parts drift first: the switch, the volume knob, the status light.
 5. **If your tool cannot take a reference picture,** use [the fallback](#fallback-no-reference-picture) at the end.
@@ -157,10 +157,36 @@ Use the attached image as the reference for the radio and the scene. Show the sa
 
 ## Prompt 10: the back off
 
-The radio opened up, for the [tinkerer's page](https://popsradio.chrisbarlow.nz/tinker.html). Attach the prompt 1 picture: this is the same radio, turned round. The numbered callouts have a key below.
+The radio opened up, for the [tinkerer's page](https://popsradio.chrisbarlow.nz/tinker.html). Attach two pictures, in this order:
+
+1. **The radio:** the prompt 1 bedside picture, `images/platform-bedside.jpg`. It fixes what the outside looks like.
+2. **The parts:** `images/parts-custom-board.jpg`. It fixes what goes inside: the boards, the cables, the mesh card, the speaker and the cell.
+
+The numbered callouts have a key below.
 
 ```
-Use the attached image as the reference for the radio. Show exactly the same radio from behind, with its back panel taken off: the same matte sage green case with the same long, low shape, about 220 mm wide, 125 mm tall and 80 mm deep; the same large orange button, small slide switch and small black volume knob on top; the same large black ribbed knob on each side; and the same narrow cream fabric shoulder strap fixed to a ring at the upper corner of each side. Do not redesign the outside of the radio. Product photograph, three-quarter rear view, on a wooden workbench in soft daylight. The radio stands upright with its back open towards the camera, like a box with one side removed, so the inside is clearly visible and well lit. The removed back panel, a flat sage green rectangle with a screw hole in each corner, lies flat on the bench beside the radio with four small screws on it and a small screwdriver next to it. Inside the case, tidy and uncluttered, with plenty of empty space: one dark green main circuit board, about 110 x 80 mm, fixed upright against the inside of the front wall on four short posts; on it, one silver metal-shielded module, two empty card bays each made of two short parallel black socket strips, two tiny white sockets, and a black holder with one green cylindrical battery along its bottom edge. One small dark green card with a silver metal-shielded module is plugged into the first card bay, standing just proud of the main board; the second card bay is empty. High on the same short side panel as the USB-C ports, one small round hole fitted with a gold threaded antenna socket, with no antenna screwed on. A round black loudspeaker is fixed to the inside of the front wall beside the board. Three short flat white ribbon cables run neatly from the main board to a small green board under the top and to a small green board behind each side knob. On the inside of the floor of the case, a neat grid of small round screw posts, moulded in the same green plastic, with nothing fixed to them. On the outside of one short side panel, low down, two small USB-C ports side by side. Six small white round numbered tags (1 to 6) sit beside: 1, the main board; 2, the card plugged into the first bay; 3, the empty second bay; 4, the two tiny white sockets; 5, the grid of screw posts; 6, the two USB-C ports and the antenna socket above them. No loose wires, no tangle, no soldering iron, no hands, no faces, no text on the boards, no brand logos. It looks deliberately easy to work on, like a well-made kit. Aspect ratio 3:2.
+Two images are attached. The first image is the reference for the outside of the radio. The second image is the reference for the parts inside it: a flat lay of circuit boards and parts on a grey mat, with numbered tags.
+
+Show the radio from the first image from behind, with its back panel taken off. Keep its outside exactly as in the first image: the same matte sage green case with the same long, low shape, about 220 mm wide, 125 mm tall and 80 mm deep; the same large orange button, small slide switch and small black volume knob on top; the same large black ribbed knob on each side; and the same narrow cream fabric shoulder strap, fixed to a metal ring at the upper corner of each side panel and lying in loose loops on the bench. Do not redesign the outside of the radio. No lettering is readable on the top from this angle.
+
+Product photograph, three-quarter rear view, on a wooden workbench in soft daylight. The radio stands upright with its back open towards the camera, like a box with one side removed, so the inside is clearly visible and well lit. The removed back panel, a flat sage green rectangle with a screw hole in each corner, lies flat on the bench in front of the radio with four small screws on it and a small screwdriver beside it.
+
+Inside the case, fit the parts from the second image, drawn exactly as they look there, tidy and uncluttered, with plenty of empty space around them:
+
+- The large main circuit board from the second image (its item 1) is fixed upright against the inside of the front wall on four short posts, with the green cylindrical battery from the second image (its item 10) sitting in the holder along its bottom edge. The main board carries only one metal-shielded module.
+- The long narrow board from the second image (its item 2) is fixed flat under the top of the case, beneath the orange button.
+- One of the two small square boards from the second image (its items 3 and 4) sits behind each side knob.
+- The three flat white cables from the second image (its item 5) run neatly from the main board, one to the top board and one to each side board. Three cables only.
+- The small green card with the metal-shielded module from the second image (its item 11) is plugged into the first card bay on the main board, standing just proud of it. The second card bay is empty.
+- The round loudspeaker from the second image (its item 9) is fixed to the inside of the front wall beside the main board.
+
+Do not show the grey mat, the white line or any numbered tag from the second image. Do not show its items 6, 7, 8, 12 or 13.
+
+On the inside of the floor of the case, a neat grid of small round screw posts, moulded in the same green plastic, with nothing fixed to them. On the outside of the short side panel nearest the camera, low down, two small USB-C ports side by side, and high on the same panel one small gold threaded antenna socket with no antenna screwed on.
+
+Six small white round numbered tags, 1 to 6, each number used exactly once, each sitting right beside the thing it names: 1 beside the main board; 2 beside the card plugged into the first bay; 3 beside the empty second bay; 4 beside the two tiny white sockets on the main board; 5 beside the grid of screw posts; 6 beside the two USB-C ports. No other numbers anywhere.
+
+No loose wires, no tangle, no soldering iron, no hands, no faces, no text on the boards, no brand logos. It looks deliberately easy to work on, like a well-made kit. High resolution, at least 2000 pixels wide. Aspect ratio 3:2.
 ```
 
 **Key to the numbers.**
@@ -172,11 +198,11 @@ Use the attached image as the reference for the radio. Show exactly the same rad
 | 3 | Empty bay 2 | For the 4G card, or any Click card |
 | 4 | Two sensor sockets | Plug-in sensors on a cable |
 | 5 | Screw posts | Somewhere to fix what you add |
-| 6 | Two USB-C ports, and an antenna socket | Power, and Data. The socket takes a screw-on 4G antenna |
+| 6 | Two USB-C ports, with an antenna socket above them | Power, and Data. The socket takes a screw-on 4G antenna |
 
-**The picture on the site.** Made from this prompt on 16 November 2026 and saved as `images/radio-open.jpg`. Its tags came out differently from the key above (two 2s, and 1 on the case corner), so the tinkerer's page has its own key written to match the picture. It also shows the mesh radio on the main board and leaves out the strap.
+**The picture on the site.** Made from an earlier version of this prompt, with one reference picture, on 16 November 2026 and saved as `images/radio-open.jpg`. Its tags came out differently from the key above (two 2s, and 1 on the case corner), so the tinkerer's page has its own key written to match the picture. It also shows the mesh radio on the main board and leaves out the strap, which is why the prompt now takes the parts picture as a second reference.
 
-**Getting the inside right.** Generators fill an open case with wires. If it comes out cluttered, add "almost empty inside, three flat cables only". If the outside changes, add "the outside of the radio matches the reference image exactly". To show the hotspot, add "a second card with a SIM holder is plugged into the second bay, and a black whip antenna is screwed onto the gold socket on the side". For the plywood version, add "the case is pale birch plywood with finger joints, as in the plywood picture" and attach that picture instead.
+**Getting the inside right.** Generators fill an open case with wires. If it comes out cluttered, add "almost empty inside, three flat cables only". If the outside changes, add "the outside of the radio matches the first image exactly". If the grey mat or the flat lay appears, add "the second image is only a guide to what the parts look like; none of its layout appears in the picture". To show the hotspot, add "the second green card from the second image, its item 12, is plugged into the second bay, and its black whip antenna is screwed onto the gold socket on the side". For the plywood version, attach `images/plywood-radio.jpg` as the first image instead.
 
 ## Prompt 11: the plug-in cards
 
