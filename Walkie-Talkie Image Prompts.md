@@ -30,7 +30,7 @@ Top-down flat lay product photograph of electronic hobby parts, neatly arranged 
 6. A rotary encoder with a metal shaft on a small black board, with a large black deeply ribbed knob, 40 mm across, beside it.
 7. A second identical rotary encoder on a small black board, with a second identical large black ribbed knob, 40 mm across, beside it.
 8. A third rotary encoder on a small black board, with a small black ribbed knob, 20 mm across, beside it.
-9. A 2.4 inch colour TFT display module, a black glass rectangle about 60 x 43 mm on a red board with a row of pins, switched off.
+9. A 2.4 inch display module, a black glass rectangle about 60 x 43 mm on a red board with a row of pins, switched off.
 10. A tiny green FM radio module, about 11 x 11 mm, a bare board with gold half-holes along two edges.
 11. A neat coil of thin black insulated wire, about 75 cm long, with one stripped end.
 12. A tiny purple accelerometer breakout board, about 12 x 12 mm, with one small black chip and a row of pins.
@@ -89,7 +89,7 @@ On the left two-thirds, a mock-up of a custom electronics kit in matte dark gree
 3. One small circuit board, about 30 x 30 mm, dark green, carrying a single rotary encoder with a metal shaft.
 4. A second identical small circuit board, about 30 x 30 mm, carrying a single rotary encoder with a metal shaft.
 5. Three short flat white ribbon cables, each about 80 mm long, with a small white plug on both ends, laid side by side.
-6. A 2.4 inch colour display, a thin black glass rectangle about 60 x 43 mm, switched off, with a short flat orange flexible cable.
+6. A 2.4 inch display, a thin black glass rectangle about 60 x 43 mm, switched off, with a short flat orange flexible cable.
 7. A short black stubby rubber antenna, about 50 mm long, joined to a thin grey cable with a tiny gold connector, beside a neat coil of thin black insulated wire.
 8. A round orange 3D printed button cap, 30 mm across, with two large black deeply ribbed knobs, 40 mm across, and one small black ribbed knob, 20 mm across.
 

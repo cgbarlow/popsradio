@@ -32,7 +32,7 @@ Concept picture prompts for this unit are in [Pop's Radio Platform Image Prompts
 | Talk button | Big orange button on top | Same |
 | PUSH / OPEN | Chrome toggle on the front | A smooth slide switch on top, left of the orange button |
 | Knobs | One, on the front, picks the channel, with end stops | Three, all large, free turning and pressable: Volume on top right of the orange button, Mode on the left side, Select on the right side |
-| Screen | Small one-colour OLED | Larger, and readable at night. Type not chosen yet (see [The screen](#the-screen-an-open-question)) |
+| Screen | Small one-colour OLED | Larger, still one colour, and readable at night (see [The screen](#the-screen-chosen-for-the-first-boards)) |
 | Speaker | Grille beside the screen | Wide grille below the screen |
 | Orientation | Sits upright | Sits upright, or lies on its back as a games board |
 | What it does | Talk | Talk, FM radio, internet radio, games, chess clock, and approved apps later |
@@ -195,7 +195,7 @@ Now chosen and priced. The [cost-down report](reports/Custom%20PCB%20and%20cost-
 | Part | Stage 2 build | Platform unit | Note |
 | --- | --- | --- | --- |
 | Knobs | One rotary encoder with push | Three rotary encoders with push, large knobs | Free turning, no end stops, so games can use them. Decided |
-| Screen | 0.96 to 1.3 inch one-colour OLED | 2.4 inch colour TFT, 320 × 240, dimmable backlight | Decided for the first boards, see below |
+| Screen | 0.96 to 1.3 inch one-colour OLED | 2.4 inch TFT, 320 × 240, shown in black and white, dimmable backlight | Decided for the first boards, see below |
 | FM | None | FM receiver chip, I2C, with a wire antenna | The RDA5807M is a common choice, controlled over I2C, with an ESP32 and MAX98357A example in the pu2clr library ([pu2clr](https://www.github.com/pu2clr/RDA5807)) |
 | Antenna | None | A wire of about 75 cm run through the shoulder strap | Hobby guides give about 75 to 77 cm as a quarter-wave whip for FM ([101 Things](https://101-things.readthedocs.io/en/latest/fm_radio.html), [Seeed](https://wiki.seeedstudio.com/Grove-I2C_FM_Receiver/)). Hiding it in the strap is a proposal, untested |
 | Tilt sensor | None | A small accelerometer | Knows upright from lying on its back |
@@ -207,7 +207,7 @@ Now chosen and priced. The [cost-down report](reports/Custom%20PCB%20and%20cost-
 
 ### The screen: chosen for the first boards
 
-**Decided: a 2.4 inch colour TFT with a backlight that dims.** It is fast enough for Pong, readable at night and costs about US$2.50. A Sharp memory LCD, the paper-like option, costs about seven times as much and was out of stock. The TFT is the weakest of the three in daylight, so it gets a daylight test with Pop; the board only has a connector for the screen, so a different panel can replace it later.
+**Decided: a monochrome screen, on a 2.4 inch TFT with a backlight that dims.** Everything is drawn in black and white, as in the concept pictures and as the Stage 2 doc decided ("one colour is fine"). The panel costed in the report could show colour; the design does not use it. It is fast enough for Pong, readable at night and costs about US$2.50. A Sharp memory LCD, the paper-like option, costs about seven times as much and was out of stock. The TFT is the weakest of the three in daylight, so it gets a daylight test with Pop; the board only has a connector for the screen, so a different panel can replace it later.
 
 The screen has to do three things that pull against each other: read easily in daylight like paper, stay readable at the bedside at night, and redraw fast enough for a Pong ball.
 

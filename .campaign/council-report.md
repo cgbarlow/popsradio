@@ -22,7 +22,7 @@ The advice was acted on in the same session. What changed is listed at the end.
 2. **Will the parts reach through 6 mm of wood?** The knob shafts, the slide switch's thumb, the button cap and the screen all sit behind a panel twice as thick as a printed wall. That is a fit test, not a detail.
 3. **Sound and radio.** A wooden box with a drilled grille will sound different from the printed case, and the mesh antenna is meant to sit inside. Both need a built box to check.
 4. **A finished box is handwork.** Gluing, sanding and oiling is time for someone. Selling it adds a product with no cost model behind it yet.
-5. **Prompt 1 is now out of date.** The reference picture still describes a paper-like screen 140 mm wide and four mode tabs. The locked design is a 2.4 inch colour screen and five modes. Every picture built on it inherits that.
+5. **Prompt 1 is now out of date.** The reference picture still describes a paper-like screen 140 mm wide and four mode tabs. The locked design is a 2.4 inch black-and-white screen and five modes. Every picture built on it inherits that.
 
 ### Owl — Process & Structure
 1. **One place to choose a case.** On the home page it goes under "Three ways to get one" as two cards. The comparison table goes on the detail page.
