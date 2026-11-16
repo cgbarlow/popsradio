@@ -24,7 +24,7 @@ Nov 16, 2026 · @Chris Barlow
 
 | Idea | Finding | Do this instead |
 |---|---|---|
-| Plug an external screen into the second USB-C port | **No.** The chip has no video output, and USB-C screens need one | The radio serves a web page on the home Wi-Fi. Any phone, tablet, laptop or TV becomes its big screen and keyboard, for nothing |
+| Plug an external screen into the second USB-C port | **No.** The chip has no video output, and USB-C screens need one | The radio serves a web page on the home Wi-Fi. Any phone, tablet, laptop or TV becomes its big screen and keyboard, for nothing. It can also cast that page to a Chromecast or Google TV |
 | Bluetooth on every radio | **Partly.** It is Bluetooth Low Energy only. Keyboards work. Bluetooth speakers, headphones and most hearing aids do not | Say "Bluetooth keyboards" and nothing wider. Offer Bluetooth audio later as a module |
 | A 4G or 5G modem | **4G yes, 5G not yet.** A 5G module costs three to four times a 4G one | Make the modem bay generic, so a cheaper 5G module can drop in when prices fall |
 
@@ -54,6 +54,20 @@ Prices are list prices and my estimates on 16 November 2026, on the same basis a
 **A USB-C screen will not work.** Portable USB-C monitors need the host to send a video signal, normally DisplayPort Alt Mode; a data-only USB-C port does not carry video ([Plugable](https://kb.plugable.com/en_US/understanding-usb-c-alt-mode), [StarTech](https://www.startech.com/en-us/blog/dp-alt-mode-performance-benefits)). The ESP32-S3 has no video output at all, and its USB is the slow 12 Mbit/s kind, so the software route that docks use (DisplayLink, over USB 3) is out too.
 
 **What gives a big screen for nothing.** The radio can serve a small web page on the home Wi-Fi. Open it on a phone, a tablet, a laptop or a smart TV and that device is the radio's screen and keyboard: read and type messages, set stations, see the mesh. No cable, no extra part, and it works with the screens people already own.
+
+**Casting to a TV.** Casting comes in two kinds, and only one is possible.
+
+| Kind | How it works | On this chip |
+|---|---|---|
+| **Mirroring** (Miracast, AirPlay screen mirroring) | The device films its own screen and sends video | **No.** It needs a video encoder the chip does not have |
+| **Cast a link** (Chromecast, Google TV) | The device tells the TV to fetch something from an address, and the TV does the work | **Yes, in principle.** The radio sends a short instruction; the TV loads the page or the stream |
+
+- **Casting is the web page, with a button.** The TV has to fetch its picture from somewhere, and that somewhere is the page the radio serves. So casting adds "send it to the TV" from the radio's own knobs, with no phone needed. It does not replace the page.
+- **Showing a page needs a small registered app.** Google's built-in receiver plays sound, pictures and video with no sign-up. Showing our own page needs a "custom receiver" registered with Google, for about US$5 ([Google](https://developers.google.com/cast/docs/registration)).
+- **Internet radio casts with no page at all.** The radio hands the TV or a cast speaker the station's address and it plays there. That is the easy win.
+- **Chromecast and Google TV only.** Apple TV and most other smart TVs do not accept it. The web page works on all of them.
+- **Never cast Talk.** A family's voices should not go to a television in another room.
+- **Not tested.** Hobby projects cast from ESP chips; I have not checked one on the ESP32-S3, or how much memory the secure link takes beside voice.
 
 **What the second port is good for.**
 
