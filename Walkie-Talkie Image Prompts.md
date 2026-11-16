@@ -8,7 +8,7 @@ Prompts for an image generator. Prompts 1a and 1b are a matching pair: every par
 
 Paste one prompt at a time. Each is self-contained, so the generator needs no other context.
 
-- **A matching pair.** Make 1a first. For 1b, attach the 1a picture if your tool takes a reference, so the mat, the light and the camera match. Save them as `images/parts-modules.jpg` and `images/parts-custom-board.jpg`, with `_sml` copies 1000 px wide, and they replace the drawing on the site.
+- **A matching pair.** Make 1a first. For 1b, attach the 1a picture if your tool takes a reference, so the mat, the light and the camera match. They are saved as `images/parts-modules.jpg` and `images/parts-custom-board.jpg`, with `_sml` copies 1000 px wide, and are on the site's front page.
 - **Labels.** Image generators often garble small text. Prompts 1a and 1b ask for numbered tags and give the key below, so a wrong label does not matter. If your generator handles text well, use the "with names" line instead.
 - **Boards have no readable text.** Both prompts ask for plain boards with no logos or part numbers, because generators invent them.
 - **There is an antenna now, but only in the parts pictures.** The mesh radio needs a 915 MHz antenna, so 1a and 1b show one. It is meant to sit inside the case, so the pictures of the finished radio still say "no antenna". Whether it can stay inside is a range test still to do.
