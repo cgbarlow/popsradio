@@ -94,17 +94,19 @@ On the left two-thirds, a mock-up of a custom electronics kit in matte dark gree
 5. Three short flat white ribbon cables, each about 80 mm long, with a small white plug on both ends, laid side by side.
 6. A 2.4 inch display, a thin black glass rectangle about 60 x 43 mm, switched off, with a short flat orange flexible cable.
 7. A neat coil of thin black insulated wire, about 75 cm long, with one stripped end.
-8. A round orange 3D printed button cap, 30 mm across, with two large black deeply ribbed knobs, 40 mm across, and one small black ribbed knob, 20 mm across.
+8. Four printed parts in one row, close together, sharing one tag: a round orange 3D printed button cap, 30 mm across; two large black deeply ribbed knobs, 40 mm across; and one small black ribbed knob, 20 mm across.
 
-On the right third of the mat, set well apart behind the thin white line, five items sold separately, each with a numbered tag (9 to 13):
+The left two-thirds holds exactly these eight items and nothing else: no plug-in cards, no antennas with gold connectors and no sensor boards on the left.
+
+On the right third of the mat, to the right of the thin white line, in one tidy column from top to bottom, five items sold separately, each with a numbered tag (9 to 13). Each number from 1 to 13 is used exactly once:
 
 9. A round black 57 mm loudspeaker with a paper cone, metal frame, and two short red and black wires.
 10. One green cylindrical 18650 lithium cell, 65 mm long and 18 mm across.
-11. A small dark green plug-in card, about 57 x 25 mm, with a row of 8 gold pins along each long edge, carrying one small silver metal-shielded module and one tiny round gold antenna socket; beside it, a short black stubby rubber antenna, about 50 mm long, on a thin grey cable with a tiny gold connector.
-12. A second small dark green plug-in card of the same size and shape, with a row of 8 gold pins along each long edge, carrying one larger flat silver metal-shielded module and a small metal SIM card holder; beside it, a short thin grey cable ending in a gold threaded antenna socket with a hex nut, and a black screw-on whip antenna about 110 mm long with a hinged elbow and a gold threaded base.
-13. A tiny square red sensor board, about 25 x 25 mm, with one small black chip, joined to a short thin cable of four coloured wires with a small white plug on each end.
+11. A small dark green plug-in card, a plain rectangle about 57 x 25 mm, with a row of 8 short gold pins along each of its two long edges and no connectors on its short ends, carrying one small silver metal-shielded module and one tiny round gold antenna socket on its face; beside it, a short black stubby rubber antenna, about 50 mm long, on a thin grey cable with a tiny gold connector.
+12. A second small dark green plug-in card with exactly the same rectangular outline, size and pin rows as item 11, carrying one larger flat silver metal-shielded module and a small metal SIM card holder; beside it, a short thin grey cable ending in a gold threaded antenna socket with a hex nut, and a black screw-on whip antenna about 110 mm long with a hinged elbow and a gold threaded base.
+13. A tiny square blue sensor board, about 25 x 25 mm, with one small black chip, joined to a short thin cable of four coloured wires with a small white plug on each end.
 
-Clean technical catalogue look, realistic scale between parts, neutral colours. The four circuit boards look like finished factory-made products of one matching set. No case or enclosure, no breadboard, no perforated board, no hookup wire, no solder, no text or part numbers printed on any board, no brand logos. Aspect ratio 16:9.
+Clean technical catalogue look, realistic scale between parts, neutral colours. The four circuit boards look like finished factory-made products of one matching set. No case or enclosure, no breadboard, no perforated board, no hookup wire, no solder, no text or part numbers printed on any board, no brand logos. High resolution, at least 2000 pixels wide. Aspect ratio 16:9.
 ```
 
 **With names instead of numbers.** Use: MAIN BOARD, TOP BOARD, MODE BOARD, SELECT BOARD, CABLES, SCREEN, FM AERIAL, BUTTON AND KNOBS; and, set apart, SPEAKER, BATTERY, MESH CARD, 4G CARD, TILT SENSOR.
@@ -128,6 +130,8 @@ Clean technical catalogue look, realistic scale between parts, neutral colours. 
 | 13 | Tilt sensor | Plugs into a sensor socket on its cable | No: sold separately |
 
 The base is about NZ$44 to make in a batch of 100 and NZ$33 in a batch of 1,000, with no soldering. All four boards are cut from one panel. This is a mock-up: the board is not drawn yet, so the layout in the picture is the generator's guess. The picture on the site was made from an earlier version of this prompt, with the mesh radio on the main board, and needs redoing.
+
+**Getting 1b right.** The first try with the modular prompt put the mesh card on the kit side, used tag 9 twice, added a stray sensor board, drew the two cards at different sizes and came out at half the resolution. The prompt now says what must not be on the left, that each number is used once, and that the two cards share one outline. Check those four things first. If the generator copies parts from the attached 1a picture, add at the start: "Use the attached image only for the mat, the lighting and the camera angle. Do not copy any of its parts."
 
 **A single comparison picture.** To get both in one frame, add to the start of 1b: "A split image. The left half shows the same radio as eighteen separate hobby modules, a perforated board and a tangle of coloured hookup wire; the right half shows the kit below." It is harder to get right than two pictures.
 
