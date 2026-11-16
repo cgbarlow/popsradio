@@ -1,0 +1,286 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 640" role="img" aria-labelledby="t d">
+<title id="t">The same radio built two ways: wired from modules, and on one custom board</title>
+<desc id="d">Left: sixteen separate modules joined by a tangle of hand-soldered wires. Right: one main board and three small boards, joined by three short cables. A drawing, not a photo.</desc>
+<rect width="1200" height="640" rx="28" fill="#f3ece0"/>
+<rect x="24" y="24" width="564" height="592" rx="20" fill="#fbf7f0" stroke="#d4c4a8" stroke-width="2"/>
+<text x="50" y="68" font-family="'Atkinson Hyperlegible', 'Helvetica Neue', Arial, sans-serif" font-size="28" font-weight="700" fill="#2a2118">Wired from modules</text>
+<text x="50" y="98" font-family="'IBM Plex Mono', Menlo, Consolas, monospace" font-size="17" fill="#65563f">16 parts · 2 to 3 hours of soldering</text>
+<rect x="612" y="24" width="564" height="592" rx="20" fill="#fbf7f0" stroke="#d4c4a8" stroke-width="2"/>
+<text x="638" y="68" font-family="'Atkinson Hyperlegible', 'Helvetica Neue', Arial, sans-serif" font-size="28" font-weight="700" fill="#2a2118">One custom board</text>
+<text x="638" y="98" font-family="'IBM Plex Mono', Menlo, Consolas, monospace" font-size="17" fill="#65563f">4 boards from one panel · 3 cables · no wiring</text>
+<path d="M88 150 C107 198 197 316 281 332" fill="none" stroke="#2a2118" stroke-width="4.5" stroke-linecap="round" opacity=".55"/>
+<path d="M88 150 C107 198 197 316 281 332" fill="none" stroke="#d63a2c" stroke-width="3" stroke-linecap="round"/>
+<path d="M98 150 C48 235 196 343 363 337" fill="none" stroke="#2a2118" stroke-width="4.5" stroke-linecap="round" opacity=".55"/>
+<path d="M98 150 C48 235 196 343 363 337" fill="none" stroke="#d63a2c" stroke-width="3" stroke-linecap="round"/>
+<path d="M106 150 C73 253 290 340 352 330" fill="none" stroke="#2a2118" stroke-width="4.5" stroke-linecap="round" opacity=".55"/>
+<path d="M106 150 C73 253 290 340 352 330" fill="none" stroke="#7a4aa0" stroke-width="3" stroke-linecap="round"/>
+<path d="M116 150 C122 207 161 342 243 337" fill="none" stroke="#2a2118" stroke-width="4.5" stroke-linecap="round" opacity=".55"/>
+<path d="M116 150 C122 207 161 342 243 337" fill="none" stroke="#2f5f9a" stroke-width="3" stroke-linecap="round"/>
+<path d="M213 150 C165 266 225 320 314 368" fill="none" stroke="#2a2118" stroke-width="4.5" stroke-linecap="round" opacity=".55"/>
+<path d="M213 150 C165 266 225 320 314 368" fill="none" stroke="#2a2118" stroke-width="3" stroke-linecap="round"/>
+<path d="M222 150 C222 260 307 360 315 364" fill="none" stroke="#2a2118" stroke-width="4.5" stroke-linecap="round" opacity=".55"/>
+<path d="M222 150 C222 260 307 360 315 364" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round"/>
+<path d="M231 150 C193 272 196 315 287 339" fill="none" stroke="#2a2118" stroke-width="4.5" stroke-linecap="round" opacity=".55"/>
+<path d="M231 150 C193 272 196 315 287 339" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round"/>
+<path d="M336 150 C311 309 301 362 359 372" fill="none" stroke="#2a2118" stroke-width="4.5" stroke-linecap="round" opacity=".55"/>
+<path d="M336 150 C311 309 301 362 359 372" fill="none" stroke="#f08a3c" stroke-width="3" stroke-linecap="round"/>
+<path d="M346 150 C290 269 341 364 257 355" fill="none" stroke="#2a2118" stroke-width="4.5" stroke-linecap="round" opacity=".55"/>
+<path d="M346 150 C290 269 341 364 257 355" fill="none" stroke="#f08a3c" stroke-width="3" stroke-linecap="round"/>
+<path d="M354 150 C354 278 256 297 284 346" fill="none" stroke="#2a2118" stroke-width="4.5" stroke-linecap="round" opacity=".55"/>
+<path d="M354 150 C354 278 256 297 284 346" fill="none" stroke="#2f5f9a" stroke-width="3" stroke-linecap="round"/>
+<path d="M364 150 C311 279 347 426 302 367" fill="none" stroke="#2a2118" stroke-width="4.5" stroke-linecap="round" opacity=".55"/>
+<path d="M364 150 C311 279 347 426 302 367" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round"/>
+<path d="M482 150 C502 201 380 308 276 348" fill="none" stroke="#2a2118" stroke-width="4.5" stroke-linecap="round" opacity=".55"/>
+<path d="M482 150 C502 201 380 308 276 348" fill="none" stroke="#2a2118" stroke-width="3" stroke-linecap="round"/>
+<path d="M490 150 C465 267 386 387 305 337" fill="none" stroke="#2a2118" stroke-width="4.5" stroke-linecap="round" opacity=".55"/>
+<path d="M490 150 C465 267 386 387 305 337" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round"/>
+<path d="M500 150 C505 290 416 396 247 353" fill="none" stroke="#2a2118" stroke-width="4.5" stroke-linecap="round" opacity=".55"/>
+<path d="M500 150 C505 290 416 396 247 353" fill="none" stroke="#2f5f9a" stroke-width="3" stroke-linecap="round"/>
+<path d="M508 150 C530 258 377 339 335 389" fill="none" stroke="#2a2118" stroke-width="4.5" stroke-linecap="round" opacity=".55"/>
+<path d="M508 150 C530 258 377 339 335 389" fill="none" stroke="#e0a800" stroke-width="3" stroke-linecap="round"/>
+<path d="M83 239 C81 297 147 278 268 338" fill="none" stroke="#2a2118" stroke-width="4.5" stroke-linecap="round" opacity=".55"/>
+<path d="M83 239 C81 297 147 278 268 338" fill="none" stroke="#7a4aa0" stroke-width="3" stroke-linecap="round"/>
+<path d="M92 239 C70 264 252 417 311 363" fill="none" stroke="#2a2118" stroke-width="4.5" stroke-linecap="round" opacity=".55"/>
+<path d="M92 239 C70 264 252 417 311 363" fill="none" stroke="#d63a2c" stroke-width="3" stroke-linecap="round"/>
+<path d="M101 239 C155 328 204 369 300 381" fill="none" stroke="#2a2118" stroke-width="4.5" stroke-linecap="round" opacity=".55"/>
+<path d="M101 239 C155 328 204 369 300 381" fill="none" stroke="#7a4aa0" stroke-width="3" stroke-linecap="round"/>
+<path d="M503 239 C450 259 340 325 250 365" fill="none" stroke="#2a2118" stroke-width="4.5" stroke-linecap="round" opacity=".55"/>
+<path d="M503 239 C450 259 340 325 250 365" fill="none" stroke="#f08a3c" stroke-width="3" stroke-linecap="round"/>
+<path d="M512 239 C520 288 479 343 320 329" fill="none" stroke="#2a2118" stroke-width="4.5" stroke-linecap="round" opacity=".55"/>
+<path d="M512 239 C520 288 479 343 320 329" fill="none" stroke="#2a2118" stroke-width="3" stroke-linecap="round"/>
+<path d="M521 239 C479 277 414 347 358 364" fill="none" stroke="#2a2118" stroke-width="4.5" stroke-linecap="round" opacity=".55"/>
+<path d="M521 239 C479 277 414 347 358 364" fill="none" stroke="#2a2118" stroke-width="3" stroke-linecap="round"/>
+<path d="M83 331 C140 341 146 312 252 355" fill="none" stroke="#2a2118" stroke-width="4.5" stroke-linecap="round" opacity=".55"/>
+<path d="M83 331 C140 341 146 312 252 355" fill="none" stroke="#f08a3c" stroke-width="3" stroke-linecap="round"/>
+<path d="M92 331 C115 344 175 409 340 355" fill="none" stroke="#2a2118" stroke-width="4.5" stroke-linecap="round" opacity=".55"/>
+<path d="M92 331 C115 344 175 409 340 355" fill="none" stroke="#f08a3c" stroke-width="3" stroke-linecap="round"/>
+<path d="M101 331 C44 348 241 403 257 359" fill="none" stroke="#2a2118" stroke-width="4.5" stroke-linecap="round" opacity=".55"/>
+<path d="M101 331 C44 348 241 403 257 359" fill="none" stroke="#2f5f9a" stroke-width="3" stroke-linecap="round"/>
+<path d="M503 331 C486 330 416 384 309 384" fill="none" stroke="#2a2118" stroke-width="4.5" stroke-linecap="round" opacity=".55"/>
+<path d="M503 331 C486 330 416 384 309 384" fill="none" stroke="#2f7a45" stroke-width="3" stroke-linecap="round"/>
+<path d="M512 331 C543 323 380 364 322 376" fill="none" stroke="#2a2118" stroke-width="4.5" stroke-linecap="round" opacity=".55"/>
+<path d="M512 331 C543 323 380 364 322 376" fill="none" stroke="#2f7a45" stroke-width="3" stroke-linecap="round"/>
+<path d="M521 331 C549 392 429 352 264 356" fill="none" stroke="#2a2118" stroke-width="4.5" stroke-linecap="round" opacity=".55"/>
+<path d="M521 331 C549 392 429 352 264 356" fill="none" stroke="#2f7a45" stroke-width="3" stroke-linecap="round"/>
+<path d="M83 423 C77 449 281 442 333 387" fill="none" stroke="#2a2118" stroke-width="4.5" stroke-linecap="round" opacity=".55"/>
+<path d="M83 423 C77 449 281 442 333 387" fill="none" stroke="#f08a3c" stroke-width="3" stroke-linecap="round"/>
+<path d="M92 423 C88 360 167 387 247 329" fill="none" stroke="#2a2118" stroke-width="4.5" stroke-linecap="round" opacity=".55"/>
+<path d="M92 423 C88 360 167 387 247 329" fill="none" stroke="#d63a2c" stroke-width="3" stroke-linecap="round"/>
+<path d="M101 423 C137 353 220 416 303 366" fill="none" stroke="#2a2118" stroke-width="4.5" stroke-linecap="round" opacity=".55"/>
+<path d="M101 423 C137 353 220 416 303 366" fill="none" stroke="#2f7a45" stroke-width="3" stroke-linecap="round"/>
+<path d="M503 423 C538 362 450 391 303 334" fill="none" stroke="#2a2118" stroke-width="4.5" stroke-linecap="round" opacity=".55"/>
+<path d="M503 423 C538 362 450 391 303 334" fill="none" stroke="#7a4aa0" stroke-width="3" stroke-linecap="round"/>
+<path d="M512 423 C462 364 475 316 301 373" fill="none" stroke="#2a2118" stroke-width="4.5" stroke-linecap="round" opacity=".55"/>
+<path d="M512 423 C462 364 475 316 301 373" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round"/>
+<path d="M521 423 C560 426 452 314 349 332" fill="none" stroke="#2a2118" stroke-width="4.5" stroke-linecap="round" opacity=".55"/>
+<path d="M521 423 C560 426 452 314 349 332" fill="none" stroke="#e0a800" stroke-width="3" stroke-linecap="round"/>
+<path d="M86 515 C113 406 204 333 239 376" fill="none" stroke="#2a2118" stroke-width="4.5" stroke-linecap="round" opacity=".55"/>
+<path d="M86 515 C113 406 204 333 239 376" fill="none" stroke="#2f7a45" stroke-width="3" stroke-linecap="round"/>
+<path d="M94 515 C65 405 189 347 352 336" fill="none" stroke="#2a2118" stroke-width="4.5" stroke-linecap="round" opacity=".55"/>
+<path d="M94 515 C65 405 189 347 352 336" fill="none" stroke="#2f5f9a" stroke-width="3" stroke-linecap="round"/>
+<path d="M104 515 C51 471 261 398 312 379" fill="none" stroke="#2a2118" stroke-width="4.5" stroke-linecap="round" opacity=".55"/>
+<path d="M104 515 C51 471 261 398 312 379" fill="none" stroke="#7a4aa0" stroke-width="3" stroke-linecap="round"/>
+<path d="M112 515 C68 414 227 426 352 382" fill="none" stroke="#2a2118" stroke-width="4.5" stroke-linecap="round" opacity=".55"/>
+<path d="M112 515 C68 414 227 426 352 382" fill="none" stroke="#e0a800" stroke-width="3" stroke-linecap="round"/>
+<path d="M218 522 C175 413 293 329 321 375" fill="none" stroke="#2a2118" stroke-width="4.5" stroke-linecap="round" opacity=".55"/>
+<path d="M218 522 C175 413 293 329 321 375" fill="none" stroke="#d63a2c" stroke-width="3" stroke-linecap="round"/>
+<path d="M226 522 C233 468 201 364 282 357" fill="none" stroke="#2a2118" stroke-width="4.5" stroke-linecap="round" opacity=".55"/>
+<path d="M226 522 C233 468 201 364 282 357" fill="none" stroke="#2f7a45" stroke-width="3" stroke-linecap="round"/>
+<path d="M236 522 C187 419 181 372 263 325" fill="none" stroke="#2a2118" stroke-width="4.5" stroke-linecap="round" opacity=".55"/>
+<path d="M236 522 C187 419 181 372 263 325" fill="none" stroke="#2a2118" stroke-width="3" stroke-linecap="round"/>
+<path d="M244 522 C245 444 292 358 298 364" fill="none" stroke="#2a2118" stroke-width="4.5" stroke-linecap="round" opacity=".55"/>
+<path d="M244 522 C245 444 292 358 298 364" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round"/>
+<path d="M358 522 C360 468 399 390 307 339" fill="none" stroke="#2a2118" stroke-width="4.5" stroke-linecap="round" opacity=".55"/>
+<path d="M358 522 C360 468 399 390 307 339" fill="none" stroke="#2f7a45" stroke-width="3" stroke-linecap="round"/>
+<path d="M366 522 C321 421 302 300 354 331" fill="none" stroke="#2a2118" stroke-width="4.5" stroke-linecap="round" opacity=".55"/>
+<path d="M366 522 C321 421 302 300 354 331" fill="none" stroke="#2a2118" stroke-width="3" stroke-linecap="round"/>
+<path d="M376 522 C330 460 380 360 266 343" fill="none" stroke="#2a2118" stroke-width="4.5" stroke-linecap="round" opacity=".55"/>
+<path d="M376 522 C330 460 380 360 266 343" fill="none" stroke="#f08a3c" stroke-width="3" stroke-linecap="round"/>
+<path d="M384 522 C441 424 377 370 256 382" fill="none" stroke="#2a2118" stroke-width="4.5" stroke-linecap="round" opacity=".55"/>
+<path d="M384 522 C441 424 377 370 256 382" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round"/>
+<path d="M496 515 C462 462 453 356 259 367" fill="none" stroke="#2a2118" stroke-width="4.5" stroke-linecap="round" opacity=".55"/>
+<path d="M496 515 C462 462 453 356 259 367" fill="none" stroke="#7a4aa0" stroke-width="3" stroke-linecap="round"/>
+<path d="M504 515 C531 381 394 337 263 344" fill="none" stroke="#2a2118" stroke-width="4.5" stroke-linecap="round" opacity=".55"/>
+<path d="M504 515 C531 381 394 337 263 344" fill="none" stroke="#d63a2c" stroke-width="3" stroke-linecap="round"/>
+<path d="M514 515 C489 482 345 407 290 357" fill="none" stroke="#2a2118" stroke-width="4.5" stroke-linecap="round" opacity=".55"/>
+<path d="M514 515 C489 482 345 407 290 357" fill="none" stroke="#2f7a45" stroke-width="3" stroke-linecap="round"/>
+<path d="M522 515 C494 376 480 302 372 329" fill="none" stroke="#2a2118" stroke-width="4.5" stroke-linecap="round" opacity=".55"/>
+<path d="M522 515 C494 376 480 302 372 329" fill="none" stroke="#e0a800" stroke-width="3" stroke-linecap="round"/>
+<rect x="48" y="128" width="108" height="44" rx="6" fill="#6b4a8c" stroke="#2a2118" stroke-width="2.5"/>
+<text x="102.0" y="155" text-anchor="middle" font-family="'Atkinson Hyperlegible', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="700" fill="#fff">Microphone</text>
+<rect x="172" y="128" width="100" height="44" rx="6" fill="#2f5f9a" stroke="#2a2118" stroke-width="2.5"/>
+<text x="222.0" y="155" text-anchor="middle" font-family="'Atkinson Hyperlegible', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="700" fill="#fff">Amplifier</text>
+<rect x="290" y="122" width="120" height="56" rx="6" fill="#1d1d1d" stroke="#2a2118" stroke-width="2.5"/>
+<text x="350.0" y="155" text-anchor="middle" font-family="'Atkinson Hyperlegible', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="700" fill="#fff">2.4 in screen</text>
+<rect x="428" y="128" width="134" height="44" rx="6" fill="#2f5f9a" stroke="#2a2118" stroke-width="2.5"/>
+<text x="495.0" y="155" text-anchor="middle" font-family="'Atkinson Hyperlegible', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="700" fill="#fff">FM tuner</text>
+<rect x="44" y="214" width="96" height="50" rx="6" fill="#3d3d3d" stroke="#2a2118" stroke-width="2.5"/>
+<text x="92.0" y="236" text-anchor="middle" font-family="'Atkinson Hyperlegible', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="700" fill="#fff">Mode</text>
+<text x="92.0" y="252" text-anchor="middle" font-family="'Atkinson Hyperlegible', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="700" fill="#fff">knob</text>
+<rect x="462" y="214" width="100" height="50" rx="6" fill="#3d3d3d" stroke="#2a2118" stroke-width="2.5"/>
+<text x="512.0" y="236" text-anchor="middle" font-family="'Atkinson Hyperlegible', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="700" fill="#fff">Select</text>
+<text x="512.0" y="252" text-anchor="middle" font-family="'Atkinson Hyperlegible', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="700" fill="#fff">knob</text>
+<rect x="44" y="306" width="96" height="50" rx="6" fill="#3d3d3d" stroke="#2a2118" stroke-width="2.5"/>
+<text x="92.0" y="328" text-anchor="middle" font-family="'Atkinson Hyperlegible', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="700" fill="#fff">Volume</text>
+<text x="92.0" y="344" text-anchor="middle" font-family="'Atkinson Hyperlegible', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="700" fill="#fff">knob</text>
+<rect x="462" y="306" width="100" height="50" rx="6" fill="#a33d3d" stroke="#2a2118" stroke-width="2.5"/>
+<text x="512.0" y="328" text-anchor="middle" font-family="'Atkinson Hyperlegible', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="700" fill="#fff">Tilt</text>
+<text x="512.0" y="344" text-anchor="middle" font-family="'Atkinson Hyperlegible', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="700" fill="#fff">sensor</text>
+<rect x="44" y="398" width="96" height="50" rx="6" fill="#ea6a1f" stroke="#2a2118" stroke-width="2.5"/>
+<text x="92.0" y="420" text-anchor="middle" font-family="'Atkinson Hyperlegible', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="700" fill="#fff">Orange</text>
+<text x="92.0" y="436" text-anchor="middle" font-family="'Atkinson Hyperlegible', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="700" fill="#fff">button</text>
+<rect x="462" y="398" width="100" height="50" rx="6" fill="#1f7a6b" stroke="#2a2118" stroke-width="2.5"/>
+<text x="512.0" y="420" text-anchor="middle" font-family="'Atkinson Hyperlegible', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="700" fill="#fff">Mesh</text>
+<text x="512.0" y="436" text-anchor="middle" font-family="'Atkinson Hyperlegible', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="700" fill="#fff">stamp</text>
+<rect x="44" y="490" width="110" height="50" rx="6" fill="#3d3d3d" stroke="#2a2118" stroke-width="2.5"/>
+<text x="99.0" y="512" text-anchor="middle" font-family="'Atkinson Hyperlegible', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="700" fill="#fff">Slide switch</text>
+<text x="99.0" y="528" text-anchor="middle" font-family="'Atkinson Hyperlegible', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="700" fill="#fff">and lights</text>
+<rect x="176" y="500" width="110" height="44" rx="6" fill="#2f5f9a" stroke="#2a2118" stroke-width="2.5"/>
+<text x="231.0" y="527" text-anchor="middle" font-family="'Atkinson Hyperlegible', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="700" fill="#fff">Charger</text>
+<rect x="306" y="500" width="130" height="44" rx="6" fill="#3d3d3d" stroke="#2a2118" stroke-width="2.5"/>
+<text x="371.0" y="527" text-anchor="middle" font-family="'Atkinson Hyperlegible', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="700" fill="#fff">18650 holder</text>
+<rect x="456" y="490" width="106" height="50" rx="6" fill="#3d3d3d" stroke="#2a2118" stroke-width="2.5"/>
+<text x="509.0" y="520" text-anchor="middle" font-family="'Atkinson Hyperlegible', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="700" fill="#fff">Speaker</text>
+<rect x="196" y="296" width="220" height="120" rx="6" fill="#c9a66b" stroke="#2a2118" stroke-width="2.5"/>
+<circle cx="208.0" cy="308.0" r="2" fill="#8a6a3a"/>
+<circle cx="208.0" cy="327.2" r="2" fill="#8a6a3a"/>
+<circle cx="208.0" cy="346.4" r="2" fill="#8a6a3a"/>
+<circle cx="208.0" cy="365.6" r="2" fill="#8a6a3a"/>
+<circle cx="208.0" cy="384.8" r="2" fill="#8a6a3a"/>
+<circle cx="208.0" cy="404.0" r="2" fill="#8a6a3a"/>
+<circle cx="224.3" cy="308.0" r="2" fill="#8a6a3a"/>
+<circle cx="224.3" cy="327.2" r="2" fill="#8a6a3a"/>
+<circle cx="224.3" cy="346.4" r="2" fill="#8a6a3a"/>
+<circle cx="224.3" cy="365.6" r="2" fill="#8a6a3a"/>
+<circle cx="224.3" cy="384.8" r="2" fill="#8a6a3a"/>
+<circle cx="224.3" cy="404.0" r="2" fill="#8a6a3a"/>
+<circle cx="240.6" cy="308.0" r="2" fill="#8a6a3a"/>
+<circle cx="240.6" cy="327.2" r="2" fill="#8a6a3a"/>
+<circle cx="240.6" cy="346.4" r="2" fill="#8a6a3a"/>
+<circle cx="240.6" cy="365.6" r="2" fill="#8a6a3a"/>
+<circle cx="240.6" cy="384.8" r="2" fill="#8a6a3a"/>
+<circle cx="240.6" cy="404.0" r="2" fill="#8a6a3a"/>
+<circle cx="256.9" cy="308.0" r="2" fill="#8a6a3a"/>
+<circle cx="256.9" cy="327.2" r="2" fill="#8a6a3a"/>
+<circle cx="256.9" cy="346.4" r="2" fill="#8a6a3a"/>
+<circle cx="256.9" cy="365.6" r="2" fill="#8a6a3a"/>
+<circle cx="256.9" cy="384.8" r="2" fill="#8a6a3a"/>
+<circle cx="256.9" cy="404.0" r="2" fill="#8a6a3a"/>
+<circle cx="273.2" cy="308.0" r="2" fill="#8a6a3a"/>
+<circle cx="273.2" cy="327.2" r="2" fill="#8a6a3a"/>
+<circle cx="273.2" cy="346.4" r="2" fill="#8a6a3a"/>
+<circle cx="273.2" cy="365.6" r="2" fill="#8a6a3a"/>
+<circle cx="273.2" cy="384.8" r="2" fill="#8a6a3a"/>
+<circle cx="273.2" cy="404.0" r="2" fill="#8a6a3a"/>
+<circle cx="289.5" cy="308.0" r="2" fill="#8a6a3a"/>
+<circle cx="289.5" cy="327.2" r="2" fill="#8a6a3a"/>
+<circle cx="289.5" cy="346.4" r="2" fill="#8a6a3a"/>
+<circle cx="289.5" cy="365.6" r="2" fill="#8a6a3a"/>
+<circle cx="289.5" cy="384.8" r="2" fill="#8a6a3a"/>
+<circle cx="289.5" cy="404.0" r="2" fill="#8a6a3a"/>
+<circle cx="305.8" cy="308.0" r="2" fill="#8a6a3a"/>
+<circle cx="305.8" cy="327.2" r="2" fill="#8a6a3a"/>
+<circle cx="305.8" cy="346.4" r="2" fill="#8a6a3a"/>
+<circle cx="305.8" cy="365.6" r="2" fill="#8a6a3a"/>
+<circle cx="305.8" cy="384.8" r="2" fill="#8a6a3a"/>
+<circle cx="305.8" cy="404.0" r="2" fill="#8a6a3a"/>
+<circle cx="322.1" cy="308.0" r="2" fill="#8a6a3a"/>
+<circle cx="322.1" cy="327.2" r="2" fill="#8a6a3a"/>
+<circle cx="322.1" cy="346.4" r="2" fill="#8a6a3a"/>
+<circle cx="322.1" cy="365.6" r="2" fill="#8a6a3a"/>
+<circle cx="322.1" cy="384.8" r="2" fill="#8a6a3a"/>
+<circle cx="322.1" cy="404.0" r="2" fill="#8a6a3a"/>
+<circle cx="338.4" cy="308.0" r="2" fill="#8a6a3a"/>
+<circle cx="338.4" cy="327.2" r="2" fill="#8a6a3a"/>
+<circle cx="338.4" cy="346.4" r="2" fill="#8a6a3a"/>
+<circle cx="338.4" cy="365.6" r="2" fill="#8a6a3a"/>
+<circle cx="338.4" cy="384.8" r="2" fill="#8a6a3a"/>
+<circle cx="338.4" cy="404.0" r="2" fill="#8a6a3a"/>
+<circle cx="354.7" cy="308.0" r="2" fill="#8a6a3a"/>
+<circle cx="354.7" cy="327.2" r="2" fill="#8a6a3a"/>
+<circle cx="354.7" cy="346.4" r="2" fill="#8a6a3a"/>
+<circle cx="354.7" cy="365.6" r="2" fill="#8a6a3a"/>
+<circle cx="354.7" cy="384.8" r="2" fill="#8a6a3a"/>
+<circle cx="354.7" cy="404.0" r="2" fill="#8a6a3a"/>
+<circle cx="371.0" cy="308.0" r="2" fill="#8a6a3a"/>
+<circle cx="371.0" cy="327.2" r="2" fill="#8a6a3a"/>
+<circle cx="371.0" cy="346.4" r="2" fill="#8a6a3a"/>
+<circle cx="371.0" cy="365.6" r="2" fill="#8a6a3a"/>
+<circle cx="371.0" cy="384.8" r="2" fill="#8a6a3a"/>
+<circle cx="371.0" cy="404.0" r="2" fill="#8a6a3a"/>
+<circle cx="387.3" cy="308.0" r="2" fill="#8a6a3a"/>
+<circle cx="387.3" cy="327.2" r="2" fill="#8a6a3a"/>
+<circle cx="387.3" cy="346.4" r="2" fill="#8a6a3a"/>
+<circle cx="387.3" cy="365.6" r="2" fill="#8a6a3a"/>
+<circle cx="387.3" cy="384.8" r="2" fill="#8a6a3a"/>
+<circle cx="387.3" cy="404.0" r="2" fill="#8a6a3a"/>
+<circle cx="403.6" cy="308.0" r="2" fill="#8a6a3a"/>
+<circle cx="403.6" cy="327.2" r="2" fill="#8a6a3a"/>
+<circle cx="403.6" cy="346.4" r="2" fill="#8a6a3a"/>
+<circle cx="403.6" cy="365.6" r="2" fill="#8a6a3a"/>
+<circle cx="403.6" cy="384.8" r="2" fill="#8a6a3a"/>
+<circle cx="403.6" cy="404.0" r="2" fill="#8a6a3a"/>
+<rect x="222" y="326" width="168" height="60" rx="6" fill="#256b3c" stroke="#2a2118" stroke-width="2.5"/>
+<text x="306.0" y="352" text-anchor="middle" font-family="'Atkinson Hyperlegible', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="700" fill="#fff">ESP32-S3</text>
+<text x="306.0" y="370" text-anchor="middle" font-family="'Atkinson Hyperlegible', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="700" fill="#fff">dev board</text>
+<text x="306" y="592" text-anchor="middle" font-family="'IBM Plex Mono', Menlo, Consolas, monospace" font-size="19" font-weight="600" fill="#2a2118">about NZ$61 to 103 a radio</text>
+<path d="M900 190 C900 210 900 230 900 250" fill="none" stroke="#2a2118" stroke-width="13" stroke-linecap="round"/>
+<path d="M900 190 C900 210 900 230 900 250" fill="none" stroke="#e9e2d2" stroke-width="9" stroke-linecap="round"/>
+<path d="M690 330 C705 330 725 330 740 330" fill="none" stroke="#2a2118" stroke-width="13" stroke-linecap="round"/>
+<path d="M690 330 C705 330 725 330 740 330" fill="none" stroke="#e9e2d2" stroke-width="9" stroke-linecap="round"/>
+<path d="M1110 330 C1095 330 1075 330 1058 330" fill="none" stroke="#2a2118" stroke-width="13" stroke-linecap="round"/>
+<path d="M1110 330 C1095 330 1075 330 1058 330" fill="none" stroke="#e9e2d2" stroke-width="9" stroke-linecap="round"/>
+<rect x="730" y="124" width="340" height="70" rx="10" fill="#256b3c" stroke="#2a2118" stroke-width="2.5"/>
+<circle cx="740" cy="134" r="4" fill="#f3ece0" stroke="#d9b24a" stroke-width="2"/>
+<circle cx="1060" cy="134" r="4" fill="#f3ece0" stroke="#d9b24a" stroke-width="2"/>
+<circle cx="740" cy="184" r="4" fill="#f3ece0" stroke="#d9b24a" stroke-width="2"/>
+<circle cx="1060" cy="184" r="4" fill="#f3ece0" stroke="#d9b24a" stroke-width="2"/>
+<circle cx="900" cy="159" r="22" fill="#ea6a1f" stroke="#2a2118" stroke-width="2.5"/>
+<rect x="752" y="144" width="78" height="30" rx="3" fill="#3d3d3d" stroke="#2a2118" stroke-width="2.5"/>
+<text x="791.0" y="163" text-anchor="middle" font-family="'Atkinson Hyperlegible', 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="700" fill="#f3ece0">PUSH·OPEN</text>
+<circle cx="1000" cy="159" r="15" fill="#3d3d3d" stroke="#2a2118" stroke-width="2.5"/><circle cx="1000" cy="159" r="6" fill="#bdbdbd"/>
+<circle cx="1040" cy="150" r="5" fill="#d63a2c"/><circle cx="1040" cy="168" r="5" fill="#6cc88a"/>
+<rect x="636" y="286" width="58" height="88" rx="10" fill="#256b3c" stroke="#2a2118" stroke-width="2.5"/>
+<circle cx="646" cy="296" r="4" fill="#f3ece0" stroke="#d9b24a" stroke-width="2"/>
+<circle cx="684" cy="296" r="4" fill="#f3ece0" stroke="#d9b24a" stroke-width="2"/>
+<circle cx="646" cy="364" r="4" fill="#f3ece0" stroke="#d9b24a" stroke-width="2"/>
+<circle cx="684" cy="364" r="4" fill="#f3ece0" stroke="#d9b24a" stroke-width="2"/>
+<rect x="1106" y="286" width="58" height="88" rx="10" fill="#256b3c" stroke="#2a2118" stroke-width="2.5"/>
+<circle cx="1116" cy="296" r="4" fill="#f3ece0" stroke="#d9b24a" stroke-width="2"/>
+<circle cx="1154" cy="296" r="4" fill="#f3ece0" stroke="#d9b24a" stroke-width="2"/>
+<circle cx="1116" cy="364" r="4" fill="#f3ece0" stroke="#d9b24a" stroke-width="2"/>
+<circle cx="1154" cy="364" r="4" fill="#f3ece0" stroke="#d9b24a" stroke-width="2"/>
+<circle cx="665" cy="330" r="19" fill="#3d3d3d" stroke="#2a2118" stroke-width="2.5"/><circle cx="665" cy="330" r="7" fill="#bdbdbd"/>
+<circle cx="1135" cy="330" r="19" fill="#3d3d3d" stroke="#2a2118" stroke-width="2.5"/><circle cx="1135" cy="330" r="7" fill="#bdbdbd"/>
+<text x="665" y="396" text-anchor="middle" font-family="'IBM Plex Mono', Menlo, Consolas, monospace" font-size="14" fill="#65563f">Mode</text>
+<text x="1135" y="396" text-anchor="middle" font-family="'IBM Plex Mono', Menlo, Consolas, monospace" font-size="14" fill="#65563f">Select</text>
+<rect x="740" y="244" width="320" height="300" rx="10" fill="#256b3c" stroke="#2a2118" stroke-width="2.5"/>
+<circle cx="750" cy="254" r="4" fill="#f3ece0" stroke="#d9b24a" stroke-width="2"/>
+<circle cx="1050" cy="254" r="4" fill="#f3ece0" stroke="#d9b24a" stroke-width="2"/>
+<circle cx="750" cy="534" r="4" fill="#f3ece0" stroke="#d9b24a" stroke-width="2"/>
+<circle cx="1050" cy="534" r="4" fill="#f3ece0" stroke="#d9b24a" stroke-width="2"/>
+<rect x="760" y="262" width="120" height="78" rx="3" fill="#bdbdbd" stroke="#2a2118" stroke-width="2.5"/>
+<text x="820.0" y="298" text-anchor="middle" font-family="'Atkinson Hyperlegible', 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="700" fill="#2a2118">ESP32-S3</text>
+<text x="820.0" y="313" text-anchor="middle" font-family="'Atkinson Hyperlegible', 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="700" fill="#2a2118">voice, Wi-Fi</text>
+<rect x="920" y="262" width="120" height="78" rx="3" fill="#bdbdbd" stroke="#2a2118" stroke-width="2.5"/>
+<text x="980.0" y="298" text-anchor="middle" font-family="'Atkinson Hyperlegible', 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="700" fill="#2a2118">Mesh radio</text>
+<text x="980.0" y="313" text-anchor="middle" font-family="'Atkinson Hyperlegible', 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="700" fill="#2a2118">HT-CT62</text>
+<rect x="760" y="356" width="62" height="34" rx="3" fill="#1d1d1d" stroke="#2a2118" stroke-width="2.5"/>
+<text x="791.0" y="377" text-anchor="middle" font-family="'Atkinson Hyperlegible', 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="700" fill="#f3ece0">Codec</text>
+<rect x="832" y="356" width="48" height="34" rx="3" fill="#1d1d1d" stroke="#2a2118" stroke-width="2.5"/>
+<text x="856.0" y="377" text-anchor="middle" font-family="'Atkinson Hyperlegible', 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="700" fill="#f3ece0">Amp</text>
+<rect x="920" y="356" width="54" height="34" rx="3" fill="#1d1d1d" stroke="#2a2118" stroke-width="2.5"/>
+<text x="947.0" y="377" text-anchor="middle" font-family="'Atkinson Hyperlegible', 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="700" fill="#f3ece0">FM</text>
+<rect x="984" y="356" width="56" height="34" rx="3" fill="#1d1d1d" stroke="#2a2118" stroke-width="2.5"/>
+<text x="1012.0" y="377" text-anchor="middle" font-family="'Atkinson Hyperlegible', 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="700" fill="#f3ece0">Tilt</text>
+<rect x="760" y="404" width="92" height="34" rx="3" fill="#1d1d1d" stroke="#2a2118" stroke-width="2.5"/>
+<text x="806.0" y="425" text-anchor="middle" font-family="'Atkinson Hyperlegible', 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="700" fill="#f3ece0">Charger</text>
+<rect x="862" y="404" width="60" height="34" rx="3" fill="#bdbdbd" stroke="#2a2118" stroke-width="2.5"/>
+<text x="892.0" y="425" text-anchor="middle" font-family="'Atkinson Hyperlegible', 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="700" fill="#2a2118">USB-C</text>
+<rect x="932" y="404" width="108" height="34" rx="3" fill="#256b3c" stroke="#2a2118" stroke-width="2.5"/>
+<text x="986.0" y="425" text-anchor="middle" font-family="'Atkinson Hyperlegible', 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="700" fill="#cfe6d2">LTE (empty)</text>
+<rect x="768" y="462" width="264" height="62" rx="8" fill="#1d1d1d" stroke="#2a2118" stroke-width="2.5"/>
+<text x="900" y="499" text-anchor="middle" font-family="'Atkinson Hyperlegible', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="700" fill="#f3ece0">18650 cell holder</text>
+<circle cx="1046" cy="252" r="6" fill="#d9b24a" stroke="#2a2118" stroke-width="2"/>
+<text x="900" y="592" text-anchor="middle" font-family="'IBM Plex Mono', Menlo, Consolas, monospace" font-size="19" font-weight="600" fill="#2a2118">about NZ$58 at 100 · NZ$45 at 1,000</text>
+</svg>

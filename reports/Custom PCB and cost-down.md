@@ -2,6 +2,8 @@
 
 Nov 16, 2026 · @Chris Barlow
 
+> **Decided on 16 November 2026.** The custom board, option C for the mesh, and the kit are now the plan, and the mesh is **always on, with every radio passing messages along**. That last choice goes further than this report first recommended; the settings and power notes below are updated to match. See [Design Decisions](../Design%20Decisions.md).
+
 ## Summary
 
 **A custom board is worth doing, but mostly for labour, reliability and volume, not because the parts get much cheaper.** The full platform radio (three knobs, bigger screen, FM, tilt sensor, battery, Wi-Fi voice and now Meshtastic) costs about **NZ$61 to 103 in modules** before shell, speaker and battery cell, plus two to three hours of wiring. On one custom board, assembled and tested in China, the same radio comes to about:
@@ -141,7 +143,7 @@ Meshtastic is a text mesh, not a voice link. The [relay report](Walkie%20talkie%
 
 - **Outage messages.** When the internet or the power is down, family on Meshtastic can send a short text. It shows in large type with a chime.
 - **"I'm OK" without the internet.** A Mesh mode on the Mode knob, switched on by the family, where Select picks a canned message and a press sends it. The orange button stays talk only, as the platform rules require.
-- **A stronger local mesh.** A radio on the dock is an always-powered node. Wellington's mesh is already busy (see the relay report), so it should start as a quiet node that does not rebroadcast.
+- **A stronger local mesh.** Every Pop's Radio is an always-on node that passes messages along, so each one sold adds a link. Wellington's mesh is already busy (see the relay report), so talk to the local mesh group before a large batch ships there.
 - **Later: voice clips, not live voice.** Projects such as Voicetastic send whole voice clips on Meshtastic's private-app port 256 ([Voicetastic](https://github.com/voicetastic/voicetastic-core/wiki/Overview)). The relay report puts a 10-second clip at about 15 seconds per hop. Possible as a voicemail, never as the main channel.
 
 ### Three ways to add it
@@ -168,13 +170,13 @@ Meshtastic's firmware is GPL-3.0 ([JKPG Mesh](https://jkpg-mesh.github.io/blogs/
 |---|---|---|
 | Region | ANZ, 915 to 928 MHz | Meshtastic's ANZ region allows 100% duty cycle and 30 dBm ([Meshtastic](https://meshtastic.org/docs/configuration/radio/lora)); the NZ licence allows up to 1 W EIRP (relay report) |
 | Primary channel | The family's own channel with its own key | TEXTMSG uses the primary channel, so strangers on the public channel never reach Pop's screen |
-| Role | Client, muted (does not rebroadcast) | Avoids adding load to a busy city mesh; families can open it up |
+| Role | Client: passes messages along | Decided: every Pop's Radio is a link in the mesh. This adds load in a busy city, so match the local mesh's settings and keep the default hop limit of 3 |
 | Preset | Match the local mesh | Wellington moved off LongFast in 2024 |
 | Bluetooth on the C3 | Off | One less radio and one less thing to pair; set up over the S3 instead |
 | Name | A nickname, not Pop's real name | Node names are public |
-| Power | Mesh on when docked or when Wi-Fi is down; off otherwise | See below |
+| Power | Always on, on the dock and on battery | Decided. A sleeping radio is a gap in the mesh. See below |
 
-**Power.** With the mesh off, a 3000 mAh 18650 lasts about 13 days at 5 mA standby and 20 minutes of talk a day (my arithmetic, 80% usable, as in the Stage 2 doc). With the mesh drawing about 30 mA (*estimate*), it lasts under 3 days. So the S3 switches the HT-CT62 on when the radio is docked or when Wi-Fi has been down for a few minutes. Three days on a fully charged radio covers most outages.
+**Power.** With the mesh off, a 3000 mAh 18650 would last about 13 days at 5 mA standby and 20 minutes of talk a day (my arithmetic, 80% usable, as in the Stage 2 doc). With the mesh drawing about 30 mA (*estimate*), it lasts under 3 days. The decision is to keep the mesh on all the time and accept about 3 days off the dock. The radio lives on its dock, so this mostly matters in a power cut, and three days on a fully charged radio covers most outages. An earlier draft of this report switched the mesh on only when docked or when Wi-Fi was down; that saves battery but leaves gaps in the mesh for everyone else.
 
 **Rules that carry over.** The HT-CT62 has no wire to the microphone, so "nobody can switch the microphone on from somewhere else" stays true in hardware. The kids' mini phone leaves the HT-CT62 off the board: an open mesh breaks "no strangers, ever".
 
@@ -287,7 +289,7 @@ All versions run the same firmware, which reads which parts are fitted at boot.
 | Order 1,000, not 100 | about NZ$13.60 | Cash up front; stock to hold |
 | Keep the TFT instead of a memory LCD | about NZ$31 | Glows, weaker in daylight. Test with Pop |
 | Leave the cell out of the kit | about NZ$12.50 | One more thing for the builder to buy |
-| Mesh as an option, not standard | about NZ$14 | Fewer radios on the mesh |
+| Mesh as an option, not standard | about NZ$14 | Fewer radios on the mesh. Not taken: the mesh is standard |
 | Shared radio instead of co-processor (option A) | about NZ$5 | No mesh while talking; dual-image firmware |
 | Generic encoders instead of ALPS | about NZ$4.30 | Feel and life unproven. Let Pop try both |
 | Printed cap over a tactile switch instead of an arcade button | about NZ$2.40 | Feel to be tried with Pop |

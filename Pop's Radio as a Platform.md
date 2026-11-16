@@ -2,18 +2,21 @@
 
 Nov 15, 2026 · @Chris Barlow
 
-A design exploration, not a locked decision. The [Stage 2 spec](Walkie-Talkie%20Beyond%20the%20R1%20Minimum%20Hardware.md#recommended-build) and the [service design](Walkie-Talkie%20Service%20Design.md) stay as they are. This brief asks what happens if the same radio can do more than talk, and what has to be true for that to stay safe and simple for Pop.
+> **Locked on 16 November 2026.** This began as a design exploration. It is now the radio we are building: the shape, the three knobs, the modes, the screen and the parts are decided, and a fifth mode, Mesh, has been added. The decisions and the tests that could still change them are in [Design Decisions](Design%20Decisions.md); the parts and prices are in the [cost-down report](reports/Custom%20PCB%20and%20cost-down.md). The [service design](Walkie-Talkie%20Service%20Design.md) is unchanged.
+
+This brief asks what happens if the same radio can do more than talk, and what has to be true for that to stay safe and simple for Pop.
 
 Concept picture prompts for this unit are in [Pop's Radio Platform Image Prompts](Pop's%20Radio%20Platform%20Image%20Prompts.md).
 
 ## Summary
 
-**The idea: design Pop's Radio as a platform, not just a radio.** The parts that make a good walkie-talkie (a speaker, a screen, knobs, Wi-Fi, a small computer that updates itself) are most of what a bedside radio, a games board and a chess clock need too. Once Pop trusts one device, each extra useful thing on it is one less gadget to learn.
+**The decision: Pop's Radio is a platform, not just a radio.** The parts that make a good walkie-talkie (a speaker, a screen, knobs, Wi-Fi, a small computer that updates itself) are most of what a bedside radio, a games board and a chess clock need too. Once Pop trusts one device, each extra useful thing on it is one less gadget to learn.
 
 - **A new shape.** A stout rectangular radio, long and low, about 220 mm wide, 125 mm tall and 80 mm deep, so it sits low and is hard to knock over. It has an adjustable shoulder strap and three knobs that are easy to grip and turn: a big one on each side and a smaller volume knob on top. Every knob turns freely and is also a button.
-- **Mode and Select.** The left knob picks what the radio is doing: Talk, Radio (FM), Radio (Internet) or Play. The right knob picks within it: who to talk to, which station, which game.
+- **Mode and Select.** The left knob picks what the radio is doing: Talk, Radio (FM), Radio (Internet), Play or Mesh. The right knob picks within it: who to talk to, which station, which game.
 - **Tip it on its back to play.** Screen facing up, the two side knobs become a left and right controller: Pong paddles or pinball flippers.
 - **A chess clock, standing upright.** It sits beside the board and each player taps the orange button with a palm to end their turn.
+- **A mesh that is always on.** Every radio carries a second, long-range radio that passes short text messages from radio to radio with no internet. See [Mesh](#mesh-messages-with-no-internet).
 - **An approved app store, later.** Once the first-party modes have proven the model, other people could build apps for it. Every app is reviewed and signed by us, installed by the family from the family app, and can never use the microphone or the talk button.
 - **One rule keeps it Pop's radio.** Holding the orange button always talks, in every mode, and an incoming message always wins. The family chooses which modes appear, and a radio can ship with Talk only.
 
@@ -66,10 +69,12 @@ flowchart LR
   M --> F["<b>Radio (FM)</b><br/>Channel 1 · 2 · 3"]
   M --> I["<b>Radio (Internet)</b><br/>Channel 1 · 2 · 3"]
   M --> P["<b>Play</b><br/>Pong · Pinball · Chess clock"]
+  M --> X["<b>Mesh</b><br/>I'm OK · Call me · On my way"]
   S(("<b>Select knob</b><br/>right side")) -.-> T
   S -.-> F
   S -.-> I
   S -.-> P
+  S -.-> X
 ```
 
 | Mode | Select knob picks | How it works | Notes |
@@ -78,6 +83,7 @@ flowchart LR
 | **Radio (FM)** | Channel 1, 2, 3 | An FM receiver chip on the I2C bus, with three presets set from the family app | Works without internet or Wi-Fi, so it still plays during an outage on battery |
 | **Radio (Internet)** | Channel 1, 2, 3 | Streams over Wi-Fi, with three presets set from the family app | Reaches stations FM cannot, such as a station from home for someone who moved countries |
 | **Play** | Pong, Pinball, Chess clock | First-party games written by us, see below | Pong and pinball on its back; the chess clock upright |
+| **Mesh** | A ready-made message, such as "I'm OK" | Sends a short text from radio to radio with no internet, see [Mesh](#mesh-messages-with-no-internet) | The mesh radio itself is always on, whether or not this mode is shown. The message list is an example, set by the family |
 
 **The Nurse channel is for talking, not for emergencies.** In a rest home, a channel to the nurses' station is an obvious third name beside Chris and Family. It is an ordinary talk channel: someone has to be listening at the other end. It does not replace the home's call bell, and the radio is still not an emergency alarm. A rest home would need to agree who answers it and when.
 
@@ -127,6 +133,21 @@ The chess clock is the clearest case for a platform. A rest home lounge already 
 
 **Later: play against the family.** Pong over the family's own channel, with Pop on his radio and a grandchild on theirs or in the family app. It would use the same service, with game moves sent as small sealed messages like voice. Not designed yet.
 
+## Mesh: messages with no internet
+
+**Every Pop's Radio carries a second radio that needs no internet, and it is always on.** It is a small Meshtastic chip on 915 MHz, beside the main chip. Radios in range of each other pass short text messages along, hop by hop, so a message can cross a suburb when the Wi-Fi, the mobile network or the power is down.
+
+![Eleven houses on a simple map, each with a Pop's Radio. With the internet down, a message from Pop reaches Chris in three hops through two neighbours' radios](images/mesh-map.svg)
+
+*How it might look. A drawing, not a coverage map.*
+
+- **Mesh is the fifth mode.** The family switches it on. Select picks a ready-made message such as "I'm OK", and a press sends it. An incoming message shows in large type with a chime.
+- **Every radio is a link.** Each one passes other people's messages along, whether or not its own family uses Mesh mode. More radios make a better mesh.
+- **Text only, best efforts.** It cannot carry live voice, and a message only gets through if there is a chain of radios between the two homes. It is not an emergency service.
+- **The rules hold.** The orange button still only talks. The mesh chip has no wire to the microphone. No location is ever sent.
+
+The settings, the battery cost and the reasons are in [Design Decisions](Design%20Decisions.md#the-mesh-always-on).
+
 ## Why a platform
 
 - **The hardware is mostly there.** Stage 2 already has an ESP32-S3, Wi-Fi, a speaker, a screen, a knob and signed automatic updates. A platform adds two knobs, a tuner chip, a tilt sensor and a bigger screen, not a new product.
@@ -169,22 +190,26 @@ The README promises "a small radio that does one thing". A platform pulls the ot
 
 ## Hardware changes from the Stage 2 build
 
-Not priced yet. Each line needs a part chosen and a NZ price checked.
+Now chosen and priced. The [cost-down report](reports/Custom%20PCB%20and%20cost-down.md) puts every part below on one custom board for about NZ$58 a kit in a batch of 100 and NZ$45 in a batch of 1,000, before the case, speaker and cell.
 
 | Part | Stage 2 build | Platform unit | Note |
 | --- | --- | --- | --- |
 | Knobs | One rotary encoder with push | Three rotary encoders with push, large knobs | Free turning, no end stops, so games can use them. Decided |
-| Screen | 0.96 to 1.3 inch one-colour OLED | Not chosen yet | Needs more research, see below |
+| Screen | 0.96 to 1.3 inch one-colour OLED | 2.4 inch colour TFT, 320 × 240, dimmable backlight | Decided for the first boards, see below |
 | FM | None | FM receiver chip, I2C, with a wire antenna | The RDA5807M is a common choice, controlled over I2C, with an ESP32 and MAX98357A example in the pu2clr library ([pu2clr](https://www.github.com/pu2clr/RDA5807)) |
 | Antenna | None | A wire of about 75 cm run through the shoulder strap | Hobby guides give about 75 to 77 cm as a quarter-wave whip for FM ([101 Things](https://101-things.readthedocs.io/en/latest/fm_radio.html), [Seeed](https://wiki.seeedstudio.com/Grove-I2C_FM_Receiver/)). Hiding it in the strap is a proposal, untested |
 | Tilt sensor | None | A small accelerometer | Knows upright from lying on its back |
-| Battery | Skipped on Pop's docked unit | Needed | A shoulder strap means it leaves the dock. A larger cell than 1000 mAh, size to be measured |
+| Battery | Skipped on Pop's docked unit | One 18650 cell, about 3000 mAh | A shoulder strap means it leaves the dock. About 3 days off the dock with the mesh on (estimate) |
+| Mesh | None | Heltec HT-CT62 co-processor running Meshtastic, with a 915 MHz antenna | Always on. See [Mesh](#mesh-messages-with-no-internet) |
+| Audio | I2S mic and MAX98357A amp | ES8388 codec, analog MEMS mic, NS4150B amp on a 5 V rail | As loud on battery as on the dock, and FM plays through the same codec |
 | Case | Wedge | Stout rectangle about 220 × 125 × 80 mm, with strap anchors, four rubber feet under the base and four on the back | Low and wide so it is hard to knock over; the back feet keep it steady as a games board |
 | Speaker | 50 mm, 3 W | Larger, to suit the bigger case | Music needs more than speech does, and an 80 mm deep case leaves room for a bigger speaker and air behind it |
 
-### The screen: an open question
+### The screen: chosen for the first boards
 
-The screen is not chosen. It needs more research before a part is picked. It has to do three things that pull against each other: read easily in daylight like paper, stay readable at the bedside at night, and redraw fast enough for a Pong ball.
+**Decided: a 2.4 inch colour TFT with a backlight that dims.** It is fast enough for Pong, readable at night and costs about US$2.50. A Sharp memory LCD, the paper-like option, costs about seven times as much and was out of stock. The TFT is the weakest of the three in daylight, so it gets a daylight test with Pop; the board only has a connector for the screen, so a different panel can replace it later.
+
+The screen has to do three things that pull against each other: read easily in daylight like paper, stay readable at the bedside at night, and redraw fast enough for a Pong ball.
 
 What is known so far:
 
@@ -198,17 +223,17 @@ What is known so far:
 | Sharp Memory LCD with a front light | Nearly | Yes | Needs a front light | Sizes available, whether a front light can be found or made, and how fast an ESP32 can drive it with voice running |
 | Ordinary backlit LCD | No | Yes | Yes | Whether it can be dimmed enough for the bedside, and how it reads in daylight |
 
-Other screen types may suit better. Research should start from the three needs above, not from this list.
+If the TFT fails the daylight test, the search starts again from the three needs above, not from this list.
 
 ## Where it fits in the roadmap
 
-This is not Stage 1 or Stage 2, and it does not change them. It sits with the kids' mini phone as a later idea. Stages 1 and 2 should not close the door on it: keep the C core free of any one screen or knob layout, and keep "modes" in mind when writing the radio's user interface.
+Stage 1 on the R1s is unchanged. Stage 2 is now this radio: first wired from modules (2a), then on the custom board (2b). The order of work is in [Design Decisions](Design%20Decisions.md#the-order-of-work). Keep the C core free of any one screen or knob layout.
 
-The cheap way to learn whether it is worth doing:
+The cheap tests still come first:
 
 1. **Simulator first.** The three knobs, the modes, Pong and the chess clock are now in the [site's simulator](https://popsradio.chrisbarlow.nz/#try). Sit with Pop in front of it on a tablet and see whether he wants more than Talk, and whether the Mode knob confuses him.
 2. **Printed knobs.** Print knobs at three sizes and let him choose.
-3. **Research the screen**, then breadboard the best candidates with Pong and voice running on an ESP32-S3.
+3. **Breadboard the screen** with Pong and voice running on an ESP32-S3, and try it in daylight and at the bedside.
 4. **Chess clock in a rest home.** A single radio as a chess clock and FM radio in a lounge, as a no-risk pilot with an activities coordinator.
 
 ## Open questions
@@ -216,7 +241,8 @@ The cheap way to learn whether it is worth doing:
 - **Does Pop want it?** The whole case rests on more modes adding value without adding confusion. The simulator test answers this before any hardware.
 - **Tap or hold.** How long a press counts as a tap, and whether a slow palm on the chess clock ever starts talking by mistake. The ready chirp is the line: nothing is sent before it.
 - **Clicks or smooth?** The knobs turn freely; whether they click at each step is still open. Clicks help when choosing, smooth turning suits Pong.
-- **Which screen.** Unanswered and needs more research: paper-like in daylight, readable at night, fast enough for games. See [The screen](#the-screen-an-open-question).
+- **Is the TFT good enough in daylight?** The screen is chosen but not tested. See [The screen](#the-screen-chosen-for-the-first-boards).
+- **Mesh range and battery.** How far the mesh reaches from inside the case, and how long the cell lasts with it always on.
 - **Is it steady enough?** Check it stays put when the orange button is pressed hard, a side knob is turned with one hand, or the strap is tugged. The size is my estimate and should be tried as a weighted cardboard or printed mock-up.
 - **FM reception indoors** with the antenna in the strap, and what happens when the strap is folded behind for games.
 - **Apps and voice together.** Can the ESP32-S3 run a sandboxed game and live voice at once? Voice keeps priority.

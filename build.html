@@ -1,0 +1,387 @@
+<!doctype html>
+<html lang="en-NZ">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pop's Radio: the board, the costs and the mesh</title>
+<meta name="description" content="How Pop's Radio is built: one custom board, what it costs at 100 and 1,000, kits and built radios, and the always-on mesh that passes messages when the internet is down.">
+<link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+<link rel="canonical" href="https://popsradio.chrisbarlow.nz/build.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Pop's Radio">
+<meta property="og:title" content="Pop\'s Radio: the board, the costs and the mesh">
+<meta property="og:description" content="How Pop's Radio is built: one custom board, what it costs at 100 and 1,000, kits and built radios, and the always-on mesh that passes messages when the internet is down.">
+<meta property="og:url" content="https://popsradio.chrisbarlow.nz/build.html">
+<meta property="og:image" content="https://popsradio.chrisbarlow.nz/images/social-preview.jpg">
+<meta property="og:image:secure_url" content="https://popsradio.chrisbarlow.nz/images/social-preview.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="A sage green radio with a big orange button on top, on a bedside table, beside the words Hold to talk. Let go to listen.">
+<meta property="og:locale" content="en_NZ">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Pop\'s Radio: the board, the costs and the mesh">
+<meta name="twitter:description" content="How Pop's Radio is built: one custom board, what it costs at 100 and 1,000, kits and built radios, and the always-on mesh that passes messages when the internet is down.">
+<meta name="twitter:image" content="https://popsradio.chrisbarlow.nz/images/social-preview.jpg">
+<script>
+/* Apply saved look before the page draws, so it doesn't flash. */
+(function () {
+  var r = document.documentElement;
+  try {
+    var t = localStorage.getItem("wt-theme"), z = localStorage.getItem("wt-size");
+    if (t) r.dataset.theme = t;
+    if (z) r.dataset.size = z;
+  } catch (e) {}
+})();
+</script>
+<!-- Google tag: counts visits, and which parts of the simulator get used -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-KL1QLNWTNE"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-KL1QLNWTNE');
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,800;1,9..144,600&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="mark" href="index.html"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M13 44V20a4 4 0 0 1 4-4h30a4 4 0 0 1 4 4v24z" fill="#ea6a1f"/><path d="M13 36h38v8H13z" fill="#b84d10"/><rect x="4" y="42" width="56" height="14" rx="2" fill="#1d1d1d"/></svg>Pop's Radio</a>
+    <nav class="nav" aria-label="On this page">
+      <a href="index.html">Home</a>
+      <a href="#decided">Decided</a>
+      <a href="#board">The board</a>
+      <a href="#costs">Costs</a>
+      <a href="#kits">Kits</a>
+      <a href="#mesh">Mesh</a>
+      <a href="#prove">Still to prove</a>
+      <a href="#shapes">Other shapes</a>
+    </nav>
+    <div class="controls">
+      <div class="seg" role="group" aria-label="Light or dark">
+        <button type="button" id="themeBtn" aria-label="Switch to dark"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path id="themeIcon" d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg> <span id="themeLbl">Dark</span></button>
+      </div>
+      <div class="seg" role="group" aria-label="Text size">
+        <button type="button" data-set-size="0" aria-label="Normal text">A</button>
+        <button type="button" data-set-size="1" aria-label="Large text" class="a2">A</button>
+        <button type="button" data-set-size="2" aria-label="Largest text" class="a3">A</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<div class="wrap page-head">
+  <span class="tag">The detail</span>
+  <h1>The board, the costs and the mesh</h1>
+  <p class="lede">The <a href="index.html">front page</a> says what Pop's Radio is. This page says how it's made, what it costs, how people get one, and how the mesh works.</p>
+  <p class="small muted">Nothing is built yet. Prices are November 2026 list prices and estimates, not quotes. The full working is in the <a href="https://github.com/cgbarlow/popsradio/blob/main/reports/Custom%20PCB%20and%20cost-down.md">custom board report</a>.</p>
+</div>
+
+<!-- Decided -->
+<section id="decided">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>What's decided</h2>
+      <p>These were ideas until 16 November 2026. Now they are the plan. Decided doesn't mean tested: each one has a test further down that could change it.</p>
+    </div>
+    <div class="scroll">
+      <table class="cmp">
+        <thead><tr><th>Decision</th><th>What it means</th><th>Before</th></tr></thead>
+        <tbody>
+          <tr><td>One radio</td><td>The stout green one: an orange button, a switch and a volume knob on top, a big knob on each side, a strap</td><td>One of four shapes</td></tr>
+          <tr><td>Five modes</td><td>Talk, FM radio, internet radio, Play and Mesh. The family chooses which appear</td><td>Talk, plus ideas</td></tr>
+          <tr><td>One custom board</td><td>A main board and three small ones, assembled and tested by the factory</td><td>Hand-wired modules</td></tr>
+          <tr><td>The screen</td><td>A 2.4 inch colour screen with a backlight that dims. It plugs in, so it can be changed</td><td>Not chosen</td></tr>
+          <tr><td>A mesh radio on its own chip</td><td>A second small chip runs Meshtastic, unchanged, beside the main chip</td><td>Three options</td></tr>
+          <tr><td>The mesh is always on</td><td>Every Pop's Radio passes messages along, on its stand or off it</td><td>Only when Wi-Fi was down</td></tr>
+          <tr><td>Kits and built radios</td><td>Buy the boards ready-made and add a case, or buy it finished. The plans stay free</td><td>One line in a table</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="small muted aside">The full list, with reasons, is in <a href="https://github.com/cgbarlow/popsradio/blob/main/Design%20Decisions.md">Design Decisions</a>.</p>
+  </div>
+</section>
+
+<!-- The board -->
+<section class="alt" id="board">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>The board</h2>
+      <p>The case has a knob on the left, a knob on the right and controls on top. One board can't reach three faces, so there are four, cut from one panel and joined by three short cables.</p>
+    </div>
+    <figure>
+      <a class="wide" href="images/build-compare.svg"><img src="images/build-compare.svg" alt="Two drawings of the same radio. Left: sixteen separate modules joined to a small board by a tangle of hand-soldered wires. Right: one main board holding both radio chips, the audio, FM, tilt sensor, charger and battery holder, joined by three short cables to a top board and two small knob boards." width="1200" height="640"></a>
+      <figcaption class="fig"><b>Fig. 1</b> The same radio, two ways. A drawing: the board isn't designed yet.</figcaption>
+    </figure>
+    <div class="scroll">
+      <table class="cmp">
+        <thead><tr><th>What it does</th><th>The part</th><th>Why this one</th></tr></thead>
+        <tbody>
+          <tr><td>Voice, Wi-Fi, the screen, updates</td><td>ESP32-S3 module</td><td>Already approved as a radio module, and the same chip the hand-wired build uses</td></tr>
+          <tr><td>The mesh</td><td>Heltec HT-CT62</td><td>Runs Meshtastic as it comes, on its own chip, so the mesh stays on while Pop talks</td></tr>
+          <tr><td>Hearing and speaking</td><td>Audio codec, a tiny microphone, a 3 W amplifier</td><td>The amplifier runs from a 5 V supply, so it's as loud on battery as on the stand</td></tr>
+          <tr><td>FM radio</td><td>RDA5807M tuner</td><td>Plays through the same audio chip. Its aerial is a wire in the strap</td></tr>
+          <tr><td>Lying on its back for games</td><td>Tilt sensor</td><td>Knows upright from flat</td></tr>
+          <tr><td>The screen</td><td>2.4 inch colour TFT, 320 × 240</td><td>Quick enough for Pong, readable at night, about a seventh of the price of a paper-like screen</td></tr>
+          <tr><td>Three knobs</td><td>Rotary encoders that also press</td><td>Turn freely with no end stops</td></tr>
+          <tr><td>The orange button</td><td>A printed cap over a small switch</td><td>Cheaper than an arcade button. The feel gets tried with Pop</td></tr>
+          <tr><td>Power</td><td>One 18650 cell, a charger that runs the radio while it charges, USB-C</td><td>It lives on a stand, so it must charge and play at once</td></tr>
+          <tr><td>Homes with no Wi-Fi</td><td>A space for a mobile-data modem</td><td>Left empty unless needed</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <h3 class="sub">How it adds up</h3>
+    <div class="stats">
+      <div class="stat"><div class="n">0.1 to 0.2 s</div><div class="k">Delay on Wi-Fi</div><p>Mouth to ear, through the service and back. A little more on mobile data. Emergency-service radio networks measure about 0.4 s.</p></div>
+      <div class="stat"><div class="n">about 3 days</div><div class="k">Off its stand</div><p>With the mesh always on and 20 minutes of talk a day. Enough for most power cuts. It lives on its stand the rest of the time.</p></div>
+      <div class="stat"><div class="n">NZ$0</div><div class="k">Subscription, ever</div><p>Running a channel costs a dollar or two a year. Each built set comes with its channels, paid for life.</p></div>
+      <div class="stat"><div class="n">200 MB</div><div class="k">Data, per month</div><p>For 20 minutes a day. Only matters on a SIM card; at home it uses the Wi-Fi.</p></div>
+    </div>
+    <p class="small muted aside">Estimates from our research. Real figures get measured on the bench.</p>
+  </div>
+</section>
+
+<!-- Costs -->
+<section id="costs">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>What it costs to make</h2>
+      <p>A custom board is worth doing mostly for the hours and the reliability. The parts only get a little cheaper.</p>
+    </div>
+    <div class="two">
+      <div>
+        <h3>One kit, landed in New Zealand</h3>
+        <div class="scroll">
+          <table class="cmp tight">
+            <thead><tr><th></th><th>100 made</th><th>1,000 made</th></tr></thead>
+            <tbody>
+              <tr><td>Parts</td><td class="num">US$22.84</td><td class="num">US$18.41</td></tr>
+              <tr><td>Board and assembly</td><td class="num">US$4.20</td><td class="num">US$2.70</td></tr>
+              <tr><td>Freight</td><td class="num">US$1.00</td><td class="num">US$0.40</td></tr>
+              <tr class="sum"><td>In NZ$, with GST</td><td class="num">about $58</td><td class="num">about $45</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="small muted fineprint">Before the case, the speaker and the battery cell. The mesh chip is the dearest part, about 30% of the parts.</p>
+      </div>
+      <div>
+        <h3>Against wiring it by hand</h3>
+        <div class="scroll">
+          <table class="cmp tight">
+            <thead><tr><th>Build</th><th>Each</th><th>Soldering</th></tr></thead>
+            <tbody>
+              <tr><td>Modules, bare mesh chip</td><td class="num">about $61</td><td>2 to 3 hours</td></tr>
+              <tr><td>Modules, ready-made mesh board</td><td class="num">about $103</td><td>2 to 3 hours</td></tr>
+              <tr><td>Custom board, 100</td><td class="num">about $58</td><td>None</td></tr>
+              <tr><td>Custom board, 1,000</td><td class="num">about $45</td><td>None</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="small muted fineprint">At 100 the board saves about NZ$3 a radio and all the soldering. At 1,000 it saves about NZ$16, a quarter. Against the ready-made mesh board it saves more than half.</p>
+      </div>
+    </div>
+    <h3 class="sub">Where the savings come from</h3>
+    <div class="stats">
+      <div class="stat"><div class="n">NZ$13.60</div><div class="k">Making 1,000, not 100</div><p>The biggest single saving, and it needs the cash up front.</p></div>
+      <div class="stat"><div class="n">NZ$12.50</div><div class="k">No cell in the box</div><p>Lithium cells are awkward to air-freight and easy to buy here.</p></div>
+      <div class="stat"><div class="n">NZ$31</div><div class="k">An ordinary screen</div><p>Against a paper-like one. It glows, so it gets a daylight test with Pop.</p></div>
+      <div class="stat"><div class="n">2 to 3 hours</div><div class="k">No wiring</div><p>Per radio. 100 radios by hand is 200 to 300 hours.</p></div>
+    </div>
+    <p class="small muted aside">One saving not taken: leaving the mesh chip off would save about NZ$14 a radio. It stays on every radio, because a mesh needs radios.</p>
+  </div>
+</section>
+
+<!-- Kits -->
+<section class="alt" id="kits">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>How people get one</h2>
+      <p>Three ways, from most work to least. All three end up as the same radio, on the same channels and the same mesh.</p>
+    </div>
+    <div class="scroll">
+      <table class="cmp">
+        <thead><tr><th></th><th>The plans</th><th>A kit</th><th>A built radio</th></tr></thead>
+        <tbody>
+          <tr><td>Who it's for</td><td>Makers building for their own family</td><td>Families who can use a screwdriver, schools and community workshops</td><td>Everyone else</td></tr>
+          <tr><td>What you get</td><td>Parts list, board files, a case to print, the firmware</td><td>All four boards assembled, tested and loaded, the screen, cables, both antennas, a setup card</td><td>A finished radio, charged and paired</td></tr>
+          <tr><td>What you add</td><td>Everything</td><td>A case (print ours, or buy it printed), a speaker and a battery cell</td><td>Nothing</td></tr>
+          <tr><td>Soldering</td><td>2 to 3 hours</td><td>None</td><td>None</td></tr>
+          <tr><td>Price</td><td>Free. Parts from about NZ$61</td><td>About NZ$89 to 99 for the first 100, towards NZ$79 at 1,000</td><td>Not set yet</td></tr>
+          <tr><td>Channels</td><td>Run your own service, or buy channels</td><td>Bought from the price list, from NZ$35 once</td><td>Come with it, paid for life</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="notes rules">
+      <div><h4>The plans stay free</h4><p>For anyone building for their own family. Selling radios or kits needs a <a href="https://github.com/cgbarlow/popsradio/blob/main/COMMERCIAL.md">licence</a> from us.</p></div>
+      <div><h4>No subscription for the radio</h4><p>Money comes from a margin on kits and built radios, extra channels, and the family app.</p></div>
+      <div><h4>Not for sale yet</h4><p>Prices are suggestions. A radio has to be tested and declared before it can be sold here, and that comes before a big batch.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Mesh -->
+<section id="mesh">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>The mesh</h2>
+      <p>A second radio in every Pop's Radio, on 915 MHz. It needs no internet, and reaches much further than Wi-Fi. Radios in range pass short text messages to each other, hop by hop. It is always on, and every radio takes part.</p>
+    </div>
+    <figure>
+      <a class="wide" href="images/mesh-map.svg"><img src="images/mesh-map.svg" alt="A simple map of eleven houses, each with a Pop's Radio. Dashed lines join radios in range of each other. With the internet down, the message I'm OK travels from Pop's house to Chris's house in three hops, through two neighbours' radios." loading="lazy" width="1200" height="680"></a>
+      <figcaption class="fig"><b>Fig. 2</b> How it might look. A drawing, not a coverage map.</figcaption>
+    </figure>
+    <div class="two sub">
+      <div>
+        <h3>What it does</h3>
+        <ul class="plain">
+          <li><b>Messages when the internet is down.</b> A short text from the family shows in big letters, with a chime.</li>
+          <li><b>"I'm OK" from Pop.</b> In Mesh mode the right-hand knob picks a ready-made message and a press sends it.</li>
+          <li><b>A link for the neighbours.</b> It passes other people's messages along, whether or not its own family uses the mesh.</li>
+        </ul>
+        <h3>What it doesn't</h3>
+        <ul class="plain">
+          <li><b>Carry live voice.</b> The mesh is far too slow. Hold to talk still needs Wi-Fi or mobile data.</li>
+          <li><b>Promise delivery.</b> A message needs a chain of radios between the two homes. Sometimes there won't be one.</li>
+          <li><b>Replace 111.</b> It is not an emergency service.</li>
+          <li><b>Listen.</b> The mesh chip has no wire to the microphone.</li>
+        </ul>
+      </div>
+      <div>
+        <h3>How it's set</h3>
+        <div class="scroll">
+          <table class="cmp tight">
+            <tbody>
+              <tr><td>On or off</td><td>Always on, on the stand and on battery</td></tr>
+              <tr><td>Other people's messages</td><td>Passed along, never shown</td></tr>
+              <tr><td>The family's messages</td><td>On the family's own channel, with its own key</td></tr>
+              <tr><td>Location</td><td>Never sent. There is no GPS on the board</td></tr>
+              <tr><td>Name on the mesh</td><td>A nickname, not Pop's real name</td></tr>
+              <tr><td>Kids' mini phone</td><td>No mesh chip. No strangers, ever</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <h3 class="sub">What always on costs</h3>
+    <div class="notes rules">
+      <div><h4>Battery</h4><p>About 3 days off the stand, against about 13 with the mesh off. Both are estimates. It mostly matters in a power cut, which is when the mesh matters too.</p></div>
+      <div><h4>About NZ$14 a radio</h4><p>The mesh chip and its antenna are the dearest parts on the board.</p></div>
+      <div><h4>A busier mesh</h4><p>Many new radios in one city can crowd the channel. We match the local settings, and talk to the local mesh group before a big batch.</p></div>
+    </div>
+    <p class="small muted aside">It works with <a href="https://meshtastic.org/">Meshtastic</a>, which is open-source. We call the feature "Mesh" and ship Meshtastic's own software, unchanged, on its own chip.</p>
+  </div>
+</section>
+
+<!-- Still to prove -->
+<section class="alt" id="prove">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Still to prove</h2>
+      <p>Any of these could send a decision back to the drawing board.</p>
+    </div>
+    <div class="scroll">
+      <table class="cmp">
+        <thead><tr><th>The test</th><th>What it could change</th></tr></thead>
+        <tbody>
+          <tr><td>Pop in front of the simulator, then a hand-wired radio</td><td>Whether more than Talk helps him or confuses him</td></tr>
+          <tr><td>The screen in daylight and by the bed</td><td>Which screen</td></tr>
+          <tr><td>The printed button cap under Pop's palm</td><td>The button</td></tr>
+          <tr><td>Battery life with the mesh always on</td><td>Always on</td></tr>
+          <tr><td>Mesh range from inside the case, inside a house</td><td>Whether the antenna can stay inside</td></tr>
+          <tr><td>FM with the aerial in the strap</td><td>Whether FM stays</td></tr>
+          <tr><td>A real quote from the board maker</td><td>Every price on this page</td></tr>
+          <tr><td>Radio testing in the 915 MHz band, and the regulator's view on kits</td><td>When kits can be sold</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="small muted aside">Radio testing is estimated at US$3,000 to 8,000 for a product built on approved modules. Over 100 kits that is NZ$54 to 145 each; over 1,000 it is NZ$5 to 15. So the first 100 are a trial, and certification comes before the bigger batch.</p>
+  </div>
+</section>
+
+<!-- Other shapes -->
+<section id="shapes">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Other shapes we looked at</h2>
+      <p>These came first: one knob, a small screen and Wi-Fi only. They are generated concept pictures. Tap one to see it full size.</p>
+    </div>
+    <div class="shapes four">
+      <figure class="shape">
+        <a href="images/bedside-radio.jpg"><div class="pic"><img src="images/bedside-radio_sml.jpg" alt="Sage green wedge-shaped tabletop radio with an orange button on top, a grille, a small screen, one knob and a toggle switch" loading="lazy" width="805" height="1000"></div></a>
+        <figcaption><h3>The first bedside radio</h3><p>Where we started: one knob and a toggle switch on a sloped front.</p></figcaption>
+      </figure>
+      <figure class="shape">
+        <a href="images/classic-handheld.jpg"><div class="pic"><img src="images/classic-handheld_sml.jpg" alt="Cream handheld walkie-talkie with grille, screen, big orange button, a knob on top and a toggle switch on the side" loading="lazy" width="805" height="1000"></div></a>
+        <figcaption><h3>Classic handheld</h3><p>The walkie-talkie shape everyone already knows.</p></figcaption>
+      </figure>
+      <figure class="shape">
+        <a href="images/pocket-pebble-front.jpg"><div class="pic"><img src="images/pocket-pebble-front_sml.jpg" alt="Navy pebble-shaped radio in a hand, front view, with a slide switch on the edge" loading="lazy" width="805" height="1000"></div></a>
+        <figcaption><h3>Pocket pebble</h3><p>Small enough for a pocket. The knob is a ring around the button.</p></figcaption>
+      </figure>
+      <figure class="shape">
+        <a href="images/pocket-pebble-back.jpg"><div class="pic"><img src="images/pocket-pebble-back_sml.jpg" alt="Back of the pebble radio, showing the belt clip and lanyard loop" loading="lazy" width="805" height="1000"></div></a>
+        <figcaption><h3>The pebble's back</h3><p>A clip for a belt and a loop for a lanyard.</p></figcaption>
+      </figure>
+    </div>
+    <h3 class="sub">The parts of that first radio</h3>
+    <div class="two">
+      <figure>
+        <a class="wide" href="images/parts-layout.jpg"><img src="images/parts-layout_sml.jpg" alt="Thirteen numbered parts laid out on a grey mat, ending with a chrome toggle switch" loading="lazy" width="1000" height="558"></a>
+        <figcaption class="fig"><b>Fig. 3</b> Thirteen parts for the one-knob radio. A generated reference picture.</figcaption>
+      </figure>
+      <p>That simpler radio came to about NZ$35 to 50 in parts. The radio we're building now has three knobs, a bigger screen, FM, a tilt sensor, a bigger battery and the mesh radio, which is why its parts list is longer. New pictures of every part, and of the custom board, are still to be made; the <a href="https://github.com/cgbarlow/popsradio/blob/main/Walkie-Talkie%20Image%20Prompts.md">prompts</a> are written.</p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <ul>
+      <li><a href="index.html">Home, and the simulator</a></li>
+      <li><a href="https://github.com/cgbarlow/popsradio/blob/main/Design%20Decisions.md">Design decisions</a></li>
+      <li><a href="https://github.com/cgbarlow/popsradio/blob/main/reports/Custom%20PCB%20and%20cost-down.md">Custom board report</a></li>
+      <li><a href="https://github.com/cgbarlow/popsradio/blob/main/Pop's%20Radio%20as%20a%20Platform.md">The radio as a platform</a></li>
+      <li><a href="https://github.com/cgbarlow/popsradio/blob/main/Walkie-Talkie%20Beyond%20the%20R1%20Minimum%20Hardware.md">ESP32 hardware research</a></li>
+      <li><a href="https://github.com/cgbarlow/popsradio/blob/main/Rabbit%20R1%20Walkie-Talkie%20Research%20and%20Design.md">R1 research and design</a></li>
+      <li><a href="https://github.com/cgbarlow/popsradio/blob/main/Walkie-Talkie%20Service%20Design.md">Service design</a></li>
+      <li><a href="https://github.com/cgbarlow/popsradio/blob/main/reports/NZ%20addressable%20market%20and%20opportunities.md">NZ market report</a></li>
+      <li><a href="https://github.com/cgbarlow/popsradio">Source on GitHub</a></li>
+    </ul>
+    <p>A family project in New Zealand. Free to build for your own family.</p>
+    <p>This site counts visits with Google Analytics.</p>
+    <p>Free for non-commercial use. Code under <a href="https://github.com/cgbarlow/popsradio/blob/main/LICENSE">PolyForm Noncommercial 1.0.0</a>; documents and images under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a>. For commercial use, see <a href="https://github.com/cgbarlow/popsradio/blob/main/COMMERCIAL.md">commercial licensing</a>.</p>
+  </div>
+</footer>
+
+<script>
+const $ = id => document.getElementById(id);
+const root = document.documentElement;
+function save(k, v) { try { localStorage.setItem(k, v); } catch (e) {} }
+function isDark() { return root.dataset.theme ? root.dataset.theme === "dark" : matchMedia("(prefers-color-scheme: dark)").matches; }
+function paintControls() {
+  const sz = root.dataset.size || "0";
+  document.querySelectorAll("[data-set-size]").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.setSize === sz)));
+  const d = isDark();
+  $("themeLbl").textContent = d ? "Light" : "Dark";
+  $("themeBtn").setAttribute("aria-label", d ? "Switch to light" : "Switch to dark");
+  $("themeIcon").setAttribute("d", d
+    ? "M12 4V2M12 22v-2M4 12H2M22 12h-2M5.6 5.6 4.2 4.2M19.8 19.8l-1.4-1.4M5.6 18.4l-1.4 1.4M19.8 4.2l-1.4 1.4M12 17a5 5 0 1 0 0-10 5 5 0 0 0 0 10z"
+    : "M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z");
+}
+document.querySelectorAll("[data-set-size]").forEach(b => b.addEventListener("click", () => { root.dataset.size = b.dataset.setSize; save("wt-size", b.dataset.setSize); paintControls(); }));
+$("themeBtn").addEventListener("click", () => { const t = isDark() ? "light" : "dark"; root.dataset.theme = t; save("wt-theme", t); paintControls(); });
+matchMedia("(prefers-color-scheme: dark)").addEventListener("change", paintControls);
+paintControls();
+</script>
+</body>
+</html>

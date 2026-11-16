@@ -1,92 +1,91 @@
 ---
-created: 2026-11-15
+created: 2026-11-16
 council-type: standalone
 ---
 
 # Council Report
 
-Scope: a revision of `index.html` to lead with the platform radio. Read in full: `index.html` (882 lines), the platform brief, the platform image prompts and the README. Looked at: the five new pictures (bedside, blueprint, chess clock, Pong, FM in the garden).
+Scope: lock the design choices that were ideas, per the [cost-down report](../reports/Custom%20PCB%20and%20cost-down.md) and its option C (a co-processor for Meshtastic), with the mesh always on and every radio taking part; update the docs and the site to match. Read in full: the cost-down report, the README, the image prompts, `index.html`. Read in part: the platform brief, the service design, the Stage 2 doc, COMMERCIAL.md.
+
+The Council's advice was acted on in the same session. What changed is listed at the end.
 
 ## Animal Perspectives
 
 ### Bear — Vision & Direction
-1. **The site still sells the old radio.** The hero picture, Fig. 1, the simulator drawing and the "Our pick for Grandad" badge are all the wedge with one knob. The word "platform" does not appear in `index.html` at all. The revision has one job: the stout green radio is *the* radio, and everything else supports it.
-2. **Keep the headline.** "Hold to talk. Let go to listen." is still the promise, and it is rule 1 of the platform brief. Talk comes first on the page; "and it does more" comes second. Do not let the games lead.
-3. **This puts the site ahead of the docs.** The brief calls the platform "a design exploration, not a locked decision", and the Stage 2 spec is still the one-knob wedge. Putting the new radio in the hero is a decision that it is now the radio we are building. Make that decision on purpose, not by swapping a picture.
-4. **A clearer page shape.** The radio, try it, what it does, how it talks, other shapes, how we get there, the card, questions. That is one story told once, with each section handing on to the next.
+1. **Three documents disagreed about what the radio is.** The platform brief called itself "a design exploration, not a locked decision", the README's Stage 2 was a one-knob radio for NZ$35 to 50, and the site said "the design we're exploring". One page now has to win. That is `Design Decisions.md`.
+2. **The headline does not move.** "Hold to talk. Let go to listen." The mesh is the second thing the radio does, not the first, and it cannot carry voice.
+3. **Always on changes what is being sold.** With the mesh asleep it is a feature. With it always on and passing messages along, every radio sold improves every other one. That is a network, and it is the strongest reason yet for a stranger to buy one.
+4. **Kits come before built radios.** A hundred kits cannot carry certification; a thousand can. The order of work should say so.
 
 ### Cat — Risk & Scope
-1. **The prices and battery figures belong to the old radio.** "About NZ$40 in parts", "about NZ$35 to 50" and "4 to 9 days" would sit under a radio with three knobs, an FM chip, a bigger screen and a battery that the brief says is "Not priced yet". Beside the new picture they overstate what we know. And "NZ$0 Subscription, ever" is still on the page; the last Council flagged it and it has not moved.
-2. **The pictures promise untested things.** Pong needs a screen that has not been chosen. FM needs an antenna in a strap that has not been tried. The site already has a "design proposal" tag for PUSH / OPEN; the new modes need the same honesty.
-3. **"NURSE" is on the screen in the hero.** To a family that reads as a call button. "This is not an emergency alarm" is far down the page, in the card and the first question. It needs to be near the picture, and the questions need a line about the Nurse channel.
-4. **Three of the five pictures have faults.** The chess picture shows part of two faces, and you asked for none. The Pong picture shows the radio standing upright, not on its back, and a child's face. The blueprint has garbled words in its title block, "MODEL: CR-01", a filled-in screen, and repeated callout numbers (two 1s, two 3s, three 6s) that cannot match any key.
-5. **The pictures and the brief disagree.** The chess picture shows the mode tabs with PLAY highlighted; the brief says games use the whole screen. The Pong picture shows upright play; the brief says on its back. One of each pair has to change before both are published.
+1. **Always on overrules the report's own advice.** The report recommended a quiet node, on only when docked or when Wi-Fi was down. Always on takes the battery from about 13 days to about 3, and the 3 rests on an estimated 30 mA. Nothing is measured.
+2. **Hundreds of relaying radios in a busy city mesh.** The relay report says Wellington's mesh is already busy. Arriving uninvited could sour the people whose mesh this depends on.
+3. **"Resilience" will be read as a safety promise.** A message needs a chain of radios and a mesh radio at the family's end. On day one there are two radios. The site must say best efforts, text only, not 111, every time the mesh is mentioned.
+4. **A price is now public before a quote exists.** NZ$89 to 99 rests on list prices, an estimated HT-CT62 volume price, and no certification. Kits probably count as supply to the regulator.
+5. **The serial link is the thinnest part.** Text mode reaches only the primary channel, and anything richer waits on legal advice about GPL protobufs. The HT-CT62's serial pins are unconfirmed.
 
 ### Owl — Process & Structure
-1. **Nine sections and no way to move between them.** The top bar holds only Dark and A A A. Four or five anchor links would make the page feel half as long.
-2. **Every section says its name twice.** A tag and then a heading: "Try it / Have a go", "Parts / What's inside", "Questions / Questions". One label each is tighter and loses nothing.
-3. **One section is a third of the page.** "Two ways to talk" has 573 of the 1,642 words in the body, 35%: two cards, a table, eight numbered notes and a proposal box. Keep the cards and the table. Fold the eight notes into one disclosure, like the Questions.
-4. **Housekeeping that reads as polish.** There are 18 inline `style` attributes; move them to classes. The notes put `h3` under `h3`. Only two pictures have "Fig." captions; number them all. The new pictures are 350 to 510 KB at 1611 × 2000 and need `_sml` versions like the others, with width and height set.
-5. **Order of work.** Pictures in, then hero and shapes, then copy, then the simulator. The simulator is separable and should go last.
+1. **A decision register with a tie-break rule.** Ten numbered decisions, what each replaced, and where the detail lives. Other documents get a dated note at the top, not a rewrite.
+2. **Keep the stage numbers stable.** Stage 2 splits into 2a (modules) and 2b (custom board), so Stages 3 and 4 keep their meaning in the service design.
+3. **The home page must not grow.** Two new topics go in; the other shapes, the old parts picture and the numbers move to a second page. Shared styles then belong in one stylesheet.
+4. **Pictures are a dependency.** The two parts pictures cannot be made here. The prompts need fixed file names so the pictures drop in, and the site needs honest drawings in the meantime.
+5. **Left behind on purpose:** the simulator has no Mesh mode and the printed card has no mesh line.
 
 ### Puppy — Opportunities & Momentum
-1. **These pictures are the best thing the project has made.** The bedside picture makes it look real. The chess picture tells the whole platform story without a word of copy.
-2. **A playable Pong, right on the page.** Two side knobs, two keys each. The brief's first roadmap step is "Simulator first: add the three knobs, the modes and Pong, and sit Grandad in front of it." The site revision *is* that test.
-3. **The mode bar is a gift to the simulator.** Turn Mode and the highlight moves along TALK, FM, NET, PLAY. It is small to build and explains the idea in two seconds.
-4. **Quick wins.** Swap the hero picture. Make a new social preview. Add a strip of three pictures: chess, Pong, FM.
-5. **The blueprint as "Meet the radio".** Crop off the title block, and put a short key beside it in real text: orange button, switch, Volume, Mode, Select.
+1. **The mesh map is the easiest picture in the project to explain.** Eleven houses, three hops, "I'm OK".
+2. **A kit with no soldering is a school and workshop project.** That is a second market the built radio never reaches.
+3. **Quick win: Mesh in the simulator.** Turn Mode to MESH, pick "I'm OK", press. It would test the idea with Pop before any hardware.
+4. **One evening on a breadboard** proves or kills option C: an ESP32-S3 board, an HT-CT62, a serial line.
 
 ### Rabbit — Resources & Stakeholders
-1. **What we have and what is missing.** Five pictures are in hand. Two from the prompt set are not: the Talk list close up, and the radio carried with its strap over a shoulder. No current picture shows the strap being used.
-2. **Dependencies stay small.** One file, no build step, and Google Fonts as the only outside call. Keep all three. That simplicity is part of why the site is easy to trust and easy to change.
-3. **Things that hang off the hero picture.** `social-preview.jpg` and its alt text, the README's top picture and its three-shape table, and the printed card. They all still show or describe the wedge.
-4. **Who reads it now.** Grandad, at the simulator. Family, mostly on a phone, so the 560 px layout matters most. And, new with the chess picture, someone who runs activities in a rest home: they need one line and a link.
-5. **Missing links and numbers.** The footer links three documents; the platform brief and the market report are not among them. There is no parts list or price for the new radio to put on the page.
+1. **New people to talk to:** the local mesh group, RSM, Heltec, the board maker, and Meshtastic's trademark contact.
+2. **One supplier for the dearest part.** The HT-CT62 is about 30% of the parts bill and comes from Heltec alone.
+3. **Cash.** A hundred kits is about NZ$5,800 landed. A thousand is about NZ$45,000, before certification.
+4. **The built radio has no price** because the case and speaker have none.
+5. **Stock.** The ESP32-S3 module was out of stock at LCSC on 16 November.
 
 ### Wolf — Cohesion & Balance
-1. **The balance flips.** Today three shapes share the row as equals, with a badge on one. After the revision one design is large and three are small: the original bedside wedge, the handheld and the pebble, in one row titled something like "Other shapes we looked at". Keep them. They show the thinking.
-2. **The card is neglected, and it is the most Grandad-facing thing on the page.** It says "turn the knob" and "press the knob". There are three knobs now. It needs rewriting with the same care as the hero.
-3. **The simulator and the picture must change together.** The drawing has a lever switch on the front, one knob, a round grille and a black screen with one word. Shown under the new hero picture, it is a different radio. If the simulator cannot be redone in the same pass, say so on the page.
-4. **Slicker is not glossier.** The voice is the asset: plain words, "Grandad", "a concept picture". Keep Fraunces, the cream paper, the wooden frame and the mono captions. Tighten by removing repeats, not by restyling.
-5. **Room has to come from somewhere.** PUSH / OPEN takes 35% of the words. The new modes need space. Trimming the first is what pays for the second.
+1. **Pop against the neighbourhood.** Always on serves the mesh; three days of battery is what Pop pays. That is acceptable only because his radio lives on its stand. Say it plainly.
+2. **The card and the simulator are now behind the design.** They are the two things Pop actually touches.
+3. **The kids' mini phone keeps its promise.** No mesh chip, no strangers. Every radio takes part except that one.
+4. **Kit buyers pay for channels; built radios include them.** It is consistent with the service design, and it may still feel unfair. Watch for it.
+5. **Stage 1 is untouched,** and should be. The hack day plan and the R1 doc did not need a word changed.
 
 ## Consensus
 
-**Common themes.** Four things came up from more than one seat.
+**Common themes.**
 
-- **One radio leads.** Bear, Wolf and Puppy all want the stout green radio as the single hero, with the other three shapes kept but made small.
-- **The page still describes the wedge in at least seven places:** the hero picture and its facts, the simulator drawing, "What's on it", the shapes badge, the parts and prices, the battery figures, and the printed card. Swapping pictures alone would leave a page that contradicts itself.
-- **Tighter comes from removing repeats.** Owl and Wolf agree: add a small nav, one label per section, fold the long notes away, clear the inline styles. The look stays.
-- **Honesty labels.** Cat and Wolf both point at the same habit that makes the site trustworthy. It has to stretch to cover the new modes, the prices and the Nurse channel.
+- **One source of truth.** Bear and Owl both wanted a single page that wins, with the older documents pointing at it.
+- **Decided is not tested.** Cat, Wolf and Owl all asked that every locked decision name the test that could reopen it.
+- **Honesty about the mesh.** Text only, best efforts, not an emergency service, and a real battery cost.
+- **Keep the home page short.** Detail moves to a second page.
 
 **Key tensions.**
 
-- **Leading with the platform, against what is actually decided.** Bear and Puppy want the new radio up front. Cat notes it is unpriced, partly untested and not locked. These fit together if Talk is shown as the plan and FM, internet radio and games are shown as ideas being explored, under the same kind of tag PUSH / OPEN already carries.
-- **Simulator ambition against scope.** Puppy wants playable Pong; Owl and Cat want the simulator last and bounded. Two passes resolve it: first the new drawing, three knobs, the mode bar and Talk; then Pong and the chess clock.
-- **Pictures against the brief.** Tabs on the chess clock, and Pong played upright. In both cases the picture may be the better idea. That is yours to decide, not the Council's.
+- **Always on against battery and a busy mesh.** You decided always on. The Council records the cost (about 3 days, an extra NZ$14 a radio, more traffic) and the mitigations (it lives on its stand; default hop limit; talk to the local mesh first).
+- **Publishing a kit price against having no quote.** Resolved by calling it suggested, for a first batch, and saying nothing is for sale.
+- **A network story against the one-button promise.** Resolved by order: Talk first, mesh second, and the orange button never sends a mesh message.
 
-**Consensus.** The page is well made and well voiced, and it is about a radio you have moved on from. The revision is mostly an edit, not a redesign: one hero, one story, fewer repeats, and honest labels on what is new. The simulator is the only large piece of building, and it doubles as the first test in the platform brief.
+**Assessment.** The project now has one radio, one board and one plan, where yesterday it had a simple radio, a platform idea and a research report that did not agree. The price of that clarity is that several decisions are locked ahead of any measurement, and the always-on mesh is the boldest of them.
 
 ## Recommended Next Steps
 
-1. **Decide whether the platform radio is now the radio.** If yes, the site, the README and the Stage 2 spec all follow. If it is still an exploration, the site should say "the design we're exploring" and keep the old prices clearly tied to the simpler build.
-2. **Sort the pictures.** Add all five to `images/` with `_sml` versions. Crop the faces out of the chess picture. Crop the title block off the blueprint and drop its number key. Regenerate Pong, or decide upright play is fine and change the brief. Settle tabs or no tabs on the chess clock.
-3. **Restructure the page** to the outline below.
-4. **Rebuild the simulator in two passes:** the new radio with the mode bar and Talk first, then Pong and the chess clock.
-5. **Fix what hangs off it:** the card, the questions (Nurse, apps), the numbers, the footer links, the social preview and the README.
+1. **Breadboard the mesh chip.** An ESP32-S3 dev board and an HT-CT62 in text mode. Confirm the serial pins, and measure the current with the mesh always on.
+2. **Make the two parts pictures** from prompts 1a and 1b, and swap them in for the drawing.
+3. **Get real quotes:** the board maker for 10 and 100, and Heltec for the HT-CT62 at 1,000.
+4. **Two conversations before any sale:** RSM on whether a kit is supply, and the local mesh group on relaying radios.
+5. **Catch up what Pop touches:** Mesh mode in the simulator, a mesh line on the card, and a price for the case and speaker so the built radio can be priced.
 
-**Proposed outline.**
+## What changed in this session
 
-| # | Section | Now | After |
-| --- | --- | --- | --- |
-| | Top bar | Mark, Dark, A A A | Add a short nav: Try it, The radio, How it talks, Progress, Questions |
-| 1 | Hero | Wedge picture, two paragraphs, three facts | New bedside picture, one paragraph, three facts rewritten for the new radio, the 111 line close by |
-| 2 | Try it | Simulator of the wedge | Simulator of the new radio, with the mode bar |
-| 3 | The radio | (none) | New: cropped blueprint with a short key to the five controls, then Talk, FM, Net and Play as four small cards with the chess, Pong and FM pictures. The three new modes tagged as ideas being explored |
-| 4 | Two ways to talk | 573 words | Cards and table kept; the eight notes folded into one disclosure |
-| 5 | Other shapes | "Pick a shape", three equal cards | Three small cards: original bedside, handheld, pebble |
-| 6 | What's inside | Parts, prices, and a separate numbers section | Merged into one, labelled as the simpler build until the new radio is priced |
-| 7 | How we get there | Two stages | Same, with the platform shown as what comes after |
-| 8 | The card | One knob | Rewritten for three knobs |
-| 9 | Questions | Five | Add the Nurse channel and apps |
-| | Footer | Three document links | Add the platform brief and the market report |
+| File | Change |
+|---|---|
+| `Design Decisions.md` | New. Ten locked decisions, the mesh settings, kits and built radios, savings, order of work, and the tests still to pass |
+| `index.html` | Tags changed from ideas to decided; new mesh section with a map; new board, kits and prices section; plan now 1, 2a, 2b; three new questions. Other shapes, the old parts list and the numbers moved out |
+| `build.html` | New second page: decisions, the board, costs, kits, the mesh, what is still to prove, other shapes |
+| `site.css` | New. The styles both pages share |
+| `images/mesh-map.svg`, `images/build-compare.svg` | New drawings |
+| `Walkie-Talkie Image Prompts.md` | Prompt 1a (twenty module parts), 1b (the custom board kit), 1c (the mesh). The old prompt kept, folded away |
+| `reports/Custom PCB and cost-down.md` | Decision note; role, power and lever rows updated for always on |
+| `Pop's Radio as a Platform.md` | Locked; Mesh mode and section added; screen chosen; hardware priced |
+| `Walkie-Talkie Service Design.md`, `Walkie-Talkie Beyond the R1 Minimum Hardware.md`, `README.md` | Dated notes, stages, kits and links |

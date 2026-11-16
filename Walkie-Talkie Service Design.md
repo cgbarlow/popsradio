@@ -2,6 +2,8 @@
 
 Nov 15, 2026 · @Chris Barlow
 
+> **Updated 16 November 2026.** The service is unchanged. The radio it serves is now the platform radio on one custom board, sold as a kit or a built radio, with an always-on mesh radio that works beside this service, not through it. See [Design Decisions](Design%20Decisions.md).
+
 ## Summary
 
 **This locks the design for Stages 1 and 2 so building can start.** The radios talk through a serverless service on Cloudflare: Workers for the front door and one Durable Object per channel to pass sealed voice between members. There is no server to run, patch or scale by hand. The service stays blind: voice is encrypted on the radio and only opened on the other radios.
@@ -216,10 +218,13 @@ Everything a builder needs has a free option. The only thing anyone pays us for 
 
 | Item | Free | From us |
 |---|---|---|
-| Parts | Kit list with part numbers and suppliers (the Stage 2 doc) | Parts kit, tested to work together |
+| Parts | Parts list and board files, with part numbers and suppliers (the [cost-down report](reports/Custom%20PCB%20and%20cost-down.md)) | A kit: all four boards assembled, tested and loaded, with the screen, cables and antennas. No soldering. Or a built radio |
 | Case | Printable plans (STL and STEP files) | Printed case |
 | Firmware | Web flasher over USB-C | Loaded on a kit's board |
+| Speaker and battery cell | Buy locally | Not in the kit; fitted in a built radio |
 | Service | Run your own copy | Channels, from the same price list |
+
+**Kit or built.** A kit is suggested at NZ$89 to 99 for the first 100, towards NZ$79 at 1,000; channels are bought from the price list. A built radio comes with its channels paid for life, like any set. The detail is in [Design Decisions](Design%20Decisions.md#how-people-get-one).
 
 **Joining our service.** A newly flashed radio makes its own key pair and shows or speaks a claim code. The builder adds it to their channels in the store or the family app. From then on it signs in and gets updates like any radio we sold.
 
@@ -232,12 +237,12 @@ Everything a builder needs has a free option. The only thing anyone pays us for 
 | Stage | What | Notes |
 |---|---|---|
 | 1, now | Two R1s on the serverless service | Protocol spec, C core, laptop test client, channel service, R1 "radio" app, a week with Pop |
-| 2, next | Our own ESP32 radio | Firmware on the C core, signed automatic updates, setup over USB then Bluetooth, power, case |
+| 2, next | Our own ESP32 radio | The platform radio, wired from modules first (2a), then on one custom board as 10 boards and 100 kits (2b). Firmware on the C core, signed automatic updates, setup over USB then Bluetooth, power, case |
 | 3 | Family app for iOS and Android | Talk, join, care and setup. Android starts from the R1 app's codebase |
 | 4, if measured | Direct path | Peer-to-peer and a UDP path through TURN, only if trial data shows cost or delay needs it |
 | Later | Kids' mini phone | Below |
 
-**Kids' mini phone (later).** A smaller, cheaper unit built from the same parts for children, who can only reach the people their parents approve, like an old home phone. It uses the same service, C core, update system and no-subscription rule, and parents manage contacts from the family app. Tin Can's kids' landline shows the demand, and its Christmas outage shows why the scaling work comes first. A product for children brings extra duties: no strangers, ever; privacy rules for children's data; and toy and battery safety standards. Not started; noted so Stages 1 to 3 do not close the door on it.
+**Kids' mini phone (later).** A smaller, cheaper unit built from the same board, without the mesh chip, for children, who can only reach the people their parents approve, like an old home phone. It uses the same service, C core, update system and no-subscription rule, and parents manage contacts from the family app. Tin Can's kids' landline shows the demand, and its Christmas outage shows why the scaling work comes first. A product for children brings extra duties: no strangers, ever; privacy rules for children's data; and toy and battery safety standards. Not started; noted so Stages 1 to 3 do not close the door on it.
 
 ## Risks
 
