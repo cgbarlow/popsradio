@@ -105,13 +105,13 @@ In the right column, to the right of the white line, exactly five items in one t
 - A round black 57 mm loudspeaker with a paper cone, metal frame, and two short red and black wires.
 - One green cylindrical 18650 lithium cell, 65 mm long and 18 mm across.
 - A small dark green plug-in card, a plain rectangle about 57 x 25 mm, with a row of 8 short gold pins along each of its two long edges and no connectors on its short ends, carrying one small silver metal-shielded module and one tiny round gold antenna socket on its face; beside it, a short black stubby rubber antenna, about 50 mm long, on a thin grey cable with a tiny gold connector. The antenna lies right beside its card, inside the right column.
-- A second small dark green plug-in card with exactly the same rectangular outline, size and pin rows as item 11, carrying one larger flat silver metal-shielded module and a small metal SIM card holder; beside it, a short thin grey cable ending in a gold threaded antenna socket with a hex nut, and a black screw-on whip antenna about 110 mm long with a hinged elbow and a gold threaded base.
+- A second small dark green plug-in card with exactly the same rectangular outline, size and pin rows as the card above it, carrying one larger flat silver metal-shielded module and a small metal SIM card holder; beside it, a short thin grey cable ending in a gold threaded antenna socket with a hex nut, and a black screw-on whip antenna about 110 mm long with a hinged elbow and a gold threaded base.
 - A tiny square blue sensor board, about 25 x 25 mm, with one small black chip, joined to a short thin cable of four coloured wires with a small white plug on each end.
 
 Clean technical catalogue look, realistic scale between parts, neutral colours. The four circuit boards in the left area look like finished factory-made products of one matching set. No case or enclosure, no breadboard, no perforated board, no hookup wire, no solder, no text, numbers or part numbers printed anywhere, no brand logos. High resolution, at least 2000 pixels wide. Aspect ratio 16:9.
 ```
 
-**The numbers are added afterwards.** Generators could not keep thirteen numbered tags straight: three tries gave repeated and missing numbers. So the prompt asks for blank tags, and the numbers 1 to 13 are drawn on afterwards, in the order of the key below: left area first, reading across and down, then the right column from the top.
+**The numbers are added afterwards.** Generators could not keep thirteen numbered tags straight: every try gave repeated or missing numbers. So the prompt asks for blank tags, and the numbers 1 to 13 are drawn on afterwards, in the order of the key below: left area first, reading across and down, then the right column from the top.
 
 **Key to the numbers.**
 
