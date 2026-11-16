@@ -242,6 +242,8 @@ footer ul { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 8
 .casepic { display: block; margin: -24px -24px 20px; border-radius: var(--radius) var(--radius) 0 0; overflow: hidden; }
 .casepic img { display: block; width: 100%; height: auto; aspect-ratio: 5 / 4; object-fit: cover; object-position: 50% 70%; }
 .modes.three .mode p { margin: 0; font-size: 0.95rem; }
+.mode .plain { margin: 8px 0 0; font-size: 0.92rem; }
+.mode .plain li { margin-bottom: 4px; }
 #inside .cmp td:first-child { width: auto; }
 
 /* ============ Picture gallery ============ */

@@ -35,7 +35,7 @@ Locked means the design work stops going round in circles. It does not mean test
 | 23 | **Open to add to, not open to copy.** The socket page is published for anyone to make and sell cards. The radio's own design and firmware stay non-commercial | Everything non-commercial | [Research](../reports/Modular%20platform%20and%20base%20unit%20cost.md#licence) |
 | 24 | **A 4G hotspot, with a screw-on antenna.** With the 4G card fitted, the radio can share its mobile data over Wi-Fi, and a bigger antenna screws onto a socket on the case for homes with weak coverage. 5G comes later, in the same bay | 4G for the radio's own use only | [Below](#the-4g-hotspot) |
 | 25 | **"Up and about": a daily sign of life, in software.** The radio tells the family when it has first been used each day, and nudges them if it has not. Off until Pop agrees, switched on at the radio, and shared both ways | Battery, online and last seen only | [Below](#looking-out-for-pop) |
-| 26 | **Room sensors as plug-ins.** Temperature and humidity first. A presence radar only later, and only if a trial with Pop says it is welcome | No sensors beyond tilt | [Below](#looking-out-for-pop) |
+| 26 | **Sensors as plug-ins.** On the table: tilt, temperature and humidity, light, air quality, and a presence radar. Which are released first is not decided. The presence radar only if a trial with Pop says it is welcome | No sensors beyond tilt | [Below](#looking-out-for-pop) |
 | 27 | **Sensing the body is a different device.** Pop's Radio will not detect falls, measure breathing or heart rate, listen, watch, or send a location | Not stated | [Below](#looking-out-for-pop) |
 
 Not changed: the [service design](Walkie-Talkie%20Service%20Design.md), Stage 1 on the two R1s, hold to talk, PUSH / OPEN, encryption, no subscription for the hardware, and "this is not an emergency alarm".
@@ -65,7 +65,7 @@ Including GST, before the case, speaker and cell for the kit lines. List prices 
 |---|---|
 | **Card bay 1** (mikroBUS shape) | The mesh card. Or any of the 1,700 or so "Click" cards |
 | **Card bay 2** (mikroBUS shape, with a battery feed) | The 4G card, or a later 5G one. Or any Click card |
-| **Two sensor sockets** (Qwiic / STEMMA QT) | Sensors and small displays, on a cable. The tilt sensor is the first |
+| **Two sensor sockets** (Qwiic / STEMMA QT) | Sensors and small displays, on a cable. Which sensors come first is not decided |
 | **Badge socket and pin header** | Badge add-on cards, and jumper wires for experiments |
 | **Screw points in the case** | Somewhere to fix what was added |
 | **USB-C: Data** | A keyboard, a USB stick, a computer |
@@ -191,7 +191,7 @@ Including GST, before the case, speaker and cell for the kit lines. List prices 
 | Level | What it is | Decision |
 |---|---|---|
 | 1. Signs of life | Software only. "Up and about" the first time the radio is used each day; a nudge to the family if it has not been used by a time they set | **Build it** (25) |
-| 2. The room | Plug-in sensors. Temperature and humidity first; a presence radar later, after a trial with Pop | **Offer as plug-ins** (26) |
+| 2. The room | Plug-in sensors: tilt, temperature and humidity, light, air quality, and a presence radar. The order is not decided; the radar waits for a trial with Pop | **Offer as plug-ins** (26) |
 | 3. The body | Fall detection, breathing, heart rate, listening, cameras, location | **Not this device** (27) |
 
 **The rules, written from Pop's side.**
