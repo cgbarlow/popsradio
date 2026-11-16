@@ -174,9 +174,13 @@ Use the attached image as the reference for the radio. Show exactly the same rad
 | 5 | Screw posts | Somewhere to fix what you add |
 | 6 | Two USB-C ports, and an antenna socket | Power, and Data. The socket takes a screw-on 4G antenna |
 
+**The picture on the site.** Made from this prompt on 16 November 2026 and saved as `images/radio-open.jpg`. Its tags came out differently from the key above (two 2s, and 1 on the case corner), so the tinkerer's page has its own key written to match the picture. It also shows the mesh radio on the main board and leaves out the strap.
+
 **Getting the inside right.** Generators fill an open case with wires. If it comes out cluttered, add "almost empty inside, three flat cables only". If the outside changes, add "the outside of the radio matches the reference image exactly". To show the hotspot, add "a second card with a SIM holder is plugged into the second bay, and a black whip antenna is screwed onto the gold socket on the side". For the plywood version, add "the case is pale birch plywood with finger joints, as in the plywood picture" and attach that picture instead.
 
 ## Prompt 11: the plug-in cards
+
+*Not made. We decided to leave this picture off: the cards already show in the custom board picture. The prompt is kept in case it is wanted later.*
 
 The cards and sensors on their own, laid out like the parts pictures. It needs no reference picture. The numbered tags have a key below.
 
