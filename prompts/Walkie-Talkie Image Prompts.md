@@ -9,7 +9,7 @@ Prompts for an image generator. Prompts 1a and 1b are a matching pair: every par
 Paste one prompt at a time. Each is self-contained, so the generator needs no other context.
 
 - **A matching pair.** 1a and 1b describe the same mat, light and camera, so they match without a reference picture. Do not attach 1a to 1b. They are saved as `images/parts-modules.jpg` and `images/parts-custom-board.jpg`, with `_sml` copies 1000 px wide, and are on the site's front page. Prompt 1b changed on 16 November 2026, when the board went modular; 1a did not, since a hand-wired radio has always been loose parts.
-- **Labels.** Image generators often garble small text. Prompt 1a asks for numbered tags and gives the key below, so a wrong label does not matter. Prompt 1b asks for blank tags, and the numbers are drawn on afterwards. If your generator handles text well, use the "with names" line instead.
+- **Labels.** Image generators often garble small text. Prompts 1a and 1b ask for numbered tags and give the key below, so a wrong label does not matter. Prompt 1b does the same. If your generator handles text well, use the "with names" line instead.
 - **Boards have no readable text.** Both prompts ask for plain boards with no logos or part numbers, because generators invent them.
 - **There is an antenna now, but only in the parts pictures.** The mesh radio needs a 915 MHz antenna, so 1a and 1b show one. It is meant to sit inside the case, so the pictures of the finished radio still say "no antenna". Whether it can stay inside is a range test still to do.
 - **Aspect ratio.** 16:9 for the parts pictures, 4:5 for the shapes. Change the last line of each prompt if your tool sets this elsewhere.
@@ -80,38 +80,40 @@ About NZ$61 for parts 1 to 18, and two to three hours of soldering. The speaker 
 
 ## Prompt 1b: the same radio on one custom board
 
-The radio as it is built in Stage 2b and sold as a kit: a base that opens up, with plug-in cards. It stands on its own: no reference picture is needed, and attaching 1a made things worse by leaking its loose parts into the picture. It describes the same mat, light and camera as 1a in words, so the two pictures still compare. The tags are blank on purpose; the numbers are added afterwards. The base kit is on the left. The things sold separately sit off to one side: the speaker, the battery cell, and the plug-in cards. The case is left out: it has its own pictures.
+The radio as it is built in Stage 2b and sold as a kit: a base that opens up, with plug-in cards. It stands on its own: no reference picture is needed, and attaching 1a made things worse by leaking its loose parts into the picture. It describes the same mat, light and camera as 1a in words, so the two pictures still compare. The base kit is on the left. The things sold separately sit off to one side: the speaker, the battery cell, and the plug-in cards. The case is left out: it has its own pictures.
 
 ```
 Top-down flat lay product photograph, knolling style, shot straight down from directly above. A matte light grey silicone workbench mat with rounded corners fills the frame, on a pale grey desk. Soft, even, shadowless studio lighting, sharp focus edge to edge, no hands, no tools, generous spacing between parts. A thin white line runs from top to bottom of the mat, two-thirds of the way across, dividing it into a wide left area and a narrow right column.
 
-A small plain white round paper tag, about 12 mm across, sits just below each item. Every tag is blank: no numbers, no letters, no writing of any kind anywhere in the picture.
+A small plain white round paper tag, about 12 mm across, sits just below each item, with one clear black handwritten number on it. There are exactly thirteen tags, numbered 1 to 13. Each number is used exactly once: no number is repeated and none is missing. The tag numbers match the numbers in the lists below.
 
-In the left area, exactly eight items and nothing else. They are a mock-up of a custom electronics kit in matte dark green circuit board with gold pads and neat rows of tiny black and grey surface-mounted parts, all machine-assembled, with no loose wires:
+In the left area, exactly eight items, tagged 1 to 8, and nothing else. They are a mock-up of a custom electronics kit in matte dark green circuit board with gold pads and neat rows of tiny black and grey surface-mounted parts, all machine-assembled, with no loose wires:
 
-- One main circuit board, about 110 x 80 mm, dark green, with a rounded corner cut-out at each mounting hole. On it: one silver metal-shielded square module in the top left corner; a few small black square chips; two USB-C sockets side by side on the right edge; a row of three small white cable sockets along the top edge; in the middle of the board, two empty card bays, each one a pair of short black 8-pin socket strips standing parallel about 23 mm apart with bare board between them; two tiny white 4-pin sockets and one small black 2 x 3 pin socket near the left edge; and an empty black holder for one cylindrical battery fixed along the bottom edge. There is only one metal-shielded module on this board.
-- One long narrow circuit board, about 110 x 25 mm, dark green, carrying a small square push switch in the centre, a small black slide switch with a flat thumb tab to its left, a rotary encoder with a short metal shaft to its right, and three tiny LEDs.
-- One small circuit board, about 30 x 30 mm, dark green, carrying a single rotary encoder with a metal shaft.
-- A second identical small circuit board, about 30 x 30 mm, carrying a single rotary encoder with a metal shaft.
-- Exactly three short flat white ribbon cables, each about 80 mm long, with a small white plug on both ends, laid side by side. Three cables, not four.
-- A 2.4 inch display, a thin black glass rectangle about 60 x 43 mm, switched off, with a short flat orange flexible cable.
-- A neat coil of thin black insulated wire, about 75 cm long, with one stripped end.
-- Four printed parts in one row, close together, sharing one tag: a round orange 3D printed button cap, 30 mm across; two large black deeply ribbed knobs, 40 mm across; and one small black ribbed knob, 20 mm across.
+1. One main circuit board, about 110 x 80 mm, dark green, with a rounded corner cut-out at each mounting hole. On it: one silver metal-shielded square module in the top left corner; a few small black square chips; two USB-C sockets side by side on the right edge; a row of three small white cable sockets along the top edge; in the middle of the board, two empty card bays, each one a pair of short black 8-pin socket strips standing parallel about 23 mm apart with bare board between them; two tiny white 4-pin sockets and one small black 2 x 3 pin socket near the left edge; and an empty black holder for one cylindrical battery fixed along the bottom edge. There is only one metal-shielded module on this board.
+2. One long narrow circuit board, about 110 x 25 mm, dark green, carrying a small square push switch in the centre, a small black slide switch with a flat thumb tab to its left, a rotary encoder with a short metal shaft to its right, and three tiny LEDs.
+3. One small circuit board, about 30 x 30 mm, dark green, carrying a single rotary encoder with a metal shaft.
+4. A second identical small circuit board, about 30 x 30 mm, carrying a single rotary encoder with a metal shaft.
+5. Exactly three short flat white ribbon cables, each about 80 mm long, with a small white plug on both ends, laid side by side, sharing the single tag 5. Three cables, not four.
+6. A 2.4 inch display, a thin black glass rectangle about 60 x 43 mm, switched off, with a short flat orange flexible cable.
+7. A neat coil of thin black insulated wire, about 75 cm long, with one stripped end.
+8. Four printed parts in one row, close together, sharing the single tag 8: a round orange 3D printed button cap, 30 mm across; two large black deeply ribbed knobs, 40 mm across; and one small black ribbed knob, 20 mm across.
 
 There are no plug-in cards, no antennas with gold connectors and no sensor boards in the left area.
 
-In the right column, to the right of the white line, exactly five items in one tidy column from top to bottom:
+In the right column, to the right of the white line, exactly five items, tagged 9 to 13, in one tidy column from top to bottom:
 
-- A round black 57 mm loudspeaker with a paper cone, metal frame, and two short red and black wires.
-- One green cylindrical 18650 lithium cell, 65 mm long and 18 mm across.
-- A small dark green plug-in card, a plain rectangle about 57 x 25 mm, with a row of 8 short gold pins along each of its two long edges and no connectors on its short ends, carrying one small silver metal-shielded module and one tiny round gold antenna socket on its face; beside it, a short black stubby rubber antenna, about 50 mm long, on a thin grey cable with a tiny gold connector. The antenna lies right beside its card, inside the right column.
-- A second small dark green plug-in card with exactly the same rectangular outline, size and pin rows as the card above it, carrying one larger flat silver metal-shielded module and a small metal SIM card holder; beside it, a short thin grey cable ending in a gold threaded antenna socket with a hex nut, and a black screw-on whip antenna about 110 mm long with a hinged elbow and a gold threaded base.
-- A tiny square blue sensor board, about 25 x 25 mm, with one small black chip, joined to a short thin cable of four coloured wires with a small white plug on each end.
+9. A round black 57 mm loudspeaker with a paper cone, metal frame, and two short red and black wires.
+10. One green cylindrical 18650 lithium cell, 65 mm long and 18 mm across.
+11. A small dark green plug-in card, a plain rectangle about 57 x 25 mm, with a row of 8 short gold pins along each of its two long edges and no connectors on its short ends, carrying one small silver metal-shielded module and one tiny round gold antenna socket on its face; beside it, a short black stubby rubber antenna, about 50 mm long, on a thin grey cable with a tiny gold connector. The antenna lies right beside its card, inside the right column.
+12. A second small dark green plug-in card with exactly the same rectangular outline, size and pin rows as the card above it, carrying one larger flat silver metal-shielded module and a small metal SIM card holder; beside it, a short thin grey cable ending in a gold threaded antenna socket with a hex nut, and a black screw-on whip antenna about 110 mm long with a hinged elbow and a gold threaded base.
+13. A tiny square blue sensor board, about 25 x 25 mm, with one small black chip, joined to a short thin cable of four coloured wires with a small white plug on each end.
 
-Clean technical catalogue look, realistic scale between parts, neutral colours. The four circuit boards in the left area look like finished factory-made products of one matching set. No case or enclosure, no breadboard, no perforated board, no hookup wire, no solder, no text, numbers or part numbers printed anywhere, no brand logos. High resolution, at least 2000 pixels wide. Aspect ratio 16:9.
+Clean technical catalogue look, realistic scale between parts, neutral colours. The four circuit boards in the left area look like finished factory-made products of one matching set. No case or enclosure, no breadboard, no perforated board, no hookup wire, no solder, no text or part numbers on any board, no writing other than the thirteen tag numbers, no brand logos. High resolution, at least 2000 pixels wide. Aspect ratio 16:9.
 ```
 
-**The numbers are added afterwards.** Generators could not keep thirteen numbered tags straight: every try gave repeated or missing numbers. So the prompt asks for blank tags, and the numbers 1 to 13 are drawn on afterwards, in the order of the key below: left area first, reading across and down, then the right column from the top.
+**With names instead of numbers.** Swap the tag sentences for: "A small white printed label sits just below each item, reading its name in clean black sans-serif capitals", and use these names: MAIN BOARD, TOP BOARD, MODE BOARD, SELECT BOARD, CABLES, SCREEN, FM AERIAL, BUTTON AND KNOBS; and, in the right column, SPEAKER, BATTERY, MESH CARD, 4G CARD, TILT SENSOR.
+
+**If the numbers come out wrong.** Earlier tries repeated some numbers and dropped others. If that happens again, the wrong tags can be painted over and renumbered afterwards, as long as the items themselves are in the right places.
 
 **Key to the numbers.**
 
@@ -133,7 +135,7 @@ Clean technical catalogue look, realistic scale between parts, neutral colours. 
 
 The base is about NZ$44 to make in a batch of 100 and NZ$33 in a batch of 1,000, with no soldering. All four boards are cut from one panel. This is a mock-up: the board is not drawn yet, so the layout in the picture is the generator's guess. The picture on the site was made from an earlier version of this prompt, with the mesh radio on the main board, and needs redoing.
 
-**Getting 1b right.** Check five things: eight items on the left and five on the right; no card, gold-connector antenna or sensor on the left; three cables; the two cards the same shape; and at least 2,000 pixels wide. If it comes out small, look for a size or quality setting in the generator: the prompt cannot force it.
+**Getting 1b right.** Check six things: the tags run 1 to 13 with none repeated; eight items on the left and five on the right; no card, gold-connector antenna or sensor on the left; three cables; the two cards the same shape; and at least 2,000 pixels wide. If it comes out small, look for a size or quality setting in the generator: the prompt cannot force it.
 
 **A single comparison picture.** To get both in one frame, add to the start of 1b: "A split image. The left half shows the same radio as eighteen separate hobby modules, a perforated board and a tangle of coloured hookup wire; the right half shows the kit below." It is harder to get right than two pictures.
 
