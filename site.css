@@ -305,7 +305,7 @@ footer ul { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 8
 }
 
 /* ============ Parts: picture and list ============ */
-.buildtabs { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 22px; }
+.buildtabs { scroll-margin-top: 80px; display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 22px; }
 .buildtabs button { display: grid; grid-template-columns: 150px 1fr; gap: 14px; align-items: center; text-align: left; background: var(--panel); color: var(--ink); border: 1.5px solid var(--line); border-radius: var(--radius); padding: 10px; cursor: pointer; font: 0.92rem/1.4 "Atkinson Hyperlegible", system-ui, sans-serif; }
 .buildtabs img { display: block; width: 100%; height: auto; border-radius: calc(var(--radius) - 8px); }
 .buildtabs b { display: block; font-family: var(--head); font-weight: var(--head-w); font-size: 1.15rem; line-height: 1.2; margin-bottom: 2px; }

@@ -115,12 +115,32 @@
   <div class="wrap">
     <div class="section-head">
       <h2>The board</h2>
-      <p>The case has a knob on the left, a knob on the right and controls on top. One board can't reach three faces, so there are four, cut from one panel and joined by three short cables.</p>
+      <p>The case has a knob on the left, a knob on the right and controls on top. One board can't reach three faces, so there are four, cut from one panel and joined by three short cables. Pick a build, then tap a part to see what it is.</p>
     </div>
-    <figure>
-      <a class="wide" href="images/build-compare.svg"><img src="images/build-compare.svg" alt="Two drawings of the same radio. Left: sixteen separate modules joined to a small board by a tangle of hand-soldered wires. Right: one main board holding both radio chips, the audio, FM, tilt sensor, charger and battery holder, joined by three short cables to a top board and two small knob boards." width="1200" height="640"></a>
-      <figcaption class="fig"><b>Fig. 1</b> The same radio, two ways. A drawing: the board isn't designed yet.</figcaption>
-    </figure>
+    <div class="buildtabs" id="parts" role="group" aria-label="Which build">
+      <button type="button" data-build="modules" aria-pressed="true">
+        <img src="images/parts-modules_sml.jpg" alt="" width="1000" height="558">
+        <span><b>Wired by hand</b>Eighteen parts, about NZ$61, and two to three hours of soldering.</span>
+      </button>
+      <button type="button" data-build="board" aria-pressed="false">
+        <img src="images/parts-custom-board_sml.jpg" alt="" width="1000" height="558" loading="lazy">
+        <span><b>One custom board</b>About NZ$58 each to make at 100 and NZ$45 at 1,000. No soldering.</span>
+      </button>
+    </div>
+    <div class="inside">
+      <div>
+        <div class="photo" id="photo">
+          <img id="photoImg" src="images/parts-modules.jpg" alt="Eighteen numbered hobby parts laid out on a grey mat, with a speaker and a battery set apart on the right." width="2000" height="1116">
+          <div class="ring" id="ring"></div>
+        </div>
+        <p class="fig" id="partNote" aria-live="polite"><b>Fig. 1</b> Tap a part in the picture, or a name in the list.</p>
+      </div>
+      <div>
+        <ol class="partlist" id="bom"></ol>
+        <div class="total"><span id="partTotalK">Per radio</span><span id="partTotalV">about NZ$61</span></div>
+      </div>
+    </div>
+    <p class="small muted fineprint">Generated pictures, not photos of our parts, so small details are wrong. The speaker and the battery, right of the line, are sold separately.</p>
     <div class="scroll">
       <table class="cmp">
         <thead><tr><th>What it does</th><th>The part</th><th>Why this one</th></tr></thead>
@@ -408,6 +428,71 @@ document.querySelectorAll("[data-set-size]").forEach(b => b.addEventListener("cl
 $("themeBtn").addEventListener("click", () => { const t = isDark() ? "light" : "dark"; root.dataset.theme = t; save("wt-theme", t); paintControls(); });
 matchMedia("(prefers-color-scheme: dark)").addEventListener("change", paintControls);
 paintControls();
+
+function track(name, params) { try { gtag("event", name, params || {}); } catch (e) {} }
+
+/* ---------- Parts: tap a part in the picture, or a name in the list ---------- */
+const PARTS = {
+ "modules": {
+  "title": "Wired by hand, from modules",
+  "img": "images/parts-modules.jpg",
+  "note": "Eighteen parts, about NZ$61, and two to three hours of soldering.",
+  "items": [[ 13.9, 21.8, 16.5, 17.9, "ESP32-S3 board", "The brain: Wi-Fi, voice, encryption, the screen and games"],[ 27.4, 22.0, 8.5, 15.2, "Microphone", "Hears you"],[ 38.0, 22.8, 9.0, 17.0, "Amplifier", "Drives the speaker"],[ 50.2, 23.1, 14.5, 20.6, "Big orange button", "Hold to talk"],[ 63.1, 22.8, 12.5, 17.9, "Mode knob", "Left side. Picks Talk, FM, internet radio or Play"],[ 73.5, 22.8, 13.0, 17.9, "Select knob", "Right side. Picks who, which station or which game"],[ 12.6, 49.1, 12.5, 17.0, "Volume knob", "On top. Louder or quieter"],[ 26.4, 48.9, 16.5, 20.6, "Screen, 2.4 inch", "Names, stations and games, in black and white"],[ 38.4, 49.5, 7.5, 13.4, "FM tuner", "Ordinary FM radio, with no internet"],[ 49.2, 48.8, 14.5, 22.4, "FM aerial wire", "About 75 cm. Runs through the shoulder strap"],[ 60.2, 49.5, 7.5, 13.4, "Tilt sensor", "Knows upright from lying on its back"],[ 70.2, 49.5, 8.5, 16.1, "Mesh radio", "The always-on mesh, on its own chip"],[ 13.5, 78.0, 13.0, 29.6, "Mesh antenna", "For the mesh radio"],[ 26.8, 76.6, 9.0, 32.3, "Battery holder", "Holds one 18650 cell"],[ 38.2, 78.0, 8.0, 17.9, "Charger", "Charges the cell over USB-C"],[ 48.1, 77.8, 7.5, 12.5, "PUSH / OPEN switch", "Slide it to talk hands-free"],[ 58.5, 77.1, 10.0, 22.4, "Lights", "Red whenever the microphone can hear. Colours for talk and listen"],[ 70.2, 77.8, 13.5, 30.5, "Board and wire", "Joins it all up, by hand"],[ 88.8, 31.4, 14.5, 26.9, "Speaker", "Sold separately"],[ 87.8, 70.2, 7.5, 29.6, "Battery cell", "Sold separately"]]
+ },
+ "board": {
+  "title": "One custom board, as a kit",
+  "img": "images/parts-custom-board.jpg",
+  "note": "About NZ$58 each to make at 100 and NZ$45 at 1,000. No soldering.",
+  "items": [[ 18.5, 33.8, 23.5, 42.1, "Main board", "Both radio chips, the audio, FM tuner, tilt sensor, charger, USB-C and the battery holder"],[ 44.5, 23.1, 24.5, 17.0, "Top board", "The talk switch, the PUSH / OPEN switch, the volume knob and the lights"],[ 61.9, 23.1, 8.5, 17.0, "Mode board", "The left-hand knob"],[ 70.8, 23.1, 8.5, 17.0, "Select board", "The right-hand knob"],[ 44.5, 47.5, 24.5, 20.6, "Three cables", "Join the small boards to the main board"],[ 68.2, 48.1, 19.5, 21.5, "Screen, 2.4 inch", "Plugs into the main board"],[ 20.0, 78.0, 26.0, 29.6, "Mesh antenna and FM aerial wire", "The antenna for the mesh radio, and the FM aerial for the strap"],[ 54.8, 77.1, 46.0, 24.2, "Button cap and knobs", "Small printed parts: the orange cap, two large knobs and the volume knob"],[ 88.8, 31.4, 14.5, 26.9, "Speaker", "Sold separately"],[ 87.8, 70.2, 7.5, 29.6, "Battery cell", "Sold separately"]]
+ }
+};
+const ALTS = {
+  modules: "Eighteen numbered hobby parts laid out on a grey mat, with a speaker and a battery set apart on the right.",
+  board: "The same radio as a kit on the same grey mat: one main board, a top board, two small knob boards, three cables, a screen, antennas and knobs, with a speaker and a battery set apart on the right."
+};
+const TOTALS = { modules: ["Per radio", "about NZ$61"], board: ["Per kit, to make", "about NZ$45 to 58"] };
+const ring = $("ring"), bom = $("bom");
+let build = "modules", partAt = -1;
+function mark(i, focus) {
+  partAt = i;
+  const items = PARTS[build].items, p = items[i];
+  [...bom.children].forEach((li, j) => { li.firstChild.classList.toggle("on", j === i); li.firstChild.setAttribute("aria-pressed", String(j === i)); });
+  if (!p) {
+    ring.classList.remove("on");
+    $("partNote").innerHTML = "<b>Fig. 1</b> Tap a part in the picture, or a name in the list.";
+    return;
+  }
+  ring.style.left = p[0] + "%"; ring.style.top = p[1] + "%"; ring.style.width = p[2] + "%"; ring.style.height = p[3] + "%";
+  ring.classList.add("on");
+  $("partNote").innerHTML = `<b>${i + 1}. ${p[4]}</b> ${p[5]}.`;
+  if (focus) bom.children[i].firstChild.focus({ preventScroll: true });
+}
+function showBuild(key) {
+  build = key;
+  document.querySelectorAll("[data-build]").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.build === key)));
+  $("photoImg").src = PARTS[key].img; $("photoImg").alt = ALTS[key];
+  bom.innerHTML = PARTS[key].items.map((p, i) => `<li><button type="button" data-i="${i}" aria-pressed="false"><span class="n">${i + 1}</span>${p[4]}</button></li>`).join("");
+  $("partTotalK").textContent = TOTALS[key][0]; $("partTotalV").textContent = TOTALS[key][1];
+  mark(-1);
+}
+document.querySelectorAll("[data-build]").forEach(b => b.addEventListener("click", () => { showBuild(b.dataset.build); track("parts_build", { build: PARTS[build].title }); }));
+bom.addEventListener("click", e => { const b = e.target.closest("button"); if (b) mark(+b.dataset.i); });
+bom.addEventListener("focusin", e => { const b = e.target.closest("button"); if (b) mark(+b.dataset.i); });
+bom.addEventListener("keydown", e => {
+  const down = e.key === "ArrowDown" || e.key === "ArrowRight", up = e.key === "ArrowUp" || e.key === "ArrowLeft";
+  if (!down && !up) return;
+  e.preventDefault();
+  const n = PARTS[build].items.length;
+  mark(((partAt < 0 ? (down ? -1 : 0) : partAt) + (down ? 1 : -1) + n) % n, true);
+});
+$("photo").addEventListener("click", e => {
+  const r = e.currentTarget.getBoundingClientRect(), px = (e.clientX - r.left) / r.width * 100, py = (e.clientY - r.top) / r.height * 100;
+  let best = -1, d = 1e9;
+  PARTS[build].items.forEach(([x, y, w, h], i) => { const dd = ((px - x) / (w / 2)) ** 2 + ((py - y) / (h / 2)) ** 2; if (dd < d) { d = dd; best = i; } });
+  mark(d < 1.6 ? best : -1);
+  if (d < 1.6) track("parts_pick", { part: PARTS[build].items[best][4] });
+});
+showBuild("modules");
 </script>
 </body>
 </html>
