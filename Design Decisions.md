@@ -1,6 +1,6 @@
 # Design Decisions
 
-Nov 16, 2026 · @Chris Barlow · updated with decisions 11 to 23
+Nov 16, 2026 · @Chris Barlow · updated with decisions 11 to 24
 
 **The ideas are now decisions.** Until today the platform radio, the custom board and the mesh were explorations sitting beside a simpler Stage 2 build. This page locks them, so there is one radio to draw, price and build. Where another document disagrees with this page, this page wins.
 
@@ -33,6 +33,7 @@ Locked means the design work stops going round in circles. It does not mean test
 | 21 | **Two audiences, two rooms.** The front page is Pop's. Tinkering has its own page. The line: the radio his younger self would have opened | One audience | [Research](reports/Modular%20platform%20and%20base%20unit%20cost.md#brand) |
 | 22 | **Open hardware, with the promises kept in hardware.** The red light is wired to the microphone's power and is never optional. Built radios have their firmware locked to our key; kits do not. The kids' mini phone has no sockets | Promises kept by firmware | [Research](reports/Modular%20platform%20and%20base%20unit%20cost.md#safety-and-trust) |
 | 23 | **Open to add to, not open to copy.** The socket page is published for anyone to make and sell cards. The radio's own design and firmware stay non-commercial | Everything non-commercial | [Research](reports/Modular%20platform%20and%20base%20unit%20cost.md#licence) |
+| 24 | **A 4G hotspot, with a screw-on antenna.** With the 4G card fitted, the radio can share its mobile data over Wi-Fi, and a bigger antenna screws onto a socket on the case for homes with weak coverage. 5G comes later, in the same bay | 4G for the radio's own use only | [Below](#the-4g-hotspot) |
 
 Not changed: the [service design](Walkie-Talkie%20Service%20Design.md), Stage 1 on the two R1s, hold to talk, PUSH / OPEN, encryption, no subscription for the hardware, and "this is not an emergency alarm".
 
@@ -168,6 +169,18 @@ Including GST, before the case, speaker and cell for the kit lines. List prices 
 - **Its own certification, probably.** The 4G version emits differently, so it is likely its own declaration. Ask RSM whether a board the family plugs in themselves changes that.
 - **Not in the parts pictures.** They show the standard radio.
 
+## The 4G hotspot
+
+**For homes where a phone gets little or no signal.** With the 4G card in, the radio becomes a small Wi-Fi hotspot, and a stronger antenna screws on outside the case to pull in a signal a phone cannot.
+
+- **A threaded socket on the case.** The 4G card's antenna lead runs to it. A small antenna comes with the card; a bigger one, or one on a cable to a window or the roof, screws on in its place.
+- **A light hotspot.** Enough for messages, email and calls. Not for video: the modem and the main chip are both slow by broadband standards.
+- **The point is Wi-Fi calling.** A phone with no signal joins the radio's Wi-Fi and makes ordinary calls over it.
+- **It is not a cell base station.** Anything that rebroadcasts mobile signal needs the network operator's approval in New Zealand, because the operators hold the licences ([RSM](https://www.rsm.govt.nz/business-individuals/buying-electrical-and-electronic-products-in-new-zealand/mobile-phone-boosters), [TCF](https://www.tcf.org.nz/digital-living/mobile-boosters)). The radio only uses the network as any phone does.
+- **The family switches it on,** from their phones. Pop does nothing, and Talk always comes first.
+- **It needs a bigger mobile plan.** The radio alone uses about 200 MB a month. A hotspot uses whatever is connected to it.
+- **5G later.** The bay is generic, so a 5G card can replace the 4G one when the modems are cheap.
+
 ## What it saves
 
 All figures include GST and leave out the case, speaker and cell. They are list prices and estimates from November 2026, not quotes.
@@ -217,6 +230,8 @@ Locking a decision does not make it true. Each of these could reopen one.
 | A Low Energy keyboard typing on the screen, and the web page on a phone | Decisions 17 to 19 |
 | Casting internet radio from the chip, beside voice | Decision 17 |
 | MIKROE's terms for the mikroBUS name | Decision 15 |
+| The hotspot on a dev board: speed, a Wi-Fi call over it, and voice running beside it | Decision 24 |
+| How much antenna gain the modem's approval allows | Decision 24: which antennas can be offered |
 | A real quote from JLCPCB and Heltec | Every price here |
 | RSM's view on kits, and testing in the 915 MHz band | Decision 9, and when kits can be sold |
 | Legal advice on Meshtastic's GPL protobufs | Direct messages and voice clips over the mesh |

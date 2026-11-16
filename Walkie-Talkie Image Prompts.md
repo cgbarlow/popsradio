@@ -101,7 +101,7 @@ On the right third of the mat, set well apart behind the thin white line, five i
 9. A round black 57 mm loudspeaker with a paper cone, metal frame, and two short red and black wires.
 10. One green cylindrical 18650 lithium cell, 65 mm long and 18 mm across.
 11. A small dark green plug-in card, about 57 x 25 mm, with a row of 8 gold pins along each long edge, carrying one small silver metal-shielded module and one tiny round gold antenna socket; beside it, a short black stubby rubber antenna, about 50 mm long, on a thin grey cable with a tiny gold connector.
-12. A second small dark green plug-in card of the same size and shape, with a row of 8 gold pins along each long edge, carrying one larger flat silver metal-shielded module and a small metal SIM card holder; beside it, a thin flat black adhesive antenna strip on a short cable.
+12. A second small dark green plug-in card of the same size and shape, with a row of 8 gold pins along each long edge, carrying one larger flat silver metal-shielded module and a small metal SIM card holder; beside it, a short thin grey cable ending in a gold threaded antenna socket with a hex nut, and a black screw-on whip antenna about 110 mm long with a hinged elbow and a gold threaded base.
 13. A tiny square red sensor board, about 25 x 25 mm, with one small black chip, joined to a short thin cable of four coloured wires with a small white plug on each end.
 
 Clean technical catalogue look, realistic scale between parts, neutral colours. The four circuit boards look like finished factory-made products of one matching set. No case or enclosure, no breadboard, no perforated board, no hookup wire, no solder, no text or part numbers printed on any board, no brand logos. Aspect ratio 16:9.
@@ -124,7 +124,7 @@ Clean technical catalogue look, realistic scale between parts, neutral colours. 
 | 9 | Speaker | Set apart | No: sold separately |
 | 10 | 18650 cell | Set apart. Fits the empty holder on the main board | No: sold separately |
 | 11 | Mesh card and antenna | The mesh radio (HT-CT62) on a plug-in card, for card bay 1 | No: sold separately. Fitted in a built radio |
-| 12 | 4G card and antenna | A modem and SIM holder on a plug-in card, for card bay 2 | No: sold separately |
+| 12 | 4G card, antenna socket and antenna | A modem and SIM holder on a plug-in card, for card bay 2. The socket fits a hole in the case, and the antenna screws on outside. It also makes the radio a Wi-Fi hotspot | No: sold separately |
 | 13 | Tilt sensor | Plugs into a sensor socket on its cable | No: sold separately |
 
 The base is about NZ$44 to make in a batch of 100 and NZ$33 in a batch of 1,000, with no soldering. All four boards are cut from one panel. This is a mock-up: the board is not drawn yet, so the layout in the picture is the generator's guess. The picture on the site was made from an earlier version of this prompt, with the mesh radio on the main board, and needs redoing.

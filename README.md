@@ -112,6 +112,6 @@ Free for non-commercial use. Build one for your own family, change it, share it.
 - **Code** (including `index.html`): [PolyForm Noncommercial 1.0.0](LICENSE)
 - **Research documents and images:** [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/). Credit Chris Barlow, don't use them commercially, and share any changed versions under the same licence.
 
-The case comes two ways, 3D printed or plywood, and the plans for both will be free. Homes without Wi-Fi can plug a 4G board and a SIM into any radio.
+The case comes two ways, 3D printed or plywood, and the plans for both will be free. Homes without Wi-Fi can plug a 4G card and a SIM into any radio, which can then share its connection as a small Wi-Fi hotspot.
 
 Building or selling radios commercially needs a licence. See [COMMERCIAL.md](COMMERCIAL.md).
