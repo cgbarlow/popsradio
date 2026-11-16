@@ -345,3 +345,4 @@ footer ul { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 8
   .two { grid-template-columns: 1fr; }
   .shapes.four { grid-template-columns: 1fr 1fr; }
 }
+.two > .scroll > .cmp { margin-top: 0; }

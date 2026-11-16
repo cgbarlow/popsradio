@@ -200,6 +200,7 @@ Now chosen and priced. The [cost-down report](reports/Custom%20PCB%20and%20cost-
 | Mesh | None | Heltec HT-CT62 co-processor running Meshtastic, with a 915 MHz antenna | Always on. See [Mesh](#mesh-connectivity-with-no-internet) |
 | Audio | I2S mic and MAX98357A amp | ES8388 codec, analog MEMS mic, NS4150B amp on a 5 V rail | As loud on battery as on the dock, and FM plays through the same codec |
 | Case | Wedge | Stout rectangle about 220 × 125 × 80 mm, with strap anchors, four rubber feet under the base and four on the back | Low and wide so it is hard to knock over; the back feet keep it steady as a games board |
+| Mobile data | Optional 4G board | Optional plug-in 4G board, for homes without Wi-Fi | See [Design Decisions](Design%20Decisions.md#4g-a-plug-in-board) |
 | Speaker | 50 mm, 3 W | Larger, to suit the bigger case | Music needs more than speech does, and an 80 mm deep case leaves room for a bigger speaker and air behind it |
 
 ### The screen: chosen for the first boards

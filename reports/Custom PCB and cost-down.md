@@ -2,7 +2,7 @@
 
 Nov 16, 2026 · @Chris Barlow
 
-> **Decided on 16 November 2026.** The custom board, option C for the mesh, and the kit are now the plan, and the mesh is **always on, with every radio passing messages along**. That last choice goes further than this report first recommended; the settings and power notes below are updated to match. See [Design Decisions](../Design%20Decisions.md).
+> **Decided on 16 November 2026.** The custom board, option C for the mesh, and the kit are now the plan, and the mesh is **always on, with every radio passing messages along**. That last choice goes further than this report first recommended; the settings and power notes below are updated to match. See [Design Decisions](../Design%20Decisions.md). Later the same day, LTE was also decided: it moves from a footprint on the main board to a plug-in 4G board, so any radio can take one (decision 12).
 
 ## Summary
 
@@ -89,7 +89,7 @@ flowchart LR
     ACC["Accelerometer"]
     PWR["IP5306 charger<br/>and 5 V boost"]
     CT["<b>HT-CT62</b><br/>ESP32-C3 + SX1262<br/>stock Meshtastic"]
-    LTE["A7670G LTE<br/>footprint, empty"]
+    LTE["Socket for a plug-in<br/>4G board, optional"]
   end
   MIC["MEMS mic"] --> COD
   FM -->|"analog line in"| COD
@@ -129,7 +129,7 @@ flowchart LR
 | Cell holder | BH-18650, SMT | from 0.94 ([LCSC](https://www.lcsc.com/product-detail/C2988620.html)) | Cell bought locally | |
 | Other | USB-C, ESD, tactile and slide switches, LEDs, cables, passives | about 2.70 at 1,000 (*estimate*) | | |
 | Antennas | 915 MHz whip with pigtail; FM wire | about 1.20 (*estimate*) | | |
-| LTE, optional | A7670G | from 12.30 ([LCSC](https://www.lcsc.com/product-detail/C5846957.html)) | Footprint only; fitted for an LTE version | |
+| LTE, optional | A7670G | from 12.30 ([LCSC](https://www.lcsc.com/product-detail/C5846957.html)) | Decided later: on a plug-in 4G board with its SIM holder and antenna; a socket on every main board | |
 
 **On the audio.** The Stage 2 doc found the MAX98357A gives only about 0.9 W from a bare battery. Here the amp runs from the IP5306's 5 V boost, so the radio is as loud off the dock as on it. The ES8388 also has a spare ADC path that can carry an echo reference later, which keeps the door open for true two-way OPEN mode.
 

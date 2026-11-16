@@ -21,6 +21,7 @@ Locked means the design work stops going round in circles. It does not mean test
 | 9 | **Two ways to buy: a built radio or a kit.** The plans stay free for anyone building for their own family | "Parts kit" was one line in a table | [Below](#how-people-get-one) |
 | 10 | **Modules for the first few, the custom board from then on.** Stage 2a builds the radio from modules to prove it; Stage 2b is 10 boards, then 100 kits | Stage 2 was a one-knob radio for NZ$35 to 50 | [Roadmap](#the-order-of-work) |
 | 11 | **The case comes two ways: 3D printed or plywood.** Both plans are free. A finished plywood box can be bought with a kit | A 3D printed case only | [Below](#the-case-printed-or-plywood) |
+| 12 | **4G is a plug-in board, for homes without Wi-Fi.** The modem, SIM holder and antenna sit on a small fifth board that plugs into a socket on every main board, so any radio can take one, then or later | A modem soldered on at the factory, for a separate LTE version | [Below](#4g-a-plug-in-board) |
 
 Not changed: the [service design](Walkie-Talkie%20Service%20Design.md), Stage 1 on the two R1s, hold to talk, PUSH / OPEN, encryption, no subscription for the hardware, and "this is not an emergency alarm".
 
@@ -101,6 +102,27 @@ Not changed: the [service design](Walkie-Talkie%20Service%20Design.md), Stage 1 
 - **Why plywood.** It suits a school workshop or a shed, it needs no printer, and a wooden radio by the bed looks like furniture, not a gadget.
 - **A first proposal.** The plan is not drawn. The 6 mm thickness, the joints and the finish are starting points, to be settled by building one.
 
+## 4G: a plug-in board
+
+**For homes with no Wi-Fi, or where it is too unreliable to trust.** Any Pop's Radio can talk over mobile data instead: plug in the 4G board, put in a SIM, and it works. Nothing else changes for Pop.
+
+- **A fifth small board.** It carries an A7670G LTE modem, a SIM holder and a 4G antenna, and is cut from the same panel as the other four. Every main board has a socket for it.
+- **Any radio, any time.** A family can order it with a kit or a built radio, or add it later if their Wi-Fi goes. It is a screwdriver job, no soldering.
+- **Every main board is ready for it.** The modem draws bursts of current far above the rest of the radio, so its power feed comes straight from the cell, with a large capacitor beside the socket. It is designed in on every board, whether or not a modem is ever fitted.
+- **Wi-Fi first.** If both are there, the radio uses Wi-Fi and keeps 4G as a fallback.
+- **It works with the mesh, not instead of it.** 4G carries voice; the mesh carries short text when everything else is down.
+
+| | |
+|---|---|
+| Cost to make | About NZ$26 at 1,000: the modem from US$12.30, the SIM holder, antenna, board and socket (estimate from the cost-down report's LTE figures) |
+| Suggested price | About NZ$45 to 55, on the same margin as the kit. A suggestion, not set |
+| Mobile plan | Paid by the family, separate from channels. The radio uses about 110 to 200 MB a month; a prepay plan such as Skinny at $8 per 4 weeks covers it, about $104 to $120 a year |
+| Networks | LTE Cat-1, every New Zealand band including 700 MHz. 3G is switched off here, which data-only voice does not need |
+| Battery | Shorter off the stand: about 2 days with the mesh always on, against about 3 on Wi-Fi (estimate) |
+
+- **Its own certification, probably.** The 4G version emits differently, so it is likely its own declaration. Ask RSM whether a board the family plugs in themselves changes that.
+- **Not in the parts pictures.** They show the standard radio.
+
 ## What it saves
 
 All figures include GST and leave out the case, speaker and cell. They are list prices and estimates from November 2026, not quotes.
@@ -120,7 +142,7 @@ The saving in parts is modest. The saving in time is the point: 100 radios from 
 |---|---|---|
 | 1 | Prove the idea on two Rabbit R1s | Now |
 | 2a | Build the platform radio from modules: three knobs, the TFT, FM, the tilt sensor and the mesh chip on a breadboard, then in a printed case and a plywood one. A week with Pop | Next |
-| 2b | The custom board. Draw it, get a real quote, build 10, test with Pop, then 100 kits | After 2a |
+| 2b | The custom board. Draw it, with the socket for the 4G board, get a real quote, build 10, test with Pop, then 100 kits | After 2a |
 | 3 | Family app for iOS and Android | Later |
 | 4 | A direct path between homes | Only if trials show the need |
 | Later | Certify, then a batch of 1,000 and built radios on sale | After the first 100 kits |
@@ -141,6 +163,8 @@ Locking a decision does not make it true. Each of these could reopen one.
 | Mesh range from inside the case, and inside a house | Decision 8, and whether the antenna can stay inside |
 | FM reception with the wire in the strap | Whether FM stays |
 | A plywood box built from the plan, with the boards in it | Decision 11: panel thickness, the joints, whether the knob shafts and the screen reach through, and how the speaker sounds in wood |
+| A 4G board in a radio, on battery, in a house with weak signal | Decision 12: the power feed, whether the antenna works inside the case, and battery life |
+| RSM's view on a 4G board the family plugs in | Decision 12, and whether it can be sold as an add-on |
 | A real quote from JLCPCB and Heltec | Every price here |
 | RSM's view on kits, and testing in the 915 MHz band | Decision 9, and when kits can be sold |
 | Legal advice on Meshtastic's GPL protobufs | Direct messages and voice clips over the mesh |
