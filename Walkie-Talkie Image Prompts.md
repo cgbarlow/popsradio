@@ -17,7 +17,7 @@ Paste one prompt at a time. Each is self-contained, so the generator needs no ot
 
 ## Prompt 1a: every part, as modules
 
-The radio as it is built in Stage 2a: breakout modules joined by hand. The parts follow the module build in the [cost-down report](reports/Custom%20PCB%20and%20cost-down.md#what-it-costs-from-modules-today), plus a battery cell. The speaker is sold separately, so it sits off to one side, apart from the kit. The case is left out: it has its own pictures.
+The radio as it is built in Stage 2a: breakout modules joined by hand. The parts follow the module build in the [cost-down report](reports/Custom%20PCB%20and%20cost-down.md#what-it-costs-from-modules-today), with the empty battery holder. The speaker and the battery cell are sold separately, so they sit off to one side, apart from the kit. The case is left out: it has its own pictures.
 
 ```
 Top-down flat lay product photograph of electronic hobby parts, neatly arranged in a grid (knolling style) on a matte light grey workbench mat. Soft even studio lighting, sharp focus, no hands, no tools, generous spacing between parts. Exactly eighteen items in three rows of six on the left three-quarters of the mat, each with a small white round numbered tag (1 to 18) placed beside it:
@@ -35,20 +35,21 @@ Top-down flat lay product photograph of electronic hobby parts, neatly arranged 
 11. A tiny purple accelerometer breakout board, about 12 x 12 mm, with one small black chip and a row of pins.
 12. A small dark green radio module shaped like a postage stamp, about 18 x 17 mm, with a silver metal shield, gold half-holes along its edges and one tiny round gold antenna socket.
 13. A short black stubby rubber antenna, about 50 mm long, joined to a thin grey cable with a tiny gold connector on the end.
-14. A black plastic holder for one cylindrical battery, with a metal spring contact at one end, and beside it one green cylindrical 18650 lithium cell, 65 mm long and 18 mm across.
+14. An empty black plastic holder for one cylindrical battery, with a metal spring contact at one end.
 15. A small blue USB-C battery charger board, about 25 x 17 mm.
 16. A small black slide switch with a short flat thumb tab.
 17. One red LED and two clear LEDs, each with two long legs.
 18. A tan perforated prototyping board, about 70 x 50 mm, and a small coil of thin multi-coloured hookup wire.
 
-On the right quarter of the mat, set well apart from the grid behind a thin white line, one item on its own, sold separately:
+On the right quarter of the mat, set well apart from the grid behind a thin white line, two items sold separately, each with a numbered tag (19 and 20):
 
 19. A round black 57 mm loudspeaker with a paper cone, metal frame, and two short red and black wires.
+20. One green cylindrical 18650 lithium cell, 65 mm long and 18 mm across.
 
 Clean technical catalogue look, realistic scale between parts, neutral colours. No case or enclosure, no extra components, no text or part numbers printed on any board, no brand logos. Aspect ratio 16:9.
 ```
 
-**With names instead of numbers.** Swap the tag sentence for: "each with a small white printed label beside it reading its name in clean black sans-serif capitals", and use these names: ESP32-S3 BOARD, MICROPHONE, AMPLIFIER, TALK BUTTON, MODE KNOB, SELECT KNOB, VOLUME KNOB, SCREEN, FM TUNER, FM AERIAL, TILT SENSOR, MESH RADIO, MESH ANTENNA, BATTERY, CHARGER, PUSH OPEN SWITCH, LIGHTS, BOARD AND WIRE; and, set apart, SPEAKER.
+**With names instead of numbers.** Swap the tag sentence for: "each with a small white printed label beside it reading its name in clean black sans-serif capitals", and use these names: ESP32-S3 BOARD, MICROPHONE, AMPLIFIER, TALK BUTTON, MODE KNOB, SELECT KNOB, VOLUME KNOB, SCREEN, FM TUNER, FM AERIAL, TILT SENSOR, MESH RADIO, MESH ANTENNA, BATTERY HOLDER, CHARGER, PUSH OPEN SWITCH, LIGHTS, BOARD AND WIRE; and, set apart, SPEAKER, BATTERY.
 
 **Key to the numbers.**
 
@@ -67,18 +68,19 @@ Clean technical catalogue look, realistic scale between parts, neutral colours. 
 | 11 | Accelerometer breakout | Knows upright from lying on its back | 2 |
 | 12 | Mesh radio stamp (Heltec HT-CT62) | The always-on mesh: Meshtastic on its own chip | 14 |
 | 13 | 915 MHz antenna with pigtail | The mesh radio's antenna | A few dollars; not in the report's module total |
-| 14 | 18650 holder and cell | Power off the stand | Holder with the charger; cell about 12.50 |
+| 14 | 18650 holder, empty | Holds the cell | With the charger |
 | 15 | USB-C charger board | Charges the cell | 3.20, with the holder |
 | 16 | Slide switch | PUSH or OPEN | With the button |
 | 17 | Red LED and two RGB LEDs | Red whenever the microphone can hear; colours for talk and listen | With the button |
 | 18 | Proto board and hookup wire | Joins it all up, by hand | 3 |
 | 19 | Speaker, 4 ohm 3 W | Loud enough for Pop, and for music | Sold separately; not in the report's total |
+| 20 | 18650 cell | Power off the stand | Sold separately; about 12.50 |
 
-About NZ$61 for parts 1 to 18 without the cell, and two to three hours of soldering. The speaker (19) is sold separately. Prices are from the cost-down report and are list prices and estimates, not quotes.
+About NZ$61 for parts 1 to 18, and two to three hours of soldering. The speaker (19) and the cell (20) are sold separately. Prices are from the cost-down report and are list prices and estimates, not quotes.
 
 ## Prompt 1b: the same radio on one custom board
 
-The radio as it is built in Stage 2b and sold as a kit. Same mat, same light, same camera as 1a, so the two pictures compare. The kit is on the left. The speaker is sold separately, so it sits off to one side, apart from the kit. The case is left out: it has its own pictures.
+The radio as it is built in Stage 2b and sold as a kit. Same mat, same light, same camera as 1a, so the two pictures compare. The kit is on the left, with its empty battery holder on the main board. The speaker and the battery cell are sold separately, so they sit off to one side, apart from the kit. The case is left out: it has its own pictures.
 
 ```
 Top-down flat lay product photograph, knolling style, on the same matte light grey workbench mat, with the same soft even studio lighting and the same camera height as a matching parts photograph. Sharp focus, no hands, no tools, generous spacing. Far fewer items than a hobby parts layout: exactly ten items, each with a small white round numbered tag (1 to 10) placed beside it. A thin white line on the mat separates the left three-quarters from the right quarter.
@@ -94,16 +96,15 @@ On the left three-quarters, a mock-up of a custom electronics kit in matte dark 
 7. A short black stubby rubber antenna, about 50 mm long, joined to a thin grey cable with a tiny gold connector, beside a neat coil of thin black insulated wire.
 8. A round orange 3D printed button cap, 30 mm across, with two large black deeply ribbed knobs, 40 mm across, and one small black ribbed knob, 20 mm across.
 
-9. One green cylindrical 18650 lithium cell, 65 mm long and 18 mm across, lying beside the main board.
+On the right quarter of the mat, set well apart behind the thin white line, two items sold separately:
 
-On the right quarter of the mat, set well apart behind the thin white line, one item on its own, sold separately:
-
-10. A round black 57 mm loudspeaker with a paper cone, metal frame, and two short red and black wires.
+9. A round black 57 mm loudspeaker with a paper cone, metal frame, and two short red and black wires.
+10. One green cylindrical 18650 lithium cell, 65 mm long and 18 mm across.
 
 Clean technical catalogue look, realistic scale between parts, neutral colours. The four circuit boards look like finished factory-made products of one matching set. No case or enclosure, no breadboard, no perforated board, no hookup wire, no solder, no text or part numbers printed on any board, no brand logos. Aspect ratio 16:9.
 ```
 
-**With names instead of numbers.** Use: MAIN BOARD, TOP BOARD, MODE BOARD, SELECT BOARD, CABLES, SCREEN, ANTENNAS, BUTTON AND KNOBS, BATTERY; and, set apart, SPEAKER.
+**With names instead of numbers.** Use: MAIN BOARD, TOP BOARD, MODE BOARD, SELECT BOARD, CABLES, SCREEN, ANTENNAS, BUTTON AND KNOBS; and, set apart, SPEAKER, BATTERY.
 
 **Key to the numbers.**
 
@@ -117,8 +118,8 @@ Clean technical catalogue look, realistic scale between parts, neutral colours. 
 | 6 | 2.4 inch TFT screen | Plugs into the main board | Yes |
 | 7 | 915 MHz antenna and FM wire | The mesh antenna, and the FM aerial for the strap | Yes |
 | 8 | Button cap and knobs | Small printed parts | With a bought case, or printed from the plans |
-| 9 | 18650 cell | Fits the holder on the main board | No: bought locally |
-| 10 | Speaker | Set apart | No: sold separately |
+| 9 | Speaker | Set apart | No: sold separately |
+| 10 | 18650 cell | Set apart. Fits the empty holder on the main board | No: sold separately |
 
 About NZ$58 a kit to make in a batch of 100 and NZ$45 in a batch of 1,000, with no soldering. All four boards are cut from one panel. This is a mock-up: the board is not drawn yet, so the layout in the picture is the generator's guess.
 
