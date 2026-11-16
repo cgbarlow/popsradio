@@ -60,13 +60,13 @@ The advice was acted on in the same session. What changed is listed at the end.
 
 - **Locking a decision that is only a proposal.** Resolved by recording it as decision 11 and marking the thickness, joints and finish as starting points with a named test.
 - **A new thing to sell with no cost behind it.** Resolved by leaving the price unset and saying so.
-- **Prompt 1 no longer matches the locked design.** Not resolved here. Changing it means redoing every picture built on it, which is your call.
+- **Prompt 1 against the locked design.** Resolved after the Council: the base image stays as it is. Its four tabs are right, and its black-and-white screen is right.
 
 **Assessment.** Plywood is a good addition and a cheap one to describe. It is also the least worked-out thing on the site: one sentence of intent, no drawing. The words now say that.
 
 ## Recommended Next Steps
 
-1. **Decide whether to redo prompt 1.** If the pictures should show the 2.4 inch screen at its real size, the reference picture and prompts 2 to 7 all need regenerating.
+1. **Keep the reference picture as it is.** Decided after the Council: the base image is right and does not change. Its screen is drawn wider than a 2.4 inch panel, which is a point for the parts list, not the picture.
 2. **Make the new pictures:** 1a and 1b (the parts), 8 and 9 (plywood), and 1c (the mesh) if wanted.
 3. **Cut the box from cardboard,** from the same drawing as the size mock-up.
 4. **Build one plywood box with the boards in it** before settling 6 mm, the joints and the grille.
