@@ -82,6 +82,7 @@ It is not an emergency alarm. In an emergency, call 111.
 | [`research_notes/`](research_notes) | The working notes behind two of the reports |
 | [`prompts/`](prompts) | The prompts used to make the pictures |
 | [`images/`](images) | The pictures and drawings |
+| [`models/`](models) | 3D models of the radio: the Blender file and an STL export |
 
 | File | What it is |
 | --- | --- |
