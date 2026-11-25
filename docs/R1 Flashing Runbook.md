@@ -4,7 +4,7 @@ Nov 25, 2026 · @Chris Barlow
 
 ## Summary
 
-This is how we take a Rabbit R1 from stock rabbitOS to our own Android, step by step, on a Linux laptop. It is written from doing it on R1 "A", so every command up to the unlock has been run and worked. The flashing part is a checked plan, not yet run.
+This is how we take a Rabbit R1 from stock rabbitOS to our own Android, step by step, on a Linux laptop. It is written from doing it on R1 "A", so every command here has been run and worked, through to LineageOS booting.
 
 | Step | What | R1 "A" | R1 "B" |
 |---|---|---|---|
@@ -13,8 +13,8 @@ This is how we take a Rabbit R1 from stock rabbitOS to our own Android, step by 
 | 2 | Allow unlocking (flip the `frp` byte) | Done | To do |
 | 3 | Get into fastboot | Done | To do |
 | 4 | Unlock the bootloader and wipe | Done | To do |
-| 5 | Flash LineageOS | Next | To do |
-| 6 | Root with Magisk, read the button scancodes | Later | To do |
+| 5 | Flash LineageOS | Done, boots | To do |
+| 6 | Root with Magisk, read the button scancodes | Next | To do |
 
 The scripts are in [`tools/r1/`](../tools/r1). The backups are not in the repo and must never be: they hold each R1's IMEI and Wi-Fi calibration.
 
@@ -158,9 +158,9 @@ for n in ["vbmeta", "vbmeta_system", "vbmeta_vendor"]:
 EOF
 ```
 
-## 5. Flash LineageOS (checked plan, not yet run)
+## 5. Flash LineageOS
 
-We checked the earlier plan against the live sources on 25 November 2026. Five things changed.
+We checked the earlier plan against the live sources on 25 November 2026, and five things changed. Then we ran it on R1 "A", and it booted first time.
 
 **Which image.** `lineage-21.0-20261109-UNOFFICIAL-arm64_bvN.img.gz` from the `lineage-21-pre-qpr2-td` folder of [Andy Yan's GSIs](https://sourceforge.net/projects/andyyan-gsi/files/), about 1.2 GB.
 
@@ -172,7 +172,7 @@ We checked the earlier plan against the live sources on 25 November 2026. Five t
 
 **Turn verification off on all three vbmeta images, both slots,** not just one, as robotOS does. Use this R1's own images from its backup, since there is no public 2.x stock image to take them from.
 
-**Read the slot from fastbootd, not the bootloader.** Croissant found the bootloader's `current-slot` was wrong on one unit. Flash `system_<slot>` explicitly.
+**Read the slot from fastbootd, not the bootloader.** Croissant found the bootloader's `current-slot` was wrong on one unit, and **R1 "A" had the same problem.** The bootloader said `b`, but fastbootd said `a`, and fastbootd was right: `super` held only `system_a`, `vendor_a` and `product_a`, and Android then booted with `ro.boot.slot_suffix=_a`. Flash `system_<slot>` explicitly, using the slot fastbootd reports. Check with `fastboot getvar all | grep is-logical` that the `_<slot>` partitions exist.
 
 **Cancel any pending update first** with `fastboot snapshot-update cancel`.
 
@@ -191,12 +191,24 @@ fastboot erase md_udc          # the real /metadata; stale keys here stop /data 
 fastboot reboot fastboot
 
 # fastbootd
-fastboot getvar current-slot   # trust this value
-fastboot snapshot-update cancel
+fastboot getvar is-userspace   # yes = fastbootd is up (R1 "A": within 3 s)
+fastboot getvar current-slot   # trust this value (R1 "A": a)
+fastboot snapshot-update cancel   # R1 "A" had leftover *-cow partitions
 fastboot delete-logical-partition product_<slot>   # optional: removes Rabbit's apps
 fastboot -S 100M flash system_<slot> lineage-21.0-20261109-UNOFFICIAL-arm64_bvN.img
 fastboot reboot
 ```
+
+**What happened on R1 "A".**
+
+- The six vbmeta writes went through OK. The two erases printed fastboot's "did you mean to format" warning, which is harmless because Android rebuilds both.
+- fastbootd came up straight away. It takes 256 MB at a time (`max-download-size: 0x10000000`), against the bootloader's 128 MB.
+- The system image went in 25 pieces, in 2 minutes 11 seconds. fastbootd grew `system_a` from 1.6 GB to exactly the image's 2.55 GB.
+- We skipped `delete-logical-partition product_a` on this first flash.
+- After `fastboot reboot`, it showed as `0e8d:2303 TrebleDroid vanilla` within 75 seconds. Android reported `sys.boot_completed=1` about 40 seconds after that, landing in the Lineage setup wizard. `adb` worked straight away with no authorisation prompt, because it's a `userdebug` build.
+- What it reported: Android 14, security patch 2026-11-01, `verifiedbootstate=orange` (unlocked), screen 480×640 at 320 dpi, Wi-Fi on, and 103 GB free in `/data`.
+- Input devices: `mtk-tpd` (touch), `mtk-pmic-keys`, `mtk-kpd`, `och1970_holl_key` (probably the hall-sensor wheel) and `mt63xx-accdet` (headset).
+- The only crash was Lineage's music app, Eleven: `AppWidgetManager` is null, the known missing-AppWidgetService problem. It's harmless for us.
 
 **Known risks for this step:**
 
