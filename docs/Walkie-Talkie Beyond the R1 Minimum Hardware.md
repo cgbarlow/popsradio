@@ -100,6 +100,15 @@ Prices as seen on 14 November 2026, converted at NZ$1.81 to the US dollar and NZ
 
 **Ruled out.** M5Dial has the right shape but only a buzzer and no mic ([Core Electronics](https://core-electronics.com.au/m5stack-dial-esp32-s3-smart-rotary-knob-with-128-touchscreen.html)). Cardputer and T-Deck have keyboards, the opposite of the brief. Pico-class boards are proven for Opus decode only ([pico-opus](https://github.com/dawidpieper/pico-opus)). nRF52 chips have no Wi-Fi.
 
+**ESP32-A1S (AI Thinker): a bench board at most** (added November 2026). It costs under US$15, and one version carries the ES8388, the codec chosen for our custom board in [Design Decisions](Design%20Decisions.md). That makes it a cheap way to start the codec driver early. It isn't a base for the radio, for four reasons:
+
+- It is built on the original ESP32, not the S3, and the original ESP32 has no Opus benchmark (see the chip table above).
+- Boards ship with either the ES8388 or the AC101, and code for one doesn't run on the other.
+- On most boards the mic capacitors are fitted in the wrong place and have to be moved by hand.
+- Its documentation is thin.
+
+If we buy one, check the listing says ES8388 ([XDA, Dec 2025](https://www.xda-developers.com/esp32-a1s-most-underrated-esp32-board/)). Whether it is the original ESP32 is my understanding; the article doesn't say.
+
 **The T-Embed caveats.** Its only button is the small push on the dial, and a 1 W speaker may be quiet for older ears. Both are fixable: wire an arcade button to its expansion port and rehouse it with a bigger speaker. The CC1101 version also carries a sub-GHz radio, NFC and IR you will not use.
 
 **A fallback if the bedside unit is too quiet.** If the breadboard test shows a 3 W amp is not loud enough even with a bigger speaker in a sealed box, use a Sonocotta Louder-ESP32 for Pop's docked unit only. It is the same ESP32-S3 with 8 MB PSRAM, so the firmware still carries over, and it gives about 32 W into 4 ohms from a 5 to 26 V adapter, with a header for the INMP441 mic (S3 boards from rev K0). No soldering is needed for the audio. The costs: it needs a mains adapter and cannot run on a battery, the amp needs setting up over I2C at boot, and its own DSP is hard to tune because TI restricts the tuning software, so keep the speech shaping in software. The Louder-ESP32 Mini (USB powered, 5 W) is not worth it: about 2 dB more than 3 W, and no mic header is listed ([Sonocotta](https://github.com/sonocotta/esp32-audio-dock)). Price not checked.
