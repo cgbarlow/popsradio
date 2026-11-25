@@ -115,6 +115,39 @@ fastboot -w
 
 `fastboot -w` reformats user data and erases `metadata`. "Partition not found: cache" is normal, because the R1 has no cache partition.
 
+### Check `seccfg` before flashing
+
+The red "dm-verity corruption" screen in [r1_escape PR #97](https://github.com/RabbitHoleEscapeR1/r1_escape/pull/97) comes from `dm_verity_state=1` in `seccfg`. Read it back after the unlock and check:
+
+```
+sudo modprobe -r cdc_acm
+mtk r seccfg ~/r1-backups/work-A/seccfg-after-unlock.bin   # leave it waiting...
+fastboot reboot                                           # ...and mtk catches the R1 as it restarts
+python3 -I -c "import struct,sys; d=open(sys.argv[1],'rb').read(28); print('lock_state=%d dm_verity_state=%d' % struct.unpack('<7I',d)[3:5])" ~/r1-backups/work-A/seccfg-after-unlock.bin
+```
+
+`fastboot reboot` saves an unplug: in fastboot the side button won't turn the R1 off.
+
+**You want `lock_state=3 dm_verity_state=0`.** R1 "A" read exactly that after `fastboot flashing unlock` (stock was `1` and `0`), so it needed no fix.
+
+If it says `dm_verity_state=1`, don't flash vbmeta yet. mtkclient 2.1.4's `mtk da seccfg unlock` keeps the existing `dm_verity_state` unless you pass `--critical`, but it refuses to run on an R1 that's already unlocked. So write back the stock `seccfg.bin` from the backup (locked, verity 0), run `mtk da seccfg unlock`, then read it back and check again.
+
+### Build the vbmeta images
+
+Build them from this R1's own active-slot copies, with the flags (bytes 120–123) set to 3 in the file itself. That avoids newer fastboot's "AVB_MAGIC" failure. Trimming each one to its few KB of real data also avoids PR #97's `vbmeta_vendor_a` size problem. On R1 "A", slots `a` and `b` held different firmware, so use the active slot's copies for both slots:
+
+```
+mkdir -p ~/r1-backups/work-A/vbmeta-flags3 && cd ~/r1-backups/work-A/vbmeta-flags3
+python3 -I - <<'EOF'
+for n in ["vbmeta", "vbmeta_system", "vbmeta_vendor"]:
+    d = bytearray(open(f"../../r1-A/{n}_b.bin", "rb").read())   # _b = the active slot
+    assert d[:4] == b"AVB0"
+    end = (len(d.rstrip(b"\0")) + 4095) // 4096 * 4096
+    d = d[:end]; d[120:124] = (3).to_bytes(4, "big")
+    open(f"{n}.img", "wb").write(d)
+EOF
+```
+
 ## 5. Flash LineageOS (checked plan, not yet run)
 
 We checked the earlier plan against the live sources on 25 November 2026. Five things changed.
@@ -139,9 +172,10 @@ The sequence:
 
 ```
 # bootloader fastboot
-fastboot flash --disable-verity --disable-verification vbmeta_a        ~/r1-backups/r1-A/vbmeta_a.bin
-fastboot flash --disable-verity --disable-verification vbmeta_b        ~/r1-backups/r1-A/vbmeta_b.bin
-# ...and the same for vbmeta_system_a/_b and vbmeta_vendor_a/_b
+cd ~/r1-backups/work-A/vbmeta-flags3
+for s in a b; do
+  for n in vbmeta vbmeta_system vbmeta_vendor; do fastboot flash ${n}_$s $n.img; done
+done
 fastboot erase userdata
 fastboot erase md_udc          # the real /metadata; stale keys here stop /data mounting
 fastboot reboot fastboot
@@ -156,8 +190,8 @@ fastboot reboot
 
 **Known risks for this step:**
 
-- **"Failed to find AVB_MAGIC".** Some recent fastboot versions fail the `--disable-verity` edit. robotOS gets round it by setting bytes 120–123 of the vbmeta image to `00 00 00 03` itself.
-- **A red "dm-verity corruption" screen and no fastbootd.** [r1_escape PR #97](https://github.com/RabbitHoleEscapeR1/r1_escape/pull/97) reports this on rabbitOS 2.3.1 after unlocking with r1_escape. Their fix rewrites `seccfg` with `dm_verity_state=0`. They also truncate `vbmeta_vendor_a` to 11534336 bytes. We have the stock `seccfg` backed up if we need to go this way.
+- **"Failed to find AVB_MAGIC".** Some recent fastboot versions fail the `--disable-verity` edit. Building the images with the flags already set avoids it.
+- **A red "dm-verity corruption" screen and no fastbootd.** [r1_escape PR #97](https://github.com/RabbitHoleEscapeR1/r1_escape/pull/97) reports this on rabbitOS 2.3.1 when `seccfg` has `dm_verity_state=1`. Checking `seccfg` first, as in step 4, rules out that cause.
 - **The home screen crash-loops.** Lineage's launcher needs AppWidgetService, which some builds lack. That doesn't matter for us: our app becomes the home screen, and Croissant disables `com.android.launcher3`.
 
 ## 6. Afterwards
