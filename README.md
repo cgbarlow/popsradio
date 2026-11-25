@@ -83,6 +83,7 @@ It is not an emergency alarm. In an emergency, call 111.
 | [`prompts/`](prompts) | The prompts used to make the pictures |
 | [`images/`](images) | The pictures and drawings |
 | [`models/`](models) | 3D models of the radio: the Blender file and an STL export |
+| [`tools/`](tools) | Scripts for the build. `tools/r1/` backs up, unlocks and reflashes the R1s |
 
 | File | What it is |
 | --- | --- |
@@ -93,6 +94,7 @@ It is not an emergency alarm. In an emergency, call 111.
 | [Rabbit R1 Walkie-Talkie Research and Design](docs/Rabbit%20R1%20Walkie-Talkie%20Research%20and%20Design.md) | Stage 1: the R1 hardware, reflashing, the app, networking, and designing for Pop |
 | [Walkie-Talkie Beyond the R1: Minimum Hardware](docs/Walkie-Talkie%20Beyond%20the%20R1%20Minimum%20Hardware.md) | The ESP32 research behind Stage 2: the simpler one-knob build, pairing, power, and open channel mode |
 | [Walkie-Talkie Service Design](docs/Walkie-Talkie%20Service%20Design.md) | The locked design: serverless service, updates, shared code, family app, lifetime costs, the guarantee and the roadmap |
+| [R1 Flashing Runbook](docs/R1%20Flashing%20Runbook.md) | Step by step from stock R1 to our own Android on Linux: backup, unlock and flashing, with what went wrong and the fixes |
 | [Hack Day Action Plan](docs/Hack%20Day%20Action%20Plan.md) | Getting the two R1s talking at the 4 December hack day: what to do beforehand, and how to spend the day |
 | [Walkie talkie without central relay](reports/Walkie%20talkie%20without%20central%20relay.md) | Research on running without a central relay, and the recommendation adopted |
 | [NZ addressable market and opportunities](reports/NZ%20addressable%20market%20and%20opportunities.md) | Research on the size of the New Zealand market, for families and for rest homes, hospitals and other organisations, by category and region |
