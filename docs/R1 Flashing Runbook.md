@@ -28,6 +28,8 @@ The background, and why we reflash at all, is in the [R1 doc](Rabbit%20R1%20Walk
 2. Unplug the R1 and switch it fully off. Hold the side button for about 10 seconds if unsure.
 3. Plug it straight into the laptop, not through a hub, without pressing anything.
 
+**To switch the R1 off, press the side button quickly 8 times** ([Rabbit support](https://www.rabbit.tech/support/article/use-rabbit-r1)). Holding it only wakes it, and works even when rabbitOS wants activating. Do it *unplugged*. If it powers off while plugged in, it drops into charging mode (`0e8d:20ff`) without passing through the preloader, so unplug and plug in again. A booted rabbitOS shows as `0e8d:2304 r1`. Once unlocked, it boots with an "unlocked, can't be trusted" warning, which is normal.
+
 A plugged-in R1 that is off sits on the USB bus as `0e8d:2000 MT65xx Preloader`, but that connection has gone quiet. Each new command needs a fresh plug-in. If `mtk` keeps saying "Handshake failed, retrying", that is what has happened: replug.
 
 ## 0. Tools
@@ -71,6 +73,14 @@ Then check it and save checksums:
 - `cd ~/r1-backups/r1-A && sha256sum *.bin > SHA256SUMS`
 
 Label the R1 with the same letter as its backup folder.
+
+**Back up the preloader too.** `mtk rl` only reads the main area, not the eMMC boot area that holds the preloader:
+
+```
+mtk r boot1 ~/r1-backups/r1-A/boot1.bin --parttype boot1   # read-only; 4 MB, starts with "EMMC_BOOT"
+```
+
+Use `mtk r`, never `mtk e`, which also accepts `boot1` and would erase it.
 
 ## 2. Allow unlocking
 
