@@ -1,0 +1,6 @@
+id=popsradio-ptt
+name=Pop's Radio push-to-talk button
+version=v1
+versionCode=1
+author=popsradio
+description=Remaps the R1 side button (mtk-kpd, key 116) from POWER to F9 for push-to-talk.

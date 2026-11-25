@@ -237,6 +237,28 @@ The R1 then shows Android's placeholder home, "Device is starting…", which is 
 
 There is no `mtk-kpd.kl`, so Android uses `Generic.kl`. The push-to-talk remap is a new `mtk-kpd.kl` that maps 116 to something other than `POWER`, and it needs root.
 
+### Side button to F9 (push-to-talk)
+
+The Magisk module in [`tools/r1/magisk-module-ptt/`](../tools/r1/magisk-module-ptt) adds `/system/usr/keylayout/mtk-kpd.kl`, which maps key 116 to `F9 WAKE`. The volume-down key, 114, stays as it was. Android picks the file up by device name, because `mtk-kpd` reports vendor and product 0. The system image is never edited: the file is overlaid at boot.
+
+```
+cd tools/r1/magisk-module-ptt && zip -r ../popsradio-ptt-v1.zip . && cd -
+adb push tools/r1/popsradio-ptt-v1.zip /data/local/tmp/
+adb shell su -c 'magisk --install-module /data/local/tmp/popsradio-ptt-v1.zip'
+adb reboot
+adb shell su -c 'dumpsys input' | grep -A12 ': mtk-kpd' | grep KeyLayoutFile   # /system/usr/keylayout/mtk-kpd.kl
+```
+
+Hold the side button, then run `adb shell su -c 'dumpsys input' | grep keyCode`. On R1 "A" a 2-second hold gave:
+
+- one `DOWN` with `keyCode=F9(139), scanCode=116, repeatCount=0`
+- repeats every 50 ms (`repeatCount` 1 to 44), which the app should ignore
+- one `UP` on release
+
+The screen stays on, because the button is no longer power.
+
+**The button can't switch the R1 off any more, and the 8-press trick is gone too.** Use `adb reboot -p` to power off. To undo the remap, remove the module in Magisk's Modules tab and restart.
+
 ### Root with Magisk
 
 **Magisk goes into `boot_<slot>`, not `init_boot`.** On R1 "A", `boot_a` is a version 2 boot image holding the kernel and a 13.6 MB ramdisk, and `init_boot` is empty. Patch the stock `boot_<slot>` from the backup, for the slot Android runs (`adb shell getprop ro.boot.slot_suffix`).

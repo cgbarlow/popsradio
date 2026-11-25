@@ -1,0 +1,8 @@
+# Pop's Radio: key layout for the R1's mtk-kpd input device.
+# Replaces Generic.kl for this device only (vendor/product 0, so Android matches by name).
+#
+# 116 is the side button. It sends one down when pressed and one up when released,
+# so the app can treat it as hold-to-talk. WAKE lets it still wake the screen.
+key 116   F9                 WAKE
+# mtk-kpd also reports a volume-down key; keep it as it was.
+key 114   VOLUME_DOWN
