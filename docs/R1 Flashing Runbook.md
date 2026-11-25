@@ -218,7 +218,26 @@ fastboot reboot
 
 ## 6. Afterwards
 
-- Root with Magisk, then run `adb shell getevent -lt`, press everything, and write the scancodes down.
+**Trebuchet, Lineage's home screen, crash-loops** on the missing AppWidgetService, as expected. Turn it off; our app will be the home screen:
+
+```
+adb shell pm disable-user --user 0 com.android.launcher3   # undo: adb shell pm enable com.android.launcher3
+```
+
+The R1 then shows Android's placeholder home, "Device is starting…", which is fine. Open anything else over adb, for example `adb shell am start -a android.settings.SETTINGS`. If `adb devices` goes empty while the R1 is still on USB, run `adb kill-server` and try again.
+
+**Buttons and wheel, read on R1 "A" with `adb shell getevent -lt`:**
+
+| Control | Device | Code | Android key | Notes |
+|---|---|---|---|---|
+| Side button | `mtk-kpd` (`event0`) | 116 `KEY_POWER` | `POWER` | A hold gives one down, then one up when released, so it suits push-to-talk. Not `mtk-pmic-keys`, which also claims `KEY_POWER` but never fired |
+| Wheel up | `och1970_holl_key` (`event2`) | 103 `KEY_UP` | `DPAD_UP` | Hall-sensor wheel. About 23 steps for one felt click, so count events, not clicks |
+| Wheel down | `och1970_holl_key` (`event2`) | 108 `KEY_DOWN` | `DPAD_DOWN` | |
+| Touch | `mtk-tpd` (`event3`) | `BTN_TOUCH` | touch | Still worked after a short screen-off |
+
+There is no `mtk-kpd.kl`, so Android uses `Generic.kl`. The push-to-talk remap is a new `mtk-kpd.kl` that maps 116 to something other than `POWER`, and it needs root.
+
+- Root with Magisk.
 - **Device Owner needs a Magisk module.** The R1's vendor doesn't declare `android.software.device_admin`, so `dpm set-device-owner` is refused. Croissant ships a module that adds `/system/etc/permissions/android.software.device_admin.xml`.
 - Never run `adb root`. frogmoses found it re-enumerates USB and killed touch.
 - Touch dying after the screen turns off, and the side button not waking the R1 from deep sleep, are reported on CipherOS. Nobody has checked on Lineage yet.
