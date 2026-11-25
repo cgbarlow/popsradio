@@ -1,0 +1,6 @@
+# Never commit R1 partition dumps: they hold each unit's IMEI and calibration.
+*.bin
+*.img
+*.img.gz
+*.img.xz
+__pycache__/
