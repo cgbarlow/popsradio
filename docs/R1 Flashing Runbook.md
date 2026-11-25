@@ -14,7 +14,7 @@ This is how we take a Rabbit R1 from stock rabbitOS to our own Android, step by 
 | 3 | Get into fastboot | Done | To do |
 | 4 | Unlock the bootloader and wipe | Done | To do |
 | 5 | Flash LineageOS | Done, boots | To do |
-| 6 | Root with Magisk, read the button scancodes | Next | To do |
+| 6 | Root with Magisk, read the button scancodes | Done | To do |
 
 The scripts are in [`tools/r1/`](../tools/r1). The backups are not in the repo and must never be: they hold each R1's IMEI and Wi-Fi calibration.
 
@@ -237,7 +237,36 @@ The R1 then shows Android's placeholder home, "Device is starting…", which is 
 
 There is no `mtk-kpd.kl`, so Android uses `Generic.kl`. The push-to-talk remap is a new `mtk-kpd.kl` that maps 116 to something other than `POWER`, and it needs root.
 
-- Root with Magisk.
+### Root with Magisk
+
+**Magisk goes into `boot_<slot>`, not `init_boot`.** On R1 "A", `boot_a` is a version 2 boot image holding the kernel and a 13.6 MB ramdisk, and `init_boot` is empty. Patch the stock `boot_<slot>` from the backup, for the slot Android runs (`adb shell getprop ro.boot.slot_suffix`).
+
+```
+gh release download v31.1 -R topjohnwu/Magisk -p 'Magisk-v31.1.apk'   # check it against the release's sha256
+adb install Magisk-v31.1.apk
+tools/r1/magisk-patch.sh Magisk-v31.1.apk ~/r1-backups/r1-A/boot_a.bin ~/r1-backups/magisk/boot_a-magisk-v31.1.img
+adb reboot bootloader
+fastboot flash boot_a ~/r1-backups/magisk/boot_a-magisk-v31.1.img
+fastboot reboot
+```
+
+The script runs Magisk's own `boot_patch.sh` on the R1 over adb, so there's no tapping through the app. On R1 "A" it reported "Pre-init storage partition: md_udc", plus three "Failed to patch" lines for the device tree, which are harmless: there was nothing to patch. Undo it by flashing the stock `boot_a.bin` back.
+
+Then open the Magisk app (`adb shell monkey -p com.topjohnwu.magisk -c android.intent.category.LAUNCHER 1`). It asks for one extra restart to finish setting up.
+
+**Magisk v31 has no "Superuser request" prompt.** Since v31 (October 2026) you grant root ahead of time, and anything not granted is refused instantly: `su` gives "Permission denied", and logcat shows `su: request rejected (2000)`. To grant adb root, open **Superuser**, tap add, search **adb**, and switch **Shell** on. Then check:
+
+```
+adb shell su -c id    # uid=0(root) ... context=u:r:magisk:s0
+```
+
+The "Superuser access" and "Automatic response" settings that older guides mention no longer exist.
+
+**Other things we noticed:**
+
+- **The speaker is very loud** at Android's default volumes. `cmd media_session volume --set` and volume key events from adb were both ignored, so turn it down by hand in Sound settings (`adb shell am start -a android.settings.SOUND_SETTINGS`).
+- **The lock screen covers whatever you open over adb.** Swipe up on the R1.
+- **The R1 sometimes resets its USB connection** for a moment. If `adb devices` goes empty, check the kernel log or replug, then run `adb kill-server`.
 - **Device Owner needs a Magisk module.** The R1's vendor doesn't declare `android.software.device_admin`, so `dpm set-device-owner` is refused. Croissant ships a module that adds `/system/etc/permissions/android.software.device_admin.xml`.
 - Never run `adb root`. frogmoses found it re-enumerates USB and killed touch.
 - Touch dying after the screen turns off, and the side button not waking the R1 from deep sleep, are reported on CipherOS. Nobody has checked on Lineage yet.
