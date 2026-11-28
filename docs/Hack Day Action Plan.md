@@ -13,6 +13,8 @@ That fits in one day only if the slow, risky setup is done beforehand. So the ne
 - **Have the service running and an app skeleton installed** before the day, so the day is spent on audio and the button, not setup.
 - **Bring your own network:** a 2.4 GHz phone hotspot, because venue Wi-Fi with a sign-in page will not work.
 
+> **Update, 28 November.** The R1s and the Zello fallback are done: tasks 2 and 3, plus the protocol v0.1 draft (task 4). R1 work then paused until the day. **Tasks 5 to 8 (Cloudflare and Wrangler, channel service v0, app skeleton, dry run) move to the day itself.** So the day starts with setup, not audio. That makes the Must harder to reach, and makes the Zello fallback more likely to be the demo.
+
 Deliberately left out of the day: the ESP32 radio, end-to-end encryption, kiosk lock-down, automatic updates, key-pair sign-in and the family app. They all come later, as planned in the R1 doc and service design.
 
 This is a plan, not sourced research. Effort figures are my estimates.
@@ -44,20 +46,20 @@ This is a plan, not sourced research. Effort figures are my estimates.
 | 2 | **Bench night**, following the [R1 Flashing Runbook](R1%20Flashing%20Runbook.md). On Chris's Omarchy laptop (Arch Linux), not the Mac mini: adb, fastboot and [mtkclient](https://github.com/bkerler/mtkclient), with the R1 plugged straight in. Back up each R1, nvram and the preloader included, and label the backups. Unlock, flash the LineageOS GSI and root with Magisk. Then run `getevent -lt` and press everything, and write down the real scancodes. **Done for both R1s:** R1 "A" on 25 November, R1 "B" on 28 November. Rooted LineageOS 21, with the side button sending F9. The scancodes are in the runbook | Chris and teammate | 1 evening each |
 | 3 | **Zello smoke test** on the same night. Install it on both R1s and talk over Wi-Fi, then over LTE if there is a SIM. Note how loud they are and roughly how much delay there is. **The R1s are now talking:** this is the guaranteed fallback. **Done 28 November** over Wi-Fi: both ways, with the side button as the talk button, about 0.5 s delay. LTE not tried yet. See the [Zello smoke test](R1%20Zello%20Smoke%20Test.md) | Chris and teammate | 30 minutes |
 | 4 | **Protocol spec v0.1** in `docs/protocol.md`, kept short. The WebSocket messages (join, floor request, granted, denied, talking, end) and the binary audio frame with its header (channel, sender, sequence, codec). Pick the cipher for later too: XChaCha20-Poly1305, as the service design says. **Drafted 20 November** as v0.1 | Chris | 1 evening |
-| 5 | **Cloudflare account and Wrangler** installed | Chris | 30 minutes |
+| 5 | **Cloudflare account and Wrangler** installed **Moved to the day (28 November).** | Chris | 30 minutes |
 
 ### Week 2: 23 to 29 November
 
 | # | Task | Owner | Effort |
 |---|---|---|---|
-| 6 | **Channel service v0.** One Worker and one Durable Object per channel: join, fan out binary frames unchanged, floor control, "who is talking", and a shared test token. Deploy it. Check it with `websocat` or a small script from the laptop | Chris | 2 evenings |
-| 7 | **App skeleton on both R1s.** A Kotlin project that installs on the flashed R1, shows one big state word and an on-screen talk button, and opens the WebSocket to the service. No audio yet | Chris | 1 to 2 evenings |
+| 6 | **Channel service v0.** One Worker and one Durable Object per channel: join, fan out binary frames unchanged, floor control, "who is talking", and a shared test token. Deploy it. Check it with `websocat` or a small script from the laptop **Moved to the day (28 November).** | Chris | 2 evenings |
+| 7 | **App skeleton on both R1s.** A Kotlin project that installs on the flashed R1, shows one big state word and an on-screen talk button, and opens the WebSocket to the service. No audio yet **Moved to the day (28 November).** | Chris | 1 to 2 evenings |
 
 ### Week 3: 30 November to 3 December
 
 | # | Task | Owner | Effort |
 |---|---|---|---|
-| 8 | **Dry run.** Both R1s join the deployed service over the phone hotspot and show each other's join and leave | Chris | 1 hour |
+| 8 | **Dry run.** Both R1s join the deployed service over the phone hotspot and show each other's join and leave **Moved to the day (28 November).** | Chris | 1 hour |
 | 9 | **Pack.** Android Studio and adb on both laptops, with the R1s authorised for adb. Hotspot tested at 2.4 GHz. Both R1s charged, with cables. Bench night notes and scancodes in the repo | Both | 1 hour |
 | 10 | **Push everything,** and give your teammate write access to the repo | Chris | 10 minutes |
 
