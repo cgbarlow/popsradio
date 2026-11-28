@@ -27,11 +27,11 @@ The case comes two ways, and other shapes we looked at:
 
 ## Where it's at
 
-This is a family project. The design is decided, in [Design Decisions](docs/Design%20Decisions.md). The radio itself isn't built yet. Stage 1 is under way: both R1s are reflashed and already talking to each other, ready for the 4 December hack day.
+This is a family project. The design is decided, in [Design Decisions](docs/Design%20Decisions.md). The radio itself isn't built yet. Stage 1 is under way: the groundwork for the 4 December [hack day](docs/Hack%20Day%20Action%20Plan.md) is done, and the day itself has to prove the two R1s talking through our own app.
 
 | Stage | What | Status |
 | --- | --- | --- |
-| 1 | Prove the idea on two Rabbit R1s, reflashed to run one app | Now. Both R1s are reflashed and rooted, with the side button as push-to-talk, and talking over Wi-Fi through Zello. Our own app is next |
+| 1 | Prove the idea on two Rabbit R1s, reflashed to run one app | Now. Groundwork done: both R1s are reflashed and rooted, with the side button as push-to-talk, and the Zello fallback works. Still to come: our channel service and app, to be proved at the 4 December hack day |
 | 2a | Build the radio from modules: three knobs, a 2.4 inch screen, FM and the mesh radio, about NZ$61 in parts | Next |
 | 2b | Put it on one custom board that opens up for plug-in cards: 10 boards, then 100 base kits at about NZ$44 each to make | After 2a |
 | 3 | A family app for iOS and Android, to talk to Pop's radio from a phone | Later |
@@ -95,7 +95,7 @@ It is not an emergency alarm. In an emergency, call 111.
 | [Walkie-Talkie Beyond the R1: Minimum Hardware](docs/Walkie-Talkie%20Beyond%20the%20R1%20Minimum%20Hardware.md) | The ESP32 research behind Stage 2: the simpler one-knob build, pairing, power, and open channel mode |
 | [Walkie-Talkie Service Design](docs/Walkie-Talkie%20Service%20Design.md) | The locked design: serverless service, updates, shared code, family app, lifetime costs, the guarantee and the roadmap |
 | [R1 Flashing Runbook](docs/R1%20Flashing%20Runbook.md) | Step by step from stock R1 to rooted LineageOS on a Linux laptop: backup, unlock, flashing, Magisk, the side button as push-to-talk and a home screen. Done on both R1s, with what went wrong and the fixes |
-| [R1 Zello Smoke Test](docs/R1%20Zello%20Smoke%20Test.md) | The hack-day fallback, and it works: both R1s talk over Wi-Fi through Zello, with the side button as the talk button, about 0.5 s delay |
+| [R1 Zello Smoke Test](docs/R1%20Zello%20Smoke%20Test.md) | The hack-day fallback (not our app), and it works: both R1s talk over Wi-Fi through Zello, with the side button as the talk button, about 0.5 s delay |
 | [Protocol](docs/protocol.md) | The walkie-talkie protocol spec, v0.1 draft: the WebSocket messages and the audio frame shared by R1s, ESP32 radios and phones |
 | [Hack Day Action Plan](docs/Hack%20Day%20Action%20Plan.md) | Getting the two R1s talking at the 4 December hack day: what to do beforehand, and how to spend the day |
 | [Walkie talkie without central relay](reports/Walkie%20talkie%20without%20central%20relay.md) | Research on running without a central relay, and the recommendation adopted |
