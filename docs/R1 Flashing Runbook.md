@@ -245,6 +245,13 @@ adb shell pm disable-user --user 0 com.android.launcher3   # undo: adb shell pm 
 
 The R1 then shows Android's placeholder home, "Device is starting…", which is fine. Open anything else over adb, for example `adb shell am start -a android.settings.SETTINGS`. If `adb devices` goes empty while the R1 is still on USB, run `adb kill-server` and try again.
 
+**A home screen until our app replaces it.** `tools/r1/home-launcher.sh <serial>` installs [Olauncher](https://f-droid.org/packages/app.olauncher/) v6.10.27 from F-Droid, checking the APK's SHA-256. It makes Olauncher the home app (`cmd role add-role-holder android.app.role.HOME app.olauncher 0`), and writes its settings with root, so the home screen is just a clock, the date and **Zello**. Nothing needs tapping, and it took about 20 seconds per R1.
+
+- Olauncher has no widgets, so it doesn't hit the missing AppWidgetService. Neither R1 logged a crash.
+- **Everything else is in Quick Settings: swipe down twice.** That gives Wi-Fi, Bluetooth, brightness, a gear for Settings, and a **power button**, which switches the R1 off or restarts it without adb.
+- Swipe up on the home screen for all apps. Undo with `adb shell pm uninstall app.olauncher`.
+- `cmd package set-home-activity` alone wasn't enough: Home still opened Android's "choose a home app" screen. The role command fixed it.
+
 **Buttons and wheel, read on R1 "A" with `adb shell getevent -lt`:**
 
 | Control | Device | Code | Android key | Notes |
@@ -276,7 +283,7 @@ Hold the side button, then run `adb shell su -c 'dumpsys input' | grep keyCode`.
 
 The screen stays on, because the button is no longer power.
 
-**The button can't switch the R1 off any more, and the 8-press trick is gone too.** Use `adb reboot -p` to power off. To undo the remap, remove the module in Magisk's Modules tab and restart.
+**The button can't switch the R1 off any more, and the 8-press trick is gone too.** Power off from Quick Settings (swipe down twice, then the power button), or with `adb reboot -p`. To undo the remap, remove the module in Magisk's Modules tab and restart.
 
 ### Root with Magisk
 
