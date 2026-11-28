@@ -8,19 +8,36 @@ This is how we take a Rabbit R1 from stock rabbitOS to our own Android, step by 
 
 | Step | What | R1 "A" | R1 "B" |
 |---|---|---|---|
-| 0 | Install the tools | Done | Same laptop, done |
-| 1 | Back up every partition except user data | Done, checked | To do |
-| 2 | Allow unlocking (flip the `frp` byte) | Done | To do |
-| 3 | Get into fastboot | Done | To do |
-| 4 | Unlock the bootloader and wipe | Done | To do |
-| 5 | Flash LineageOS | Done, boots | To do |
-| 6 | Root with Magisk, read the button scancodes | Done | To do |
+| 0 | Install the tools | Done | Done (same laptop) |
+| 1 | Back up every partition except user data | Done, checked | Done, checked |
+| 2 | Allow unlocking (flip the `frp` byte) | Done | Done |
+| 3 | Get into fastboot | Done | Done |
+| 4 | Unlock the bootloader and wipe | Done | Done |
+| 5 | Flash LineageOS | Done, boots | Done, boots |
+| 6 | Root with Magisk, remap the side button | Done | Done |
 
 The scripts are in [`tools/r1/`](../tools/r1). The backups are not in the repo and must never be: they hold each R1's IMEI and Wi-Fi calibration.
 
 The background, and why we reflash at all, is in the [R1 doc](Rabbit%20R1%20Walkie-Talkie%20Research%20and%20Design.md#getting-control-of-the-r1).
 
 **Watch progress with one dashboard.** Run `tools/r1/r1-monitor.sh B` in a spare terminal. It lists every stage below, with status and live progress for the one running: a bar for the backup and the system flash, and the latest log line for the rest. It also shows what the R1 is right now: rabbitOS, off and charging, preloader, fastboot or Android. Stage statuses are set with `tools/r1/r1-stage.sh <unit> <stage> <status> [note]`, and saved in `~/r1-backups/r1-<unit>.state`. The statuses are `pending`, `waiting` (needs you), `running`, `done`, `failed` and `skipped`. Each stage's log goes in `~/r1-backups/logs-<unit>/<stage>.log`.
+
+## How R1 "B" differed
+
+R1 "B" was done on 28 November in about an hour, following this runbook with the [monitor](#summary) running. Almost everything matched R1 "A". The differences:
+
+| | R1 "A" | R1 "B" |
+|---|---|---|
+| Bootloader date (rabbitOS) | 2026-07-10 (2.3) | **2026-09-10 (2.3.1)**, the version in r1_escape PR #97 |
+| `seccfg` after unlock | `lock_state=3 dm_verity_state=0` | the same, so PR #97 didn't apply here either |
+| Bootloader's `current-slot` | `b` (wrong) | `a` (right) |
+| Slot fastbootd reported, and Android booted | `a` | `a` |
+| vbmeta images built from | `_b` copies | `_a` copies; either works, since verification is off |
+
+- **Checking the backup needed no reconnect.** The partition table is in the backup's own `gpt.bin`, so the file sizes were checked against that rather than `mtk printgpt`.
+- **R1 "B" went back into the preloader after each `mtk` command.** So `boot1` and the `frp` write connected straight away, without unplugging.
+- **`mtk` connected with `cdc_acm` loaded,** unlike R1 "A".
+- **The Magisk app asked for Android's notification permission** before its setup restart.
 
 ## The one thing to know first
 
