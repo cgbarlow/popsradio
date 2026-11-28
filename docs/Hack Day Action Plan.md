@@ -41,7 +41,7 @@ This is a plan, not sourced research. Effort figures are my estimates.
 | # | Task | Owner | Effort |
 |---|---|---|---|
 | 1 | **Brief your teammate.** Share the repo and this plan, and ask whether they can make the bench night | Chris | 30 minutes |
-| 2 | **Bench night** ([R1 doc](Rabbit%20R1%20Walkie-Talkie%20Research%20and%20Design.md#getting-control-of-the-r1), steps 1 to 6). On the Mac mini, running directly on macOS, not in a VM: Google's platform-tools for adb and fastboot, and the main [mtkclient](https://github.com/bkerler/mtkclient) project with its macOS install notes. A VM tends to miss the R1 as it reconnects between boot modes. Back up each R1, nvram included, and label the backups. Unlock, flash the LineageOS GSI and root with Magisk. Then run `getevent -lt` and press everything, and write down the real scancodes | Chris and teammate | 1 evening |
+| 2 | **Bench night**, following the [R1 Flashing Runbook](R1%20Flashing%20Runbook.md). On Chris's Omarchy laptop (Arch Linux), not the Mac mini: adb, fastboot and [mtkclient](https://github.com/bkerler/mtkclient), with the R1 plugged straight in. Back up each R1, nvram and the preloader included, and label the backups. Unlock, flash the LineageOS GSI and root with Magisk. Then run `getevent -lt` and press everything, and write down the real scancodes. **R1 "A" done 25 November:** rooted LineageOS 21, with the side button sending F9. Its scancodes are in the runbook | Chris and teammate | 1 evening each |
 | 3 | **Zello smoke test** on the same night. Install it on both R1s and talk over Wi-Fi, then over LTE if there is a SIM. Note how loud they are and roughly how much delay there is. **The R1s are now talking:** this is the guaranteed fallback | Chris and teammate | 30 minutes |
 | 4 | **Protocol spec v0.1** in `docs/protocol.md`, kept short. The WebSocket messages (join, floor request, granted, denied, talking, end) and the binary audio frame with its header (channel, sender, sequence, codec). Pick the cipher for later too: XChaCha20-Poly1305, as the service design says | Chris | 1 evening |
 | 5 | **Cloudflare account and Wrangler** installed | Chris | 30 minutes |
@@ -98,7 +98,7 @@ You take the app's audio path, the service and integration. Pair up whenever one
 | Risk | Mitigation |
 |---|---|
 | An R1 won't unlock or flash | Done in week 1, with time to sort it out; the mtkclient route is in the R1 doc |
-| mtkclient won't connect from macOS | Use a real Linux machine: your teammate's laptop, or a PC booted from an Ubuntu USB stick |
+| mtkclient won't see the R1 | Start mtk first, then power the R1 up with nothing pressed, plugged straight into the laptop. Unload `cdc_acm` if it holds the R1. See the [runbook](R1%20Flashing%20Runbook.md#the-one-thing-to-know-first). Your teammate's laptop is a second Linux machine |
 | Venue Wi-Fi has a sign-in page | Own 2.4 GHz hotspot |
 | Service not ready | `wrangler dev` on the laptop |
 | Side button remap fails | On-screen button; the side button is only a "Should" |
