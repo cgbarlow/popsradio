@@ -27,11 +27,11 @@ The case comes two ways, and other shapes we looked at:
 
 ## Where it's at
 
-This is a family project. The design is decided, in [Design Decisions](docs/Design%20Decisions.md). The radio itself isn't built yet. Stage 1 is under way: the groundwork for the 4 December [hack day](docs/Hack%20Day%20Action%20Plan.md) is done, and the day itself has to prove the two R1s talking through our own app.
+This is a family project. The design is decided, in [Design Decisions](docs/Design%20Decisions.md). The radio itself isn't built yet. Stage 1 is under way, working towards the 4 December [hack day](docs/Hack%20Day%20Action%20Plan.md), where the two R1s must talk through our own app. The R1s are ready, and the Zello fallback works. Our channel service and app aren't built yet.
 
 | Stage | What | Status |
 | --- | --- | --- |
-| 1 | Prove the idea on two Rabbit R1s, reflashed to run one app | Now. Groundwork done: both R1s are reflashed and rooted, with the side button as push-to-talk, and the Zello fallback works. Still to come: our channel service and app, to be proved at the 4 December hack day |
+| 1 | Prove the idea on two Rabbit R1s, reflashed to run one app | Now. Done: both R1s reflashed and rooted, the side button as push-to-talk, the Zello fallback, and the protocol spec v0.1 draft. To do before the hack day: the channel service, the app skeleton and a dry run |
 | 2a | Build the radio from modules: three knobs, a 2.4 inch screen, FM and the mesh radio, about NZ$61 in parts | Next |
 | 2b | Put it on one custom board that opens up for plug-in cards: 10 boards, then 100 base kits at about NZ$44 each to make | After 2a |
 | 3 | A family app for iOS and Android, to talk to Pop's radio from a phone | Later |
