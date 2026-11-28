@@ -20,6 +20,8 @@ The scripts are in [`tools/r1/`](../tools/r1). The backups are not in the repo a
 
 The background, and why we reflash at all, is in the [R1 doc](Rabbit%20R1%20Walkie-Talkie%20Research%20and%20Design.md#getting-control-of-the-r1).
 
+**Watch progress with one dashboard.** Run `tools/r1/r1-monitor.sh B` in a spare terminal. It lists every stage below, with status and live progress for the one running: a bar for the backup and the system flash, and the latest log line for the rest. It also shows what the R1 is right now: rabbitOS, off and charging, preloader, fastboot or Android. Stage statuses are set with `tools/r1/r1-stage.sh <unit> <stage> <status> [note]`, and saved in `~/r1-backups/r1-<unit>.state`. The statuses are `pending`, `waiting` (needs you), `running`, `done`, `failed` and `skipped`. Each stage's log goes in `~/r1-backups/logs-<unit>/<stage>.log`.
+
 ## The one thing to know first
 
 **The R1 only talks to `mtk` for a moment as it powers up.** It has no volume buttons, so there is no button combination for flashing mode. Every `mtk` command works the same way:
