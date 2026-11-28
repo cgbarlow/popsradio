@@ -36,7 +36,7 @@ On 28 November that was version 7.21.1 (`versionCode 7002101`): 85,843,057 bytes
 
 With both R1s plugged in, use `adb devices` to get their serials, and pass `-s <serial>` to each adb command.
 
-There is no home screen app on these builds, so open Zello over adb:
+Both R1s now have a simple home screen with Zello on it, from `tools/r1/home-launcher.sh` (see the [runbook](R1%20Flashing%20Runbook.md#6-afterwards)). Without it, open Zello over adb:
 
 ```
 adb -s <serial> shell monkey -p com.loudtalks -c android.intent.category.LAUNCHER 1
